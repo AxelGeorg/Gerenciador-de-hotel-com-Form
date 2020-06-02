@@ -1,0 +1,10 @@
+C:\Users\Daniel\source\repos\Gerenciamento de Hotel\Gerenciamento de Hotel\bin\Debug\Gerenciamento de Hotel.exe.config
+C:\Users\Daniel\source\repos\Gerenciamento de Hotel\Gerenciamento de Hotel\bin\Debug\Gerenciamento de Hotel.exe
+C:\Users\Daniel\source\repos\Gerenciamento de Hotel\Gerenciamento de Hotel\bin\Debug\Gerenciamento de Hotel.pdb
+C:\Users\Daniel\source\repos\Gerenciamento de Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento de Hotel.csprojAssemblyReference.cache
+C:\Users\Daniel\source\repos\Gerenciamento de Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.Form1.resources
+C:\Users\Daniel\source\repos\Gerenciamento de Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.Properties.Resources.resources
+C:\Users\Daniel\source\repos\Gerenciamento de Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento de Hotel.csproj.GenerateResource.cache
+C:\Users\Daniel\source\repos\Gerenciamento de Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento de Hotel.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\source\repos\Gerenciamento de Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento de Hotel.exe
+C:\Users\Daniel\source\repos\Gerenciamento de Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento de Hotel.pdb
