@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gerenciamento_de_Hotel.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,13 @@ namespace Gerenciamento_de_Hotel
             telaPrincipal.ShowDialog();
            
             
+        }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+            PanelScreen panel = new PanelScreen();
+            this.Hide();
+            panel.ShowDialog();
         }
     }
 }
