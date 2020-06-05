@@ -10,23 +10,19 @@ using System.Windows.Forms;
 
 namespace Gerenciamento_de_Hotel
 {
-    public partial class Form1 : Form
+    public partial class LoginScreen : Form
     {
-        public Form1()
+        public LoginScreen()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_login_Click(object sender, EventArgs e)
-        {
-            LoginScreen telaLogin = new LoginScreen();
+            Form1 telaPrincipal = new Form1();
             this.Hide();
-            telaLogin.ShowDialog();
+            telaPrincipal.ShowDialog();
+           
             
         }
     }
