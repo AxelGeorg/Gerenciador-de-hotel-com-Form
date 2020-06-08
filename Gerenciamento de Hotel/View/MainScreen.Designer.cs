@@ -1,6 +1,6 @@
 ﻿namespace Gerenciamento_de_Hotel
 {
-    partial class Form1
+    partial class MainScreen
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
             this.btn_login = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_information = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@
             this.btn_information.Name = "btn_information";
             this.btn_information.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // MainScreen
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -62,7 +62,7 @@
             this.Controls.Add(this.btn_login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainScreen";
             this.ShowIcon = false;
             this.ResumeLayout(false);
             this.PerformLayout();

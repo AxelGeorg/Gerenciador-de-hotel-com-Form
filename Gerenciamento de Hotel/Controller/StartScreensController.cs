@@ -8,5 +8,10 @@ namespace Gerenciamento_de_Hotel
 {
     class StartScreensController
     {
+
+        public static void abrirTela(String novaTela)
+        {
+           // return 0;
+        }
     }
 }

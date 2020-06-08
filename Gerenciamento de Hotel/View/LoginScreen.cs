@@ -1,4 +1,6 @@
-﻿using Gerenciamento_de_Hotel.View;
+﻿using Gerenciamento_de_Hotel.Controller;
+using Gerenciamento_de_Hotel.Model.DAO;
+using Gerenciamento_de_Hotel.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,25 +15,29 @@ namespace Gerenciamento_de_Hotel
 {
     public partial class LoginScreen : Form
     {
+        EmployeesDAO employeesDAO = new EmployeesDAO();
+
         public LoginScreen()
         {
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form1 telaPrincipal = new Form1();
-            this.Hide();
-            telaPrincipal.ShowDialog();
-           
-            
-        }
-
         private void btn_login_Click(object sender, EventArgs e)
         {
-            PanelScreen panel = new PanelScreen();
+            if (employeesDAO.ValidateUser(txt_email.Text, txt_password.Text)){
+                PanelScreen panel = new PanelScreen();
+                this.Hide();
+                panel.ShowDialog();
+            }else{
+                MessageBox.Show("Erro ao tentar efetuar o login");
+            }
+        }
+
+        private void btn_comeBack_Click(object sender, EventArgs e)
+        {
+            MainScreen telaPrincipal = new MainScreen();
             this.Hide();
-            panel.ShowDialog();
+            telaPrincipal.ShowDialog();  
         }
     }
 }

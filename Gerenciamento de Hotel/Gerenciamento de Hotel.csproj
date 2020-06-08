@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\loginController.cs" />
     <Compile Include="Controller\StartScreensController.cs" />
     <Compile Include="View\LoginScreen.cs">
       <SubType>Form</SubType>
