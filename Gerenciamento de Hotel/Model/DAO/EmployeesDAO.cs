@@ -11,9 +11,9 @@ namespace Gerenciamento_de_Hotel.Model.DAO
 {
     class EmployeesDAO
     {
-        //string conexaoString = "Server=localhost;Database=hotel;Uid=root;Pwd=;";
-        //MySqlConnection connection = null;
-        //MySqlCommand command;
+        string conexaoString = "Server=localhost;Database=hotel;Uid=root;Pwd=;";
+        MySqlConnection connection = null;
+        MySqlCommand command;
 
         
 
@@ -26,17 +26,16 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             try
             {
                 //Passa a string de conexao  root@127.0.0.1:3306      jdbc:mysql://127.0.0.1:3306/?user=root
-                MySqlConnection connection = new MySqlConnection("Server=localhost;Database=hotel;Uid=root;Pwd=;");
+                connection = new MySqlConnection(conexaoString);
                 
                 connection.Open(); // abre a conexão
                
-                MySqlCommand command = new MySqlCommand("select emp_email, emp_password from Employees;", connection);
+                command = new MySqlCommand("select emp_email, emp_password from Employees;", connection);
                 command.CommandType = CommandType.Text;
 
                 //Atribui os dados coletados para o dr
                 MySqlDataReader dr = command.ExecuteReader();
                 dr.Read();
-
 
                 int d = 0;
                 bool valida = false;

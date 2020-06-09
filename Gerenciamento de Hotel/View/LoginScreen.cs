@@ -15,7 +15,7 @@ namespace Gerenciamento_de_Hotel
 {
     public partial class LoginScreen : Form
     {
-        EmployeesDAO employeesDAO = new EmployeesDAO();
+        loginController loginController = new loginController();
 
         public LoginScreen()
         {
@@ -24,7 +24,7 @@ namespace Gerenciamento_de_Hotel
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (employeesDAO.ValidateUser(txt_email.Text, txt_password.Text)){
+            if (loginController.validateUser(txt_email.Text, txt_password.Text)==true){
                 PanelScreen panel = new PanelScreen();
                 this.Hide();
                 panel.ShowDialog();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gerenciamento_de_Hotel.Model.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,21 +7,14 @@ using System.Threading.Tasks;
 
 namespace Gerenciamento_de_Hotel.Controller
 {
-    class loginController
+    public class loginController
     {
+        EmployeesDAO employeesDAO = new EmployeesDAO();
         public bool validateUser(String email, String senha){
-            bool validated = true;
 
             try
             {
-                
-                
-
-
-
-
-
-                return validated;
+                return employeesDAO.ValidateUser(email, senha);
             }
             catch (Exception)
             {
