@@ -23,5 +23,10 @@ namespace Gerenciamento_de_Hotel.Model.Entidades
             this.fun_titulo = titulo;
         }
 
+        public Employees()
+        {
+
+        }
+
     }
 }

@@ -108,8 +108,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\FrigoBarController.cs" />
     <Compile Include="Controller\loginController.cs" />
     <Compile Include="Controller\StartScreensController.cs" />
+    <Compile Include="Model\DAO\FrigoBarDAO.cs" />
+    <Compile Include="Model\DAO\RoomDAO.cs" />
+    <Compile Include="Model\Entidades\FrigoBar.cs" />
+    <Compile Include="Model\Entidades\Room.cs" />
+    <Compile Include="View\CreateRoomScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CreateRoomScreen.Designer.cs">
+      <DependentUpon>CreateRoomScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +143,15 @@
     <Compile Include="View\PanelScreen.Designer.cs">
       <DependentUpon>PanelScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\RoomScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RoomScreen.Designer.cs">
+      <DependentUpon>RoomScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\CreateRoomScreen.resx">
+      <DependentUpon>CreateRoomScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +169,9 @@
     </Compile>
     <EmbeddedResource Include="View\PanelScreen.resx">
       <DependentUpon>PanelScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RoomScreen.resx">
+      <DependentUpon>RoomScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

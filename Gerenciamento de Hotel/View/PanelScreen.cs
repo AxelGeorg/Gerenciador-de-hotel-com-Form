@@ -28,5 +28,12 @@ namespace Gerenciamento_de_Hotel.View
             this.Hide();
             telaLogin.ShowDialog();
         }
+
+        private void bnt_bedrooms_Click(object sender, EventArgs e)
+        {
+            RoomScreen tela = new RoomScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
     }
 }

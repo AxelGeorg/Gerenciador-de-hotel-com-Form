@@ -1,16 +1,38 @@
-drop table Employees;
-create table Employees (
-	emp_id      int(8) primary key auto_increment,
-    emp_name    varchar(15) not null,
-    emp_surname varchar(15) not null,
-    emp_CPF     varchar(15) not null,
-    emp_office  varchar(15) not null,
-    emp_salary  float(8) not null,
-    emp_status   varchar(15) not null,
-    emp_password varchar(15) not null,
-    emp_email varchar(40) not null
+use hotel;
+
+select * from employees;
+
+create table room (
+	room_id              int primary key auto_increment,
+    room_numeroQuarto    varchar(15) not null,
+    room_quantPessoa     int not null,
+    room_quantCasal      int not null,
+    room_quantSolteiro   int not null,
+    room_disponibilidade bool not null,
+    room_limpeza  		 bool not null,
+    room_precoDiaria     float not null,
+    room_precoTotal      float,
+    fk_frigID int,
+    CONSTRAINT fk_frigoBar FOREIGN KEY (fk_frigID) REFERENCES frigoBar (frig_id)
 );
 
-insert into Employees (emp_name,emp_surname,emp_CPF,emp_office,emp_salary,emp_status,emp_email,emp_password) values ('Axel','Georg','22131343','ceo',3000,'clt','axelgeorggfertylkjjh','12345');
+insert into room (room_numeroQuarto, room_quantPessoa, room_quantCasal, room_quantSolteiro, room_disponibilidade, room_limpeza, room_precoDiaria, fk_frigID)
+           values('A01', 4, 1, 2, true, true, 120, 2);
 
-select * from Employees;
+insert into frigoBar (frig_identificacao) values ('FrigoBar A03');
+
+create table frigoBarProduto (
+	frigP_id          int primary key auto_increment,
+    frigP_nomeProduto varchar(30) not null,
+    frigP_preco       float not null,
+    frigP_quant		 int not null	
+);
+
+create table frigoBar (
+	frig_id            int primary key auto_increment,
+    frig_identificacao varchar (30) not null,
+    fk_frigPID         int,
+    CONSTRAINT fk_frigoP FOREIGN KEY (fk_frigPID) REFERENCES frigoBarProduto (frigP_id)
+);
+
+drop table frigoBarProduto;

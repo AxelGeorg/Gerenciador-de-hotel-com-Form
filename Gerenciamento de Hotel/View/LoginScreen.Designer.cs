@@ -95,10 +95,10 @@
             // 
             // btn_comeBack
             // 
-            this.btn_comeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_comeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_comeBack.Location = new System.Drawing.Point(1, 0);
             this.btn_comeBack.Name = "btn_comeBack";
-            this.btn_comeBack.Size = new System.Drawing.Size(50, 49);
+            this.btn_comeBack.Size = new System.Drawing.Size(50, 26);
             this.btn_comeBack.TabIndex = 7;
             this.btn_comeBack.Text = "←";
             this.btn_comeBack.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 387);
+            this.ClientSize = new System.Drawing.Size(512, 304);
             this.Controls.Add(this.btn_comeBack);
             this.Controls.Add(this.btn_pwr);
             this.Controls.Add(this.btn_login);

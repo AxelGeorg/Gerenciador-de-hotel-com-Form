@@ -24,13 +24,26 @@ namespace Gerenciamento_de_Hotel
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (loginController.validateUser(txt_email.Text, txt_password.Text)==true){
-                PanelScreen panel = new PanelScreen();
-                this.Hide();
-                panel.ShowDialog();
-            }else{
-                MessageBox.Show("Erro ao tentar efetuar o login");
+            if (String.Equals(txt_email.Text, "") | String.Equals(txt_password.Text,"")){
+                MessageBox.Show("Os campos login e senha precisam ser preenchidos");
             }
+            else
+            {
+                if (loginController.validateUser(txt_email.Text, txt_password.Text) == true)
+                {
+                    CreateRoomScreen panel = new CreateRoomScreen();
+                    this.Hide();
+                    panel.ShowDialog();
+
+                    //PanelScreen panel = new PanelScreen();
+                    //this.Hide();
+                    //panel.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao tentar efetuar o login");
+                }
+            }  
         }
 
         private void btn_comeBack_Click(object sender, EventArgs e)

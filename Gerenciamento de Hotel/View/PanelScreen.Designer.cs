@@ -35,18 +35,21 @@
             // 
             // bnt_bedrooms
             // 
-            this.bnt_bedrooms.Location = new System.Drawing.Point(116, 89);
+            this.bnt_bedrooms.Location = new System.Drawing.Point(54, 64);
+            this.bnt_bedrooms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bnt_bedrooms.Name = "bnt_bedrooms";
-            this.bnt_bedrooms.Size = new System.Drawing.Size(191, 28);
+            this.bnt_bedrooms.Size = new System.Drawing.Size(255, 34);
             this.bnt_bedrooms.TabIndex = 0;
-            this.bnt_bedrooms.Text = "Verificar quartos";
+            this.bnt_bedrooms.Text = "Quartos";
             this.bnt_bedrooms.UseVisualStyleBackColor = true;
+            this.bnt_bedrooms.Click += new System.EventHandler(this.bnt_bedrooms_Click);
             // 
             // btn_employee
             // 
-            this.btn_employee.Location = new System.Drawing.Point(116, 132);
+            this.btn_employee.Location = new System.Drawing.Point(54, 116);
+            this.btn_employee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_employee.Name = "btn_employee";
-            this.btn_employee.Size = new System.Drawing.Size(191, 28);
+            this.btn_employee.Size = new System.Drawing.Size(255, 34);
             this.btn_employee.TabIndex = 1;
             this.btn_employee.Text = "Funcionários";
             this.btn_employee.UseVisualStyleBackColor = true;
@@ -55,8 +58,9 @@
             // btn_comeBack
             // 
             this.btn_comeBack.Location = new System.Drawing.Point(1, 0);
+            this.btn_comeBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_comeBack.Name = "btn_comeBack";
-            this.btn_comeBack.Size = new System.Drawing.Size(54, 19);
+            this.btn_comeBack.Size = new System.Drawing.Size(72, 23);
             this.btn_comeBack.TabIndex = 2;
             this.btn_comeBack.Text = "<--";
             this.btn_comeBack.UseVisualStyleBackColor = true;
@@ -64,12 +68,13 @@
             // 
             // PanelScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 261);
+            this.ClientSize = new System.Drawing.Size(389, 223);
             this.Controls.Add(this.btn_comeBack);
             this.Controls.Add(this.btn_employee);
             this.Controls.Add(this.bnt_bedrooms);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PanelScreen";
             this.Text = "Painel";
             this.ResumeLayout(false);
