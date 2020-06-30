@@ -28,63 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bnt_bedrooms = new System.Windows.Forms.Button();
-            this.btn_employee = new System.Windows.Forms.Button();
             this.btn_comeBack = new System.Windows.Forms.Button();
+            this.btn_employees = new System.Windows.Forms.Button();
+            this.btn_room = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // bnt_bedrooms
-            // 
-            this.bnt_bedrooms.Location = new System.Drawing.Point(54, 64);
-            this.bnt_bedrooms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bnt_bedrooms.Name = "bnt_bedrooms";
-            this.bnt_bedrooms.Size = new System.Drawing.Size(255, 34);
-            this.bnt_bedrooms.TabIndex = 0;
-            this.bnt_bedrooms.Text = "Quartos";
-            this.bnt_bedrooms.UseVisualStyleBackColor = true;
-            this.bnt_bedrooms.Click += new System.EventHandler(this.bnt_bedrooms_Click);
-            // 
-            // btn_employee
-            // 
-            this.btn_employee.Location = new System.Drawing.Point(54, 116);
-            this.btn_employee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_employee.Name = "btn_employee";
-            this.btn_employee.Size = new System.Drawing.Size(255, 34);
-            this.btn_employee.TabIndex = 1;
-            this.btn_employee.Text = "Funcionários";
-            this.btn_employee.UseVisualStyleBackColor = true;
-            this.btn_employee.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_comeBack
             // 
+            this.btn_comeBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_comeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_comeBack.Location = new System.Drawing.Point(1, 0);
-            this.btn_comeBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_comeBack.Name = "btn_comeBack";
-            this.btn_comeBack.Size = new System.Drawing.Size(72, 23);
+            this.btn_comeBack.Size = new System.Drawing.Size(97, 28);
             this.btn_comeBack.TabIndex = 2;
-            this.btn_comeBack.Text = "<--";
+            this.btn_comeBack.Text = "←";
             this.btn_comeBack.UseVisualStyleBackColor = true;
             this.btn_comeBack.Click += new System.EventHandler(this.btn_comeBack_Click);
             // 
+            // btn_employees
+            // 
+            this.btn_employees.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_employees.Location = new System.Drawing.Point(198, 225);
+            this.btn_employees.Name = "btn_employees";
+            this.btn_employees.Size = new System.Drawing.Size(235, 28);
+            this.btn_employees.TabIndex = 3;
+            this.btn_employees.Text = "Funcionários";
+            this.btn_employees.UseVisualStyleBackColor = true;
+            this.btn_employees.Click += new System.EventHandler(this.btn_employees_Click);
+            // 
+            // btn_room
+            // 
+            this.btn_room.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_room.Location = new System.Drawing.Point(198, 173);
+            this.btn_room.Name = "btn_room";
+            this.btn_room.Size = new System.Drawing.Size(235, 28);
+            this.btn_room.TabIndex = 4;
+            this.btn_room.Text = "Quartos";
+            this.btn_room.UseVisualStyleBackColor = true;
+            this.btn_room.Click += new System.EventHandler(this.btn_room_Click);
+            // 
             // PanelScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 223);
+            this.ClientSize = new System.Drawing.Size(673, 389);
+            this.Controls.Add(this.btn_room);
+            this.Controls.Add(this.btn_employees);
             this.Controls.Add(this.btn_comeBack);
-            this.Controls.Add(this.btn_employee);
-            this.Controls.Add(this.bnt_bedrooms);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PanelScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Painel";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button bnt_bedrooms;
-        private System.Windows.Forms.Button btn_employee;
         private System.Windows.Forms.Button btn_comeBack;
+        private System.Windows.Forms.Button btn_employees;
+        private System.Windows.Forms.Button btn_room;
     }
 }

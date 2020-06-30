@@ -143,3 +143,10 @@ C:\Users\Daniel\Desktop\Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento de 
 C:\Users\Daniel\Desktop\Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento de Hotel.pdb
 C:\Users\Daniel\Desktop\Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.CreateRoomScreen.resources
 C:\Users\Daniel\Desktop\Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.RoomScreen.resources
+C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.CreateRoomScreen.resources
+C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.RoomScreen.resources
+C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.CreateEmployeeScreen.resources
+C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.EmployeeScreen.resources
+C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.CreateFrigoBarScreen.resources
+C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.FrigoBarScreen.resources
+C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ReadEmployeeScreen.resources

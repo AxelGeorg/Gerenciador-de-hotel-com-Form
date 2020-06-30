@@ -6,27 +6,14 @@ using System.Threading.Tasks;
 
 namespace Gerenciamento_de_Hotel.Model.Entidades
 {
-    class Employees
+    public class Employees
     {
-        public int fun_id { get; set; }
-        public string fun_nome { get; set; }
-        public string fun_sobrenome { get; set; }
-        public string fun_cpf { get; set; }
-        public string fun_titulo { get; set; }
-
-        public Employees(int id, string nome, string sobrenome, string cpf, string titulo)
-        {
-            this.fun_id = id;
-            this.fun_nome = nome;
-            this.fun_sobrenome = sobrenome;
-            this.fun_cpf = cpf;
-            this.fun_titulo = titulo;
-        }
-
-        public Employees()
-        {
-
-        }
-
+        public int emp_id { get; set; }
+        public string emp_nome { get; set; }
+        public string emp_sobrenome { get; set; }
+        public string emp_cpf { get; set; }
+        public string emp_titulo { get; set; }
+        public string emp_email { get; set; }
+        public string emp_password { get; set; }
     }
 }

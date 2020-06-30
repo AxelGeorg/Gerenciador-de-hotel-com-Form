@@ -30,7 +30,7 @@ namespace Gerenciamento_de_Hotel.View
             {
                 for (int i = 0; i < frigoBares.Count; i++)
                 {
-                    cb_frigoBar.Items.Add(frigoBares[i].frig_identificacao);
+                    cbox_frigoBar.Items.Add(frigoBares[i].frig_identificacao);
                     listFrigoBares.Add(frigoBares[i]);
                 }
             }
@@ -51,6 +51,21 @@ namespace Gerenciamento_de_Hotel.View
             PanelScreen tela = new PanelScreen();
             this.Hide();
             tela.ShowDialog();
+        }
+
+        private void txt_identificacao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_frigoBar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cadastrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

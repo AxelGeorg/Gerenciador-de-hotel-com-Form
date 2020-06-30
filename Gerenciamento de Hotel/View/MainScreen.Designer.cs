@@ -36,6 +36,7 @@
             // 
             // btn_login
             // 
+            this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.btn_login, "btn_login");
             this.btn_login.Name = "btn_login";
             this.btn_login.UseVisualStyleBackColor = true;
@@ -49,6 +50,7 @@
             // btn_information
             // 
             this.btn_information.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_information.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.btn_information, "btn_information");
             this.btn_information.Name = "btn_information";
             this.btn_information.UseVisualStyleBackColor = false;

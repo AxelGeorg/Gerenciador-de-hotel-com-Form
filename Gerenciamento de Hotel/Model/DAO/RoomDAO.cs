@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gerenciamento_de_Hotel.Model.DAO
 {
-    class RoomDAO
+    public class RoomDAO
     {
         string conexaoString = "Server=localhost;Database=hotel;Uid=root;Pwd=;";
         MySqlConnection connection = null;

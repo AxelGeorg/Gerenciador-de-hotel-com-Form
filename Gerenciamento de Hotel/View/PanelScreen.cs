@@ -17,19 +17,21 @@ namespace Gerenciamento_de_Hotel.View
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_comeBack_Click(object sender, EventArgs e)
         {
-            LoginScreen telaLogin = new LoginScreen();
+            LoginScreen tela = new LoginScreen();
             this.Hide();
-            telaLogin.ShowDialog();
+            tela.ShowDialog();
         }
 
-        private void bnt_bedrooms_Click(object sender, EventArgs e)
+        private void btn_employees_Click(object sender, EventArgs e)
+        {
+            EmployeeScreen tela = new EmployeeScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
+
+        private void btn_room_Click(object sender, EventArgs e)
         {
             RoomScreen tela = new RoomScreen();
             this.Hide();

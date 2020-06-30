@@ -8,17 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gerenciamento_de_Hotel
+namespace Gerenciamento_de_Hotel.View
 {
-    public partial class MainScreen : Form
+    public partial class CreateFrigoBarScreen : Form
     {
-        public MainScreen()
+        public CreateFrigoBarScreen()
         {
             InitializeComponent();
         }
-        private void btn_login_Click(object sender, EventArgs e)
+
+        private void btn_back_Click(object sender, EventArgs e)
         {
-            LoginScreen tela = new LoginScreen();
+            FrigoBarScreen tela = new FrigoBarScreen();
             this.Hide();
             tela.ShowDialog();
         }

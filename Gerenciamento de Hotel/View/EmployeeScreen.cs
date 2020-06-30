@@ -1,5 +1,4 @@
-﻿using Gerenciamento_de_Hotel.Model.Entidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Gerenciamento_de_Hotel.View
 {
-    public partial class RoomScreen : Form
+    public partial class EmployeeScreen : Form
     {
-        public RoomScreen()
+        public EmployeeScreen()
         {
             InitializeComponent();
-        }
-
-        private void btn_criarQuarto_Click(object sender, EventArgs e)
-        {
-            CreateRoomScreen tela = new CreateRoomScreen();
-            this.Hide();
-            tela.ShowDialog();
         }
 
         private void btn_comeBack_Click(object sender, EventArgs e)
@@ -32,9 +24,16 @@ namespace Gerenciamento_de_Hotel.View
             tela.ShowDialog();
         }
 
-        private void btn_addFrigoBar_Click(object sender, EventArgs e)
+        private void btn_cadastrarEmp_Click(object sender, EventArgs e)
         {
-            FrigoBarScreen tela = new FrigoBarScreen();
+            CreateEmployeeScreen tela = new CreateEmployeeScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
+
+        private void btn_listarEmp_Click(object sender, EventArgs e)
+        {
+            ReadEmployeeScreen tela = new ReadEmployeeScreen();
             this.Hide();
             tela.ShowDialog();
         }

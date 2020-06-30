@@ -23,7 +23,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
 
                 using (connection = new MySqlConnection(conexaoString))
                 {
-                    using (command = new MySqlCommand("select frig_id, frig_nomeProduto, frig_preco, frig_quant  from frigoBar;", connection))
+                    using (command = new MySqlCommand("select frig_id, frig_identificacao, fk_frigPID from frigoBar;", connection))
                     {
                         connection.Open(); // abre a conexão
                         using (MySqlDataReader dataReader = command.ExecuteReader())

@@ -15,7 +15,7 @@ namespace Gerenciamento_de_Hotel
 {
     public partial class LoginScreen : Form
     {
-        loginController loginController = new loginController();
+        employeeController Controller = new employeeController();
 
         public LoginScreen()
         {
@@ -24,33 +24,36 @@ namespace Gerenciamento_de_Hotel
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (String.Equals(txt_email.Text, "") | String.Equals(txt_password.Text,"")){
+            var verifica = 0;
+
+            if (String.Equals(txtb_email.Text, "") || String.Equals(txtb_password.Text,"")){
                 MessageBox.Show("Os campos login e senha precisam ser preenchidos");
             }
             else
             {
-                if (loginController.validateUser(txt_email.Text, txt_password.Text) == true)
-                {
-                    CreateRoomScreen panel = new CreateRoomScreen();
-                    this.Hide();
-                    panel.ShowDialog();
+                var listEmp = Controller.retornaEmployees();
 
-                    //PanelScreen panel = new PanelScreen();
-                    //this.Hide();
-                    //panel.ShowDialog();
-                }
-                else
+                for (int i = 0; i < listEmp.Count; i++)
                 {
-                    MessageBox.Show("Erro ao tentar efetuar o login");
+                    if ((txtb_email.Text.Trim() == listEmp[i].emp_email) && (txtb_password.Text.Trim() == listEmp[i].emp_password))
+                    {
+                        verifica = 1;
+                        PanelScreen tela = new PanelScreen();
+                        this.Hide();
+                        tela.ShowDialog();
+                    }
+                }
+                if (verifica == 0)
+                {
+                    MessageBox.Show("Email ou senha incorretos, digite novamente!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }  
         }
-
         private void btn_comeBack_Click(object sender, EventArgs e)
         {
-            MainScreen telaPrincipal = new MainScreen();
+            MainScreen tela = new MainScreen();
             this.Hide();
-            telaPrincipal.ShowDialog();  
+            tela.ShowDialog();  
         }
     }
 }
