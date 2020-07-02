@@ -133,6 +133,12 @@
     <Compile Include="View\CreateRoomScreen.Designer.cs">
       <DependentUpon>CreateRoomScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\DeleteEmployeeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DeleteEmployeeScreen.Designer.cs">
+      <DependentUpon>DeleteEmployeeScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\EmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,12 @@
     <Compile Include="View\RoomScreen.Designer.cs">
       <DependentUpon>RoomScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UpdateEmployeeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UpdateEmployeeScreen.Designer.cs">
+      <DependentUpon>UpdateEmployeeScreen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\CreateEmployeeScreen.resx">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CreateRoomScreen.resx">
       <DependentUpon>CreateRoomScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DeleteEmployeeScreen.resx">
+      <DependentUpon>DeleteEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeScreen.resx">
       <DependentUpon>EmployeeScreen.cs</DependentUpon>
@@ -217,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RoomScreen.resx">
       <DependentUpon>RoomScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UpdateEmployeeScreen.resx">
+      <DependentUpon>UpdateEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -37,5 +37,19 @@ namespace Gerenciamento_de_Hotel.View
             this.Hide();
             tela.ShowDialog();
         }
+
+        private void btn_atualizarEmp_Click(object sender, EventArgs e)
+        {
+            UpdateEmployeeScreen tela = new UpdateEmployeeScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
+
+        private void btn_deletarEmp_Click(object sender, EventArgs e)
+        {
+            DeleteEmployeeScreen tela = new DeleteEmployeeScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
     }
 }

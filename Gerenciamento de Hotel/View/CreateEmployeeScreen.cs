@@ -19,6 +19,7 @@ namespace Gerenciamento_de_Hotel.View
         public CreateEmployeeScreen()
         {
             InitializeComponent();
+            btn_cadastrar.Enabled = false;
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace Gerenciamento_de_Hotel.View
                 if (txtb_cpf.Text.Trim() == listEmp[i].emp_cpf)
                 {
                     verificaSeRetornou = 1;
-                    MessageBox.Show("Não é possível cadastrar essa funcionários, pois já há uma funcionário com esse nome!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Não é possível cadastrar essa funcionários, pois já há uma funcionário com esse CPF!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -65,6 +66,78 @@ namespace Gerenciamento_de_Hotel.View
             EmployeeScreen tela = new EmployeeScreen();
             this.Hide();
             tela.ShowDialog();
+        }
+
+        private void txtb_nome_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_sobrenome.Text)) && (!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_titulo.Text)) && (!string.IsNullOrWhiteSpace(txtb_email.Text)) && (!string.IsNullOrWhiteSpace(txtb_senha.Text)))
+            {
+                btn_cadastrar.Enabled = true;
+            }
+            else
+            {
+                btn_cadastrar.Enabled = false;
+            }
+        }
+
+        private void txtb_sobrenome_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_sobrenome.Text)) && (!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_titulo.Text)) && (!string.IsNullOrWhiteSpace(txtb_email.Text)) && (!string.IsNullOrWhiteSpace(txtb_senha.Text)))
+            {
+                btn_cadastrar.Enabled = true;
+            }
+            else
+            {
+                btn_cadastrar.Enabled = false;
+            }
+        }
+
+        private void txtb_cpf_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_sobrenome.Text)) && (!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_titulo.Text)) && (!string.IsNullOrWhiteSpace(txtb_email.Text)) && (!string.IsNullOrWhiteSpace(txtb_senha.Text)))
+            {
+                btn_cadastrar.Enabled = true;
+            }
+            else
+            {
+                btn_cadastrar.Enabled = false;
+            }
+        }
+
+        private void txtb_titulo_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_sobrenome.Text)) && (!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_titulo.Text)) && (!string.IsNullOrWhiteSpace(txtb_email.Text)) && (!string.IsNullOrWhiteSpace(txtb_senha.Text)))
+            {
+                btn_cadastrar.Enabled = true;
+            }
+            else
+            {
+                btn_cadastrar.Enabled = false;
+            }
+        }
+
+        private void txtb_email_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_sobrenome.Text)) && (!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_titulo.Text)) && (!string.IsNullOrWhiteSpace(txtb_email.Text)) && (!string.IsNullOrWhiteSpace(txtb_senha.Text)))
+            {
+                btn_cadastrar.Enabled = true;
+            }
+            else
+            {
+                btn_cadastrar.Enabled = false;
+            }
+        }
+
+        private void txtb_senha_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_sobrenome.Text)) && (!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_titulo.Text)) && (!string.IsNullOrWhiteSpace(txtb_email.Text)) && (!string.IsNullOrWhiteSpace(txtb_senha.Text)))
+            {
+                btn_cadastrar.Enabled = true;
+            }
+            else
+            {
+                btn_cadastrar.Enabled = false;
+            }
         }
     }
 }

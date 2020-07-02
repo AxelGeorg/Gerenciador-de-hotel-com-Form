@@ -117,5 +117,51 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 return false;
             }
         }
+
+        public bool alterarEmployee(int emp_id,string emp_nome, string emp_sobrenome, string emp_cpf, string emp_titulo, string emp_email, string emp_password)
+        {
+            try
+            {
+                connection = new MySqlConnection(conexaoString);
+                connection.Open(); // abre a conexão
+                command = new MySqlCommand();
+                command.Connection = connection;
+
+                command.CommandType = CommandType.Text;
+                command.CommandText = "update employees set emp_nome = '" + emp_nome + "',emp_sobrenome = '" + emp_sobrenome + "',emp_cpf = '" + emp_cpf + "',emp_titulo = '" + emp_titulo + "',emp_email = '" + emp_email + "',emp_password = '" + emp_password + "' where emp_id = " + emp_id + ";;";
+
+                command.ExecuteNonQuery();
+                command.Connection.Close(); //fecha conexão
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool deletarEmployee(int emp_id)
+        {
+            try
+            {
+                connection = new MySqlConnection(conexaoString);
+                connection.Open(); // abre a conexão
+                command = new MySqlCommand();
+                command.Connection = connection;
+
+                command.CommandType = CommandType.Text;
+                command.CommandText = "delete from employees where emp_id = " + emp_id + ";";
+
+                command.ExecuteNonQuery();
+                command.Connection.Close(); //fecha conexão
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

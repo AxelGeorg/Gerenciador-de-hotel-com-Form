@@ -150,3 +150,5 @@ C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.CreateFrigoBarScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.FrigoBarScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ReadEmployeeScreen.resources
+C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.UpdateEmployeeScreen.resources
+C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.DeleteEmployeeScreen.resources

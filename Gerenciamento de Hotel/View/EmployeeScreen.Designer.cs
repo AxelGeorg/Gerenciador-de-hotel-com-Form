@@ -56,6 +56,7 @@
             this.btn_deletarEmp.TabIndex = 8;
             this.btn_deletarEmp.Text = "Deletar";
             this.btn_deletarEmp.UseVisualStyleBackColor = true;
+            this.btn_deletarEmp.Click += new System.EventHandler(this.btn_deletarEmp_Click);
             // 
             // btn_listarEmp
             // 
@@ -77,6 +78,7 @@
             this.btn_atualizarEmp.TabIndex = 6;
             this.btn_atualizarEmp.Text = "Atualizar";
             this.btn_atualizarEmp.UseVisualStyleBackColor = true;
+            this.btn_atualizarEmp.Click += new System.EventHandler(this.btn_atualizarEmp_Click);
             // 
             // btn_cadastrarEmp
             // 
