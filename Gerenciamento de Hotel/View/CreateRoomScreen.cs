@@ -14,27 +14,12 @@ namespace Gerenciamento_de_Hotel.View
 {
     public partial class CreateRoomScreen : Form
     {
-        FrigoBarController FrigoBarController = new FrigoBarController();
         public CreateRoomScreen()
         {
             InitializeComponent();
-            carregarComboBox();
         }
 
-        private void carregarComboBox()
-        {
-            var frigoBares = FrigoBarController.listarFrigoBares();
-            var listFrigoBares = new List<FrigoBar>();
-
-            if (frigoBares.Count != 0)
-            {
-                for (int i = 0; i < frigoBares.Count; i++)
-                {
-                    cbox_frigoBar.Items.Add(frigoBares[i].frig_identificacao);
-                    listFrigoBares.Add(frigoBares[i]);
-                }
-            }
-        }
+     
 
         private void CreateRoomScreen_Tisk(object sender, EventArgs e)
         {
@@ -58,10 +43,6 @@ namespace Gerenciamento_de_Hotel.View
 
         }
 
-        private void cb_frigoBar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {

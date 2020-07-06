@@ -15,6 +15,12 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         string conexaoString = "Server=localhost;Database=hotel;Uid=root;Pwd=;";
         MySqlConnection connection = null;
         MySqlCommand command;
+        bool clickID = true;
+        bool clickNome = true;
+        bool clickSobrenome = true;
+        bool clickCPF = true;
+        bool clickTitulo = true;
+        bool clickEmail = true;
 
         public bool ValidateUser(String email, String senha)
         {
@@ -58,16 +64,109 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             }
         }
 
-        public List<Employees> BuscarFuncionarios()
+        public List<Employees> BuscarFuncionarios(int tipoOrdenacao)
         {
             try
             {
+                
                 var listEmp = new List<Employees>();
+                string query = "select emp_id,emp_nome,emp_sobrenome,emp_cpf,emp_titulo,emp_email,emp_password from employees";
                 //int qntd = qntdBanco();
+
+                if (tipoOrdenacao == 0)
+                {
+                    if (clickID == true)
+                    {
+                        query  = query + " order by emp_id asc;";
+                        clickID = false;
+                    }
+                    else
+                    {
+                        query = query + " order by emp_id desc;";
+                        clickID = true;
+                    }
+
+                }
+
+
+                if (tipoOrdenacao == 1)
+                {
+                    if (clickNome == true)
+                    {
+                        query = query + " order by emp_nome asc;";
+                        clickNome = false;
+                    }
+                    else
+                    {
+                        query = query + " order by emp_nome desc;";
+                        clickNome = true;
+                    }
+                    
+                }
+
+                if (tipoOrdenacao == 2)
+                {
+                    if (clickSobrenome == true)
+                    {
+                        query = query + " order by emp_sobrenome asc;";
+                        clickSobrenome = false;
+                    }
+                    else
+                    {
+                        query = query + " order by emp_sobrenome desc;";
+                        clickSobrenome = true;
+                    }
+
+                }
+
+                if (tipoOrdenacao == 3)
+                {
+                    if (clickCPF == true)
+                    {
+                        query = query + " order by emp_cpf asc;";
+                        clickCPF = false;
+                    }
+                    else
+                    {
+                        query = query + " order by emp_cpf desc;";
+                        clickCPF = true;
+                    }
+
+                }
+
+                if (tipoOrdenacao == 4)
+                {
+                    if (clickTitulo == true)
+                    {
+                        query = query + " order by emp_titulo asc;";
+                        clickTitulo = false;
+                    }
+                    else
+                    {
+                        query = query + " order by emp_titulo desc;";
+                        clickTitulo = true;
+                    }
+
+                }
+
+                if (tipoOrdenacao == 5)
+                {
+                    if (clickEmail == true)
+                    {
+                        query = query + " order by emp_email asc;";
+                        clickEmail = false;
+                    }
+                    else
+                    {
+                        query = query + " order by emp_email desc;";
+                        clickEmail = true;
+                    }
+                }
+
 
                 using (connection = new MySqlConnection(conexaoString))
                 {
-                    using (command = new MySqlCommand("select emp_id,emp_nome,emp_sobrenome,emp_cpf,emp_titulo,emp_email,emp_password from employees;", connection))
+                    using (command = new MySqlCommand(query, connection))
                     {
                         connection.Open(); // abre a conexão
                         using (MySqlDataReader dataReader = command.ExecuteReader())

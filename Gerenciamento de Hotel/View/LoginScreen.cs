@@ -31,7 +31,7 @@ namespace Gerenciamento_de_Hotel
             }
             else
             {
-                var listEmp = Controller.retornaEmployees();
+                var listEmp = Controller.retornaEmployees(0);
 
                 for (int i = 0; i < listEmp.Count; i++)
                 {

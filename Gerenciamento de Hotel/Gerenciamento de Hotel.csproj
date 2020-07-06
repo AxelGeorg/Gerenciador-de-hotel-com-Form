@@ -108,24 +108,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\FrigoBarController.cs" />
     <Compile Include="Controller\employeeController.cs" />
     <Compile Include="Controller\StartScreensController.cs" />
-    <Compile Include="Model\DAO\FrigoBarDAO.cs" />
+    <Compile Include="Model\DAO\DrinksDAO.cs" />
+    <Compile Include="Model\DAO\FoodsDAO.cs" />
     <Compile Include="Model\DAO\RoomDAO.cs" />
-    <Compile Include="Model\Entidades\FrigoBar.cs" />
+    <Compile Include="Model\Entidades\Drinks.cs" />
+    <Compile Include="Model\Entidades\Foods.cs" />
     <Compile Include="Model\Entidades\Room.cs" />
     <Compile Include="View\CreateEmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\CreateEmployeeScreen.Designer.cs">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\CreateFrigoBarScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\CreateFrigoBarScreen.Designer.cs">
-      <DependentUpon>CreateFrigoBarScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CreateRoomScreen.cs">
       <SubType>Form</SubType>
@@ -144,12 +139,6 @@
     </Compile>
     <Compile Include="View\EmployeeScreen.Designer.cs">
       <DependentUpon>EmployeeScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FrigoBarScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FrigoBarScreen.Designer.cs">
-      <DependentUpon>FrigoBarScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LoginScreen.cs">
       <SubType>Form</SubType>
@@ -194,9 +183,6 @@
     <EmbeddedResource Include="View\CreateEmployeeScreen.resx">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CreateFrigoBarScreen.resx">
-      <DependentUpon>CreateFrigoBarScreen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\CreateRoomScreen.resx">
       <DependentUpon>CreateRoomScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,9 +191,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeeScreen.resx">
       <DependentUpon>EmployeeScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FrigoBarScreen.resx">
-      <DependentUpon>FrigoBarScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>

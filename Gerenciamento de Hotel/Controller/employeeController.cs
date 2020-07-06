@@ -23,9 +23,9 @@ namespace Gerenciamento_de_Hotel.Controller
             }
         }
 
-        public List<Employees> retornaEmployees()
+        public List<Employees> retornaEmployees(int tipoOrdenacao)
         {
-            return employeesDAO.BuscarFuncionarios();
+            return employeesDAO.BuscarFuncionarios(tipoOrdenacao);
         }
 
         public void cradastraEmployees(Employees emp)

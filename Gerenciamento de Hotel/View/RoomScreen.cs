@@ -31,12 +31,5 @@ namespace Gerenciamento_de_Hotel.View
             this.Hide();
             tela.ShowDialog();
         }
-
-        private void btn_addFrigoBar_Click(object sender, EventArgs e)
-        {
-            FrigoBarScreen tela = new FrigoBarScreen();
-            this.Hide();
-            tela.ShowDialog();
-        }
     }
 }

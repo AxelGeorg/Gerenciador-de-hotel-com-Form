@@ -28,7 +28,7 @@ namespace Gerenciamento_de_Hotel.View
             int verificaSeRetornou = 0;
 
             //valida se há outra empresa com msm nome
-            var listEmp = controller.retornaEmployees();
+            var listEmp = controller.retornaEmployees(0);
 
             for (int i = 0; i < listEmp.Count; i++)
             {

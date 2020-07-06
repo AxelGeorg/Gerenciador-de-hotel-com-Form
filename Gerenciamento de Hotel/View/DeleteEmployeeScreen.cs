@@ -36,7 +36,7 @@ namespace Gerenciamento_de_Hotel.View
             int verificaSeRetornou = 0;
 
             listViewDeletar.Items.Clear();
-            var emp = controller.retornaEmployees();
+            var emp = controller.retornaEmployees(0);
 
             for (int i = 0; i < emp.Count; i++)
             {

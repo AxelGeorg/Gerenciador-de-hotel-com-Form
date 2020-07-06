@@ -40,7 +40,7 @@ namespace Gerenciamento_de_Hotel.View
             int verificaSeRetornou = 0;
 
             listViewAlterar.Items.Clear();
-            var emp = controller.retornaEmployees();
+            var emp = controller.retornaEmployees(0);
 
             for (int i = 0; i < emp.Count; i++)
             {
@@ -90,7 +90,7 @@ namespace Gerenciamento_de_Hotel.View
             {
                 employees.emp_cpf = txtb_novoAlterar.Text;
 
-                var listEmp = controller.retornaEmployees();
+                var listEmp = controller.retornaEmployees(0);
 
                 for (int i = 0; i < listEmp.Count; i++)
                 {

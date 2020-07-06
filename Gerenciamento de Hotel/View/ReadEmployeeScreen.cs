@@ -19,7 +19,7 @@ namespace Gerenciamento_de_Hotel.View
         public ReadEmployeeScreen()
         {
             InitializeComponent();
-            listar();
+            listar(0);
         }
 
         private void btn_comeBack_Click(object sender, EventArgs e)
@@ -29,12 +29,12 @@ namespace Gerenciamento_de_Hotel.View
             tela.ShowDialog();
         }
 
-        public void listar()
+        public void listar(int tipoOrdenacao)
         {
             listView_employees.Items.Clear();
             var emp = new List<Employees>();
 
-            emp = controller.retornaEmployees();
+            emp = controller.retornaEmployees(tipoOrdenacao);
 
             for (int i = 0; i < emp.Count; i++)
             {
@@ -45,6 +45,36 @@ namespace Gerenciamento_de_Hotel.View
                 listView_employees.Items[i].SubItems.Add(emp[i].emp_titulo);
                 listView_employees.Items[i].SubItems.Add(emp[i].emp_email);
             }
+        }
+
+        private void ordenarNomer(object sender, ColumnClickEventArgs e)
+        {
+            listView_employees.Items.Clear();
+            if (e.Column == 0)
+            {
+                listar(0);
+            }
+            else if(e.Column == 1){
+                listar(1);
+            }
+            else if (e.Column == 2)
+            {
+                listar(2);
+            }
+            else if (e.Column == 3)
+            {
+                listar(3);
+            }
+            else if (e.Column == 4)
+            {
+                listar(4);
+            }
+            else if (e.Column == 5)
+            {
+                listar(5);
+            }
+
+
         }
     }
 }
