@@ -22,6 +22,8 @@ namespace Gerenciamento_de_Hotel.View
         public UpdateEmployeeScreen()
         {
             InitializeComponent();
+
+            listaComboBox();
             btn_alterar.Enabled = false;
             txtb_novoAlterar.Enabled = false;
             cbox_opcoes.Enabled = false;
@@ -74,6 +76,8 @@ namespace Gerenciamento_de_Hotel.View
 
         private void btn_alterar_Click(object sender, EventArgs e)
         {
+            int verificaSeRetornou = 0;
+
             if (cbox_opcoes.SelectedIndex == 0)
             {
                 employees.emp_nome = txtb_novoAlterar.Text;
@@ -85,6 +89,16 @@ namespace Gerenciamento_de_Hotel.View
             else if (cbox_opcoes.SelectedIndex == 2)
             {
                 employees.emp_cpf = txtb_novoAlterar.Text;
+
+                var listEmp = controller.retornaEmployees();
+
+                for (int i = 0; i < listEmp.Count; i++)
+                {
+                    if (employees.emp_cpf == listEmp[i].emp_cpf)
+                    {
+                        verificaSeRetornou = 1;
+                    }
+                }
             }
             else if (cbox_opcoes.SelectedIndex == 3)
             {
@@ -99,12 +113,19 @@ namespace Gerenciamento_de_Hotel.View
                 employees.emp_password = txtb_novoAlterar.Text;
             }
 
-            if (MessageBox.Show("Deseja alterar esse funcionario?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            if (verificaSeRetornou == 0)
             {
-                controller.alteraEmployee(employees);
-                MessageBox.Show("Funcionario alterado com sucesso!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
-                tela.ShowDialog();
+                if (MessageBox.Show("Deseja alterar esse funcionario?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    controller.alteraEmployee(employees);
+                    MessageBox.Show("Funcionario alterado com sucesso!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    tela.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não é possível alterar esse funcionário, pois já há um funcionário com esse CPF!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -130,6 +151,16 @@ namespace Gerenciamento_de_Hotel.View
                 txtb_novoAlterar.Enabled = false;
                 cbox_opcoes.Enabled = false;
             }
+        }
+
+        private void listaComboBox()
+        {
+            cbox_opcoes.Items.Add("Nome");
+            cbox_opcoes.Items.Add("Sobrenome");
+            cbox_opcoes.Items.Add("CPF");
+            cbox_opcoes.Items.Add("Título");
+            cbox_opcoes.Items.Add("Email");
+            cbox_opcoes.Items.Add("Senha");
         }
     }
 }
