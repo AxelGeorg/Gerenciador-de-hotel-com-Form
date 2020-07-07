@@ -13,6 +13,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
 
 namespace Gerenciamento_de_Hotel
 {
@@ -56,7 +58,7 @@ namespace Gerenciamento_de_Hotel
         {
             MainScreen tela = new MainScreen();
             this.Hide();
-            tela.ShowDialog();  
+            tela.ShowDialog(); 
         }
 
         private void btn_esqueceuSenha_Click(object sender, EventArgs e)
@@ -92,9 +94,18 @@ namespace Gerenciamento_de_Hotel
 
 
                     // cria uma mensagem - MailMessage(Remetente, Destinatario, Assunto, enviaMensagem);
-                    MailMessage mensagemEmail = new MailMessage("vilson.daniel@hotmail.com", "axelgeorg16@gmail.com", "testeAssunto", "testeCorpo");
+                    MailMessage mensagemEmail = new MailMessage(/*"vilson.daniel@hotmail.com", "axelgeorg16@gmail.com", "testeAssunto", "testeCorpo"*/);
+                    mensagemEmail.To.Add(new MailAddress("vilson.daniel@hotmail.com"));
+                    mensagemEmail.From = new MailAddress("axelgeorg16@gmail.com");
+                    mensagemEmail.Subject = "titulo do email";
+                    mensagemEmail.Body = "Este é o corpo do email";
 
-                    using (SmtpClient client = new System.Net.Mail.SmtpClient())
+                    SmtpClient smtp = new SmtpClient("smtp.live.com",587);
+                    smtp.Send(mensagemEmail);
+
+
+                    /*
+                    using (SmtpClient client = new SmtpClient())
                     {
                         client.Host = "smtp.gmail.com";
                         client.Port = 587;
@@ -104,7 +115,7 @@ namespace Gerenciamento_de_Hotel
 
                         // envia a mensagem
                         client.Send(mensagemEmail);
-                    }
+                    }*/
 
 
                     MessageBox.Show("Email enviado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
