@@ -32,10 +32,20 @@ namespace Gerenciamento_de_Hotel.View
 
             for (int i = 0; i < listEmp.Count; i++)
             {
-                if (txtb_cpf.Text.Trim() == listEmp[i].emp_cpf)
+                if ((txtb_cpf.Text.Trim() == listEmp[i].emp_cpf) && (txtb_email.Text.Trim() == listEmp[i].emp_email))
                 {
+                    MessageBox.Show("Não é possível cadastrar essa funcionários, pois já há uma funcionário com esse CPF e com esse Email!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     verificaSeRetornou = 1;
+                }
+                else if (txtb_cpf.Text.Trim() == listEmp[i].emp_cpf)
+                {
                     MessageBox.Show("Não é possível cadastrar essa funcionários, pois já há uma funcionário com esse CPF!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    verificaSeRetornou = 1;
+                }
+                else if (txtb_email.Text.Trim() == listEmp[i].emp_email)
+                {
+                    MessageBox.Show("Não é possível cadastrar essa funcionários, pois já há uma funcionário com esse Email!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    verificaSeRetornou = 1;
                 }
             }
 
@@ -52,11 +62,13 @@ namespace Gerenciamento_de_Hotel.View
                 {
                     controller.cradastraEmployees(emp);
 
+                    txtb_nome.Clear();  
+                    txtb_sobrenome.Clear();
+                    txtb_cpf.Clear();
+                    txtb_titulo.Clear();
+                    txtb_email.Clear();
+                    txtb_senha.Clear();
                     MessageBox.Show("Funcionário cadastrado com sucesso!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-                    //this.Hide();
-                    //tela.ShowDialog();
                 }
             }
         }

@@ -33,7 +33,7 @@ namespace Gerenciamento_de_Hotel.View
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            PanelScreen tela = new PanelScreen();
+            RoomScreen tela = new RoomScreen();
             this.Hide();
             tela.ShowDialog();
         }

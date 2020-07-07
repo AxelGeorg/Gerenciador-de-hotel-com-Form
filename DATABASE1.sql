@@ -1,10 +1,10 @@
 create table employees (
 	emp_id          int primary key auto_increment,
-    emp_nome        varchar(15) not null,
-    emp_sobrenome   varchar(15) not null,
+    emp_nome        varchar(20) not null,
+    emp_sobrenome   varchar(25) not null,
     emp_cpf         varchar(15) not null,
     emp_titulo      varchar(15) not null,
-    emp_email       varchar(15) not null,
+    emp_email       varchar(45) not null,
     emp_password 	varchar(15) not null
 );
 
@@ -33,8 +33,3 @@ create table drinks(
     dri_preco float,
     dri_tipo  varchar(15)
 );
-
-
-
-
-

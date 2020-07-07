@@ -7,7 +7,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,7 +18,7 @@ namespace Gerenciamento_de_Hotel
 {
     public partial class LoginScreen : Form
     {
-        employeeController Controller = new employeeController();
+        employeeController controller = new employeeController();
 
         public LoginScreen()
         {
@@ -31,7 +34,7 @@ namespace Gerenciamento_de_Hotel
             }
             else
             {
-                var listEmp = Controller.retornaEmployees(0);
+                var listEmp = controller.retornaEmployees(0);
 
                 for (int i = 0; i < listEmp.Count; i++)
                 {
@@ -54,6 +57,93 @@ namespace Gerenciamento_de_Hotel
             MainScreen tela = new MainScreen();
             this.Hide();
             tela.ShowDialog();  
+        }
+
+        private void btn_esqueceuSenha_Click(object sender, EventArgs e)
+        {
+            int validaEmail = 0;
+
+            var listEmp = controller.retornaEmployees(0);
+
+            for (int i = 0; i < listEmp.Count; i++)
+            {
+                if ((txtb_email.Text.Trim() == listEmp[i].emp_email) && (ValidaEnderecoEmail(txtb_email.Text.Trim()) == true))
+                {
+                    validaEmail = 1;
+                }
+            }
+            if (validaEmail == 1)
+            {
+                try
+                {/*
+                    //cria uma mensagem
+                    MailMessage mail = new MailMessage();
+                    //define os endereços
+                    mail.From = new MailAddress("axelgeorg16@gmail.com");
+                    //mail.To.Add("macoratti@ig.com.br"); // se eu quiser mandar para outro email ao msm tmp
+
+                    //define o conteúdo
+                    mail.Subject = "Este é um simples ,muito simples email";
+                    mail.Body = "Este é o corpo do email";
+                    //envia a mensagem
+                    SmtpClient smtp = new SmtpClient("smtp.gmail.com",);
+                    smtp.Send(mail);
+                    */
+
+
+                    // cria uma mensagem - MailMessage(Remetente, Destinatario, Assunto, enviaMensagem);
+                    MailMessage mensagemEmail = new MailMessage("vilson.daniel@hotmail.com", "axelgeorg16@gmail.com", "testeAssunto", "testeCorpo");
+
+                    using (SmtpClient client = new System.Net.Mail.SmtpClient())
+                    {
+                        client.Host = "smtp.gmail.com";
+                        client.Port = 587;
+                        client.EnableSsl = true;
+                        client.UseDefaultCredentials = false;
+                        client.Credentials = new System.Net.NetworkCredential("axelgeorg16@gmail.com", "991602113xp");
+
+                        // envia a mensagem
+                        client.Send(mensagemEmail);
+                    }
+
+
+                    MessageBox.Show("Email enviado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao enviar o email, verifique se o email realmente existe!\n"+ex.Message.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Esse email não esta registrado ou não é valido!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public bool ValidaEnderecoEmail(string enderecoEmail)
+        {
+            try
+            {
+                //define a expressão regulara para validar o email
+                string texto_Validar = enderecoEmail;
+                Regex expressaoRegex = new Regex(@"\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}");
+
+                // testa o email com a expressão
+                if (expressaoRegex.IsMatch(texto_Validar))
+                {
+                    // o email é valido
+                    return true;
+                }
+                else
+                {
+                    // o email é inválido
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

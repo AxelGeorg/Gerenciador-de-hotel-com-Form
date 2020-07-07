@@ -70,9 +70,9 @@
             this.label1.Location = new System.Drawing.Point(360, 76);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 18);
+            this.label1.Size = new System.Drawing.Size(157, 18);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Digite a sua sobrenome:";
+            this.label1.Text = "Digite seu sobrenome:";
             // 
             // label2
             // 
@@ -111,9 +111,9 @@
             this.label3.Location = new System.Drawing.Point(360, 160);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 18);
+            this.label3.Size = new System.Drawing.Size(112, 18);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Digite a sua título:";
+            this.label3.Text = "Digite seu título:";
             // 
             // label4
             // 

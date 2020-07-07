@@ -62,7 +62,7 @@
             // txtb_email
             // 
             this.txtb_email.Location = new System.Drawing.Point(183, 107);
-            this.txtb_email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_email.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_email.Name = "txtb_email";
             this.txtb_email.Size = new System.Drawing.Size(299, 20);
             this.txtb_email.TabIndex = 2;
@@ -71,7 +71,7 @@
             // txtb_password
             // 
             this.txtb_password.Location = new System.Drawing.Point(183, 160);
-            this.txtb_password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_password.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_password.Name = "txtb_password";
             this.txtb_password.Size = new System.Drawing.Size(299, 20);
             this.txtb_password.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_login.Location = new System.Drawing.Point(254, 303);
-            this.btn_login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_login.Margin = new System.Windows.Forms.Padding(2);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(172, 28);
             this.btn_login.TabIndex = 4;
@@ -92,19 +92,20 @@
             // 
             this.btn_esqueceuSenha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_esqueceuSenha.Location = new System.Drawing.Point(553, 350);
-            this.btn_esqueceuSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_esqueceuSenha.Margin = new System.Windows.Forms.Padding(2);
             this.btn_esqueceuSenha.Name = "btn_esqueceuSenha";
             this.btn_esqueceuSenha.Size = new System.Drawing.Size(109, 28);
             this.btn_esqueceuSenha.TabIndex = 6;
             this.btn_esqueceuSenha.Text = "Esqueceu a Senha";
             this.btn_esqueceuSenha.UseVisualStyleBackColor = true;
+            this.btn_esqueceuSenha.Click += new System.EventHandler(this.btn_esqueceuSenha_Click);
             // 
             // btn_comeBack
             // 
             this.btn_comeBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_comeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_comeBack.Location = new System.Drawing.Point(2, 1);
-            this.btn_comeBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_comeBack.Margin = new System.Windows.Forms.Padding(2);
             this.btn_comeBack.Name = "btn_comeBack";
             this.btn_comeBack.Size = new System.Drawing.Size(97, 28);
             this.btn_comeBack.TabIndex = 7;
@@ -124,7 +125,7 @@
             this.Controls.Add(this.txtb_email);
             this.Controls.Add(this.lb_password);
             this.Controls.Add(this.lb_email);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "LoginScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
