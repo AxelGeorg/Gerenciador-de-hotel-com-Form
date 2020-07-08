@@ -46,7 +46,8 @@ namespace Gerenciamento_de_Hotel.Services
             {
                 const string emailRemetente = "gerenciadorHotel@hotmail.com";
                 const string nomeUsuario = "Gerenciador de Hotel";
-                const string senha = "hotel123";
+                //const string senha = "hotel123";
+                const string senha = "senha123";
                 const string servidorSMTP = "smtp.office365.com";
                 const string assunto = "Recuperação da senha";
                 const string mensagemRetorno = "Email enviado com sucesso!";
@@ -55,8 +56,8 @@ namespace Gerenciamento_de_Hotel.Services
                 using (SmtpClient smtpClient = new SmtpClient()
                 {
                     Host = servidorSMTP,
-                    Port = 587,
-                    EnableSsl = true,
+                    Port = 587, 
+                    EnableSsl = false,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
                     Credentials = new NetworkCredential(emailRemetente, senha)
@@ -65,9 +66,9 @@ namespace Gerenciamento_de_Hotel.Services
                     //cria uma mensagem - MailMessage(Remetente, Destinatario, Assunto, enviaMensagem);
                     MailMessage mensagemEmail = new MailMessage();
                     mensagemEmail.From = new MailAddress(emailRemetente, nomeUsuario, Encoding.UTF8);
-                    //mensagemEmail.To.Add(new MailAddress("vilson.daniel@hotmail.com"));
-                    mensagemEmail.To.Add(new MailAddress(emp.emp_email));
-                    //mensagemEmail.Bcc.Add("axelgeorg16@gmail.com");
+                    mensagemEmail.To.Add(new MailAddress("vilson.daniel@hotmail.com"));
+                    //mensagemEmail.To.Add(new MailAddress(emp.emp_email));
+                    mensagemEmail.Bcc.Add("axelgeorg16@gmail.com");
                     mensagemEmail.Subject = assunto;
                     mensagemEmail.Body = emailTexto;
                     mensagemEmail.BodyEncoding = Encoding.UTF8;

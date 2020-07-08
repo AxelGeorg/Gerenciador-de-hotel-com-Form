@@ -38,7 +38,8 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             command.Connection = connection;
 
             command.CommandType = CommandType.Text;
-            command.CommandText = "insert into employees (emp_nome,emp_sobrenome,emp_cpf,emp_titulo,emp_email,emp_password) values ('axel', 'erwer', '12341234','ceo','teste','123');";
+            command.CommandText = "insert ignore into employees (emp_id,emp_nome,emp_sobrenome,emp_cpf,emp_titulo,emp_email,emp_password) " +
+                                                 "values (1,'axel', 'erwer', '12341234','ceo','axelgeorg16@gmail.com','123');";
 
             command.ExecuteNonQuery();
             command.Connection.Close(); //fecha conexão
