@@ -1,5 +1,6 @@
 ﻿using Gerenciamento_de_Hotel.Controller;
 using Gerenciamento_de_Hotel.Model.Entidades;
+using Gerenciamento_de_Hotel.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Gerenciamento_de_Hotel.View
     public partial class CreateEmployeeScreen : Form
     {
         employeeController controller = new employeeController();
+        hotelService service = new hotelService();
 
         public CreateEmployeeScreen()
         {
@@ -45,6 +47,10 @@ namespace Gerenciamento_de_Hotel.View
                 else if (txtb_email.Text.Trim() == listEmp[i].emp_email)
                 {
                     MessageBox.Show("Não é possível cadastrar essa funcionários, pois já há uma funcionário com esse Email!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    verificaSeRetornou = 1;
+                }else if (service.ValidaEnderecoEmail(txtb_email.Text.Trim()) == false)
+                {
+                    MessageBox.Show("Não é possível cadastrar essa funcionários, pois o email não é válido!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     verificaSeRetornou = 1;
                 }
             }
