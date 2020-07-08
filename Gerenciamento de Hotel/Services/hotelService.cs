@@ -1,4 +1,5 @@
 ﻿using Gerenciamento_de_Hotel.Controller;
+using Gerenciamento_de_Hotel.Model.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,32 +40,52 @@ namespace Gerenciamento_de_Hotel.Services
                 throw;
             }
         }
-        public string EnviaEmail(string enderecoEmail, int posicao)
+        public string EnviaEmail(Employees emp)
         {
             try
             {
                 const string emailRemetente = "gerenciadorHotel@hotmail.com";
+                const string nomeUsuario = "Gerenciador de Hotel";
                 const string senha = "hotel123";
-                const string servidorSMTP = "smtp.live.com";
+                const string servidorSMTP = "smtp.office365.com";
+                const string assunto = "Recuperação da senha";
+                const string mensagemRetorno = "Email enviado com sucesso!";
+                string emailTexto = "Este email é automático, por favor não responda-o\n \n Caro(a) " + emp.emp_nome + " " + emp.emp_sobrenome + " a senha referente ao seu email " + emp.emp_email + " é: " + emp.emp_password + ".\n\n Atenciosamente Gerenciador de Hoteis.";
 
-                var listEmp = controller.retornaEmployees(0);
-
-                // cria uma mensagem - MailMessage(Remetente, Destinatario, Assunto, enviaMensagem);
-                MailMessage mensagemEmail = new MailMessage(/*"vilson.daniel@hotmail.com", "vilson.daniel17@gmail.com", "testeAssunto", "testeCorpo"*/);
-                mensagemEmail.To.Add(new MailAddress(emailRemetente));//remetente
-                mensagemEmail.From = new MailAddress("vilson.daniel@hotmail.com");//Destinatario
-                mensagemEmail.Subject = "Recuperação da senha";
-                mensagemEmail.Body = "Este email é automático, por favor não responda-o\n \n Caro(a) " + listEmp[posicao].emp_nome + " " + listEmp[posicao].emp_sobrenome + " a senha referente ao seu email " + listEmp[posicao].emp_email + " é: " + listEmp[posicao].emp_password + ".\n\n Atenciosamente Gerenciador de Hoteis.";
-
-                SmtpClient smtp = new SmtpClient(servidorSMTP, 587);
-                using (smtp)
+                using (SmtpClient smtpClient = new SmtpClient()
                 {
-                    smtp.Credentials = new NetworkCredential(emailRemetente, senha);//email e senha do remetente
-                    smtp.EnableSsl = true;
-                    smtp.Send(mensagemEmail);
+                    Host = servidorSMTP,
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(emailRemetente, senha)
+                })
+                {
+                    //cria uma mensagem - MailMessage(Remetente, Destinatario, Assunto, enviaMensagem);
+                    MailMessage mensagemEmail = new MailMessage();
+                    mensagemEmail.From = new MailAddress(emailRemetente, nomeUsuario, Encoding.UTF8);
+                    //mensagemEmail.To.Add(new MailAddress("vilson.daniel@hotmail.com"));
+                    mensagemEmail.To.Add(new MailAddress(emp.emp_email));
+                    //mensagemEmail.Bcc.Add("axelgeorg16@gmail.com");
+                    mensagemEmail.Subject = assunto;
+                    mensagemEmail.Body = emailTexto;
+                    mensagemEmail.BodyEncoding = Encoding.UTF8;
+                    mensagemEmail.BodyEncoding = Encoding.GetEncoding("ISO-8859-1");
+                    mensagemEmail.Priority = MailPriority.High;
+
+                    smtpClient.Send(mensagemEmail);
                 }
 
-                return "Email enviado com sucesso!";
+                return mensagemRetorno;
+            }
+            catch (SmtpFailedRecipientException ex)
+            {
+                return  "Mensagem : {0} " + ex.Message;
+            }
+            catch (SmtpException ex)
+            {
+                return "Mensagem SMPT Fail : {0} " + ex.Message;
             }
             catch (Exception ex)
             {

@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
 using Gerenciamento_de_Hotel.Services;
+using Gerenciamento_de_Hotel.Model.Entidades;
 
 namespace Gerenciamento_de_Hotel
 {
@@ -65,10 +66,10 @@ namespace Gerenciamento_de_Hotel
 
         private void btn_esqueceuSenha_Click(object sender, EventArgs e)
         {
-            int validaEmail = 0;
-            int posicao = 0;
             var listEmp = controller.retornaEmployees(0);
+            var emp = new Employees();
             var resposta = "";
+            var validaEmail = 0;
 
             if (!string.IsNullOrWhiteSpace(txtb_email.Text))
             {
@@ -77,7 +78,7 @@ namespace Gerenciamento_de_Hotel
                     if ((txtb_email.Text.Trim() == listEmp[i].emp_email) && (service.ValidaEnderecoEmail(txtb_email.Text.Trim()) == true))
                     {
                         validaEmail = 1;
-                        posicao = i;
+                        emp = listEmp[i];
                     }
                 }
             }
@@ -100,7 +101,7 @@ namespace Gerenciamento_de_Hotel
                     smtp.Send(mail);
                     */
                     
-                    resposta = service.EnviaEmail(txtb_email.Text.Trim(),posicao);
+                    resposta = service.EnviaEmail(emp);
 
                     /* smtp.Send(mensagemEmail);*/
 
