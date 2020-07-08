@@ -118,6 +118,7 @@
     <Compile Include="Model\Entidades\Drinks.cs" />
     <Compile Include="Model\Entidades\Foods.cs" />
     <Compile Include="Model\Entidades\Room.cs" />
+    <Compile Include="Services\hotelService.cs" />
     <Compile Include="View\CreateEmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>

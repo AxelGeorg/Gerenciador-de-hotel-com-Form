@@ -99,9 +99,6 @@ namespace Gerenciamento_de_Hotel
                     SmtpClient smtp = new SmtpClient("smtp.gmail.com",);
                     smtp.Send(mail);
                     */
-
-
-                    // cria uma mensagem - MailMessage(Remetente, Destinatario, Assunto, enviaMensagem);
                     
                     resposta = service.EnviaEmail(txtb_email.Text.Trim(),posicao);
 
