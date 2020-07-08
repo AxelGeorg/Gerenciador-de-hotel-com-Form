@@ -109,9 +109,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\employeeController.cs" />
+    <Compile Include="Controller\inicializaController.cs" />
     <Compile Include="Controller\StartScreensController.cs" />
     <Compile Include="Model\DAO\DrinksDAO.cs" />
     <Compile Include="Model\DAO\FoodsDAO.cs" />
+    <Compile Include="Model\DAO\inicializaDAO.cs" />
     <Compile Include="Model\DAO\RoomDAO.cs" />
     <Compile Include="Model\Entidades\Drinks.cs" />
     <Compile Include="Model\Entidades\Foods.cs" />

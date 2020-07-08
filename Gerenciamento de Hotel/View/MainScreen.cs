@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gerenciamento_de_Hotel.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace Gerenciamento_de_Hotel
 {
     public partial class MainScreen : Form
     {
+        inicializaController controller = new inicializaController();
         public MainScreen()
         {
             InitializeComponent();
+            controller.criaDATABASE();
+            controller.criaTabelas();
         }
         private void btn_login_Click(object sender, EventArgs e)
         {

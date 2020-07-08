@@ -1,10 +1,10 @@
 create table employees (
 	emp_id          int primary key auto_increment,
     emp_nome        varchar(20) not null,
-    emp_sobrenome   varchar(25) not null,
+    emp_sobrenome   varchar(35) not null,
     emp_cpf         varchar(15) not null,
     emp_titulo      varchar(15) not null,
-    emp_email       varchar(45) not null,
+    emp_email       varchar(55) not null,
     emp_password 	varchar(15) not null
 );
 

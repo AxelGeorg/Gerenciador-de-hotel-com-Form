@@ -64,6 +64,8 @@ namespace Gerenciamento_de_Hotel
         private void btn_esqueceuSenha_Click(object sender, EventArgs e)
         {
             int validaEmail = 0;
+            int posicao = 0;
+
 
             var listEmp = controller.retornaEmployees(0);
 
@@ -72,6 +74,8 @@ namespace Gerenciamento_de_Hotel
                 if ((txtb_email.Text.Trim() == listEmp[i].emp_email) && (ValidaEnderecoEmail(txtb_email.Text.Trim()) == true))
                 {
                     validaEmail = 1;
+                    posicao = i;
+
                 }
             }
             if (validaEmail == 1)
@@ -94,35 +98,41 @@ namespace Gerenciamento_de_Hotel
 
 
                     // cria uma mensagem - MailMessage(Remetente, Destinatario, Assunto, enviaMensagem);
-                    MailMessage mensagemEmail = new MailMessage(/*"vilson.daniel@hotmail.com", "axelgeorg16@gmail.com", "testeAssunto", "testeCorpo"*/);
-                    mensagemEmail.To.Add(new MailAddress("vilson.daniel@hotmail.com"));
-                    mensagemEmail.From = new MailAddress("axelgeorg16@gmail.com");
-                    mensagemEmail.Subject = "titulo do email";
-                    mensagemEmail.Body = "Este é o corpo do email";
+                    MailMessage mensagemEmail = new MailMessage("vilson.daniel@hotmail.com", "vilson.daniel17@gmail.com", "testeAssunto", "testeCorpo");
+                    mensagemEmail.To.Add(new MailAddress("vilson.daniel@hotmail.com"));//remetente
+                    mensagemEmail.From = new MailAddress("gerenciadorHotel@hotmail.com");//Destinatario
+                    mensagemEmail.Subject = "Recuperação da senha";
+                    mensagemEmail.Body = "Este email é automático, por favor não responda-o\n \n Caro(a) " + listEmp[posicao].emp_nome + " " + listEmp[posicao].emp_sobrenome + " a senha referente ao seu email " + listEmp[posicao].emp_email + " é: " + listEmp[posicao].emp_password + ".\n\n Atenciosamente Gerenciador de Hoteis.";
 
-                    SmtpClient smtp = new SmtpClient("smtp.live.com",587);
-                    smtp.Send(mensagemEmail);
-
-
-                    /*
-                    using (SmtpClient client = new SmtpClient())
+                    SmtpClient smtp = new SmtpClient("smtp.live.com", 587);
+                    using (smtp)
                     {
-                        client.Host = "smtp.gmail.com";
-                        client.Port = 587;
-                        client.EnableSsl = true;
-                        client.UseDefaultCredentials = false;
-                        client.Credentials = new System.Net.NetworkCredential("axelgeorg16@gmail.com", "991602113xp");
-
-                        // envia a mensagem
-                        client.Send(mensagemEmail);
-                    }*/
+                        smtp.Credentials = new NetworkCredential("gerenciadorHotel@hotmail.com", "hotel123");//email e senha do remetente
+                        smtp.EnableSsl = true;
+                        smtp.Send(mensagemEmail);
+                    }
+                    /* smtp.Send(mensagemEmail);*/
 
 
-                    MessageBox.Show("Email enviado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     /*
+                     using (SmtpClient client = new SmtpClient())
+                     {
+                         client.Host = "smtp.gmail.com";
+                         client.Port = 587;
+                         client.EnableSsl = true;
+                         client.UseDefaultCredentials = false;
+                         client.Credentials = new System.Net.NetworkCredential("axelgeorg16@gmail.com", "991602113xp");
+
+                         // envia a mensagem
+                         client.Send(mensagemEmail);
+                     }*/
+
+
+                     MessageBox.Show("Email enviado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao enviar o email, verifique se o email realmente existe!\n"+ex.Message.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro ao enviar o email, verifique se o email realmente existe!\n" + ex.Message.ToString(), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
