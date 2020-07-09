@@ -32,9 +32,12 @@ namespace Gerenciamento_de_Hotel
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+            string email = txtb_email.Text.Trim();
+            string senha = txtb_password.Text.Trim();
+
             var verifica = 0;
 
-            if (string.IsNullOrWhiteSpace(txtb_email.Text) || string.IsNullOrWhiteSpace(txtb_password.Text)){
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senha)){
                 MessageBox.Show("Os campos login e senha precisam ser preenchidos");
             }
             else
@@ -43,7 +46,7 @@ namespace Gerenciamento_de_Hotel
 
                 for (int i = 0; i < listEmp.Count; i++)
                 {
-                    if ((txtb_email.Text.Trim() == listEmp[i].emp_email) && (txtb_password.Text.Trim() == listEmp[i].emp_password))
+                    if ((email == listEmp[i].emp_email) && (senha == listEmp[i].emp_password))
                     {
                         verifica = 1;
                         PanelScreen tela = new PanelScreen();
@@ -66,10 +69,12 @@ namespace Gerenciamento_de_Hotel
 
         private void btn_esqueceuSenha_Click(object sender, EventArgs e)
         {
+            var resposta = "";
+            string assunto = "Recuperação da senha";
+            string emailTexto = "";
+            var verificaSeValidouEmail = 0;
             var listEmp = controller.retornaEmployees(0);
             var emp = new Employees();
-            var resposta = "";
-            var validaEmail = 0;
 
             if (!string.IsNullOrWhiteSpace(txtb_email.Text))
             {
@@ -77,48 +82,19 @@ namespace Gerenciamento_de_Hotel
                 {
                     if ((txtb_email.Text.Trim() == listEmp[i].emp_email) && (service.ValidaEnderecoEmail(txtb_email.Text.Trim()) == true))
                     {
-                        validaEmail = 1;
+                        verificaSeValidouEmail = 1;
                         emp = listEmp[i];
                     }
                 }
             }
             
-            if (validaEmail == 1)
+            if (verificaSeValidouEmail == 1)
             {
                 try
-                {/*
-                    //cria uma mensagem
-                    MailMessage mail = new MailMessage();
-                    //define os endereços
-                    mail.From = new MailAddress("axelgeorg16@gmail.com");
-                    //mail.To.Add("macoratti@ig.com.br"); // se eu quiser mandar para outro email ao msm tmp
+                {
+                    emailTexto = "Este email é automático, por favor não responda-o\n \n Caro(a) " + emp.emp_nome + " " + emp.emp_sobrenome + " a senha referente ao seu email " + emp.emp_email + " é: " + emp.emp_password + ".\n\n Atenciosamente Gerenciador de Hoteis.";
 
-                    //define o conteúdo
-                    mail.Subject = "Este é um simples ,muito simples email";
-                    mail.Body = "Este é o corpo do email";
-                    //envia a mensagem
-                    SmtpClient smtp = new SmtpClient("smtp.gmail.com",);
-                    smtp.Send(mail);
-                    */
-                    
-                    resposta = service.EnviaEmail(emp);
-
-                    /* smtp.Send(mensagemEmail);*/
-
-
-                    /*
-                    using (SmtpClient client = new SmtpClient())
-                    {
-                        client.Host = "smtp.gmail.com";
-                        client.Port = 587;
-                        client.EnableSsl = true;
-                        client.UseDefaultCredentials = false;
-                        client.Credentials = new System.Net.NetworkCredential("axelgeorg16@gmail.com", "991602113xp");
-
-                        // envia a mensagem
-                        client.Send(mensagemEmail);
-                    }*/
-
+                    resposta = service.EnviaEmail(emp, assunto, emailTexto);
 
                     MessageBox.Show(resposta, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

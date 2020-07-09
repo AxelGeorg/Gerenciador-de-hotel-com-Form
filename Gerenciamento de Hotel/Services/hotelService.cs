@@ -19,8 +19,9 @@ namespace Gerenciamento_de_Hotel.Services
         {
             try
             {
-                //define a expressão regulara para validar o email
                 string texto_Validar = enderecoEmail;
+
+                //define a expressão regulara para validar o email
                 Regex expressaoRegex = new Regex(@"\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}");
 
                 // testa o email com a expressão
@@ -40,7 +41,7 @@ namespace Gerenciamento_de_Hotel.Services
                 throw;
             }
         }
-        public string EnviaEmail(Employees emp)
+        public string EnviaEmail(Employees emp, string assuntoEmail, string corpoEmail)
         {
             try
             {
@@ -49,9 +50,9 @@ namespace Gerenciamento_de_Hotel.Services
                 //const string senha = "hotel123";
                 const string senha = "senha123";
                 const string servidorSMTP = "smtp.office365.com";
-                const string assunto = "Recuperação da senha";
                 const string mensagemRetorno = "Email enviado com sucesso!";
-                string emailTexto = "Este email é automático, por favor não responda-o\n \n Caro(a) " + emp.emp_nome + " " + emp.emp_sobrenome + " a senha referente ao seu email " + emp.emp_email + " é: " + emp.emp_password + ".\n\n Atenciosamente Gerenciador de Hoteis.";
+                string assunto = assuntoEmail;
+                string emailTexto = corpoEmail;
 
                 using (SmtpClient smtpClient = new SmtpClient()
                 {
