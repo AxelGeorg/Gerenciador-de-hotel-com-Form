@@ -55,6 +55,7 @@
             // 
             // btn_cadastrar
             // 
+            this.btn_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cadastrar.Location = new System.Drawing.Point(526, 386);
             this.btn_cadastrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_cadastrar.Name = "btn_cadastrar";
@@ -66,6 +67,7 @@
             // 
             // btn_back
             // 
+            this.btn_back.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_back.Location = new System.Drawing.Point(-1, -1);
             this.btn_back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -94,7 +96,6 @@
             this.txt_identificacao.Size = new System.Drawing.Size(397, 22);
             this.txt_identificacao.TabIndex = 15;
             this.txt_identificacao.Tag = "Oi";
-            //this.txt_identificacao.TextChanged += new System.EventHandler(this.txt_identificacao_TextChanged_1);
             // 
             // label2
             // 
@@ -123,7 +124,6 @@
             this.txt_precoDiaria.Name = "txt_precoDiaria";
             this.txt_precoDiaria.Size = new System.Drawing.Size(397, 22);
             this.txt_precoDiaria.TabIndex = 20;
-            //this.txt_precoDiaria.TextChanged += new System.EventHandler(this.txt_precoDiaria_TextChanged);
             this.txt_precoDiaria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precoDiaria_KeyPress);
             // 
             // txt_qunatCamaSolteiro
@@ -166,7 +166,6 @@
             this.txt_qunatPessoas.Size = new System.Drawing.Size(397, 27);
             this.txt_qunatPessoas.TabIndex = 22;
             this.txt_qunatPessoas.Tag = "Oi";
-            //this.txt_qunatPessoas.TextChanged += new System.EventHandler(this.txt_qunatPessoas_TextChanged);
             // 
             // label6
             // 

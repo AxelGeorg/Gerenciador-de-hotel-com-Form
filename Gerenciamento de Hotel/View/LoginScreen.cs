@@ -27,6 +27,7 @@ namespace Gerenciamento_de_Hotel
 
         public LoginScreen()
         {
+            
             InitializeComponent();
         }
 
@@ -69,6 +70,7 @@ namespace Gerenciamento_de_Hotel
 
         private void btn_esqueceuSenha_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             var resposta = "";
             string assunto = "Recuperação da senha";
             string emailTexto = "";
@@ -87,7 +89,8 @@ namespace Gerenciamento_de_Hotel
                     }
                 }
             }
-            
+            this.Cursor = Cursors.Hand;
+
             if (verificaSeValidouEmail == 1)
             {
                 try
@@ -107,6 +110,7 @@ namespace Gerenciamento_de_Hotel
             {
                 MessageBox.Show("Erro!\n\nEsse email não esta registrado, não é valido ou a caixa de texto email está vazia!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
     }
 }
