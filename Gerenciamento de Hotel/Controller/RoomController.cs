@@ -1,0 +1,22 @@
+﻿using Gerenciamento_de_Hotel.Model.DAO;
+using Gerenciamento_de_Hotel.Model.Entidades;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Gerenciamento_de_Hotel.Controller
+{
+    public class RoomController
+    {
+        RoomDAO roomDAO = new RoomDAO();
+        Room room = new Room();
+
+        public bool cadastrarRoom(Room room)
+        {
+            //Daniel 09/07/2020 Chama o método para cadastrar os quartos.
+            return roomDAO.cadastrarRoom(room.room_numeroQUarto, room.quantPessoas, room.room_quantCasal, room.room_quantSolteiro, room.room_disponibilidade, room.room_limpeza, room.room_precoDiaria);
+        }
+    }
+}

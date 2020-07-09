@@ -46,9 +46,11 @@ namespace Gerenciamento_de_Hotel.Services
             try
             {
                 const string emailRemetente = "gerenciadorHotel@hotmail.com";
+                //const string emailRemetente = "vilson.daniel@hotmail.com";
                 const string nomeUsuario = "Gerenciador de Hotel";
                 //const string senha = "hotel123";
                 const string senha = "senha123";
+                //const string senha = "qwerty.bnu123";
                 const string servidorSMTP = "smtp.office365.com";
                 const string mensagemRetorno = "Email enviado com sucesso!";
                 string assunto = assuntoEmail;

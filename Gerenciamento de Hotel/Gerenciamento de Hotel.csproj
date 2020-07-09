@@ -110,6 +110,7 @@
   <ItemGroup>
     <Compile Include="Controller\employeeController.cs" />
     <Compile Include="Controller\inicializaController.cs" />
+    <Compile Include="Controller\RoomController.cs" />
     <Compile Include="Controller\StartScreensController.cs" />
     <Compile Include="Model\DAO\DrinksDAO.cs" />
     <Compile Include="Model\DAO\FoodsDAO.cs" />
