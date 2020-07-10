@@ -67,6 +67,7 @@
             this.txtb_email.Size = new System.Drawing.Size(299, 20);
             this.txtb_email.TabIndex = 2;
             this.txtb_email.Tag = "Oi";
+            this.txtb_email.TextChanged += new System.EventHandler(this.txtb_email_TextChanged);
             // 
             // txtb_password
             // 
@@ -75,6 +76,8 @@
             this.txtb_password.Name = "txtb_password";
             this.txtb_password.Size = new System.Drawing.Size(299, 20);
             this.txtb_password.TabIndex = 3;
+            this.txtb_password.UseSystemPasswordChar = true;
+            this.txtb_password.TextChanged += new System.EventHandler(this.txtb_password_TextChanged);
             // 
             // btn_login
             // 

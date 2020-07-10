@@ -27,7 +27,6 @@ namespace Gerenciamento_de_Hotel
 
         public LoginScreen()
         {
-            
             InitializeComponent();
         }
 
@@ -110,7 +109,16 @@ namespace Gerenciamento_de_Hotel
             {
                 MessageBox.Show("Erro!\n\nEsse email não esta registrado, não é valido ou a caixa de texto email está vazia!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
+        }
+
+        private void txtb_email_TextChanged(object sender, EventArgs e)
+        {
+            txtb_email.MaxLength = 30;
+        }
+
+        private void txtb_password_TextChanged(object sender, EventArgs e)
+        {
+            txtb_password.MaxLength = 15;
         }
     }
 }

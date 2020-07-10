@@ -58,7 +58,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                                                                         "emp_sobrenome varchar(35) not null," +
                                                                         "emp_cpf varchar(15) not null," +
                                                                         "emp_titulo varchar(15) not null," +
-                                                                        "emp_email varchar(55) not null," +
+                                                                        "emp_email varchar(30) not null," +
                                                                         "emp_password varchar(15) not null);";
 
             command.ExecuteNonQuery();

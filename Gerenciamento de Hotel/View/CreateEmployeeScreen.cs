@@ -144,6 +144,8 @@ namespace Gerenciamento_de_Hotel.View
             {
                 btn_cadastrar.Enabled = false;
             }
+
+            txtb_email.MaxLength = 30;
         }
 
         private void txtb_senha_TextChanged(object sender, EventArgs e)
@@ -156,6 +158,8 @@ namespace Gerenciamento_de_Hotel.View
             {
                 btn_cadastrar.Enabled = false;
             }
+
+            txtb_senha.MaxLength = 15;
         }
     }
 }
