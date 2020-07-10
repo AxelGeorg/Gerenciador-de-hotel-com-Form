@@ -11,17 +11,6 @@ namespace Gerenciamento_de_Hotel.Controller
     public class employeeController
     {
         EmployeesDAO employeesDAO = new EmployeesDAO();
-        public bool validateUser(String email, String senha)
-        {
-            try
-            {
-                return employeesDAO.ValidateUser(email, senha);
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
 
         public List<Employees> retornaEmployees(int tipoOrdenacao)
         {

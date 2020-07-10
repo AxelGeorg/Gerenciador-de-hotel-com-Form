@@ -12,7 +12,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
 {
     class EmployeesDAO
     {
-        string conexaoString = "Server=localhost;Database=hotel;Uid=root;Pwd=;";
+        const string conexaoString = "Server=localhost;Database=hotel;Uid=root;Pwd=;";
         MySqlConnection connection = null;
         MySqlCommand command;
         bool clickID = true;
@@ -22,56 +22,12 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         bool clickTitulo = true;
         bool clickEmail = true;
 
-        public bool ValidateUser(String email, String senha)
-        {
-            try
-            {
-                connection = new MySqlConnection(conexaoString);
-                
-                connection.Open(); // abre a conexão
-               
-                command = new MySqlCommand("select emp_email, emp_password from employees;", connection);
-                command.CommandType = CommandType.Text;
-
-                //Atribui os dados coletados para o dr
-                MySqlDataReader dr = command.ExecuteReader();
-                dr.Read();
-
-                int d = 0;
-                bool valida = false;
-
-                while(d <= 2)
-                {
-                    if (String.Equals(email, dr.GetString(0)) && (String.Equals(senha, dr.GetString(1)))){
-                        valida = true;
-                        break;
-                    }
-                    else
-                    {
-                        valida = false;
-                    }
-                    //dr.NextResultAsync();
-                    dr.NextResult();
-                    d += 1;
-                }
-                command.Connection.Close(); 
-
-                return valida;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
         public List<Employees> BuscarFuncionarios(int tipoOrdenacao)
         {
             try
             {
-                
                 var listEmp = new List<Employees>();
                 string query = "select emp_id,emp_nome,emp_sobrenome,emp_cpf,emp_titulo,emp_email,emp_password from employees";
-                //int qntd = qntdBanco();
 
                 if (tipoOrdenacao == 0)
                 {
@@ -87,7 +43,6 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                     }
 
                 }
-
 
                 if (tipoOrdenacao == 1)
                 {
