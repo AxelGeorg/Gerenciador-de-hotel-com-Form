@@ -18,7 +18,6 @@ namespace Gerenciamento_de_Hotel.View
         Employees employees = new Employees();
         EmployeeScreen tela = new EmployeeScreen();
 
-
         public UpdateEmployeeScreen()
         {
             InitializeComponent();

@@ -182,7 +182,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 command.Connection = connection;
 
                 command.CommandType = CommandType.Text;
-                command.CommandText = "update employees set emp_nome = '" + emp_nome + "',emp_sobrenome = '" + emp_sobrenome + "',emp_cpf = '" + emp_cpf + "',emp_titulo = '" + emp_titulo + "',emp_email = '" + emp_email + "',emp_password = '" + emp_password + "' where emp_id = " + emp_id + ";;";
+                command.CommandText = "update employees set emp_nome = '" + emp_nome + "',emp_sobrenome = '" + emp_sobrenome + "',emp_cpf = '" + emp_cpf + "',emp_titulo = '" + emp_titulo + "',emp_email = '" + emp_email + "',emp_password = '" + emp_password + "' where emp_id = " + emp_id + ";";
 
                 command.ExecuteNonQuery();
                 command.Connection.Close(); //fecha conexão

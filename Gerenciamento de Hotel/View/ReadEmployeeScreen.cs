@@ -74,10 +74,5 @@ namespace Gerenciamento_de_Hotel.View
                 listar(5);
             }
         }
-
-        private void listView_employees_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

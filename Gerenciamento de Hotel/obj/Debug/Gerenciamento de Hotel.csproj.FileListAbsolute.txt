@@ -282,3 +282,4 @@ C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento 
 C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento de Hotel.pdb
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ReadRoomScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento de Hotel.csprojAssemblyReference.cache
+C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.UpdateRoomScreen.resources

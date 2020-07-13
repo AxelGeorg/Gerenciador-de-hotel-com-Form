@@ -190,6 +190,12 @@
     <Compile Include="View\UpdateEmployeeScreen.Designer.cs">
       <DependentUpon>UpdateEmployeeScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UpdateRoomScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UpdateRoomScreen.Designer.cs">
+      <DependentUpon>UpdateRoomScreen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\CreateEmployeeScreen.resx">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UpdateEmployeeScreen.resx">
       <DependentUpon>UpdateEmployeeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UpdateRoomScreen.resx">
+      <DependentUpon>UpdateRoomScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

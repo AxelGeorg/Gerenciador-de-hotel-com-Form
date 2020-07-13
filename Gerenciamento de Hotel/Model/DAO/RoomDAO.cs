@@ -46,6 +46,28 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 return false;
             }
         }
+
+        public bool alteraRoom(int room_id, string room_numeroQuarto, int room_quantPessoa, int room_quantCasal, int room_quantSolteiro, bool room_disponibilidade, bool room_limpeza, float room_precoDiaria, float room_precoTotal)
+        {
+            try
+            {
+                connection = new MySqlConnection(conexaoString);
+                connection.Open(); // abre a conexão
+                command = new MySqlCommand();
+                command.Connection = connection;
+
+                command.CommandType = CommandType.Text;
+                command.CommandText = "update employees set room_numeroQuarto = '" + room_numeroQuarto + "',room_quantPessoa = " + room_quantPessoa + ",room_quantCasal = " + room_quantCasal + ",room_quantSolteiro = " + room_quantSolteiro + ",room_disponibilidade = " + room_disponibilidade + ",room_limpeza = " + room_limpeza + ",room_precoDiaria = '" + room_precoDiaria + "',room_precoTotal = '" + room_precoTotal + "' where emp_id = " + room_id + ";";
+                command.ExecuteNonQuery();
+                command.Connection.Close(); //fecha conexão
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         public List<Room> BuscarQuartos(int tipoOrdenacao)
         {
             try
