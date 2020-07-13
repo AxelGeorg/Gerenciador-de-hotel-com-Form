@@ -14,7 +14,7 @@ namespace Gerenciamento_de_Hotel.View
 {
     public partial class ReadEmployeeScreen : Form
     {
-        employeeController controller = new employeeController();
+        EmployeeController controller = new EmployeeController();
 
         public ReadEmployeeScreen()
         {
@@ -47,7 +47,7 @@ namespace Gerenciamento_de_Hotel.View
             }
         }
 
-        private void ordenarNomer(object sender, ColumnClickEventArgs e)
+        private void ordenar(object sender, ColumnClickEventArgs e)
         {
             listView_employees.Items.Clear();
             if (e.Column == 0)
@@ -73,7 +73,10 @@ namespace Gerenciamento_de_Hotel.View
             {
                 listar(5);
             }
+        }
 
+        private void listView_employees_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

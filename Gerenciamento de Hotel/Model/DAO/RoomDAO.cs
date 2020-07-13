@@ -24,7 +24,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         bool clickPrecoTotal = true;
         bool clickQuantPessoa = true;
 
-        public bool cadastrarRoom(string room_numeroQuarto, int room_quantPessoa, int room_quantCasal, int room_quantSolteiro, bool room_disponibilidade, bool room_limpeza, float room_precoDiaria)
+        public bool cadastrarRoom(string room_numeroQuarto, int room_quantPessoa, int room_quantCasal, int room_quantSolteiro, bool room_disponibilidade, bool room_limpeza, float room_precoDiaria, float room_precoTotal)
         {
             //Daniel 09/07/2020 Conexão com o banco e a inserção dos dados do quarto para o banco.
             try
@@ -35,7 +35,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 command.Connection = connection;
 
                 command.CommandType = CommandType.Text;
-                command.CommandText = "insert into room (room_numeroQuarto, room_quantPessoa, room_quantCasal, room_quantSolteiro, room_disponibilidade, room_limpeza, room_precoDiaria) values ('" + room_numeroQuarto + "'," + room_quantPessoa + "," + room_quantCasal + "," + room_quantSolteiro + "," + room_disponibilidade + "," + room_limpeza + "," + room_precoDiaria + ");";
+                command.CommandText = "insert into room (room_numeroQuarto, room_quantPessoa, room_quantCasal, room_quantSolteiro, room_disponibilidade, room_limpeza, room_precoDiaria, room_precoTotal) values ('" + room_numeroQuarto + "'," + room_quantPessoa + "," + room_quantCasal + "," + room_quantSolteiro + "," + room_disponibilidade + "," + room_limpeza + "," + room_precoDiaria + "," + room_precoTotal + ");";
                 command.ExecuteNonQuery();
                 command.Connection.Close(); //fecha conexão
 
@@ -51,7 +51,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             try
             {
                 var listRoom = new List<Room>();
-                string query = "select room_id,room_numeroQuarto,room_quantCasal,room_quantSolteiro,room_disponibilidade,room_limpeza,room_precoDiaria,room_precoTotal,room_quantPessoa from room";
+                string query = "select room_id,room_numeroQuarto,room_quantCasal,room_quantSolteiro,room_disponibilidade,room_limpeza,room_precoDiaria,room_precoTotal,room_quantPessoa from room ";
 
                 if (tipoOrdenacao == 0)
                 {

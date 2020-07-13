@@ -15,8 +15,8 @@ namespace Gerenciamento_de_Hotel.View
 {
     public partial class CreateEmployeeScreen : Form
     {
-        employeeController controller = new employeeController();
-        hotelService service = new hotelService();
+        EmployeeController controller = new EmployeeController();
+        HotelService service = new HotelService();
 
         public CreateEmployeeScreen()
         {

@@ -108,18 +108,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\employeeController.cs" />
-    <Compile Include="Controller\inicializaController.cs" />
+    <Compile Include="Controller\EmployeeController.cs" />
+    <Compile Include="Controller\InicializaController.cs" />
     <Compile Include="Controller\RoomController.cs" />
     <Compile Include="Controller\StartScreensController.cs" />
     <Compile Include="Model\DAO\DrinksDAO.cs" />
     <Compile Include="Model\DAO\FoodsDAO.cs" />
-    <Compile Include="Model\DAO\inicializaDAO.cs" />
+    <Compile Include="Model\DAO\InicializaDAO.cs" />
     <Compile Include="Model\DAO\RoomDAO.cs" />
     <Compile Include="Model\Entidades\Drinks.cs" />
     <Compile Include="Model\Entidades\Foods.cs" />
     <Compile Include="Model\Entidades\Room.cs" />
-    <Compile Include="Services\hotelService.cs" />
+    <Compile Include="Services\HotelService.cs" />
     <Compile Include="View\CreateEmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +172,12 @@
     <Compile Include="View\ReadEmployeeScreen.Designer.cs">
       <DependentUpon>ReadEmployeeScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ReadRoomScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReadRoomScreen.Designer.cs">
+      <DependentUpon>ReadRoomScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\RoomScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ReadEmployeeScreen.resx">
       <DependentUpon>ReadEmployeeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReadRoomScreen.resx">
+      <DependentUpon>ReadRoomScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RoomScreen.resx">
       <DependentUpon>RoomScreen.cs</DependentUpon>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gerenciamento_de_Hotel.Controller
 {
-    public class employeeController
+    public class EmployeeController
     {
         EmployeesDAO employeesDAO = new EmployeesDAO();
 

@@ -14,7 +14,7 @@ namespace Gerenciamento_de_Hotel.View
 {
     public partial class DeleteEmployeeScreen : Form
     {
-        employeeController controller = new employeeController();
+        EmployeeController controller = new EmployeeController();
         Employees employees = new Employees();
         EmployeeScreen tela = new EmployeeScreen();
 

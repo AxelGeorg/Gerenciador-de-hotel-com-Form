@@ -67,7 +67,8 @@
             this.listView_employees.TabIndex = 11;
             this.listView_employees.UseCompatibleStateImageBehavior = false;
             this.listView_employees.View = System.Windows.Forms.View.Details;
-            this.listView_employees.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.ordenarNomer);
+            this.listView_employees.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.ordenar);
+            this.listView_employees.SelectedIndexChanged += new System.EventHandler(this.listView_employees_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

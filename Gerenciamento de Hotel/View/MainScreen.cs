@@ -13,7 +13,7 @@ namespace Gerenciamento_de_Hotel
 {
     public partial class MainScreen : Form
     {
-        inicializaController controller = new inicializaController();
+        InicializaController controller = new InicializaController();
         public MainScreen()
         {
             InitializeComponent();

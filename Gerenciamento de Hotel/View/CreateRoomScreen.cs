@@ -56,6 +56,7 @@ namespace Gerenciamento_de_Hotel.View
                 room.room_disponibilidade = true;
                 room.room_quantCasal = Convert.ToInt32(txtb_quantCamaCasal.Text);
                 room.room_quantSolteiro = Convert.ToInt32(txtb_qunatCamaSolteiro.Text);
+                room.room_precoTotal = 0;
                 room.room_precoDiaria = float.Parse(txtb_precoDiaria.Text);
                 room.room_limpeza = false;
                 room.room_quantPessoa = Convert.ToInt32(txtb_qunatPessoas.Text);

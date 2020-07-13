@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gerenciamento_de_Hotel.Model.DAO
 {
-    public class inicializaDAO
+    public class InicializaDAO
     {
         string conexaoString = "Server=localhost;Database=hotel;Uid=root;Pwd=;";
         string cs = @"Server=localhost;Uid=root;Pwd=;";

@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace Gerenciamento_de_Hotel.Services
 {
-    public class hotelService
+    public class HotelService
     {
-        employeeController controller = new employeeController();
+        EmployeeController controller = new EmployeeController();
 
         public bool ValidaEnderecoEmail(string enderecoEmail)
         {
@@ -41,7 +41,7 @@ namespace Gerenciamento_de_Hotel.Services
                 throw;
             }
         }
-        public string EnviaEmail(Employees emp, string assuntoEmail, string corpoEmail)
+        public string EnviaEmail(string assuntoEmail, string corpoEmail)
         {
             try
             {

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Gerenciamento_de_Hotel.Controller
 {
-    public class inicializaController
+    public class InicializaController
     {
-        inicializaDAO inicializaDAO = new inicializaDAO();
+        InicializaDAO inicializaDAO = new InicializaDAO();
         public void criaDATABASE()
         {
             inicializaDAO.criaDataBase();

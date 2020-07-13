@@ -22,8 +22,8 @@ namespace Gerenciamento_de_Hotel
 {
     public partial class LoginScreen : Form
     {
-        employeeController controller = new employeeController();
-        hotelService service = new hotelService();
+        EmployeeController controller = new EmployeeController();
+        HotelService service = new HotelService();
 
         public LoginScreen()
         {
@@ -96,7 +96,7 @@ namespace Gerenciamento_de_Hotel
                 {
                     emailTexto = "Este email é automático, por favor não responda-o\n \n Caro(a) " + emp.emp_nome + " " + emp.emp_sobrenome + " a senha referente ao seu email " + emp.emp_email + " é: " + emp.emp_password + ".\n\n Atenciosamente Gerenciador de Hoteis.";
 
-                    resposta = service.EnviaEmail(emp, assunto, emailTexto);
+                    resposta = service.EnviaEmail(assunto, emailTexto);
 
                     MessageBox.Show(resposta, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
