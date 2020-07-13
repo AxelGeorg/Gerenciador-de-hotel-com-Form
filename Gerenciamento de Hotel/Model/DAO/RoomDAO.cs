@@ -57,7 +57,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 command.Connection = connection;
 
                 command.CommandType = CommandType.Text;
-                command.CommandText = "update employees set room_numeroQuarto = '" + room_numeroQuarto + "',room_quantPessoa = " + room_quantPessoa + ",room_quantCasal = " + room_quantCasal + ",room_quantSolteiro = " + room_quantSolteiro + ",room_disponibilidade = " + room_disponibilidade + ",room_limpeza = " + room_limpeza + ",room_precoDiaria = '" + room_precoDiaria + "',room_precoTotal = '" + room_precoTotal + "' where emp_id = " + room_id + ";";
+                command.CommandText = "update room set room_numeroQuarto = '" + room_numeroQuarto + "',room_quantPessoa = " + room_quantPessoa + ",room_quantCasal = " + room_quantCasal + ",room_quantSolteiro = " + room_quantSolteiro + ",room_disponibilidade = " + room_disponibilidade + ",room_limpeza = " + room_limpeza + ",room_precoDiaria = " + room_precoDiaria + ",room_precoTotal = " + room_precoTotal + " where room_id = " + room_id + ";";
                 command.ExecuteNonQuery();
                 command.Connection.Close(); //fecha conexão
 

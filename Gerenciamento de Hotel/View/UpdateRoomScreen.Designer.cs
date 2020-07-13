@@ -76,6 +76,7 @@
             this.cbox_opcoes.Name = "cbox_opcoes";
             this.cbox_opcoes.Size = new System.Drawing.Size(185, 21);
             this.cbox_opcoes.TabIndex = 35;
+            this.cbox_opcoes.SelectedIndexChanged += new System.EventHandler(this.cbox_opcoes_SelectedIndexChanged);
             // 
             // btn_alterar
             // 

@@ -38,5 +38,12 @@ namespace Gerenciamento_de_Hotel.View
             this.Hide();
             tela.ShowDialog();
         }
+
+        private void btn_atualizar_Click(object sender, EventArgs e)
+        {
+            UpdateRoomScreen tela = new UpdateRoomScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
     }
 }

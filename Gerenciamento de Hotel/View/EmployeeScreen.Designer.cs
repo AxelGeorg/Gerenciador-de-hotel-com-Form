@@ -49,6 +49,7 @@
             // 
             // btn_deletarEmp
             // 
+            this.btn_deletarEmp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_deletarEmp.Location = new System.Drawing.Point(214, 237);
             this.btn_deletarEmp.Margin = new System.Windows.Forms.Padding(2);
             this.btn_deletarEmp.Name = "btn_deletarEmp";
@@ -60,6 +61,7 @@
             // 
             // btn_listarEmp
             // 
+            this.btn_listarEmp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_listarEmp.Location = new System.Drawing.Point(214, 196);
             this.btn_listarEmp.Margin = new System.Windows.Forms.Padding(2);
             this.btn_listarEmp.Name = "btn_listarEmp";
@@ -71,6 +73,7 @@
             // 
             // btn_atualizarEmp
             // 
+            this.btn_atualizarEmp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_atualizarEmp.Location = new System.Drawing.Point(214, 149);
             this.btn_atualizarEmp.Margin = new System.Windows.Forms.Padding(2);
             this.btn_atualizarEmp.Name = "btn_atualizarEmp";
@@ -82,6 +85,7 @@
             // 
             // btn_cadastrarEmp
             // 
+            this.btn_cadastrarEmp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cadastrarEmp.Location = new System.Drawing.Point(214, 101);
             this.btn_cadastrarEmp.Margin = new System.Windows.Forms.Padding(2);
             this.btn_cadastrarEmp.Name = "btn_cadastrarEmp";

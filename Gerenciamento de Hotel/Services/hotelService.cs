@@ -96,5 +96,19 @@ namespace Gerenciamento_de_Hotel.Services
                 return ex.Message;
             }
         }
+        public bool verificaIntOrFloat(string textInt)
+        {
+            int verificaInt;
+            float verificaFloat;
+
+            if ((int.TryParse(textInt, out verificaInt)) || (float.TryParse(textInt, out verificaFloat)))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
