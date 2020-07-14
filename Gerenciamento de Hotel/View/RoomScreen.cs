@@ -45,5 +45,12 @@ namespace Gerenciamento_de_Hotel.View
             this.Hide();
             tela.ShowDialog();
         }
+
+        private void btn_deletar_Click(object sender, EventArgs e)
+        {
+            DeleteRoomScreen tela = new DeleteRoomScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
     }
 }

@@ -26,5 +26,9 @@ namespace Gerenciamento_de_Hotel.Controller
             //Daniel 09/07/2020 Chama o método para cadastrar os quartos.
             return roomDAO.alteraRoom(room.room_id, room.room_numeroQuarto, room.room_quantPessoa, room.room_quantCasal, room.room_quantSolteiro, room.room_disponibilidade, room.room_limpeza, room.room_precoDiaria, room.room_precoTotal);
         }
+        public bool deletaRoom(int id)
+        {
+            return roomDAO.deletaRoom(id);
+        }
     }
 }

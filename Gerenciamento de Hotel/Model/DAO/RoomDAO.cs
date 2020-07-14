@@ -218,7 +218,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                                 room.room_disponibilidade = Convert.ToBoolean(dataReader["room_disponibilidade"].ToString());
                                 room.room_limpeza = Convert.ToBoolean(dataReader["room_limpeza"].ToString());
                                 room.room_precoDiaria = float.Parse(dataReader["room_precoDiaria"].ToString());
-                                room.room_precoTotal = float.Parse(dataReader["room_precoTotal"].ToString());
+                           //     room.room_precoTotal = float.Parse(dataReader["room_precoTotal"].ToString());
                                 room.room_quantPessoa = Convert.ToInt32(dataReader["room_quantPessoa"].ToString());
                                 listRoom.Add(room);
                             }
@@ -231,6 +231,28 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             {
                 throw new Exception("Erro ao acessar a lista de quartos" + ex.Message);
             }
+        }
+        public bool deletaRoom(int id)
+        {
+            try
+            {
+                connection = new MySqlConnection(conexaoString);
+                connection.Open(); // abre a conexão
+                command = new MySqlCommand();
+                command.Connection = connection;
+
+                command.CommandType = CommandType.Text;
+                command.CommandText = "delete from room where room_id = " + id + ";";
+                command.ExecuteNonQuery();
+                command.Connection.Close(); //fecha conexão
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
     }
 }

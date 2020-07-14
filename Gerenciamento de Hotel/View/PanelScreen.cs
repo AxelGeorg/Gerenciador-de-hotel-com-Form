@@ -37,5 +37,12 @@ namespace Gerenciamento_de_Hotel.View
             this.Hide();
             tela.ShowDialog();
         }
+
+        private void btn_guest_Click(object sender, EventArgs e)
+        {
+            GuestScreen tela = new GuestScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
     }
 }

@@ -33,3 +33,14 @@ create table drinks(
     dri_preco float,
     dri_tipo  varchar(15)
 );
+
+create table guest (
+	gue_id int primary key auto_increment,
+    gue_nome varchar (30) not null,
+    gue_cpf varchar(15) not null,
+    gue_dataNascimento date not null,
+    gue_diasReservado int,
+    gue_precoTotal float,
+    gue_fk_room int,
+    CONSTRAINT fk_room FOREIGN KEY (gue_fk_room) REFERENCES room (room_id)
+);

@@ -38,10 +38,10 @@
             // btn_criarQuarto
             // 
             this.btn_criarQuarto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_criarQuarto.Location = new System.Drawing.Point(207, 121);
-            this.btn_criarQuarto.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_criarQuarto.Location = new System.Drawing.Point(276, 149);
+            this.btn_criarQuarto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_criarQuarto.Name = "btn_criarQuarto";
-            this.btn_criarQuarto.Size = new System.Drawing.Size(235, 28);
+            this.btn_criarQuarto.Size = new System.Drawing.Size(313, 34);
             this.btn_criarQuarto.TabIndex = 0;
             this.btn_criarQuarto.Text = "Cadastrar";
             this.btn_criarQuarto.UseVisualStyleBackColor = true;
@@ -50,10 +50,10 @@
             // btn_atualizar
             // 
             this.btn_atualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_atualizar.Location = new System.Drawing.Point(207, 166);
-            this.btn_atualizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_atualizar.Location = new System.Drawing.Point(276, 204);
+            this.btn_atualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_atualizar.Name = "btn_atualizar";
-            this.btn_atualizar.Size = new System.Drawing.Size(235, 28);
+            this.btn_atualizar.Size = new System.Drawing.Size(313, 34);
             this.btn_atualizar.TabIndex = 1;
             this.btn_atualizar.Text = "Atualizar";
             this.btn_atualizar.UseVisualStyleBackColor = true;
@@ -62,10 +62,10 @@
             // btn_verificar
             // 
             this.btn_verificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_verificar.Location = new System.Drawing.Point(207, 212);
-            this.btn_verificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_verificar.Location = new System.Drawing.Point(276, 261);
+            this.btn_verificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_verificar.Name = "btn_verificar";
-            this.btn_verificar.Size = new System.Drawing.Size(235, 28);
+            this.btn_verificar.Size = new System.Drawing.Size(313, 34);
             this.btn_verificar.TabIndex = 2;
             this.btn_verificar.Text = "Verificar";
             this.btn_verificar.UseVisualStyleBackColor = true;
@@ -74,21 +74,23 @@
             // btn_deletar
             // 
             this.btn_deletar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_deletar.Location = new System.Drawing.Point(207, 257);
-            this.btn_deletar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_deletar.Location = new System.Drawing.Point(276, 316);
+            this.btn_deletar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_deletar.Name = "btn_deletar";
-            this.btn_deletar.Size = new System.Drawing.Size(235, 28);
+            this.btn_deletar.Size = new System.Drawing.Size(313, 34);
             this.btn_deletar.TabIndex = 3;
             this.btn_deletar.Text = "Deletar";
             this.btn_deletar.UseVisualStyleBackColor = true;
+            this.btn_deletar.Click += new System.EventHandler(this.btn_deletar_Click);
             // 
             // btn_comeBack
             // 
             this.btn_comeBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_comeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_comeBack.Location = new System.Drawing.Point(1, 2);
+            this.btn_comeBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_comeBack.Name = "btn_comeBack";
-            this.btn_comeBack.Size = new System.Drawing.Size(97, 28);
+            this.btn_comeBack.Size = new System.Drawing.Size(129, 34);
             this.btn_comeBack.TabIndex = 4;
             this.btn_comeBack.Text = "←";
             this.btn_comeBack.UseVisualStyleBackColor = true;
@@ -96,15 +98,15 @@
             // 
             // RoomScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 389);
+            this.ClientSize = new System.Drawing.Size(897, 479);
             this.Controls.Add(this.btn_comeBack);
             this.Controls.Add(this.btn_deletar);
             this.Controls.Add(this.btn_verificar);
             this.Controls.Add(this.btn_atualizar);
             this.Controls.Add(this.btn_criarQuarto);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RoomScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
