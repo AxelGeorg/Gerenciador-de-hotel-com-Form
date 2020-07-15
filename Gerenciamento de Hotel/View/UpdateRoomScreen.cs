@@ -118,46 +118,65 @@ namespace Gerenciamento_de_Hotel.View
             }
             else if (cbox_opcoes.SelectedIndex == 1)
             {
-                room.room_quantCasal = Convert.ToInt32(txtb_novoAlterar.Text);
-                room.room_quantPessoa = room.room_quantSolteiro + room.room_quantCasal * 2;
-
                 //verifica se é inteiro
                 if (!service.verificaIntOrFloat(txtb_novoAlterar.Text))
                 {
                     verificaSeRetornou = 1;
                     retorno = "pois a quantidade de camas de casal não está me formato inteiro, verifique a forma o qual foi digitada!!";
                 }
+                else
+                {
+                    room.room_quantCasal = Convert.ToInt32(txtb_novoAlterar.Text);
+                    room.room_quantPessoa = room.room_quantSolteiro + room.room_quantCasal * 2;
+                }
             }
             else if (cbox_opcoes.SelectedIndex == 2)
             {
-                room.room_quantSolteiro = Convert.ToInt32(txtb_novoAlterar.Text);
-                room.room_quantPessoa = room.room_quantSolteiro + room.room_quantCasal * 2;
-
                 //verifica se é inteiro
                 if (!service.verificaIntOrFloat(txtb_novoAlterar.Text))
                 {
                     verificaSeRetornou = 1;
                     retorno = "pois a quantidade de camas de solteiro não está me formato inteiro, verifique a forma o qual foi digitada!!";
                 }
-            }/*
+                else
+                {
+                    room.room_quantSolteiro = Convert.ToInt32(txtb_novoAlterar.Text);
+                    room.room_quantPessoa = room.room_quantSolteiro + room.room_quantCasal * 2;
+                }
+            }
             else if (cbox_opcoes.SelectedIndex == 3)
             {
-                //txtb_novoAlterar.Text = "Disponível ou Ocupado";
+                if (rbtn_disponivel.Checked)
+                {
+                    room.room_disponibilidade = true;
+                }
+                else if (rbtn_ocupado.Checked)
+                {
+                    room.room_disponibilidade = false;
+                }
             }
             else if (cbox_opcoes.SelectedIndex == 4)
             {
-                // txtb_novoAlterar.Text = "Limpo ou Sujo";
-            }*/
-            else if (cbox_opcoes.SelectedIndex == 3)
+                if (rbtn_limpo.Checked)
+                {
+                    room.room_limpeza = true;
+                }
+                else if (rbtn_sujo.Checked)
+                {
+                    room.room_limpeza = false;
+                }
+            }
+            else if (cbox_opcoes.SelectedIndex == 5)
             {
-                //verificar se é número...
-                room.room_precoDiaria = float.Parse(txtb_novoAlterar.Text);
-
                 //verifica se é um float
                 if (!service.verificaIntOrFloat(txtb_novoAlterar.Text))
                 {
                     verificaSeRetornou = 1;
                     retorno = "pois o valor do preço não está no formato desejado, verifique a forma o qual foi digitada!!!!";
+                }
+                else
+                {
+                    room.room_precoDiaria = float.Parse(txtb_novoAlterar.Text);
                 }
             }
 
@@ -167,6 +186,7 @@ namespace Gerenciamento_de_Hotel.View
                 {
                     controller.alteraRoom(room);
                     MessageBox.Show(retorno, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limpaCampoForm();
                 }
             }
             else
@@ -179,17 +199,99 @@ namespace Gerenciamento_de_Hotel.View
         {
             if ((string.IsNullOrWhiteSpace(txtb_roomAlterar.Text)))
             {
-                listView_room.Items.Clear();
-                btn_alterar.Enabled = false;
+                limpaCampoForm();
+            }
+        }
+
+        private void limpaCampoForm()
+        {
+            listView_room.Items.Clear();
+            btn_alterar.Enabled = false;
+            txtb_novoAlterar.Text = "";
+            txtb_novoAlterar.Enabled = false;
+            cbox_opcoes.Enabled = false;
+            cbox_opcoes.SelectedIndex = -1;
+        }
+
+        private void cbox_opcoes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((cbox_opcoes.SelectedIndex == 0) || (cbox_opcoes.SelectedIndex == 1) || (cbox_opcoes.SelectedIndex == 2) || (cbox_opcoes.SelectedIndex == 5))
+            {
+                txtb_novoAlterar.Enabled = true;
+                txtb_novoAlterar.Visible = true;
+                rbtn_disponivel.Enabled = false;
+                rbtn_disponivel.Visible = false;
+                rbtn_ocupado.Enabled = false;
+                rbtn_ocupado.Visible = false;
+                rbtn_limpo.Enabled = false;
+                rbtn_limpo.Visible = false;
+                rbtn_sujo.Enabled = false;
+                rbtn_sujo.Visible = false;
+            }
+            else if (cbox_opcoes.SelectedIndex == 3)
+            {
                 txtb_novoAlterar.Text = "";
                 txtb_novoAlterar.Enabled = false;
-                cbox_opcoes.Enabled = false;
-                cbox_opcoes.SelectedIndex = -1;
-            }  
+                txtb_novoAlterar.Visible = false;
+                rbtn_disponivel.Enabled = true;
+                rbtn_disponivel.Visible = true;
+                rbtn_ocupado.Enabled = true;
+                rbtn_ocupado.Visible = true;
+                rbtn_limpo.Enabled = false;
+                rbtn_limpo.Visible = false;
+                rbtn_sujo.Enabled = false;
+                rbtn_sujo.Visible = false;
+
+                if (room.room_disponibilidade)
+                {
+                    rbtn_disponivel.Checked = true;
+                    rbtn_ocupado.Checked = false;
+                }
+                else if (!room.room_disponibilidade)
+                {
+                    rbtn_disponivel.Checked = false;
+                    rbtn_ocupado.Checked = true;
+                }
+            }
+            else if (cbox_opcoes.SelectedIndex == 4)
+            {
+                txtb_novoAlterar.Text = "";
+                txtb_novoAlterar.Enabled = false;
+                txtb_novoAlterar.Visible = false;
+                rbtn_disponivel.Enabled = false;
+                rbtn_disponivel.Visible = false;
+                rbtn_ocupado.Enabled = false;
+                rbtn_ocupado.Visible = false;
+                rbtn_limpo.Enabled = true;
+                rbtn_limpo.Visible = true;
+                rbtn_sujo.Enabled = true;
+                rbtn_sujo.Visible = true;
+
+                if (room.room_limpeza)
+                {
+                    rbtn_limpo.Checked = true;
+                    rbtn_sujo.Checked = false;
+                }
+                else if (!room.room_limpeza)
+                {
+                    rbtn_limpo.Checked = false;
+                    rbtn_sujo.Checked = true;
+                }
+            }
         }
+        private void listaComboBox()
+        {
+            cbox_opcoes.Items.Add("Numero do Quarto");
+            cbox_opcoes.Items.Add("Quant. Camas casal");
+            cbox_opcoes.Items.Add("Quant. Camas solteiro");
+            cbox_opcoes.Items.Add("Disponibilidade");
+            cbox_opcoes.Items.Add("Limpeza");
+            cbox_opcoes.Items.Add("Preço da Diária");
+        }
+
         private void txtb_novoAlterar_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtb_novoAlterar.Text))
+            if ((!string.IsNullOrWhiteSpace(txtb_novoAlterar.Text)) || (((rbtn_disponivel.Checked && rbtn_disponivel.Enabled) || (rbtn_ocupado.Checked && rbtn_ocupado.Enabled)) || ((rbtn_limpo.Checked && rbtn_limpo.Enabled) || (rbtn_sujo.Checked && rbtn_sujo.Enabled))))
             {
                 btn_alterar.Enabled = true;
             }
@@ -198,25 +300,53 @@ namespace Gerenciamento_de_Hotel.View
                 btn_alterar.Enabled = false;
             }
         }
-        private void cbox_opcoes_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void rbtn_limpo_CheckedChanged(object sender, EventArgs e)
         {
-            if ((cbox_opcoes.SelectedText != null) || (cbox_opcoes.SelectedText != ""))
+            if ((!string.IsNullOrWhiteSpace(txtb_novoAlterar.Text)) || (((rbtn_disponivel.Checked && rbtn_disponivel.Enabled) || (rbtn_ocupado.Checked && rbtn_ocupado.Enabled)) || ((rbtn_limpo.Checked && rbtn_limpo.Enabled) || (rbtn_sujo.Checked && rbtn_sujo.Enabled))))
             {
-                txtb_novoAlterar.Enabled = true;
+                btn_alterar.Enabled = true;
             }
             else
             {
-                txtb_novoAlterar.Enabled = false;
+                btn_alterar.Enabled = false;
             }
         }
-        private void listaComboBox()
+
+        private void rbtn_sujo_CheckedChanged(object sender, EventArgs e)
         {
-            cbox_opcoes.Items.Add("Numero do Quarto");
-            cbox_opcoes.Items.Add("Quant. Camas casal");
-            cbox_opcoes.Items.Add("Quant. Camas solteiro");
-            //cbox_opcoes.Items.Add("Disponibilidade");
-            //cbox_opcoes.Items.Add("Limpeza");
-            cbox_opcoes.Items.Add("Preço da Diária");
+            if ((!string.IsNullOrWhiteSpace(txtb_novoAlterar.Text)) || (((rbtn_disponivel.Checked && rbtn_disponivel.Enabled) || (rbtn_ocupado.Checked && rbtn_ocupado.Enabled)) || ((rbtn_limpo.Checked && rbtn_limpo.Enabled) || (rbtn_sujo.Checked && rbtn_sujo.Enabled))))
+            {
+                btn_alterar.Enabled = true;
+            }
+            else
+            {
+                btn_alterar.Enabled = false;
+            }
+        }
+
+        private void rbtn_ocupado_CheckedChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_novoAlterar.Text)) || (((rbtn_disponivel.Checked && rbtn_disponivel.Enabled) || (rbtn_ocupado.Checked && rbtn_ocupado.Enabled)) || ((rbtn_limpo.Checked && rbtn_limpo.Enabled) || (rbtn_sujo.Checked && rbtn_sujo.Enabled))))
+            {
+                btn_alterar.Enabled = true;
+            }
+            else
+            {
+                btn_alterar.Enabled = false;
+            }
+        }
+
+        private void rbtn_disponivel_CheckedChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_novoAlterar.Text)) || (((rbtn_disponivel.Checked && rbtn_disponivel.Enabled) || (rbtn_ocupado.Checked && rbtn_ocupado.Enabled)) || ((rbtn_limpo.Checked && rbtn_limpo.Enabled) || (rbtn_sujo.Checked && rbtn_sujo.Enabled))))
+            {
+                btn_alterar.Enabled = true;
+            }
+            else
+            {
+                btn_alterar.Enabled = false;
+            }
         }
     }
 }

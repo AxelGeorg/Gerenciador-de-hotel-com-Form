@@ -46,6 +46,10 @@
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rbtn_disponivel = new System.Windows.Forms.RadioButton();
+            this.rbtn_ocupado = new System.Windows.Forms.RadioButton();
+            this.rbtn_limpo = new System.Windows.Forms.RadioButton();
+            this.rbtn_sujo = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // txtb_novoAlterar
@@ -201,11 +205,67 @@
             this.columnHeader15.Text = "Quant. Pessoas";
             this.columnHeader15.Width = 87;
             // 
+            // rbtn_disponivel
+            // 
+            this.rbtn_disponivel.AutoSize = true;
+            this.rbtn_disponivel.Location = new System.Drawing.Point(285, 284);
+            this.rbtn_disponivel.Name = "rbtn_disponivel";
+            this.rbtn_disponivel.Size = new System.Drawing.Size(76, 17);
+            this.rbtn_disponivel.TabIndex = 39;
+            this.rbtn_disponivel.TabStop = true;
+            this.rbtn_disponivel.Text = "Disponível";
+            this.rbtn_disponivel.UseVisualStyleBackColor = true;
+            this.rbtn_disponivel.Visible = false;
+            this.rbtn_disponivel.CheckedChanged += new System.EventHandler(this.rbtn_disponivel_CheckedChanged);
+            // 
+            // rbtn_ocupado
+            // 
+            this.rbtn_ocupado.AutoSize = true;
+            this.rbtn_ocupado.Location = new System.Drawing.Point(428, 284);
+            this.rbtn_ocupado.Name = "rbtn_ocupado";
+            this.rbtn_ocupado.Size = new System.Drawing.Size(69, 17);
+            this.rbtn_ocupado.TabIndex = 40;
+            this.rbtn_ocupado.TabStop = true;
+            this.rbtn_ocupado.Text = "Ocupado";
+            this.rbtn_ocupado.UseVisualStyleBackColor = true;
+            this.rbtn_ocupado.Visible = false;
+            this.rbtn_ocupado.CheckedChanged += new System.EventHandler(this.rbtn_ocupado_CheckedChanged);
+            // 
+            // rbtn_limpo
+            // 
+            this.rbtn_limpo.AutoSize = true;
+            this.rbtn_limpo.Location = new System.Drawing.Point(285, 284);
+            this.rbtn_limpo.Name = "rbtn_limpo";
+            this.rbtn_limpo.Size = new System.Drawing.Size(53, 17);
+            this.rbtn_limpo.TabIndex = 41;
+            this.rbtn_limpo.TabStop = true;
+            this.rbtn_limpo.Text = "Limpo";
+            this.rbtn_limpo.UseVisualStyleBackColor = true;
+            this.rbtn_limpo.Visible = false;
+            this.rbtn_limpo.CheckedChanged += new System.EventHandler(this.rbtn_limpo_CheckedChanged);
+            // 
+            // rbtn_sujo
+            // 
+            this.rbtn_sujo.AutoSize = true;
+            this.rbtn_sujo.Location = new System.Drawing.Point(428, 284);
+            this.rbtn_sujo.Name = "rbtn_sujo";
+            this.rbtn_sujo.Size = new System.Drawing.Size(46, 17);
+            this.rbtn_sujo.TabIndex = 42;
+            this.rbtn_sujo.TabStop = true;
+            this.rbtn_sujo.Text = "Sujo";
+            this.rbtn_sujo.UseVisualStyleBackColor = true;
+            this.rbtn_sujo.Visible = false;
+            this.rbtn_sujo.CheckedChanged += new System.EventHandler(this.rbtn_sujo_CheckedChanged);
+            // 
             // UpdateRoomScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 389);
+            this.Controls.Add(this.rbtn_sujo);
+            this.Controls.Add(this.rbtn_limpo);
+            this.Controls.Add(this.rbtn_ocupado);
+            this.Controls.Add(this.rbtn_disponivel);
             this.Controls.Add(this.listView_room);
             this.Controls.Add(this.txtb_novoAlterar);
             this.Controls.Add(this.lbl_opcoesAlterar);
@@ -216,6 +276,7 @@
             this.Controls.Add(this.lbl_roomNumero);
             this.Controls.Add(this.btn_comeBack);
             this.Name = "UpdateRoomScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateRoomScreen";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -242,5 +303,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.RadioButton rbtn_disponivel;
+        private System.Windows.Forms.RadioButton rbtn_ocupado;
+        private System.Windows.Forms.RadioButton rbtn_limpo;
+        private System.Windows.Forms.RadioButton rbtn_sujo;
     }
 }

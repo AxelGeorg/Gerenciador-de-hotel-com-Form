@@ -125,6 +125,7 @@ namespace Gerenciamento_de_Hotel.View
                 {
                     controller.alteraEmployee(employees);
                     MessageBox.Show("Funcionario alterado com sucesso!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limpaCampoForm();
                 }
             }
             else
@@ -149,13 +150,18 @@ namespace Gerenciamento_de_Hotel.View
         {
             if ((string.IsNullOrWhiteSpace(txtb_empAlterar.Text)))
             {
-                listViewAlterar.Items.Clear();
-                btn_alterar.Enabled = false;
-                txtb_novoAlterar.Text = "";
-                txtb_novoAlterar.Enabled = false;
-                cbox_opcoes.Enabled = false;
-                cbox_opcoes.SelectedIndex = -1;
+                limpaCampoForm();
             }
+        }
+
+        private void limpaCampoForm()
+        {
+            listViewAlterar.Items.Clear();
+            btn_alterar.Enabled = false;
+            txtb_novoAlterar.Text = "";
+            txtb_novoAlterar.Enabled = false;
+            cbox_opcoes.Enabled = false;
+            cbox_opcoes.SelectedIndex = -1;
         }
 
         private void listaComboBox()

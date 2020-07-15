@@ -123,6 +123,7 @@ namespace Gerenciamento_de_Hotel.View
                 {
                     controller.alteraGuest(guest, tipoSelect);
                     MessageBox.Show("Funcionario alterado com sucesso!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limpaCampoForm();
                 }
             }
             else
@@ -164,19 +165,24 @@ namespace Gerenciamento_de_Hotel.View
         {
             if ((string.IsNullOrWhiteSpace(txtb_guestAlterar.Text)))
             {
-                listView_guest.Items.Clear();
-                btn_alterar.Enabled = false;
-                txtb_dia.Text = "";
-                txtb_dia.Enabled = false;
-                txtb_mes.Text = "";
-                txtb_mes.Enabled = false;
-                txtb_ano.Text = "";
-                txtb_ano.Enabled = false;
-                txtb_novoAlterar.Text = "";
-                txtb_novoAlterar.Enabled = false;
-                cbox_opcoes.Enabled = false;
-                cbox_opcoes.SelectedIndex = -1;
+                limpaCampoForm();
             }
+        }
+
+        private void limpaCampoForm()
+        {
+            listView_guest.Items.Clear();
+            btn_alterar.Enabled = false;
+            txtb_dia.Text = "";
+            txtb_dia.Enabled = false;
+            txtb_mes.Text = "";
+            txtb_mes.Enabled = false;
+            txtb_ano.Text = "";
+            txtb_ano.Enabled = false;
+            txtb_novoAlterar.Text = "";
+            txtb_novoAlterar.Enabled = false;
+            cbox_opcoes.Enabled = false;
+            cbox_opcoes.SelectedIndex = -1;
         }
 
         private void txtb_novoAlterar_TextChanged(object sender, EventArgs e)
