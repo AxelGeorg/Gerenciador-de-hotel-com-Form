@@ -41,6 +41,13 @@ namespace Gerenciamento_de_Hotel.Services
                 throw;
             }
         }
+
+        /// <summary>
+        /// Envia email.
+        /// </summary>
+        /// <param name="assuntoEmail"></param>
+        /// <param name="corpoEmail"></param>
+        /// <returns></returns>
         public string EnviaEmail(string assuntoEmail, string corpoEmail)
         {
             try
@@ -96,6 +103,11 @@ namespace Gerenciamento_de_Hotel.Services
                 return ex.Message;
             }
         }
+        /// <summary>
+        /// Serviço que verifica se a variável string passada como parametro pode ser considerada uma variável do tipo int ou float. 
+        /// </summary>
+        /// <param name="textInt"></param>
+        /// <returns></returns>
         public bool verificaIntOrFloat(string textInt)
         {
             int verificaInt;

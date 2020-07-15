@@ -27,10 +27,9 @@ namespace Gerenciamento_de_Hotel.View
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
             Guest guest = new Guest();
-            string dataNascimento; 
+            string dataNascimento;
             int verificaSeRetornou = 0;
 
-            //valida se há outra hóspede com msm cpf
             var listGuest = controller.retornaGuest(0);
 
             for (int i = 0; i < listGuest.Count; i++)
@@ -83,7 +82,7 @@ namespace Gerenciamento_de_Hotel.View
             {
                 btn_cadastrar.Enabled = false;
             }
-            txtb_dia.MaxLength = 50;
+            txtb_nome.MaxLength = 30;
         }
 
         private void txtb_cpf_TextChanged(object sender, EventArgs e)

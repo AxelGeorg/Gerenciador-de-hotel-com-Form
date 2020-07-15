@@ -17,7 +17,6 @@ namespace Gerenciamento_de_Hotel.View
     {
         RoomController controller = new RoomController();
         Room room = new Room();
-        RoomScreen tela = new RoomScreen();
         HotelService service = new HotelService();
 
         public UpdateRoomScreen()
@@ -187,6 +186,7 @@ namespace Gerenciamento_de_Hotel.View
                 txtb_novoAlterar.Text = "";
                 txtb_novoAlterar.Enabled = false;
                 cbox_opcoes.Enabled = false;
+                cbox_opcoes.SelectedIndex = -1;
             }  
         }
         private void txtb_novoAlterar_TextChanged(object sender, EventArgs e)

@@ -1,5 +1,6 @@
 ﻿using Gerenciamento_de_Hotel.Controller;
 using Gerenciamento_de_Hotel.Model.Entidades;
+using Gerenciamento_de_Hotel.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace Gerenciamento_de_Hotel.View
     {
         EmployeeController controller = new EmployeeController();
         Employees employees = new Employees();
-        EmployeeScreen tela = new EmployeeScreen();
+        HotelService service = new HotelService();
 
         public UpdateEmployeeScreen()
         {
@@ -30,6 +31,7 @@ namespace Gerenciamento_de_Hotel.View
 
         private void btn_comeBack_Click(object sender, EventArgs e)
         {
+            EmployeeScreen tela = new EmployeeScreen();
             this.Hide();
             tela.ShowDialog();
         }
@@ -89,6 +91,11 @@ namespace Gerenciamento_de_Hotel.View
             {
                 employees.emp_cpf = txtb_novoAlterar.Text;
 
+                if (!service.verificaIntOrFloat(employees.emp_cpf))
+                {
+                    verificaSeRetornou = 1;
+                }
+
                 var listEmp = controller.retornaEmployees(0);
 
                 for (int i = 0; i < listEmp.Count; i++)
@@ -118,8 +125,6 @@ namespace Gerenciamento_de_Hotel.View
                 {
                     controller.alteraEmployee(employees);
                     MessageBox.Show("Funcionario alterado com sucesso!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-                    tela.ShowDialog();
                 }
             }
             else
@@ -149,6 +154,7 @@ namespace Gerenciamento_de_Hotel.View
                 txtb_novoAlterar.Text = "";
                 txtb_novoAlterar.Enabled = false;
                 cbox_opcoes.Enabled = false;
+                cbox_opcoes.SelectedIndex = -1;
             }
         }
 

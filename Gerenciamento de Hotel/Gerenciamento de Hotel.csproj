@@ -193,6 +193,12 @@
     <Compile Include="View\ReadEmployeeScreen.Designer.cs">
       <DependentUpon>ReadEmployeeScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ReadGuestScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReadGuestScreen.Designer.cs">
+      <DependentUpon>ReadGuestScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ReadRoomScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,12 @@
     </Compile>
     <Compile Include="View\UpdateEmployeeScreen.Designer.cs">
       <DependentUpon>UpdateEmployeeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateGuestScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UpdateGuestScreen.Designer.cs">
+      <DependentUpon>UpdateGuestScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UpdateRoomScreen.cs">
       <SubType>Form</SubType>
@@ -265,6 +277,9 @@
     <EmbeddedResource Include="View\ReadEmployeeScreen.resx">
       <DependentUpon>ReadEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ReadGuestScreen.resx">
+      <DependentUpon>ReadGuestScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ReadRoomScreen.resx">
       <DependentUpon>ReadRoomScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UpdateEmployeeScreen.resx">
       <DependentUpon>UpdateEmployeeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UpdateGuestScreen.resx">
+      <DependentUpon>UpdateGuestScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UpdateRoomScreen.resx">
       <DependentUpon>UpdateRoomScreen.cs</DependentUpon>

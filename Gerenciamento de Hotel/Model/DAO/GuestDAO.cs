@@ -99,7 +99,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                                 guest.gue_id = Convert.ToInt32(dataReader["gue_id"].ToString());
                                 guest.gue_nome = dataReader["gue_nome"].ToString();
                                 guest.gue_cpf = dataReader["gue_cpf"].ToString();
-                                guest.gue_dataNascimento = dataReader["gue_dataNascimento"].ToString();
+                                guest.gue_dataNascimento = dataReader["gue_dataNascimento"].ToString().Remove(dataReader["gue_dataNascimento"].ToString().Length - 8);
                                 listGuest.Add(guest);
                             }
                         }
@@ -112,15 +112,6 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 throw new Exception("Erro ao acessar a lista de funcionarios" + ex.Message);
             }
         }
-
-
-
-
-
-
-
-
-
 
         public bool cadastrarGuest(Guest guest)
         {
@@ -135,6 +126,39 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             command.Connection.Close(); //fecha conexão
             return true;
         }
+
+        public bool alterarGuest(Guest guest, int tipoSelect)
+        {
+            try
+            {
+                string query = "update guest set gue_nome = '" + guest.gue_nome + "',gue_cpf = '" + guest.gue_cpf + "'";
+
+                if(tipoSelect == 1)
+                    query = query + ",gue_dataNascimento = '" + guest.gue_dataNascimento + "'";
+
+                query = query + " where gue_id = " + guest.gue_id + ";";
+
+                connection = new MySqlConnection(conexaoString);
+                connection.Open(); // abre a conexão
+                command = new MySqlCommand();
+                command.Connection = connection;
+
+                command.CommandType = CommandType.Text;
+                command.CommandText = query;
+
+                command.ExecuteNonQuery();
+                command.Connection.Close(); //fecha conexão
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+
 
         public bool deletarGuest(int id)
         {

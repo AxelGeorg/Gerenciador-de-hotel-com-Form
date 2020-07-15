@@ -23,5 +23,19 @@ namespace Gerenciamento_de_Hotel.View
             this.Hide();
             tela.ShowDialog();
         }
+
+        private void btn_verificar_Click(object sender, EventArgs e)
+        {
+            ReadGuestScreen tela = new ReadGuestScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
+
+        private void btn_atualizar_Click(object sender, EventArgs e)
+        {
+            UpdateGuestScreen tela = new UpdateGuestScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
     }
 }
