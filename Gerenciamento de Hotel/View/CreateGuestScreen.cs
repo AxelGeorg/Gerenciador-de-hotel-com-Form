@@ -1,5 +1,6 @@
 ﻿using Gerenciamento_de_Hotel.Controller;
 using Gerenciamento_de_Hotel.Model.Entidades;
+using Gerenciamento_de_Hotel.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,32 +16,133 @@ namespace Gerenciamento_de_Hotel.View
     public partial class CreateGuestScreen : Form
     {
         GuestController controller = new GuestController();
-        Guest guest = new Guest();
-        string dataNascimento;
+        HotelService service = new HotelService();
+
         public CreateGuestScreen()
         {
             InitializeComponent();
+            btn_cadastrar.Enabled = false;
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja cadastrar esse Hóspede?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            Guest guest = new Guest();
+            string dataNascimento; 
+            int verificaSeRetornou = 0;
+
+            //valida se há outra hóspede com msm cpf
+            var listGuest = controller.retornaGuest(0);
+
+            for (int i = 0; i < listGuest.Count; i++)
+            {
+                if (txtb_cpf.Text.Trim() == listGuest[i].gue_cpf)
+                {
+                    MessageBox.Show("Não é possível cadastrar esse hóspede, pois já há uma hóspede com esse CPF!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    verificaSeRetornou = 1;
+                }
+                else if ((!service.verificaIntOrFloat(txtb_dia.Text.Trim())) || (!service.verificaIntOrFloat(txtb_mes.Text.Trim())) || (!service.verificaIntOrFloat(txtb_ano.Text.Trim())))
+                {
+                    MessageBox.Show("Não é possível cadastrar esse hóspede, pois a sua data de nascimento não está no formato correto!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    verificaSeRetornou = 1;
+                }
+            }
+
+            if (verificaSeRetornou == 0)
             {
                 dataNascimento = txtb_ano.Text + "/" + txtb_mes.Text + "/" + txtb_dia.Text;
                 guest.gue_nome = txtb_nome.Text;
                 guest.gue_cpf = txtb_cpf.Text;
                 guest.gue_dataNascimento = dataNascimento;
 
-                if (controller.cadastrarGuest(guest))
+                if (MessageBox.Show("Deseja cadastrar esse Hóspede?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 {
-                    MessageBox.Show("Hóspede cadastrado com sucesso");
-                }
-                else
-                {
-                    MessageBox.Show("Não foi possível cadastrar o hóspede");
+                    if (controller.cadastrarGuest(guest))
+                    {
+                        txtb_nome.Clear();
+                        txtb_cpf.Clear();
+                        txtb_dia.Clear();
+                        txtb_mes.Clear();
+                        txtb_ano.Clear();
+                        MessageBox.Show("Hóspede cadastrado com sucesso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foi possível cadastrar o hóspede");
+                    }
                 }
             }
+        }
 
+        private void txtb_nome_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_dia.Text)) && (!string.IsNullOrWhiteSpace(txtb_mes.Text)) && (!string.IsNullOrWhiteSpace(txtb_ano.Text)))
+            {
+                btn_cadastrar.Enabled = true;
+            }
+            else
+            {
+                btn_cadastrar.Enabled = false;
+            }
+            txtb_dia.MaxLength = 50;
+        }
+
+        private void txtb_cpf_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_dia.Text)) && (!string.IsNullOrWhiteSpace(txtb_mes.Text)) && (!string.IsNullOrWhiteSpace(txtb_ano.Text)))
+            {
+                btn_cadastrar.Enabled = true;
+            }
+            else
+            {
+                btn_cadastrar.Enabled = false;
+            }
+            txtb_cpf.MaxLength = 15;
+        }
+
+        private void txtb_dia_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_dia.Text)) && (!string.IsNullOrWhiteSpace(txtb_mes.Text)) && (!string.IsNullOrWhiteSpace(txtb_ano.Text)))
+            {
+                btn_cadastrar.Enabled = true;
+            }
+            else
+            {
+                btn_cadastrar.Enabled = false;
+            }
+            txtb_dia.MaxLength = 2;
+        }
+
+        private void txtb_mes_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_dia.Text)) && (!string.IsNullOrWhiteSpace(txtb_mes.Text)) && (!string.IsNullOrWhiteSpace(txtb_ano.Text)))
+            {
+                btn_cadastrar.Enabled = true;
+            }
+            else
+            {
+                btn_cadastrar.Enabled = false;
+            }
+            txtb_mes.MaxLength = 2;
+        }
+
+        private void txtb_ano_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_dia.Text)) && (!string.IsNullOrWhiteSpace(txtb_mes.Text)) && (!string.IsNullOrWhiteSpace(txtb_ano.Text)))
+            {
+                btn_cadastrar.Enabled = true;
+            }
+            else
+            {
+                btn_cadastrar.Enabled = false;
+            }
+            txtb_ano.MaxLength = 4;
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            GuestScreen tela = new GuestScreen();
+            this.Hide();
+            tela.ShowDialog();
         }
     }
 }

@@ -120,5 +120,25 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             command.ExecuteNonQuery();
             command.Connection.Close(); //fecha conexão
         }
+        public void criaTabelaGuest()
+        {
+            connection = new MySqlConnection(conexaoString);
+            connection.Open(); // abre a conexão
+            command = new MySqlCommand();
+            command.Connection = connection;
+
+            command.CommandType = CommandType.Text;
+            command.CommandText = "create table if not exists guest (gue_id int primary key auto_increment," +
+                                                                        "gue_nome varchar(30) not null," +
+                                                                        "gue_cpf varchar(15) not null," +
+                                                                        "gue_dataNascimento date not null," +
+                                                                        "gue_diasReservado int," +
+                                                                        "gue_precoTotal float," +
+                                                                        "gue_fk_room int," +
+                                                                        "CONSTRAINT fk_room FOREIGN KEY(gue_fk_room) REFERENCES room(room_id));";
+
+            command.ExecuteNonQuery();
+            command.Connection.Close(); //fecha conexão
+        }
     }
 }

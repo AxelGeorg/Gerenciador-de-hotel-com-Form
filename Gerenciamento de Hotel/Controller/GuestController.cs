@@ -12,7 +12,12 @@ namespace Gerenciamento_de_Hotel.Controller
     {
         GuestDAO guestDAO = new GuestDAO();
 
-       public bool cadastrarGuest (Guest guest)
+        public List<Guest> retornaGuest(int tipoOrdenacao)
+        {
+            return guestDAO.BuscarFuncionarios(tipoOrdenacao);
+        }
+
+        public bool cadastrarGuest (Guest guest)
         {
             return guestDAO.cadastrarGuest(guest);
         }

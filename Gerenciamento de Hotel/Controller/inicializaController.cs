@@ -20,6 +20,7 @@ namespace Gerenciamento_de_Hotel.Controller
             inicializaDAO.criaTabelaRoom();
             inicializaDAO.criaTabelaDrink();
             inicializaDAO.criaTabelaFood();
+            inicializaDAO.criaTabelaGuest();
 
             inicializaDAO.criaEmployeeTeste();
         }
