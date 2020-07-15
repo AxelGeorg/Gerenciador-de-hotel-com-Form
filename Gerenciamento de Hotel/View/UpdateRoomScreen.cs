@@ -167,8 +167,6 @@ namespace Gerenciamento_de_Hotel.View
                 {
                     controller.alteraRoom(room);
                     MessageBox.Show(retorno, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-                    tela.ShowDialog();
                 }
             }
             else
