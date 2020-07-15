@@ -22,6 +22,11 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         bool clickTitulo = true;
         bool clickEmail = true;
 
+        /// <summary>
+        /// Retorna uma lista de Funcionários.
+        /// </summary>
+        /// <param name="tipoOrdenacao"></param>
+        /// <returns></returns>
         public List<Employees> BuscarFuncionarios(int tipoOrdenacao)
         {
             try
@@ -149,6 +154,16 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             }
         }
 
+        /// <summary>
+        /// Cadastra um funcionário.
+        /// </summary>
+        /// <param name="emp_nome"></param>
+        /// <param name="emp_sobrenome"></param>
+        /// <param name="emp_cpf"></param>
+        /// <param name="emp_titulo"></param>
+        /// <param name="emp_email"></param>
+        /// <param name="emp_password"></param>
+        /// <returns></returns>
         public bool cadastrarEmployee(string emp_nome, string emp_sobrenome, string emp_cpf, string emp_titulo, string emp_email, string emp_password)
         {
             try
@@ -172,6 +187,17 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             }
         }
 
+        /// <summary>
+        /// Altera um funcionário.
+        /// </summary>
+        /// <param name="emp_id"></param>
+        /// <param name="emp_nome"></param>
+        /// <param name="emp_sobrenome"></param>
+        /// <param name="emp_cpf"></param>
+        /// <param name="emp_titulo"></param>
+        /// <param name="emp_email"></param>
+        /// <param name="emp_password"></param>
+        /// <returns></returns>
         public bool alterarEmployee(int emp_id,string emp_nome, string emp_sobrenome, string emp_cpf, string emp_titulo, string emp_email, string emp_password)
         {
             try
@@ -195,6 +221,11 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             }
         }
 
+        /// <summary>
+        /// Deleta um funcionário de acordo com o id do mesmo.
+        /// </summary>
+        /// <param name="emp_id"></param>
+        /// <returns></returns>
         public bool deletarEmployee(int emp_id)
         {
             try

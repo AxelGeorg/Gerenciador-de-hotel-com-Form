@@ -61,7 +61,6 @@ namespace Gerenciamento_de_Hotel.View
                 }
 
                 listView_room.Items[i].SubItems.Add("R$"+listRoom[i].room_precoDiaria.ToString());
-                listView_room.Items[i].SubItems.Add("R$"+listRoom[i].room_precoTotal.ToString());
                 listView_room.Items[i].SubItems.Add(listRoom[i].room_quantPessoa.ToString());
             }
         }

@@ -15,6 +15,9 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         MySqlConnection connection = null;
         MySqlCommand command;
 
+        /// <summary>
+        /// Cria a base de dados no MySQL.
+        /// </summary>
         public void criaDataBase()
         { 
             connection = new MySqlConnection(cs);
@@ -30,6 +33,9 @@ namespace Gerenciamento_de_Hotel.Model.DAO
 
         }
 
+        /// <summary>
+        /// Cria um funcionário teste na tabela de funcionários.
+        /// </summary>
         public void criaEmployeeTeste()
         {
             connection = new MySqlConnection(conexaoString);
@@ -45,6 +51,9 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             command.Connection.Close(); //fecha conexão
         }
 
+        /// <summary>
+        /// Cria toda a tabela de funcionário na base de dados.
+        /// </summary>
         public void criaTabelaEmployees()
         {
             connection = new MySqlConnection(conexaoString);
@@ -64,7 +73,10 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             command.ExecuteNonQuery();
             command.Connection.Close(); //fecha conexão
         }
-        
+
+        /// <summary>
+        /// Cria toda a tabela quarto na base de dados.
+        /// </summary>
         public void criaTabelaRoom()
         {
             connection = new MySqlConnection(conexaoString);
@@ -80,13 +92,15 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                                                                         "room_quantSolteiro int not null," +
                                                                         "room_disponibilidade bool not null," +
                                                                         "room_limpeza bool not null," +
-                                                                        "room_precoDiaria float not null," +
-                                                                        "room_precoTotal float);";
+                                                                        "room_precoDiaria float not null);";
 
             command.ExecuteNonQuery();
             command.Connection.Close(); //fecha conexão
-        } 
-        
+        }
+
+        /// <summary>
+        /// Cria toda a tabela de bebida na base de dados.
+        /// </summary>
         public void criaTabelaDrink()
         {
             connection = new MySqlConnection(conexaoString);
@@ -102,8 +116,11 @@ namespace Gerenciamento_de_Hotel.Model.DAO
 
             command.ExecuteNonQuery();
             command.Connection.Close(); //fecha conexão
-        }   
+        }
 
+        /// <summary>
+        /// Cria toda a tabela de comida na base de dados.
+        /// </summary>
         public void criaTabelaFood()
         {
             connection = new MySqlConnection(conexaoString);
@@ -120,6 +137,10 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             command.ExecuteNonQuery();
             command.Connection.Close(); //fecha conexão
         }
+
+        /// <summary>
+        /// Cria toda a tabela de hóspede na base de dados.
+        /// </summary>
         public void criaTabelaGuest()
         {
             connection = new MySqlConnection(conexaoString);

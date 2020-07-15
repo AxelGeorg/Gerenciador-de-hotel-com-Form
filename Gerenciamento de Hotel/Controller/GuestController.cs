@@ -14,7 +14,7 @@ namespace Gerenciamento_de_Hotel.Controller
 
         public List<Guest> retornaGuest(int tipoOrdenacao)
         {
-            return guestDAO.BuscarFuncionarios(tipoOrdenacao);
+            return guestDAO.BuscarGuest(tipoOrdenacao);
         }
 
         public bool cadastrarGuest(Guest guest)

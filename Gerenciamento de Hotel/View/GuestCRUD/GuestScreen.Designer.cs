@@ -45,6 +45,7 @@
             this.btn_comeBack.TabIndex = 9;
             this.btn_comeBack.Text = "←";
             this.btn_comeBack.UseVisualStyleBackColor = true;
+            this.btn_comeBack.Click += new System.EventHandler(this.btn_comeBack_Click);
             // 
             // btn_deletar
             // 

@@ -19,7 +19,12 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         bool clickCPF = true;
         bool clickDataNascimento = true;
 
-        public List<Guest> BuscarFuncionarios(int tipoOrdenacao)
+        /// <summary>
+        /// Retorna uma lista de funcionários de acordo com a ordenação desejada.
+        /// </summary>
+        /// <param name="tipoOrdenacao"></param>
+        /// <returns></returns>
+        public List<Guest> BuscarGuest(int tipoOrdenacao)
         {
             try
             {
@@ -113,6 +118,11 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             }
         }
 
+        /// <summary>
+        /// Cadastra o hóspede desejado.
+        /// </summary>
+        /// <param name="guest"></param>
+        /// <returns></returns>
         public bool cadastrarGuest(Guest guest)
         {
             connection = new MySqlConnection(conexaoString);
@@ -127,6 +137,12 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             return true;
         }
 
+        /// <summary>
+        /// Altera o hóspede desejado.
+        /// </summary>
+        /// <param name="guest"></param>
+        /// <param name="tipoSelect"></param>
+        /// <returns></returns>
         public bool alterarGuest(Guest guest, int tipoSelect)
         {
             try
@@ -157,9 +173,11 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             }
         }
 
-
-
-
+        /// <summary>
+        ///  Deleta o hóspede desejado.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool deletarGuest(int id)
         {
             return true;

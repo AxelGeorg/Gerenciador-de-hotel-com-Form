@@ -71,7 +71,6 @@ namespace Gerenciamento_de_Hotel.View
                     }
 
                     itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_precoDiaria));
-                    itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_precoTotal));
                     itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_quantPessoa));
                     listView_room.Items.Add(itens);
 
@@ -82,7 +81,6 @@ namespace Gerenciamento_de_Hotel.View
                     room.room_disponibilidade = roomRetornado[i].room_disponibilidade;
                     room.room_limpeza = roomRetornado[i].room_limpeza;
                     room.room_precoDiaria = roomRetornado[i].room_precoDiaria;
-                    room.room_precoTotal = roomRetornado[i].room_precoTotal;
                     room.room_quantPessoa = roomRetornado[i].room_quantPessoa;
 
                     cbox_opcoes.Enabled = true;
@@ -211,6 +209,10 @@ namespace Gerenciamento_de_Hotel.View
             txtb_novoAlterar.Enabled = false;
             cbox_opcoes.Enabled = false;
             cbox_opcoes.SelectedIndex = -1;
+            rbtn_disponivel.Enabled = false;
+            rbtn_ocupado.Enabled = false;
+            rbtn_limpo.Enabled = false;
+            rbtn_sujo.Enabled = false;
         }
 
         private void cbox_opcoes_SelectedIndexChanged(object sender, EventArgs e)

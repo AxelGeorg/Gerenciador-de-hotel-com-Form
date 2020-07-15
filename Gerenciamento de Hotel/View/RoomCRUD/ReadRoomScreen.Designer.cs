@@ -35,10 +35,9 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_comeBack = new System.Windows.Forms.Button();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btn_comeBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView_room
@@ -51,7 +50,6 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7,
-            this.columnHeader8,
             this.columnHeader9});
             this.listView_room.GridLines = true;
             this.listView_room.HideSelection = false;
@@ -60,8 +58,8 @@
             this.listView_room.Size = new System.Drawing.Size(649, 343);
             this.listView_room.TabIndex = 13;
             this.listView_room.UseCompatibleStateImageBehavior = false;
-            this.listView_room.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.ordenar);
             this.listView_room.View = System.Windows.Forms.View.Details;
+            this.listView_room.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.ordenar);
             // 
             // columnHeader1
             // 
@@ -71,12 +69,12 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Número";
-            this.columnHeader2.Width = 55;
+            this.columnHeader2.Width = 70;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Camas de casal";
-            this.columnHeader3.Width = 90;
+            this.columnHeader3.Width = 95;
             // 
             // columnHeader4
             // 
@@ -86,12 +84,22 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Disponibilidade";
-            this.columnHeader5.Width = 85;
+            this.columnHeader5.Width = 95;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Limpeza";
-            this.columnHeader6.Width = 55;
+            this.columnHeader6.Width = 80;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Preço Diária";
+            this.columnHeader7.Width = 80;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Quant. Pessoas";
+            this.columnHeader9.Width = 87;
             // 
             // btn_comeBack
             // 
@@ -104,21 +112,6 @@
             this.btn_comeBack.Text = "←";
             this.btn_comeBack.UseVisualStyleBackColor = true;
             this.btn_comeBack.Click += new System.EventHandler(this.btn_comeBack_Click);
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Preço Diária";
-            this.columnHeader7.Width = 70;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Preço Total";
-            this.columnHeader8.Width = 67;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Quant. Pessoas";
-            this.columnHeader9.Width = 87;
             // 
             // ReadRoomScreen
             // 
@@ -145,7 +138,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Button btn_comeBack;
         private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
     }
 }

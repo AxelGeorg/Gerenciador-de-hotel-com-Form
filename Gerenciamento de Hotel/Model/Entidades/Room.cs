@@ -15,7 +15,6 @@ namespace Gerenciamento_de_Hotel.Model.Entidades
         public bool room_disponibilidade { get; set; }
         public bool room_limpeza { get; set; }
         public float room_precoDiaria { get; set; }
-        public float room_precoTotal { get; set; }
         public int room_quantPessoa { get; set; }
     }
 }

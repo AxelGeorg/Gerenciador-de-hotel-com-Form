@@ -21,12 +21,21 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         bool clickDisponibilidade = true;
         bool clickLimpeza = true;
         bool clickPrecoDiaria = true;
-        bool clickPrecoTotal = true;
         bool clickQuantPessoa = true;
 
-        public bool cadastrarRoom(string room_numeroQuarto, int room_quantPessoa, int room_quantCasal, int room_quantSolteiro, bool room_disponibilidade, bool room_limpeza, float room_precoDiaria, float room_precoTotal)
+        /// <summary>
+        /// Cadastra o quarto desejado.
+        /// </summary>
+        /// <param name="room_numeroQuarto"></param>
+        /// <param name="room_quantPessoa"></param>
+        /// <param name="room_quantCasal"></param>
+        /// <param name="room_quantSolteiro"></param>
+        /// <param name="room_disponibilidade"></param>
+        /// <param name="room_limpeza"></param>
+        /// <param name="room_precoDiaria"></param>
+        /// <returns></returns>
+        public bool cadastrarRoom(string room_numeroQuarto, int room_quantPessoa, int room_quantCasal, int room_quantSolteiro, bool room_disponibilidade, bool room_limpeza, float room_precoDiaria)
         {
-            //Daniel 09/07/2020 Conexão com o banco e a inserção dos dados do quarto para o banco.
             try
             {
                 connection = new MySqlConnection(conexaoString);
@@ -35,7 +44,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 command.Connection = connection;
 
                 command.CommandType = CommandType.Text;
-                command.CommandText = "insert into room (room_numeroQuarto, room_quantPessoa, room_quantCasal, room_quantSolteiro, room_disponibilidade, room_limpeza, room_precoDiaria, room_precoTotal) values ('" + room_numeroQuarto + "'," + room_quantPessoa + "," + room_quantCasal + "," + room_quantSolteiro + "," + room_disponibilidade + "," + room_limpeza + "," + room_precoDiaria + "," + room_precoTotal + ");";
+                command.CommandText = "insert into room (room_numeroQuarto, room_quantPessoa, room_quantCasal, room_quantSolteiro, room_disponibilidade, room_limpeza, room_precoDiaria) values ('" + room_numeroQuarto + "'," + room_quantPessoa + "," + room_quantCasal + "," + room_quantSolteiro + "," + room_disponibilidade + "," + room_limpeza + "," + room_precoDiaria + ");";
                 command.ExecuteNonQuery();
                 command.Connection.Close(); //fecha conexão
 
@@ -47,7 +56,19 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             }
         }
 
-        public bool alteraRoom(int room_id, string room_numeroQuarto, int room_quantPessoa, int room_quantCasal, int room_quantSolteiro, bool room_disponibilidade, bool room_limpeza, float room_precoDiaria, float room_precoTotal)
+        /// <summary>
+        /// Altera o quarto desejado.
+        /// </summary>
+        /// <param name="room_id"></param>
+        /// <param name="room_numeroQuarto"></param>
+        /// <param name="room_quantPessoa"></param>
+        /// <param name="room_quantCasal"></param>
+        /// <param name="room_quantSolteiro"></param>
+        /// <param name="room_disponibilidade"></param>
+        /// <param name="room_limpeza"></param>
+        /// <param name="room_precoDiaria"></param>
+        /// <returns></returns>
+        public bool alteraRoom(int room_id, string room_numeroQuarto, int room_quantPessoa, int room_quantCasal, int room_quantSolteiro, bool room_disponibilidade, bool room_limpeza, float room_precoDiaria)
         {
             try
             {
@@ -57,7 +78,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 command.Connection = connection;
 
                 command.CommandType = CommandType.Text;
-                command.CommandText = "update room set room_numeroQuarto = '" + room_numeroQuarto + "',room_quantPessoa = " + room_quantPessoa + ",room_quantCasal = " + room_quantCasal + ",room_quantSolteiro = " + room_quantSolteiro + ",room_disponibilidade = " + room_disponibilidade + ",room_limpeza = " + room_limpeza + ",room_precoDiaria = " + room_precoDiaria + ",room_precoTotal = " + room_precoTotal + " where room_id = " + room_id + ";";
+                command.CommandText = "update room set room_numeroQuarto = '" + room_numeroQuarto + "',room_quantPessoa = " + room_quantPessoa + ",room_quantCasal = " + room_quantCasal + ",room_quantSolteiro = " + room_quantSolteiro + ",room_disponibilidade = " + room_disponibilidade + ",room_limpeza = " + room_limpeza + ",room_precoDiaria = " + room_precoDiaria + " where room_id = " + room_id + ";";
                 command.ExecuteNonQuery();
                 command.Connection.Close(); //fecha conexão
 
@@ -68,12 +89,18 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 return false;
             }
         }
+
+        /// <summary>
+        /// Retorna uma lista de quartos de acordo com a ordenação desejada.
+        /// </summary>
+        /// <param name="tipoOrdenacao"></param>
+        /// <returns></returns>
         public List<Room> BuscarQuartos(int tipoOrdenacao)
         {
             try
             {
                 var listRoom = new List<Room>();
-                string query = "select room_id,room_numeroQuarto,room_quantCasal,room_quantSolteiro,room_disponibilidade,room_limpeza,room_precoDiaria,room_precoTotal,room_quantPessoa from room ";
+                string query = "select room_id,room_numeroQuarto,room_quantCasal,room_quantSolteiro,room_disponibilidade,room_limpeza,room_precoDiaria,room_quantPessoa from room ";
 
                 if (tipoOrdenacao == 0)
                 {
@@ -175,20 +202,6 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 
                 if (tipoOrdenacao == 7)
                 {
-                    if (clickPrecoTotal == true)
-                    {
-                        query = query + " order by room_precoTotal asc;";
-                        clickPrecoTotal = false;
-                    }
-                    else
-                    {
-                        query = query + " order by room_precoTotal desc;";
-                        clickPrecoTotal = true;
-                    }
-                }
-                
-                if (tipoOrdenacao == 8)
-                {
                     if (clickQuantPessoa == true)
                     {
                         query = query + " order by room_quantPessoa asc;";
@@ -200,7 +213,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                         clickQuantPessoa = true;
                     }
                 }
-
+                
                 using (connection = new MySqlConnection(conexaoString))
                 {
                     using (command = new MySqlCommand(query, connection))
@@ -218,7 +231,6 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                                 room.room_disponibilidade = Convert.ToBoolean(dataReader["room_disponibilidade"].ToString());
                                 room.room_limpeza = Convert.ToBoolean(dataReader["room_limpeza"].ToString());
                                 room.room_precoDiaria = float.Parse(dataReader["room_precoDiaria"].ToString());
-                           //     room.room_precoTotal = float.Parse(dataReader["room_precoTotal"].ToString());
                                 room.room_quantPessoa = Convert.ToInt32(dataReader["room_quantPessoa"].ToString());
                                 listRoom.Add(room);
                             }
@@ -232,6 +244,12 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 throw new Exception("Erro ao acessar a lista de quartos" + ex.Message);
             }
         }
+
+        /// <summary>
+        /// Deleta o quarto desejado.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool deletaRoom(int id)
         {
             try
@@ -252,7 +270,6 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             {
                 return false;
             }
-
         }
     }
 }

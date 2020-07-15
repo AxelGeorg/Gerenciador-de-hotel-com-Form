@@ -123,46 +123,46 @@
     <Compile Include="Model\Entidades\Guest.cs" />
     <Compile Include="Model\Entidades\Room.cs" />
     <Compile Include="Services\HotelService.cs" />
-    <Compile Include="View\CreateEmployeeScreen.cs">
+    <Compile Include="View\Employees\CreateEmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CreateEmployeeScreen.Designer.cs">
+    <Compile Include="View\Employees\CreateEmployeeScreen.Designer.cs">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CreateGuestScreen.cs">
+    <Compile Include="View\GuestCRUD\CreateGuestScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CreateGuestScreen.Designer.cs">
+    <Compile Include="View\GuestCRUD\CreateGuestScreen.Designer.cs">
       <DependentUpon>CreateGuestScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CreateRoomScreen.cs">
+    <Compile Include="View\RoomCRUD\CreateRoomScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CreateRoomScreen.Designer.cs">
+    <Compile Include="View\RoomCRUD\CreateRoomScreen.Designer.cs">
       <DependentUpon>CreateRoomScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DeleteEmployeeScreen.cs">
+    <Compile Include="View\Employees\DeleteEmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\DeleteEmployeeScreen.Designer.cs">
+    <Compile Include="View\Employees\DeleteEmployeeScreen.Designer.cs">
       <DependentUpon>DeleteEmployeeScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DeleteRoomScreen.cs">
+    <Compile Include="View\RoomCRUD\DeleteRoomScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\DeleteRoomScreen.Designer.cs">
+    <Compile Include="View\RoomCRUD\DeleteRoomScreen.Designer.cs">
       <DependentUpon>DeleteRoomScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\EmployeeScreen.cs">
+    <Compile Include="View\Employees\EmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\EmployeeScreen.Designer.cs">
+    <Compile Include="View\Employees\EmployeeScreen.Designer.cs">
       <DependentUpon>EmployeeScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\GuestScreen.cs">
+    <Compile Include="View\GuestCRUD\GuestScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\GuestScreen.Designer.cs">
+    <Compile Include="View\GuestCRUD\GuestScreen.Designer.cs">
       <DependentUpon>GuestScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LoginScreen.cs">
@@ -187,22 +187,22 @@
     <Compile Include="View\PanelScreen.Designer.cs">
       <DependentUpon>PanelScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ReadEmployeeScreen.cs">
+    <Compile Include="View\Employees\ReadEmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ReadEmployeeScreen.Designer.cs">
+    <Compile Include="View\Employees\ReadEmployeeScreen.Designer.cs">
       <DependentUpon>ReadEmployeeScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ReadGuestScreen.cs">
+    <Compile Include="View\GuestCRUD\ReadGuestScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ReadGuestScreen.Designer.cs">
+    <Compile Include="View\GuestCRUD\ReadGuestScreen.Designer.cs">
       <DependentUpon>ReadGuestScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ReadRoomScreen.cs">
+    <Compile Include="View\RoomCRUD\ReadRoomScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ReadRoomScreen.Designer.cs">
+    <Compile Include="View\RoomCRUD\ReadRoomScreen.Designer.cs">
       <DependentUpon>ReadRoomScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ReserveRoomsScreen.cs">
@@ -211,49 +211,49 @@
     <Compile Include="View\ReserveRoomsScreen.Designer.cs">
       <DependentUpon>ReserveRoomsScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\RoomScreen.cs">
+    <Compile Include="View\RoomCRUD\RoomScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\RoomScreen.Designer.cs">
+    <Compile Include="View\RoomCRUD\RoomScreen.Designer.cs">
       <DependentUpon>RoomScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UpdateEmployeeScreen.cs">
+    <Compile Include="View\Employees\UpdateEmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\UpdateEmployeeScreen.Designer.cs">
+    <Compile Include="View\Employees\UpdateEmployeeScreen.Designer.cs">
       <DependentUpon>UpdateEmployeeScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UpdateGuestScreen.cs">
+    <Compile Include="View\GuestCRUD\UpdateGuestScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\UpdateGuestScreen.Designer.cs">
+    <Compile Include="View\GuestCRUD\UpdateGuestScreen.Designer.cs">
       <DependentUpon>UpdateGuestScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UpdateRoomScreen.cs">
+    <Compile Include="View\RoomCRUD\UpdateRoomScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\UpdateRoomScreen.Designer.cs">
+    <Compile Include="View\RoomCRUD\UpdateRoomScreen.Designer.cs">
       <DependentUpon>UpdateRoomScreen.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\CreateEmployeeScreen.resx">
+    <EmbeddedResource Include="View\Employees\CreateEmployeeScreen.resx">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CreateGuestScreen.resx">
+    <EmbeddedResource Include="View\GuestCRUD\CreateGuestScreen.resx">
       <DependentUpon>CreateGuestScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CreateRoomScreen.resx">
+    <EmbeddedResource Include="View\RoomCRUD\CreateRoomScreen.resx">
       <DependentUpon>CreateRoomScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\DeleteEmployeeScreen.resx">
+    <EmbeddedResource Include="View\Employees\DeleteEmployeeScreen.resx">
       <DependentUpon>DeleteEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\DeleteRoomScreen.resx">
+    <EmbeddedResource Include="View\RoomCRUD\DeleteRoomScreen.resx">
       <DependentUpon>DeleteRoomScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\EmployeeScreen.resx">
+    <EmbeddedResource Include="View\Employees\EmployeeScreen.resx">
       <DependentUpon>EmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\GuestScreen.resx">
+    <EmbeddedResource Include="View\GuestCRUD\GuestScreen.resx">
       <DependentUpon>GuestScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginScreen.resx">
@@ -274,25 +274,25 @@
     <EmbeddedResource Include="View\PanelScreen.resx">
       <DependentUpon>PanelScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ReadEmployeeScreen.resx">
+    <EmbeddedResource Include="View\Employees\ReadEmployeeScreen.resx">
       <DependentUpon>ReadEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ReadGuestScreen.resx">
+    <EmbeddedResource Include="View\GuestCRUD\ReadGuestScreen.resx">
       <DependentUpon>ReadGuestScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ReadRoomScreen.resx">
+    <EmbeddedResource Include="View\RoomCRUD\ReadRoomScreen.resx">
       <DependentUpon>ReadRoomScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\RoomScreen.resx">
+    <EmbeddedResource Include="View\RoomCRUD\RoomScreen.resx">
       <DependentUpon>RoomScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UpdateEmployeeScreen.resx">
+    <EmbeddedResource Include="View\Employees\UpdateEmployeeScreen.resx">
       <DependentUpon>UpdateEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UpdateGuestScreen.resx">
+    <EmbeddedResource Include="View\GuestCRUD\UpdateGuestScreen.resx">
       <DependentUpon>UpdateGuestScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UpdateRoomScreen.resx">
+    <EmbeddedResource Include="View\RoomCRUD\UpdateRoomScreen.resx">
       <DependentUpon>UpdateRoomScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

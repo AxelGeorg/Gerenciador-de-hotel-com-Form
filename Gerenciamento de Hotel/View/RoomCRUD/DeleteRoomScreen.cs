@@ -58,7 +58,6 @@ namespace Gerenciamento_de_Hotel.View
                     }
 
                     itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_precoDiaria));
-                    itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_precoTotal));
                     itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_quantPessoa));
                     listView_room.Items.Add(itens);                  
                 }

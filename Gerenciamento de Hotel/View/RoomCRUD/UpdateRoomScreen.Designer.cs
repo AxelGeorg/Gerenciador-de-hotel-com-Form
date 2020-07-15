@@ -44,7 +44,6 @@
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rbtn_disponivel = new System.Windows.Forms.RadioButton();
             this.rbtn_ocupado = new System.Windows.Forms.RadioButton();
@@ -148,7 +147,6 @@
             this.columnHeader11,
             this.columnHeader12,
             this.columnHeader13,
-            this.columnHeader14,
             this.columnHeader15});
             this.listView_room.GridLines = true;
             this.listView_room.HideSelection = false;
@@ -168,7 +166,7 @@
             // columnHeader8
             // 
             this.columnHeader8.Text = "Número";
-            this.columnHeader8.Width = 55;
+            this.columnHeader8.Width = 75;
             // 
             // columnHeader9
             // 
@@ -178,32 +176,27 @@
             // columnHeader10
             // 
             this.columnHeader10.Text = "Camas de Solteiro";
-            this.columnHeader10.Width = 105;
+            this.columnHeader10.Width = 110;
             // 
             // columnHeader11
             // 
             this.columnHeader11.Text = "Disponibilidade";
-            this.columnHeader11.Width = 85;
+            this.columnHeader11.Width = 90;
             // 
             // columnHeader12
             // 
             this.columnHeader12.Text = "Limpeza";
-            this.columnHeader12.Width = 55;
+            this.columnHeader12.Width = 75;
             // 
             // columnHeader13
             // 
             this.columnHeader13.Text = "Preço Diária";
-            this.columnHeader13.Width = 70;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Preço Total";
-            this.columnHeader14.Width = 67;
+            this.columnHeader13.Width = 80;
             // 
             // columnHeader15
             // 
             this.columnHeader15.Text = "Quant. Pessoas";
-            this.columnHeader15.Width = 87;
+            this.columnHeader15.Width = 90;
             // 
             // rbtn_disponivel
             // 
@@ -301,7 +294,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.RadioButton rbtn_disponivel;
         private System.Windows.Forms.RadioButton rbtn_ocupado;

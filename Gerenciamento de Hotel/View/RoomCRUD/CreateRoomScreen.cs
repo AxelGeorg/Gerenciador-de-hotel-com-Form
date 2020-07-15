@@ -56,7 +56,6 @@ namespace Gerenciamento_de_Hotel.View
                 room.room_disponibilidade = true;
                 room.room_quantCasal = Convert.ToInt32(txtb_quantCamaCasal.Text);
                 room.room_quantSolteiro = Convert.ToInt32(txtb_qunatCamaSolteiro.Text);
-                room.room_precoTotal = 0;
                 room.room_precoDiaria = float.Parse(txtb_precoDiaria.Text);
                 room.room_limpeza = false;
                 room.room_quantPessoa = Convert.ToInt32(txtb_qunatPessoas.Text);
@@ -100,21 +99,18 @@ namespace Gerenciamento_de_Hotel.View
 
         private void txtb_quantCamaCasal_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Daniel 09/07/2020 permite apenas números
             if ((Char.IsLetter(e.KeyChar)) || (Char.IsWhiteSpace(e.KeyChar)))
                 e.Handled = true;
         }
 
         private void txt_qunatCamaSolteiro_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Daniel 09/07/2020 permite apenas números
             if ((Char.IsLetter(e.KeyChar)) || (Char.IsWhiteSpace(e.KeyChar)))
                 e.Handled = true;
         }
 
         private void txt_precoDiaria_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Daniel 09/07/2020 permite apenas números
             if ((Char.IsLetter(e.KeyChar)) || (Char.IsWhiteSpace(e.KeyChar)))
                 e.Handled = true;
         }
@@ -132,7 +128,7 @@ namespace Gerenciamento_de_Hotel.View
         }
         private void txtb_qunatCamaSolteiro_TextChanged(object sender, EventArgs e)
         {
-            //Daniel 09/07/2020 - Faz a verificação dos campos camaCasal e camaSolteiro para setar o valor correto na quantidade de pessoas.
+            //Faz a verificação dos campos camaCasal e camaSolteiro para setar o valor correto na quantidade de pessoas.
             if (txtb_qunatCamaSolteiro.Text != "")
             {
                 if (txtb_quantCamaCasal.Text != "")
@@ -164,7 +160,7 @@ namespace Gerenciamento_de_Hotel.View
         }
         private void txt_qunatCamaSolteiro_TextChanged(object sender, EventArgs e)
         {
-            //Daniel 09/07/2020 - Faz a verificação dos campos camaCasal e camaSolteiro para setar o valor correto na quantidade de pessoas.
+            //Faz a verificação dos campos camaCasal e camaSolteiro para setar o valor correto na quantidade de pessoas.
             if (txtb_qunatCamaSolteiro.Text != "")
             {
                 if (txtb_quantCamaCasal.Text != "")
