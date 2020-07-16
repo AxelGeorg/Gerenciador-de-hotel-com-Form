@@ -180,6 +180,16 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         /// <returns></returns>
         public bool deletarGuest(int id)
         {
+            connection = new MySqlConnection(conexaoString);
+            connection.Open(); // abre a conexão
+            command = new MySqlCommand();
+            command.Connection = connection;
+
+            command.CommandType = CommandType.Text;
+            command.CommandText = "delete from guest where gue_id = " + id + ";";
+            command.ExecuteNonQuery();
+            command.Connection.Close(); //fecha conexão
+
             return true;
         }
 

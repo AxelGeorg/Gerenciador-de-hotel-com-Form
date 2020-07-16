@@ -135,6 +135,12 @@
     <Compile Include="View\GuestCRUD\CreateGuestScreen.Designer.cs">
       <DependentUpon>CreateGuestScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\GuestCRUD\DeleteGuestScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GuestCRUD\DeleteGuestScreen.Designer.cs">
+      <DependentUpon>DeleteGuestScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\RoomCRUD\CreateRoomScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\GuestCRUD\CreateGuestScreen.resx">
       <DependentUpon>CreateGuestScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GuestCRUD\DeleteGuestScreen.resx">
+      <DependentUpon>DeleteGuestScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RoomCRUD\CreateRoomScreen.resx">
       <DependentUpon>CreateRoomScreen.cs</DependentUpon>
