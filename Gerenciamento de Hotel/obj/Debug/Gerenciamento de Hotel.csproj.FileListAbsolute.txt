@@ -342,3 +342,13 @@ C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamen
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.GuestCRUD.DeleteGuestScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.MenuStripScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.GerenciadorStripScreen.resources
+C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.GerenciadorStripScreen.resources
+C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.CreateGuestScreen.resources
+C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.GuestCRUD.DeleteGuestScreen.resources
+C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.MenuStripScreen.resources
+C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.DeleteRoomScreen.resources
+C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.GuestScreen.resources
+C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ReadGuestScreen.resources
+C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ReadRoomScreen.resources
+C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.UpdateGuestScreen.resources
+C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.UpdateRoomScreen.resources

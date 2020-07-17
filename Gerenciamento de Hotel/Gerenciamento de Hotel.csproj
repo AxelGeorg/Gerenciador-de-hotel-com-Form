@@ -119,6 +119,7 @@
     <Compile Include="Model\DAO\InicializaDAO.cs" />
     <Compile Include="Model\DAO\RoomDAO.cs" />
     <Compile Include="Model\Entidades\Drinks.cs" />
+    <Compile Include="Model\Entidades\Filtro.cs" />
     <Compile Include="Model\Entidades\Foods.cs" />
     <Compile Include="Model\Entidades\Guest.cs" />
     <Compile Include="Model\Entidades\Room.cs" />
@@ -128,6 +129,12 @@
     </Compile>
     <Compile Include="View\Employees\CreateEmployeeScreen.Designer.cs">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FiltroScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FiltroScreen.Designer.cs">
+      <DependentUpon>FiltroScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\GerenciadorStripScreen.cs">
       <SubType>Form</SubType>
@@ -256,6 +263,9 @@
     <EmbeddedResource Include="View\Employees\CreateEmployeeScreen.resx">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FiltroScreen.resx">
+      <DependentUpon>FiltroScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\GerenciadorStripScreen.resx">
       <DependentUpon>GerenciadorStripScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MenuStripScreen.resx">
       <DependentUpon>MenuStripScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReserveRoomsScreen.resx">
+      <DependentUpon>ReserveRoomsScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RoomCRUD\CreateRoomScreen.resx">
       <DependentUpon>CreateRoomScreen.cs</DependentUpon>
