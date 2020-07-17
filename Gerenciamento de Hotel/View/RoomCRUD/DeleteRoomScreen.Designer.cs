@@ -109,7 +109,7 @@
             // 
             this.btn_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_pesquisar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn_pesquisar.Location = new System.Drawing.Point(423, 98);
+            this.btn_pesquisar.Location = new System.Drawing.Point(478, 99);
             this.btn_pesquisar.Name = "btn_pesquisar";
             this.btn_pesquisar.Size = new System.Drawing.Size(188, 23);
             this.btn_pesquisar.TabIndex = 41;
@@ -122,7 +122,7 @@
             this.txtb_roomDeletar.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtb_roomDeletar.Location = new System.Drawing.Point(18, 99);
             this.txtb_roomDeletar.Name = "txtb_roomDeletar";
-            this.txtb_roomDeletar.Size = new System.Drawing.Size(324, 20);
+            this.txtb_roomDeletar.Size = new System.Drawing.Size(405, 20);
             this.txtb_roomDeletar.TabIndex = 40;
             // 
             // lbl_roomNumero
@@ -152,7 +152,7 @@
             // 
             this.btn_deletar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_deletar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_deletar.Location = new System.Drawing.Point(183, 260);
+            this.btn_deletar.Location = new System.Drawing.Point(174, 317);
             this.btn_deletar.Name = "btn_deletar";
             this.btn_deletar.Size = new System.Drawing.Size(317, 29);
             this.btn_deletar.TabIndex = 44;
@@ -164,14 +164,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 345);
+            this.ClientSize = new System.Drawing.Size(673, 389);
             this.Controls.Add(this.btn_deletar);
             this.Controls.Add(this.btn_comeBack);
             this.Controls.Add(this.listView_room);
             this.Controls.Add(this.btn_pesquisar);
             this.Controls.Add(this.txtb_roomDeletar);
             this.Controls.Add(this.lbl_roomNumero);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DeleteRoomScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeleteRoomScreen";

@@ -17,8 +17,7 @@ namespace Gerenciamento_de_Hotel.View
     {
         RoomController controller = new RoomController();
         Room room = new Room();
-        RoomScreen tela = new RoomScreen();
-        HotelService service = new HotelService();
+        GerenciadorStripScreen tela = new GerenciadorStripScreen();
         public DeleteRoomScreen()
         {
             InitializeComponent();
@@ -66,7 +65,6 @@ namespace Gerenciamento_de_Hotel.View
 
         private void btn_comeBack_Click(object sender, EventArgs e)
         {
-            RoomScreen tela = new RoomScreen();
             this.Hide();
             tela.ShowDialog();
         }
@@ -78,7 +76,6 @@ namespace Gerenciamento_de_Hotel.View
                 if (controller.deletaRoom(room.room_id))
                 {
                     MessageBox.Show("Quarto deletado com sucesso");
-                    RoomScreen tela = new RoomScreen();
                     this.Hide();
                     tela.ShowDialog();
                 }

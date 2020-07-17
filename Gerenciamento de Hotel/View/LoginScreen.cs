@@ -49,7 +49,7 @@ namespace Gerenciamento_de_Hotel
                     if ((email == listEmp[i].emp_email) && (senha == listEmp[i].emp_password))
                     {
                         verifica = 1;
-                        PanelScreen tela = new PanelScreen();
+                        GerenciadorStripScreen tela = new GerenciadorStripScreen();
                         this.Hide();
                         tela.ShowDialog();
                     }
@@ -62,7 +62,7 @@ namespace Gerenciamento_de_Hotel
         }
         private void btn_comeBack_Click(object sender, EventArgs e)
         {
-            MainScreen tela = new MainScreen();
+            MenuStripScreen tela = new MenuStripScreen();
             this.Hide();
             tela.ShowDialog(); 
         }

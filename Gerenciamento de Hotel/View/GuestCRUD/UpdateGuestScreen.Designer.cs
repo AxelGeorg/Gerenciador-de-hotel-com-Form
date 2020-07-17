@@ -82,6 +82,7 @@
             // 
             // cbox_opcoes
             // 
+            this.cbox_opcoes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbox_opcoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_opcoes.FormattingEnabled = true;
             this.cbox_opcoes.Location = new System.Drawing.Point(12, 273);
@@ -106,7 +107,7 @@
             // 
             this.btn_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_pesquisar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn_pesquisar.Location = new System.Drawing.Point(402, 107);
+            this.btn_pesquisar.Location = new System.Drawing.Point(416, 107);
             this.btn_pesquisar.Name = "btn_pesquisar";
             this.btn_pesquisar.Size = new System.Drawing.Size(188, 23);
             this.btn_pesquisar.TabIndex = 32;

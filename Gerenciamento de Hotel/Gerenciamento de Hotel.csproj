@@ -129,6 +129,12 @@
     <Compile Include="View\Employees\CreateEmployeeScreen.Designer.cs">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\GerenciadorStripScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GerenciadorStripScreen.Designer.cs">
+      <DependentUpon>GerenciadorStripScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\GuestCRUD\CreateGuestScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,12 @@
     </Compile>
     <Compile Include="View\GuestCRUD\DeleteGuestScreen.Designer.cs">
       <DependentUpon>DeleteGuestScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenuStripScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MenuStripScreen.Designer.cs">
+      <DependentUpon>MenuStripScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\RoomCRUD\CreateRoomScreen.cs">
       <SubType>Form</SubType>
@@ -244,11 +256,17 @@
     <EmbeddedResource Include="View\Employees\CreateEmployeeScreen.resx">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\GerenciadorStripScreen.resx">
+      <DependentUpon>GerenciadorStripScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\GuestCRUD\CreateGuestScreen.resx">
       <DependentUpon>CreateGuestScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GuestCRUD\DeleteGuestScreen.resx">
       <DependentUpon>DeleteGuestScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MenuStripScreen.resx">
+      <DependentUpon>MenuStripScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RoomCRUD\CreateRoomScreen.resx">
       <DependentUpon>CreateRoomScreen.cs</DependentUpon>

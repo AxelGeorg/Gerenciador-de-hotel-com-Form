@@ -16,8 +16,7 @@ namespace Gerenciamento_de_Hotel.View
     {
         EmployeeController controller = new EmployeeController();
         Employees employees = new Employees();
-        EmployeeScreen tela = new EmployeeScreen();
-
+        GerenciadorStripScreen tela = new GerenciadorStripScreen();
 
         public DeleteEmployeeScreen()
         {
@@ -76,7 +75,7 @@ namespace Gerenciamento_de_Hotel.View
 
         private void txtb_empDeletar_TextChanged(object sender, EventArgs e)
         {
-            if ((string.IsNullOrWhiteSpace(txtb_empDeletar.Text)))
+            if (string.IsNullOrWhiteSpace(txtb_empDeletar.Text))
             { 
                 listViewDeletar.Items.Clear();
                 btn_deletar.Enabled = false;

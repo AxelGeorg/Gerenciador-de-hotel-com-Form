@@ -58,7 +58,7 @@
             // 
             this.btn_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_pesquisar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn_pesquisar.Location = new System.Drawing.Point(402, 117);
+            this.btn_pesquisar.Location = new System.Drawing.Point(478, 119);
             this.btn_pesquisar.Name = "btn_pesquisar";
             this.btn_pesquisar.Size = new System.Drawing.Size(188, 23);
             this.btn_pesquisar.TabIndex = 28;
@@ -121,7 +121,7 @@
             this.txtb_empDeletar.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtb_empDeletar.Location = new System.Drawing.Point(15, 120);
             this.txtb_empDeletar.Name = "txtb_empDeletar";
-            this.txtb_empDeletar.Size = new System.Drawing.Size(294, 20);
+            this.txtb_empDeletar.Size = new System.Drawing.Size(408, 20);
             this.txtb_empDeletar.TabIndex = 26;
             this.txtb_empDeletar.TextChanged += new System.EventHandler(this.txtb_empDeletar_TextChanged);
             // 

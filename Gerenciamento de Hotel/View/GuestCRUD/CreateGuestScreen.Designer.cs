@@ -161,6 +161,7 @@
             // 
             // btn_cadastrar
             // 
+            this.btn_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cadastrar.Location = new System.Drawing.Point(206, 295);
             this.btn_cadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_cadastrar.Name = "btn_cadastrar";

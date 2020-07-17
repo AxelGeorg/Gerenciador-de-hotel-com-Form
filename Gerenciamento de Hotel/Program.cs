@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gerenciamento_de_Hotel.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace Gerenciamento_de_Hotel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainScreen());
+            Application.Run(new MenuStripScreen());
+            //Application.Run(new MainScreen());
         }
     }
 }

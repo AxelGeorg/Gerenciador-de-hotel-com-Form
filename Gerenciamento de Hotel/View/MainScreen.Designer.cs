@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
             this.btn_login = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_information = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_login
@@ -47,19 +46,10 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // btn_information
-            // 
-            this.btn_information.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_information.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btn_information, "btn_information");
-            this.btn_information.Name = "btn_information";
-            this.btn_information.UseVisualStyleBackColor = false;
-            // 
             // MainScreen
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btn_information);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -75,7 +65,6 @@
 
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_information;
     }
 }
 

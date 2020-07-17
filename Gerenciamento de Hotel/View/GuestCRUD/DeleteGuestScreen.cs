@@ -19,10 +19,18 @@ namespace Gerenciamento_de_Hotel.View.GuestCRUD
         public DeleteGuestScreen()
         {
             InitializeComponent();
+            btn_deletar.Enabled = false;
         }
-
+        private void btn_comeBack_Click(object sender, EventArgs e)
+        {
+            GerenciadorStripScreen tela = new GerenciadorStripScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
+            int verificaSeRetornou = 0;
+
             listView_guest.Items.Clear();
             var guestRetornado = controller.retornaGuest(0);
 
@@ -31,12 +39,19 @@ namespace Gerenciamento_de_Hotel.View.GuestCRUD
                 if (txtb_guestDeletar.Text.Trim() == guestRetornado[i].gue_cpf)
                 {
                     ListViewItem itens = new ListViewItem(Convert.ToString(guestRetornado[i].gue_id));
-                    guest.gue_id = guestRetornado[i].gue_id;
                     itens.SubItems.Add(Convert.ToString(guestRetornado[i].gue_nome));
                     itens.SubItems.Add(Convert.ToString(guestRetornado[i].gue_dataNascimento));
-
                     listView_guest.Items.Add(itens);
+
+                    guest.gue_id = guestRetornado[i].gue_id;
+                    btn_deletar.Enabled = true;
+
+                    verificaSeRetornou = 1;
                 }
+            }
+            if (verificaSeRetornou == 0)
+            {
+                MessageBox.Show("Não foi possìvel encontrar nenhum hóspede com esse cpf!! \nDigite novamente!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -55,6 +70,15 @@ namespace Gerenciamento_de_Hotel.View.GuestCRUD
                 {
                     MessageBox.Show("Não foi possível deletar o hóspede");
                 }
+            }
+        }
+
+        private void txtb_guestDeletar_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtb_guestDeletar.Text))
+            {
+                listView_guest.Items.Clear();
+                btn_deletar.Enabled = false;
             }
         }
     }

@@ -24,7 +24,7 @@ namespace Gerenciamento_de_Hotel.View
 
         private void btn_comeBack_Click(object sender, EventArgs e)
         {
-            EmployeeScreen tela = new EmployeeScreen();
+            GerenciadorStripScreen tela = new GerenciadorStripScreen();
             this.Hide();
             tela.ShowDialog();
         }
