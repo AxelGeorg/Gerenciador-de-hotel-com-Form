@@ -37,13 +37,12 @@
             this.loginToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verificarQuartosLivresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
             // 
-            this.menuStrip.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.menuStrip.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.menuStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -54,7 +53,7 @@
             this.informaçõesToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1121, 28);
+            this.menuStrip.Size = new System.Drawing.Size(1122, 28);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -62,6 +61,7 @@
             // 
             this.hotelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.informaçõesToolStripMenuItem1});
+            this.hotelToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.hotelToolStripMenuItem.Name = "hotelToolStripMenuItem";
             this.hotelToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.hotelToolStripMenuItem.Text = "Hotel";
@@ -75,6 +75,7 @@
             // 
             // hóspedesToolStripMenuItem
             // 
+            this.hóspedesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.hóspedesToolStripMenuItem.Name = "hóspedesToolStripMenuItem";
             this.hóspedesToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
             this.hóspedesToolStripMenuItem.Text = "Hóspedes";
@@ -83,6 +84,7 @@
             // 
             this.funcionáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loginToolStripMenuItem1});
+            this.funcionáriosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
             this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
@@ -96,40 +98,31 @@
             // 
             // verificarQuartosLivresToolStripMenuItem
             // 
+            this.verificarQuartosLivresToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.verificarQuartosLivresToolStripMenuItem.Name = "verificarQuartosLivresToolStripMenuItem";
             this.verificarQuartosLivresToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
             this.verificarQuartosLivresToolStripMenuItem.Text = "Verificar quartos livres";
             // 
             // informaçõesToolStripMenuItem
             // 
+            this.informaçõesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.informaçõesToolStripMenuItem.Name = "informaçõesToolStripMenuItem";
             this.informaçõesToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.informaçõesToolStripMenuItem.Text = "Sobre";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(163, 83);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(754, 80);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Bem Vindo ao Hotel";
             // 
             // MenuStripScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MintCream;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1121, 543);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            this.BackgroundImage = global::Gerenciamento_de_Hotel.Properties.Resources.logo12;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(1122, 543);
             this.Controls.Add(this.menuStrip);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuStripScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuStripScreen";
@@ -150,6 +143,5 @@
         private System.Windows.Forms.ToolStripMenuItem informaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informaçõesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem1;
-        private System.Windows.Forms.Label label1;
     }
 }
