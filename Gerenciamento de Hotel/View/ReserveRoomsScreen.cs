@@ -87,10 +87,15 @@ namespace Gerenciamento_de_Hotel.View
                     lbl_precoDiariaA.Visible = true;
 
 
-
-                    lbl_precpTotalA.Text = Convert.ToString(listRoom[i].room_precoDiaria * Convert.ToInt32(txtb_quantDias.Text));
+                    if (!string.IsNullOrEmpty(txtb_quantDias.Text))
+                    {
+                        lbl_precpTotalA.Text = Convert.ToString(listRoom[i].room_precoDiaria * Convert.ToInt32(txtb_quantDias.Text));
+                    }
+                    else
+                    {
+                        lbl_precpTotalA.Text = Convert.ToString(listRoom[i].room_precoDiaria);
+                    }
                     lbl_precpTotalA.Visible = true;
-
                 }
             }
         }
