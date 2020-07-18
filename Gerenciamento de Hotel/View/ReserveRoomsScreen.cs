@@ -37,7 +37,7 @@ namespace Gerenciamento_de_Hotel.View
             lbl_precpTotalA.Visible = false;
         }
 
-        //se não foi filtrado nada ou seja filtroslavo == false, o select retorna os quartos disponiveis padrao
+        //se não foi filtrado nada ou seja filtrosalvo == false, o select retorna os quartos disponiveis como retorno padrao
 
         private void btn_filtrar_Click(object sender, EventArgs e)
         {
@@ -69,8 +69,6 @@ namespace Gerenciamento_de_Hotel.View
 
         private void cbox_quarto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listGuest = controllerGuest.retornaGuest(0);
-
             for (int i = 0; i < listRoom.Count; i++)
             {
                 if (cbox_quarto.SelectedIndex == i)
@@ -87,7 +85,6 @@ namespace Gerenciamento_de_Hotel.View
                     lbl_camasSolteiroA.Visible = true;
                     lbl_quantMaxPessoasA.Visible = true;
                     lbl_precoDiariaA.Visible = true;
-
 
                     if (!string.IsNullOrEmpty(txtb_quantDias.Text))
                     {
@@ -112,21 +109,34 @@ namespace Gerenciamento_de_Hotel.View
 
         private void btn_reservar_Click(object sender, EventArgs e)
         {
+            int verificaSeRetornou = 0;
+
             //valida se as textbox estão preenchidas corretamente, ou seja,
-            //valida se o hospede realmente existe
-            //valida se o campo num dias é um numero msm
+            if ((!string.IsNullOrEmpty(txtb_quantDias.Text)) && (service.verificaIntOrFloat(txtb_quantDias.Text)) && (!string.IsNullOrEmpty(txtb_cpf.Text)))
+            {
+                var listGuest = controllerGuest.retornaGuest(0);
 
-            //ação do button
+                for (int i = 0; i < listGuest.Count; i++)
+                {
+                    if (txtb_cpf.Text.Trim() == listGuest[i].gue_cpf)
+                    {                       
+                        verificaSeRetornou = 1;
+                    }
+                }
 
-            // add o preço total ao funcionário
-            // botar o quarto como ocupado
-            // add a fk do guest no room
+                if (verificaSeRetornou == 1)
+                {
+                    // add o preço total ao funcionário
+                    // botar o quarto como ocupado
+                    // add a fk do guest no room
 
-
-
-
-
-            //limpar todos os campos
+                    //limpar todos os campos
+                }
+                else
+                {
+                    //dar opção para cadastra hóspede com esse cpf
+                }
+            }
         }
     }
 }
