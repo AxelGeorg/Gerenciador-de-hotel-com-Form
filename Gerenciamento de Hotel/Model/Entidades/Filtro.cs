@@ -13,5 +13,7 @@ namespace Gerenciamento_de_Hotel.Model.Entidades
         public int quantCamaCasal { get; set; }
         public int quantCamaSolteiro { get; set; }
         public int quantPessoas { get; set; }
+        public string filtrosql { get; set; }
+        public bool filtroSalvo { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Gerenciamento_de_Hotel.Controller;
+using Gerenciamento_de_Hotel.Model.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,116 @@ namespace Gerenciamento_de_Hotel.View
 {
     public partial class ReserveRoomsScreen : Form
     {
+        RoomController controllerRoom = new RoomController();
+        GuestController controllerGuest = new GuestController();
+        FiltroScreen telaFiltro = new FiltroScreen();
+        string filtroSQL = "select * from room where room_disponibilidade = true;";
+        List<Room> listRoom = new List<Room>();
+        List<Guest> listGuest = new List<Guest>();
+        
+
         public ReserveRoomsScreen()
         {
             InitializeComponent();
+            listaComboBox();
+
+            lbl_numeroQuartoA.Visible = false;
+            lbl_quantCamasCasalA.Visible = false;
+            lbl_camasSolteiroA.Visible = false;
+            lbl_quantMaxPessoasA.Visible = false;
+            lbl_precoDiariaA.Visible = false;
+            lbl_precpTotalA.Visible = false;
+        }
+
+        //se não foi filtrado nada ou seja filtroslavo == false, o select retorna os quartos disponiveis padrao
+
+        private void btn_filtrar_Click(object sender, EventArgs e)
+        {
+            FiltroScreen tela = new FiltroScreen();
+            tela.ShowDialog();
+        }
+
+        private void btn_comeBack_Click(object sender, EventArgs e)
+        {
+            GerenciadorStripScreen tela = new GerenciadorStripScreen();
+            tela.Hide();
+            tela.ShowDialog();
+        }
+        private void listaComboBox()
+        {
+            //era pra pegar o filtrosql da tela filtro mas não estaaakkk
+            if (!string.IsNullOrEmpty(telaFiltro.filtroSQL))
+            {
+                filtroSQL = telaFiltro.filtroSQL;
+            }
+
+            listRoom = controllerRoom.retornaRoomComFiltro(filtroSQL);
+
+            for (int i = 0; i < listRoom.Count; i++)
+            {
+                cbox_quarto.Items.Add(listRoom[i].room_numeroQuarto);
+            }
+        }
+
+        private void cbox_quarto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listGuest = controllerGuest.retornaGuest(0);
+
+            for (int i = 0; i < listRoom.Count; i++)
+            {
+                if (cbox_quarto.SelectedIndex == i)
+                {
+
+                    lbl_numeroQuartoA.Text = listRoom[i].room_numeroQuarto;
+                    lbl_quantCamasCasalA.Text = Convert.ToString(listRoom[i].room_quantCasal);
+                    lbl_camasSolteiroA.Text = Convert.ToString(listRoom[i].room_quantSolteiro);
+                    lbl_quantMaxPessoasA.Text = Convert.ToString(listRoom[i].room_quantPessoa);
+                    lbl_precoDiariaA.Text = Convert.ToString(listRoom[i].room_precoDiaria);
+
+                    lbl_numeroQuartoA.Visible = true;
+                    lbl_quantCamasCasalA.Visible = true;
+                    lbl_camasSolteiroA.Visible = true;
+                    lbl_quantMaxPessoasA.Visible = true;
+                    lbl_precoDiariaA.Visible = true;
+
+
+
+                    lbl_precpTotalA.Text = Convert.ToString(listRoom[i].room_precoDiaria * Convert.ToInt32(txtb_quantDias.Text));
+                    lbl_precpTotalA.Visible = true;
+
+                }
+            }
+        }
+
+        private void txtb_quantDias_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrEmpty(txtb_quantDias.Text)) && (lbl_precpTotalA.Visible))
+            {
+                lbl_precpTotalA.Text = Convert.ToString(Convert.ToInt32(lbl_precoDiariaA.Text) * Convert.ToInt32(txtb_quantDias.Text));
+            }
+            else
+            {
+                lbl_precpTotalA.Text = "";
+            }
+        }
+
+        private void btn_reservar_Click(object sender, EventArgs e)
+        {
+            //valida se as textbox estão preenchidas corretamente, ou seja,
+            //valida se o hospede realmente existe
+            //valida se o campo num dias é um numero msm
+
+            //ação do button
+
+            // add o preço total ao funcionário
+            // botar o quarto como ocupado
+            // add a fk do guest no room
+
+
+
+
+
+            //limpar todos os campos
         }
     }
 }

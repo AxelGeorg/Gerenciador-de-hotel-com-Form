@@ -244,6 +244,43 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 throw new Exception("Erro ao acessar a lista de quartos" + ex.Message);
             }
         }
+        
+        public List<Room> BuscarQuartosComFiltro(string filtrosql)
+        {
+            try
+            {
+                var listRoom = new List<Room>();
+                
+                using (connection = new MySqlConnection(conexaoString))
+                {
+                    using (command = new MySqlCommand(filtrosql, connection))
+                    {
+                        connection.Open(); // abre a conexão
+                        using (MySqlDataReader dataReader = command.ExecuteReader())
+                        {
+                            while (dataReader.Read())
+                            {
+                                Room room = new Room();
+                                room.room_id = Convert.ToInt32(dataReader["room_id"].ToString());
+                                room.room_numeroQuarto = dataReader["room_numeroQuarto"].ToString();
+                                room.room_quantCasal = Convert.ToInt32(dataReader["room_quantCasal"].ToString());
+                                room.room_quantSolteiro = Convert.ToInt32(dataReader["room_quantSolteiro"].ToString());
+                                room.room_disponibilidade = Convert.ToBoolean(dataReader["room_disponibilidade"].ToString());
+                                room.room_limpeza = Convert.ToBoolean(dataReader["room_limpeza"].ToString());
+                                room.room_precoDiaria = float.Parse(dataReader["room_precoDiaria"].ToString());
+                                room.room_quantPessoa = Convert.ToInt32(dataReader["room_quantPessoa"].ToString());
+                                listRoom.Add(room);
+                            }
+                        }
+                        return listRoom;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao acessar a lista de quartos" + ex.Message);
+            }
+        }
 
         /// <summary>
         /// Deleta o quarto desejado.
