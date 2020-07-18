@@ -96,6 +96,7 @@
             // 
             // cbox_quarto
             // 
+            this.cbox_quarto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbox_quarto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_quarto.FormattingEnabled = true;
             this.cbox_quarto.Location = new System.Drawing.Point(236, 279);
@@ -140,6 +141,7 @@
             // 
             // btn_filtrar
             // 
+            this.btn_filtrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_filtrar.Location = new System.Drawing.Point(236, 222);
             this.btn_filtrar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_filtrar.Name = "btn_filtrar";
@@ -295,6 +297,7 @@
             // 
             // btn_reservar
             // 
+            this.btn_reservar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_reservar.Location = new System.Drawing.Point(611, 317);
             this.btn_reservar.Name = "btn_reservar";
             this.btn_reservar.Size = new System.Drawing.Size(211, 26);

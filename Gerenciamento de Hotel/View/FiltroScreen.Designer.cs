@@ -46,7 +46,7 @@
             // txtb_quantPessoa
             // 
             this.txtb_quantPessoa.Location = new System.Drawing.Point(283, 42);
-            this.txtb_quantPessoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_quantPessoa.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_quantPessoa.Name = "txtb_quantPessoa";
             this.txtb_quantPessoa.Size = new System.Drawing.Size(170, 20);
             this.txtb_quantPessoa.TabIndex = 8;
@@ -66,7 +66,7 @@
             // txtb_quantCamaSolteiro
             // 
             this.txtb_quantCamaSolteiro.Location = new System.Drawing.Point(283, 122);
-            this.txtb_quantCamaSolteiro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_quantCamaSolteiro.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_quantCamaSolteiro.Name = "txtb_quantCamaSolteiro";
             this.txtb_quantCamaSolteiro.Size = new System.Drawing.Size(170, 20);
             this.txtb_quantCamaSolteiro.TabIndex = 10;
@@ -86,7 +86,7 @@
             // txtb_quantCamaCasal
             // 
             this.txtb_quantCamaCasal.Location = new System.Drawing.Point(283, 78);
-            this.txtb_quantCamaCasal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_quantCamaCasal.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_quantCamaCasal.Name = "txtb_quantCamaCasal";
             this.txtb_quantCamaCasal.Size = new System.Drawing.Size(170, 20);
             this.txtb_quantCamaCasal.TabIndex = 12;
@@ -128,7 +128,7 @@
             // txtb_precoMin
             // 
             this.txtb_precoMin.Location = new System.Drawing.Point(149, 162);
-            this.txtb_precoMin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_precoMin.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_precoMin.Name = "txtb_precoMin";
             this.txtb_precoMin.Size = new System.Drawing.Size(117, 20);
             this.txtb_precoMin.TabIndex = 15;
@@ -137,7 +137,7 @@
             // txtb_precoMax
             // 
             this.txtb_precoMax.Location = new System.Drawing.Point(323, 163);
-            this.txtb_precoMax.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_precoMax.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_precoMax.Name = "txtb_precoMax";
             this.txtb_precoMax.Size = new System.Drawing.Size(130, 20);
             this.txtb_precoMax.TabIndex = 16;
@@ -145,8 +145,9 @@
             // 
             // btn_filtrar
             // 
+            this.btn_filtrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_filtrar.Location = new System.Drawing.Point(109, 214);
-            this.btn_filtrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_filtrar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_filtrar.Name = "btn_filtrar";
             this.btn_filtrar.Size = new System.Drawing.Size(113, 24);
             this.btn_filtrar.TabIndex = 17;
@@ -156,9 +157,10 @@
             // 
             // btn_removerFiltro
             // 
+            this.btn_removerFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_removerFiltro.Enabled = false;
             this.btn_removerFiltro.Location = new System.Drawing.Point(245, 214);
-            this.btn_removerFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_removerFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.btn_removerFiltro.Name = "btn_removerFiltro";
             this.btn_removerFiltro.Size = new System.Drawing.Size(113, 24);
             this.btn_removerFiltro.TabIndex = 18;
@@ -195,7 +197,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtb_quantPessoa);
             this.Controls.Add(this.lb_quantPessoa);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FiltroScreen";
             this.Text = "FiltroScreen";
             this.ResumeLayout(false);

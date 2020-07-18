@@ -1,5 +1,6 @@
 ﻿using Gerenciamento_de_Hotel.Controller;
 using Gerenciamento_de_Hotel.Model.Entidades;
+using Gerenciamento_de_Hotel.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace Gerenciamento_de_Hotel.View
     {
         RoomController controllerRoom = new RoomController();
         GuestController controllerGuest = new GuestController();
+        HotelService service = new HotelService();
         FiltroScreen telaFiltro = new FiltroScreen();
         string filtroSQL = "select * from room where room_disponibilidade = true;";
         List<Room> listRoom = new List<Room>();
@@ -40,7 +42,7 @@ namespace Gerenciamento_de_Hotel.View
         private void btn_filtrar_Click(object sender, EventArgs e)
         {
             FiltroScreen tela = new FiltroScreen();
-            tela.ShowDialog();
+            tela.Show();
         }
 
         private void btn_comeBack_Click(object sender, EventArgs e)
@@ -102,13 +104,9 @@ namespace Gerenciamento_de_Hotel.View
 
         private void txtb_quantDias_TextChanged(object sender, EventArgs e)
         {
-            if ((!string.IsNullOrEmpty(txtb_quantDias.Text)) && (lbl_precpTotalA.Visible))
+            if ((!string.IsNullOrEmpty(txtb_quantDias.Text)) && (lbl_precpTotalA.Visible) && (service.verificaIntOrFloat(txtb_quantDias.Text)))
             {
                 lbl_precpTotalA.Text = Convert.ToString(Convert.ToInt32(lbl_precoDiariaA.Text) * Convert.ToInt32(txtb_quantDias.Text));
-            }
-            else
-            {
-                lbl_precpTotalA.Text = "";
             }
         }
 

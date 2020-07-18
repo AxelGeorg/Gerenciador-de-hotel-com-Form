@@ -46,9 +46,7 @@ namespace Gerenciamento_de_Hotel.View
 
         private void btn_comeBack_Click(object sender, EventArgs e)
         {
-            ReserveRoomsScreen tela = new ReserveRoomsScreen();
-            tela.Hide();
-            tela.ShowDialog();
+            this.Hide();
         }
 
         //salva filtro
@@ -130,9 +128,7 @@ namespace Gerenciamento_de_Hotel.View
                     precoMaxGlobal = filtro.precoMax;
                     salvou = true;
 
-                    ReserveRoomsScreen tela = new ReserveRoomsScreen();
-                    tela.Hide();
-                    tela.Show();
+                    this.Hide();
                 }
             }
             else
