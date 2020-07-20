@@ -18,6 +18,7 @@ namespace Gerenciamento_de_Hotel.View
         Filtro filtro = new Filtro();
         HotelService service = new HotelService();
         RoomController controller = new RoomController();
+        ReserveRoomsScreen reserveRoomsScreen = new ReserveRoomsScreen();
 
 
         public int quantPessoasGlobal;
@@ -32,6 +33,7 @@ namespace Gerenciamento_de_Hotel.View
         public FiltroScreen()
         {
             InitializeComponent();
+            preencherCampos();
 
             //talvez funcione
             if (salvou == true)
@@ -44,6 +46,36 @@ namespace Gerenciamento_de_Hotel.View
             }
         }
 
+        private void preencherCampos()
+        {
+            if (quantPessoasGlobal != 0)
+            {
+                txtb_quantPessoa.Text = Convert.ToString(quantPessoasGlobal);
+            }
+
+            if (quantCamasCasalGlobal != 0)
+            {
+                txtb_quantCamaCasal.Text = Convert.ToString(quantCamasCasalGlobal);
+            }
+
+            if (quantCamasSolteiroGlobal != 0)
+            {
+                txtb_quantCamaSolteiro.Text = Convert.ToString(quantCamasSolteiroGlobal);
+            }
+
+            if (precoMinGlobal != 0)
+            {
+                txtb_precoMin.Text = Convert.ToString(precoMinGlobal);
+            }
+
+            if (precoMaxGlobal != 0)
+            {
+                txtb_precoMax.Text = Convert.ToString(precoMaxGlobal);
+            }
+
+      
+        }
+
         private void btn_comeBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -54,9 +86,39 @@ namespace Gerenciamento_de_Hotel.View
         {
             int verificaSeValidou = 0;
             filtroSQL = "select * from room where room_disponibilidade = true ";
+
+            /* --------------------------Daniel Inicio----------------------*/
+
+            if (txtb_precoMax.Text != "")
+            {
+                filtroSQL = filtroSQL + " and room_precoDiaria <= " + txtb_precoMax.Text;
+                precoMaxGlobal = Convert.ToInt32(txtb_precoMax.Text);
+            }
+
+            if (txtb_precoMin.Text != "")
+            {
+                filtroSQL = filtroSQL + " and room_precoDiaria >= " + txtb_precoMin.Text;
+            }
+
+            if (txtb_quantCamaCasal.Text != "")
+            {
+                filtroSQL = filtroSQL + " and room_quantCasal >= " + txtb_quantCamaCasal.Text;
+            }
+
+            if (txtb_quantCamaSolteiro.Text != "")
+            {
+                filtroSQL = filtroSQL + " and room_quantSolteiro >= " + txtb_quantCamaSolteiro.Text;
+            }
+
+            if (txtb_quantPessoa.Text != "")
+            {
+                filtroSQL = filtroSQL + " and room_quantPessoa >= " + txtb_quantPessoa.Text;
+            }
+
+            /* ----------------------------Daniel Fim-----------------------*/
             //valida campos
 
-            if ((!string.IsNullOrEmpty(txtb_precoMin.Text) && (service.verificaIntOrFloat(txtb_precoMin.Text))))
+            /*if ((!string.IsNullOrEmpty(txtb_precoMin.Text) && (service.verificaIntOrFloat(txtb_precoMin.Text))))
             {
                 filtro.precoMin = float.Parse(txtb_precoMin.Text);
                 filtroSQL = filtroSQL + " and room_precoDiaria >= " + filtro.precoMin + "";
@@ -134,7 +196,50 @@ namespace Gerenciamento_de_Hotel.View
             else
             {
                 MessageBox.Show("O filtro não foi salvo pois algum campo está incorreto!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }*/
+            filtroSQL = filtroSQL + ";";
+            reserveRoomsScreen.sql = filtroSQL;
+            preencheVariavel();//Preenche as variaveis da classe FiltroScreen a partir dos textBox
+            reserveRoomsScreen.retornaDados(quantPessoasGlobal, quantCamasCasalGlobal, quantCamasSolteiroGlobal, precoMinGlobal, precoMaxGlobal);// Chama o método para preencher as variaveis da tela Reserve
+            reserveRoomsScreen.listaComboBox(filtroSQL);//Chama o método para realizar o select
+            this.Hide();// Fechar a tela FiltroScreen
+        }
+
+        private void preencheVariavel()
+        {
+            if (txtb_quantPessoa.Text != "")
+            {
+                quantPessoasGlobal = Convert.ToInt32(txtb_quantPessoa.Text);
             }
+
+            if (txtb_quantCamaCasal.Text != "")
+            {
+                quantCamasCasalGlobal = Convert.ToInt32(txtb_quantCamaCasal.Text);
+            }
+
+            if (txtb_quantCamaSolteiro.Text != "")
+            {
+                quantCamasSolteiroGlobal = Convert.ToInt32(txtb_quantCamaSolteiro.Text);
+            }
+
+            if (txtb_precoMax.Text != "")
+            {
+                precoMaxGlobal = float.Parse(txtb_precoMax.Text);
+            }
+
+            if (txtb_precoMin.Text != "")
+            {
+                precoMinGlobal = float.Parse(txtb_precoMin.Text);
+            }
+        }
+
+        public void retornaDados(int quantPessoas, int quantCamasCasal, int quantCamasSolteiro, float precoMin, float precoMax)
+        {
+            quantPessoasGlobal       = quantPessoas;
+            quantCamasCasalGlobal    = quantCamasCasal;
+            quantCamasSolteiroGlobal = quantCamasSolteiro;
+            precoMinGlobal           = precoMin;
+            precoMaxGlobal           = precoMax;
         }
     }
 }
