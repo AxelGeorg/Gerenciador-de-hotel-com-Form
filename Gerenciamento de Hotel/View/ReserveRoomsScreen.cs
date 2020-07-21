@@ -18,25 +18,21 @@ namespace Gerenciamento_de_Hotel.View
         RoomController controllerRoom = new RoomController();
         GuestController controllerGuest = new GuestController();
         HotelService service = new HotelService();
-        //FiltroScreen telaFiltro = new FiltroScreen();
-        string filtroSQL = "select * from room where room_disponibilidade = true;";
         List<Room> listRoom = new List<Room>();
-        List<Guest> listGuest = new List<Guest>();
-        public string sql;
+        FiltroScreen tela;
+        string filtroSQL = "select * from room where room_disponibilidade = true;";
 
-        public int quantPessoas;
-        public int quantCamasCasal;
-        public int quantCamasSolteiro;
-        public float precoMin;
-        public float precoMax;
-
+        public int quantPessoas = 0;
+        public int quantCamasCasal = 0;
+        public int quantCamasSolteiro = 0;
+        public float precoMin = 0;
+        public float precoMax = 0;
 
         public ReserveRoomsScreen()
         {
             InitializeComponent();
-            listaComboBox(filtroSQL);
 
-            quantPessoas = 0;
+            listaComboBox(filtroSQL);
 
             lbl_numeroQuartoA.Visible = false;
             lbl_quantCamasCasalA.Visible = false;
@@ -46,12 +42,46 @@ namespace Gerenciamento_de_Hotel.View
             lbl_precpTotalA.Visible = false;
         }
 
-        //se não foi filtrado nada ou seja filtrosalvo == false, o select retorna os quartos disponiveis como retorno padrao
+        public ReserveRoomsScreen(string sqlstring)
+        {
+            InitializeComponent();
+
+            filtroSQL = sqlstring;
+
+            listaComboBox(filtroSQL);
+
+            lbl_numeroQuartoA.Visible = false;
+            lbl_quantCamasCasalA.Visible = false;
+            lbl_camasSolteiroA.Visible = false;
+            lbl_quantMaxPessoasA.Visible = false;
+            lbl_precoDiariaA.Visible = false;
+            lbl_precpTotalA.Visible = false;
+        }
+
+        public ReserveRoomsScreen(string sqlstring, int quantPessoasGlobal, int quantCamasCasalGlobal, int quantCamasSolteiroGlobal, float precoMinGlobal, float precoMaxGlobal)
+        {
+            InitializeComponent();
+
+            quantPessoas = quantPessoasGlobal;
+            quantCamasCasal = quantCamasCasalGlobal;
+            quantCamasSolteiro = quantCamasSolteiroGlobal;
+            precoMin = precoMinGlobal;
+            precoMax = precoMaxGlobal;
+            filtroSQL = sqlstring;
+
+            listaComboBox(filtroSQL);
+
+            lbl_numeroQuartoA.Visible = false;
+            lbl_quantCamasCasalA.Visible = false;
+            lbl_camasSolteiroA.Visible = false;
+            lbl_quantMaxPessoasA.Visible = false;
+            lbl_precoDiariaA.Visible = false;
+            lbl_precpTotalA.Visible = false;
+        }
 
         private void btn_filtrar_Click(object sender, EventArgs e)
         {
-            FiltroScreen tela = new FiltroScreen();
-            tela.retornaDados(quantPessoas, quantCamasCasal, quantCamasSolteiro, precoMin, precoMax);
+            tela = new FiltroScreen(this, quantPessoas, quantCamasCasal, quantCamasSolteiro, precoMin, precoMax);
             tela.Show();
         }
 
@@ -63,29 +93,17 @@ namespace Gerenciamento_de_Hotel.View
         }
         public void listaComboBox(string sql)
         {
-            //era pra pegar o filtrosql da tela filtro mas não estaaakkk
-            /*if (!string.IsNullOrEmpty(telaFiltro.filtroSQL))
-            {
-                filtroSQL = telaFiltro.filtroSQL;
-            }*/
-            if(sql != "")
-            {
-                cbox_quarto.Items.Clear();
-                listRoom = controllerRoom.retornaRoomComFiltro(sql);
+            cbox_quarto.Items.Clear();
+            listRoom = controllerRoom.retornaRoomComFiltro(sql);
 
-                for (int i = 0; i < listRoom.Count; i++)
-                {
-                    cbox_quarto.Items.Add(listRoom[i].room_numeroQuarto);
-                }
-                filtroSQL = sql;
+            for (int i = 0; i < listRoom.Count; i++)
+            {
+                cbox_quarto.Items.Add(listRoom[i].room_numeroQuarto);
             }
-
-            
         }
 
         private void cbox_quarto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //listaComboBox(filtroSQL);
             for (int i = 0; i < listRoom.Count; i++)
             {
                 if (cbox_quarto.SelectedIndex == i)
@@ -122,13 +140,16 @@ namespace Gerenciamento_de_Hotel.View
             {
                 lbl_precpTotalA.Text = Convert.ToString(Convert.ToInt32(lbl_precoDiariaA.Text) * Convert.ToInt32(txtb_quantDias.Text));
             }
+            else if ((string.IsNullOrEmpty(txtb_quantDias.Text)) && (lbl_precpTotalA.Visible))
+            {
+                lbl_precpTotalA.Text = lbl_precoDiariaA.Text;
+            }
         }
 
         private void btn_reservar_Click(object sender, EventArgs e)
         {
             int verificaSeRetornou = 0;
 
-            //valida se as textbox estão preenchidas corretamente, ou seja,
             if ((!string.IsNullOrEmpty(txtb_quantDias.Text)) && (service.verificaIntOrFloat(txtb_quantDias.Text)) && (!string.IsNullOrEmpty(txtb_cpf.Text)))
             {
                 var listGuest = controllerGuest.retornaGuest(0);
@@ -155,20 +176,5 @@ namespace Gerenciamento_de_Hotel.View
                 }
             }
         }
-
-        private void ReserveRoomsScreen_Load(object sender, EventArgs e)
-        {
-            listaComboBox(filtroSQL);
-        }
-
-        public void retornaDados(int quantPessoasGlobal, int quantCamasCasalGlobal, int quantCamasSolteiroGlobal, float precoMinGlobal, float precoMaxGlobal)
-        {
-            quantPessoas       = quantPessoasGlobal;
-            quantCamasCasal    = quantCamasCasalGlobal;
-            quantCamasSolteiro = quantCamasSolteiroGlobal;
-            precoMin           = precoMinGlobal;
-            precoMax           = precoMaxGlobal;
-        }
-
     }
 }

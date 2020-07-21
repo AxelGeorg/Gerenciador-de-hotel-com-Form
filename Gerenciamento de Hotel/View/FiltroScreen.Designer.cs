@@ -158,7 +158,6 @@
             // btn_removerFiltro
             // 
             this.btn_removerFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_removerFiltro.Enabled = false;
             this.btn_removerFiltro.Location = new System.Drawing.Point(245, 214);
             this.btn_removerFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.btn_removerFiltro.Name = "btn_removerFiltro";
@@ -166,6 +165,7 @@
             this.btn_removerFiltro.TabIndex = 18;
             this.btn_removerFiltro.Text = "Remover";
             this.btn_removerFiltro.UseVisualStyleBackColor = true;
+            this.btn_removerFiltro.Click += new System.EventHandler(this.btn_removerFiltro_Click);
             // 
             // btn_comeBack
             // 
@@ -199,6 +199,7 @@
             this.Controls.Add(this.lb_quantPessoa);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FiltroScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FiltroScreen";
             this.ResumeLayout(false);
             this.PerformLayout();
