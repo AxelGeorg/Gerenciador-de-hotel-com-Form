@@ -16,8 +16,7 @@ create table room (
     room_quantSolteiro   int not null,
     room_disponibilidade bool not null,
     room_limpeza  		 bool not null,
-    room_precoDiaria     float not null,
-    room_precoTotal      float
+    room_precoDiaria     float not null
 ); 
 
 create table foods(

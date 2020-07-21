@@ -174,6 +174,37 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         }
 
         /// <summary>
+        /// Altera o hóspede desejado após a reserva do quarto.
+        /// </summary>
+        /// <param name="guest"></param>
+        /// <param name="tipoSelect"></param>
+        /// <returns></returns>
+        public bool alterarGuestReserva(Guest guest)
+        {
+            try
+            {
+                string query = "update guest set gue_diasReservado = "+guest.gue_diasReservados+ ", gue_precoTotal = "+guest.gue_precoTotal+ ", gue_fk_room = "+guest.gue_fk_room+" where gue_id = " + guest.gue_id + ";";
+
+                connection = new MySqlConnection(conexaoString);
+                connection.Open(); // abre a conexão
+                command = new MySqlCommand();
+                command.Connection = connection;
+
+                command.CommandType = CommandType.Text;
+                command.CommandText = query;
+
+                command.ExecuteNonQuery();
+                command.Connection.Close(); //fecha conexão
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
         ///  Deleta o hóspede desejado.
         /// </summary>
         /// <param name="id"></param>

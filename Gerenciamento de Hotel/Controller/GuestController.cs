@@ -27,6 +27,11 @@ namespace Gerenciamento_de_Hotel.Controller
             return guestDAO.alterarGuest(guest, tipoSelect);
         }
 
+        public bool alteraGuestParaReserva(Guest guest)
+        {
+            return guestDAO.alterarGuestReserva(guest);
+        }
+
         public bool deletaGuest(int id)
         {
             return guestDAO.deletarGuest(id);

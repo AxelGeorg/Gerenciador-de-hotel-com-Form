@@ -19,8 +19,11 @@ namespace Gerenciamento_de_Hotel.View
         GuestController controllerGuest = new GuestController();
         HotelService service = new HotelService();
         List<Room> listRoom = new List<Room>();
+        Guest guest = new Guest();
+        Room room = new Room();
         FiltroScreen tela;
         string filtroSQL = "select * from room where room_disponibilidade = true;";
+        int room_id_fk;
 
         public int quantPessoas = 0;
         public int quantCamasCasal = 0;
@@ -77,7 +80,7 @@ namespace Gerenciamento_de_Hotel.View
         private void btn_comeBack_Click(object sender, EventArgs e)
         {
             GerenciadorStripScreen tela = new GerenciadorStripScreen();
-            tela.Hide();
+            this.Hide();
             tela.ShowDialog();
         }
         public void listaComboBox(string sql)
@@ -97,6 +100,7 @@ namespace Gerenciamento_de_Hotel.View
             {
                 if (cbox_quarto.SelectedIndex == i)
                 {
+                    room_id_fk = listRoom[i].room_id;
 
                     lbl_numeroQuartoA.Text = listRoom[i].room_numeroQuarto;
                     lbl_quantCamasCasalA.Text = Convert.ToString(listRoom[i].room_quantCasal);
@@ -148,22 +152,66 @@ namespace Gerenciamento_de_Hotel.View
                     if (txtb_cpf.Text.Trim() == listGuest[i].gue_cpf)
                     {                       
                         verificaSeRetornou = 1;
+
+                        guest.gue_id = listGuest[i].gue_id;
+                        guest.gue_nome = listGuest[i].gue_nome;
+                        guest.gue_cpf = listGuest[i].gue_cpf;
+                        guest.gue_diasReservados = Convert.ToInt32(txtb_quantDias.Text);
+                        guest.gue_precoTotal = float.Parse(lbl_precpTotalA.Text);
+                        guest.gue_fk_room = room_id_fk;
+                    }
+                }
+
+                var listRoom = controllerRoom.retornaRoom(0);
+
+                for (int i = 0; i < listRoom.Count; i++)
+                {
+                    if (room_id_fk == listRoom[i].room_id)
+                    {
+                        room = listRoom[i];
+                        /*room.room_id = listRoom[i].room_id;
+                        room.room_numeroQuarto = listRoom[i].room_numeroQuarto;
+                        room.room_quantCasal = listRoom[i].room_quantCasal;
+                        room.room_quantSolteiro = listRoom[i].room_quantSolteiro;*/
+                        room.room_disponibilidade = false;
+                        /*room.room_limpeza = listRoom[i].room_limpeza;
+                        room.room_precoDiaria = listRoom[i].room_precoDiaria;
+                        room.room_quantPessoa = listRoom[i].room_quantPessoa;*/
                     }
                 }
 
                 if (verificaSeRetornou == 1)
                 {
-                    // add o preço total ao funcionário
-                    // botar o quarto como ocupado
-                    // add a fk do guest no room
-
-                    //limpar todos os campos
+                    if (MessageBox.Show("Deseja reservar o quarto "+room.room_numeroQuarto+" ao hóspede "+guest.gue_nome+"?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                    {
+                        controllerGuest.alteraGuestParaReserva(guest);
+                        controllerRoom.alteraRoom(room);
+                        limpaCamposForm();
+                    }
                 }
                 else
                 {
-                    //dar opção para cadastra hóspede com esse cpf
+                    MessageBox.Show("Não é possível reservar o quarto pois não há hóspedes com esse cpf!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("Não é possível reservar o quarto pois os campos foram preenchidos de modo incorreto!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void limpaCamposForm()
+        {
+            string padraoSQL = "select * from room where room_disponibilidade = true;";
+
+            txtb_cpf.Text = "";
+            txtb_quantDias.Text = "";
+            quantPessoas = 0;
+            quantCamasCasal = 0;
+            quantCamasSolteiro = 0;
+            precoMin = 0;
+            precoMax = 0;
+            listaComboBox(padraoSQL);
         }
     }
 }
