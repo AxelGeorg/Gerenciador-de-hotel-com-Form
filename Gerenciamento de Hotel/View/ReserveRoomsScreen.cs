@@ -31,15 +31,7 @@ namespace Gerenciamento_de_Hotel.View
         public ReserveRoomsScreen()
         {
             InitializeComponent();
-
-            listaComboBox(filtroSQL);
-
-            lbl_numeroQuartoA.Visible = false;
-            lbl_quantCamasCasalA.Visible = false;
-            lbl_camasSolteiroA.Visible = false;
-            lbl_quantMaxPessoasA.Visible = false;
-            lbl_precoDiariaA.Visible = false;
-            lbl_precpTotalA.Visible = false;
+            executaCboxAndVisible(filtroSQL);
         }
 
         public ReserveRoomsScreen(string sqlstring)
@@ -47,15 +39,7 @@ namespace Gerenciamento_de_Hotel.View
             InitializeComponent();
 
             filtroSQL = sqlstring;
-
-            listaComboBox(filtroSQL);
-
-            lbl_numeroQuartoA.Visible = false;
-            lbl_quantCamasCasalA.Visible = false;
-            lbl_camasSolteiroA.Visible = false;
-            lbl_quantMaxPessoasA.Visible = false;
-            lbl_precoDiariaA.Visible = false;
-            lbl_precpTotalA.Visible = false;
+            executaCboxAndVisible(filtroSQL);
         }
 
         public ReserveRoomsScreen(string sqlstring, int quantPessoasGlobal, int quantCamasCasalGlobal, int quantCamasSolteiroGlobal, float precoMinGlobal, float precoMaxGlobal)
@@ -69,7 +53,12 @@ namespace Gerenciamento_de_Hotel.View
             precoMax = precoMaxGlobal;
             filtroSQL = sqlstring;
 
-            listaComboBox(filtroSQL);
+            executaCboxAndVisible(filtroSQL);
+        }
+
+        public void executaCboxAndVisible(string sqlRecebida)
+        {
+            listaComboBox(sqlRecebida);
 
             lbl_numeroQuartoA.Visible = false;
             lbl_quantCamasCasalA.Visible = false;
