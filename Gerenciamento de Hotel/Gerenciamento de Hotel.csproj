@@ -124,6 +124,12 @@
     <Compile Include="Model\Entidades\Guest.cs" />
     <Compile Include="Model\Entidades\Room.cs" />
     <Compile Include="Services\HotelService.cs" />
+    <Compile Include="View\CloseRoomsScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CloseRoomsScreen.Designer.cs">
+      <DependentUpon>CloseRoomsScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Employees\CreateEmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     <Compile Include="View\RoomCRUD\UpdateRoomScreen.Designer.cs">
       <DependentUpon>UpdateRoomScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\CloseRoomsScreen.resx">
+      <DependentUpon>CloseRoomsScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Employees\CreateEmployeeScreen.resx">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>

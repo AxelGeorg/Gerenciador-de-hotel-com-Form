@@ -356,3 +356,4 @@ C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento 
 C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ReserveRoomsScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.FiltroScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ReserveRoomsScreen.resources
+C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.CloseRoomsScreen.resources

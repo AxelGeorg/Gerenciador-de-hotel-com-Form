@@ -115,5 +115,12 @@ namespace Gerenciamento_de_Hotel.View
             this.Hide();
             tela.ShowDialog();
         }
+
+        private void quartoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CloseRoomsScreen tela = new CloseRoomsScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
     }
 }

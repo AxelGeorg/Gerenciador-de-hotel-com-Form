@@ -20,6 +20,10 @@ namespace Gerenciamento_de_Hotel.Controller
         {
             return roomDAO.BuscarQuartosComFiltro(filtrosql);
         }
+        public Room retornaRoomID(int id)
+        {
+            return roomDAO.retornaRoomID(id);
+        }
         public bool cadastrarRoom(Room room)
         {
             return roomDAO.cadastrarRoom(room.room_numeroQuarto, room.room_quantPessoa, room.room_quantCasal, room.room_quantSolteiro, room.room_disponibilidade, room.room_limpeza, room.room_precoDiaria);

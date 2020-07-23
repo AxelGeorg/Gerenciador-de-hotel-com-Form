@@ -282,6 +282,46 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             }
         }
 
+        public Room retornaRoomID(int id)
+        {
+           // Room room = new Room();
+
+            try
+            {
+                var room = new Room();
+                string query = "select * from room where room_id = " + id + ";";
+
+                using (connection = new MySqlConnection(conexaoString))
+                {
+                    using (command = new MySqlCommand(query, connection))
+                    {
+                        connection.Open(); // abre a conexão
+                        using (MySqlDataReader dataReader = command.ExecuteReader())
+                        {
+                            while (dataReader.Read())
+                            {
+                                room.room_id = Convert.ToInt32(dataReader["room_id"].ToString());
+                                room.room_numeroQuarto = dataReader["room_numeroQuarto"].ToString();
+                                room.room_quantCasal = Convert.ToInt32(dataReader["room_quantCasal"].ToString());
+                                room.room_quantSolteiro = Convert.ToInt32(dataReader["room_quantSolteiro"].ToString());
+                                room.room_disponibilidade = Convert.ToBoolean(dataReader["room_disponibilidade"].ToString());
+                                room.room_limpeza = Convert.ToBoolean(dataReader["room_limpeza"].ToString());
+                                room.room_precoDiaria = float.Parse(dataReader["room_precoDiaria"].ToString());
+                                room.room_quantPessoa = Convert.ToInt32(dataReader["room_quantPessoa"].ToString());
+                            }
+                        }
+                        return room;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao acessar o quarto" + ex.Message);
+            }
+
+   
+        }
+
         /// <summary>
         /// Deleta o quarto desejado.
         /// </summary>

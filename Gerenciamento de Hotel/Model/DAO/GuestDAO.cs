@@ -118,6 +118,41 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             }
         }
 
+        public Guest retornaGuestCPF(string cpf)
+        {
+            Guest guest = new Guest();
+            try
+            {
+                string query = "select gue_id, gue_cpf, gue_nome, gue_precoTotal, gue_fk_room from guest where gue_cpf = '" + cpf + "';";
+                using (connection = new MySqlConnection(conexaoString))
+                {
+                    using (command = new MySqlCommand(query, connection))
+                    {
+                        connection.Open(); // abre a conexão
+                        using (MySqlDataReader dataReader = command.ExecuteReader())
+                        {
+                            while (dataReader.Read())
+                            {
+                                guest.gue_id = Convert.ToInt32(dataReader["gue_id"].ToString());
+                                guest.gue_nome = dataReader["gue_nome"].ToString();
+                                guest.gue_fk_room = Convert.ToInt32(dataReader["gue_fk_room"].ToString());
+                                guest.gue_precoTotal = float.Parse(dataReader["gue_precoTotal"].ToString());
+                                guest.gue_cpf = dataReader["gue_cpf"].ToString();
+                                
+                            }
+                        }
+
+                    }
+                }
+                return guest;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao acessar o hóspede através do CPF" + ex.Message);
+            }
+        }
+
         /// <summary>
         /// Cadastra o hóspede desejado.
         /// </summary>
@@ -200,6 +235,31 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             }
             catch (Exception)
             {
+                return false;
+            }
+        }
+
+        public bool alterarGuestCheckOut(int id)
+        {
+            try
+            {
+                string query = "update guest set gue_fk_room = null, gue_precoTotal = 0, gue_diasReservado = 0 where gue_id = " + id + "; ";
+
+                connection = new MySqlConnection(conexaoString);
+                connection.Open(); // abre a conexão
+                command = new MySqlCommand();
+                command.Connection = connection;
+
+                command.CommandType = CommandType.Text;
+                command.CommandText = query;
+
+                command.ExecuteNonQuery();
+                command.Connection.Close(); //fecha conexão
+                return true;
+            }
+            catch (Exception)
+            {
+
                 return false;
             }
         }

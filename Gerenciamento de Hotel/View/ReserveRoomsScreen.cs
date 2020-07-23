@@ -169,14 +169,7 @@ namespace Gerenciamento_de_Hotel.View
                     if (room_id_fk == listRoom[i].room_id)
                     {
                         room = listRoom[i];
-                        /*room.room_id = listRoom[i].room_id;
-                        room.room_numeroQuarto = listRoom[i].room_numeroQuarto;
-                        room.room_quantCasal = listRoom[i].room_quantCasal;
-                        room.room_quantSolteiro = listRoom[i].room_quantSolteiro;*/
                         room.room_disponibilidade = false;
-                        /*room.room_limpeza = listRoom[i].room_limpeza;
-                        room.room_precoDiaria = listRoom[i].room_precoDiaria;
-                        room.room_quantPessoa = listRoom[i].room_quantPessoa;*/
                     }
                 }
 

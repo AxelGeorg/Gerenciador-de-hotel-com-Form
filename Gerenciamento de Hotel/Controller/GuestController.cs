@@ -17,6 +17,11 @@ namespace Gerenciamento_de_Hotel.Controller
             return guestDAO.BuscarGuest(tipoOrdenacao);
         }
 
+        public Guest retornaGuestCPF(string cpf)
+        {
+            return guestDAO.retornaGuestCPF(cpf);
+        }
+
         public bool cadastrarGuest(Guest guest)
         {
             return guestDAO.cadastrarGuest(guest);
@@ -32,9 +37,15 @@ namespace Gerenciamento_de_Hotel.Controller
             return guestDAO.alterarGuestReserva(guest);
         }
 
+        public bool alteraGuestCheckOut(int id)
+        {
+            return guestDAO.alterarGuestCheckOut(id);
+        }
+
         public bool deletaGuest(int id)
         {
             return guestDAO.deletarGuest(id);
         }
+
     }
 }
