@@ -123,7 +123,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             Guest guest = new Guest();
             try
             {
-                string query = "select gue_id, gue_cpf, gue_nome, gue_precoTotal, gue_fk_room from guest where gue_cpf = '" + cpf + "';";
+                string query = "select gue_id, gue_cpf, gue_nome, gue_precoTotal, gue_fk_room from guest where gue_fk_room != 0 and gue_cpf = '" + cpf + "';";
                 using (connection = new MySqlConnection(conexaoString))
                 {
                     using (command = new MySqlCommand(query, connection))

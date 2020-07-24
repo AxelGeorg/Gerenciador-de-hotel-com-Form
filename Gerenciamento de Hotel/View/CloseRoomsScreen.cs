@@ -99,12 +99,12 @@ namespace Gerenciamento_de_Hotel.View
                     {
                         rbtn_efetuado.Enabled = false;
                         rbtn_pendente.Enabled = false;
-                        MessageBox.Show("Hóspede não encontrado");
+                        MessageBox.Show("Hóspede não encontrado por não ter realizado um Check-In ou por não estar cadastrado no sistema!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Hóspede não encontrado");
+                    MessageBox.Show("Hóspede não encontrado por não ter realizado um Check-In ou por não estar cadastrado no sistema!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 e.Handled = true;
