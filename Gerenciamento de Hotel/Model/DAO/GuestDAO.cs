@@ -138,10 +138,8 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                                 guest.gue_fk_room = Convert.ToInt32(dataReader["gue_fk_room"].ToString());
                                 guest.gue_precoTotal = float.Parse(dataReader["gue_precoTotal"].ToString());
                                 guest.gue_cpf = dataReader["gue_cpf"].ToString();
-                                
                             }
                         }
-
                     }
                 }
                 return guest;
@@ -160,16 +158,23 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         /// <returns></returns>
         public bool cadastrarGuest(Guest guest)
         {
-            connection = new MySqlConnection(conexaoString);
-            connection.Open(); // abre a conexão
-            command = new MySqlCommand();
-            command.Connection = connection;
+            try
+            {
+                connection = new MySqlConnection(conexaoString);
+                connection.Open(); // abre a conexão
+                command = new MySqlCommand();
+                command.Connection = connection;
 
-            command.CommandType = CommandType.Text;
-            command.CommandText = "insert into guest (gue_nome, gue_cpf, gue_dataNascimento, gue_diasReservado, gue_precoTotal) values ('"+ guest.gue_nome + "', '" + guest.gue_cpf + "', '" + guest.gue_dataNascimento + "', " + guest.gue_diasReservados + ", " + guest.gue_precoTotal + ");";
-            command.ExecuteNonQuery();
-            command.Connection.Close(); //fecha conexão
-            return true;
+                command.CommandType = CommandType.Text;
+                command.CommandText = "insert into guest (gue_nome, gue_cpf, gue_dataNascimento, gue_diasReservado, gue_precoTotal) values ('" + guest.gue_nome + "', '" + guest.gue_cpf + "', '" + guest.gue_dataNascimento + "', " + guest.gue_diasReservados + ", " + guest.gue_precoTotal + ");";
+                command.ExecuteNonQuery();
+                command.Connection.Close(); //fecha conexão
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }           
         }
 
         /// <summary>

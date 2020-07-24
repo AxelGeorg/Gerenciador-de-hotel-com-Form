@@ -1,4 +1,5 @@
-﻿using Gerenciamento_de_Hotel.View.GuestCRUD;
+﻿using Gerenciamento_de_Hotel.View.ConsumablesCRUD;
+using Gerenciamento_de_Hotel.View.GuestCRUD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,6 +120,20 @@ namespace Gerenciamento_de_Hotel.View
         private void quartoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             CloseRoomsScreen tela = new CloseRoomsScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
+
+        private void verificarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            ReadConsumablesScreen tela = new ReadConsumablesScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
+
+        private void cadastrarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            CreateConsumablesScreen tela = new CreateConsumablesScreen();
             this.Hide();
             tela.ShowDialog();
         }

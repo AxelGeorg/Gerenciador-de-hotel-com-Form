@@ -108,19 +108,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ConsumablesController.cs" />
     <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\GuestController.cs" />
     <Compile Include="Controller\InicializaController.cs" />
     <Compile Include="Controller\RoomController.cs" />
-    <Compile Include="Controller\StartScreensController.cs" />
-    <Compile Include="Model\DAO\DrinksDAO.cs" />
-    <Compile Include="Model\DAO\FoodsDAO.cs" />
+    <Compile Include="Model\DAO\ConsumablesDAO.cs" />
     <Compile Include="Model\DAO\GuestDAO.cs" />
     <Compile Include="Model\DAO\InicializaDAO.cs" />
     <Compile Include="Model\DAO\RoomDAO.cs" />
-    <Compile Include="Model\Entidades\Drinks.cs" />
+    <Compile Include="Model\Entidades\Consumables.cs" />
     <Compile Include="Model\Entidades\Filtro.cs" />
-    <Compile Include="Model\Entidades\Foods.cs" />
     <Compile Include="Model\Entidades\Guest.cs" />
     <Compile Include="Model\Entidades\Room.cs" />
     <Compile Include="Services\HotelService.cs" />
@@ -130,10 +128,16 @@
     <Compile Include="View\CloseRoomsScreen.Designer.cs">
       <DependentUpon>CloseRoomsScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Employees\CreateEmployeeScreen.cs">
+    <Compile Include="View\ConsumablesCRUD\CreateConsumablesScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Employees\CreateEmployeeScreen.Designer.cs">
+    <Compile Include="View\ConsumablesCRUD\CreateConsumablesScreen.Designer.cs">
+      <DependentUpon>CreateConsumablesScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\EmployeesCRUD\CreateEmployeeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EmployeesCRUD\CreateEmployeeScreen.Designer.cs">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FiltroScreen.cs">
@@ -160,11 +164,23 @@
     <Compile Include="View\GuestCRUD\DeleteGuestScreen.Designer.cs">
       <DependentUpon>DeleteGuestScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\LoginGuestScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoginGuestScreen.Designer.cs">
+      <DependentUpon>LoginGuestScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MenuStripScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\MenuStripScreen.Designer.cs">
       <DependentUpon>MenuStripScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConsumablesCRUD\ReadConsumablesScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConsumablesCRUD\ReadConsumablesScreen.Designer.cs">
+      <DependentUpon>ReadConsumablesScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\RoomCRUD\CreateRoomScreen.cs">
       <SubType>Form</SubType>
@@ -172,10 +188,10 @@
     <Compile Include="View\RoomCRUD\CreateRoomScreen.Designer.cs">
       <DependentUpon>CreateRoomScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Employees\DeleteEmployeeScreen.cs">
+    <Compile Include="View\EmployeesCRUD\DeleteEmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Employees\DeleteEmployeeScreen.Designer.cs">
+    <Compile Include="View\EmployeesCRUD\DeleteEmployeeScreen.Designer.cs">
       <DependentUpon>DeleteEmployeeScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\RoomCRUD\DeleteRoomScreen.cs">
@@ -184,10 +200,10 @@
     <Compile Include="View\RoomCRUD\DeleteRoomScreen.Designer.cs">
       <DependentUpon>DeleteRoomScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Employees\EmployeeScreen.cs">
+    <Compile Include="View\EmployeesCRUD\EmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Employees\EmployeeScreen.Designer.cs">
+    <Compile Include="View\EmployeesCRUD\EmployeeScreen.Designer.cs">
       <DependentUpon>EmployeeScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\GuestCRUD\GuestScreen.cs">
@@ -218,10 +234,10 @@
     <Compile Include="View\PanelScreen.Designer.cs">
       <DependentUpon>PanelScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Employees\ReadEmployeeScreen.cs">
+    <Compile Include="View\EmployeesCRUD\ReadEmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Employees\ReadEmployeeScreen.Designer.cs">
+    <Compile Include="View\EmployeesCRUD\ReadEmployeeScreen.Designer.cs">
       <DependentUpon>ReadEmployeeScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\GuestCRUD\ReadGuestScreen.cs">
@@ -248,10 +264,10 @@
     <Compile Include="View\RoomCRUD\RoomScreen.Designer.cs">
       <DependentUpon>RoomScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Employees\UpdateEmployeeScreen.cs">
+    <Compile Include="View\EmployeesCRUD\UpdateEmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Employees\UpdateEmployeeScreen.Designer.cs">
+    <Compile Include="View\EmployeesCRUD\UpdateEmployeeScreen.Designer.cs">
       <DependentUpon>UpdateEmployeeScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\GuestCRUD\UpdateGuestScreen.cs">
@@ -266,10 +282,19 @@
     <Compile Include="View\RoomCRUD\UpdateRoomScreen.Designer.cs">
       <DependentUpon>UpdateRoomScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\StoreGuestScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StoreGuestScreen.Designer.cs">
+      <DependentUpon>StoreGuestScreen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\CloseRoomsScreen.resx">
       <DependentUpon>CloseRoomsScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Employees\CreateEmployeeScreen.resx">
+    <EmbeddedResource Include="View\ConsumablesCRUD\CreateConsumablesScreen.resx">
+      <DependentUpon>CreateConsumablesScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EmployeesCRUD\CreateEmployeeScreen.resx">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FiltroScreen.resx">
@@ -284,8 +309,14 @@
     <EmbeddedResource Include="View\GuestCRUD\DeleteGuestScreen.resx">
       <DependentUpon>DeleteGuestScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\LoginGuestScreen.resx">
+      <DependentUpon>LoginGuestScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MenuStripScreen.resx">
       <DependentUpon>MenuStripScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConsumablesCRUD\ReadConsumablesScreen.resx">
+      <DependentUpon>ReadConsumablesScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ReserveRoomsScreen.resx">
       <DependentUpon>ReserveRoomsScreen.cs</DependentUpon>
@@ -293,13 +324,13 @@
     <EmbeddedResource Include="View\RoomCRUD\CreateRoomScreen.resx">
       <DependentUpon>CreateRoomScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Employees\DeleteEmployeeScreen.resx">
+    <EmbeddedResource Include="View\EmployeesCRUD\DeleteEmployeeScreen.resx">
       <DependentUpon>DeleteEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RoomCRUD\DeleteRoomScreen.resx">
       <DependentUpon>DeleteRoomScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Employees\EmployeeScreen.resx">
+    <EmbeddedResource Include="View\EmployeesCRUD\EmployeeScreen.resx">
       <DependentUpon>EmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GuestCRUD\GuestScreen.resx">
@@ -324,7 +355,7 @@
     <EmbeddedResource Include="View\PanelScreen.resx">
       <DependentUpon>PanelScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Employees\ReadEmployeeScreen.resx">
+    <EmbeddedResource Include="View\EmployeesCRUD\ReadEmployeeScreen.resx">
       <DependentUpon>ReadEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GuestCRUD\ReadGuestScreen.resx">
@@ -336,7 +367,7 @@
     <EmbeddedResource Include="View\RoomCRUD\RoomScreen.resx">
       <DependentUpon>RoomScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Employees\UpdateEmployeeScreen.resx">
+    <EmbeddedResource Include="View\EmployeesCRUD\UpdateEmployeeScreen.resx">
       <DependentUpon>UpdateEmployeeScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GuestCRUD\UpdateGuestScreen.resx">
@@ -344,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RoomCRUD\UpdateRoomScreen.resx">
       <DependentUpon>UpdateRoomScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StoreGuestScreen.resx">
+      <DependentUpon>StoreGuestScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -383,5 +417,6 @@
   <ItemGroup>
     <None Include="Resources\logo12.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

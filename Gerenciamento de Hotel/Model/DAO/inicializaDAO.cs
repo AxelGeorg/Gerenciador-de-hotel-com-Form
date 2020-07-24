@@ -36,7 +36,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         /// <summary>
         /// Cria um funcionário teste na tabela de funcionários.
         /// </summary>
-        public void criaEmployeeTeste()
+        public void criaEmployeePadrao()
         {
             connection = new MySqlConnection(conexaoString);
             connection.Open(); // abre a conexão
@@ -101,7 +101,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         /// <summary>
         /// Cria toda a tabela de bebida na base de dados.
         /// </summary>
-        public void criaTabelaDrink()
+        public void criaTabelaConsumables()
         {
             connection = new MySqlConnection(conexaoString);
             connection.Open(); // abre a conexão
@@ -109,30 +109,11 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             command.Connection = connection;
 
             command.CommandType = CommandType.Text;
-            command.CommandText = "create table if not exists drinks (dri_id int primary key auto_increment," +
-                                                                        "dri_nome varchar(20) not null," +
-                                                                        "dri_preco float not null," +
-                                                                        "dri_tipo varchar(15) not null);";
-
-            command.ExecuteNonQuery();
-            command.Connection.Close(); //fecha conexão
-        }
-
-        /// <summary>
-        /// Cria toda a tabela de comida na base de dados.
-        /// </summary>
-        public void criaTabelaFood()
-        {
-            connection = new MySqlConnection(conexaoString);
-            connection.Open(); // abre a conexão
-            command = new MySqlCommand();
-            command.Connection = connection;
-
-            command.CommandType = CommandType.Text;
-            command.CommandText = "create table if not exists foods (food_id int primary key auto_increment," +
-                                                                        "food_nome varchar(20) not null," +
-                                                                        "food_preco float not null," +
-                                                                        "food_tipo varchar(15) not null);";
+            command.CommandText = "create table if not exists consumables (con_id int primary key auto_increment," +
+                                                                          "con_nome varchar(20) not null," +
+                                                                          "con_tipoProduto varchar(10) not null," +
+                                                                          "con_tipoSabor varchar(10) not null," +
+                                                                          "con_descricao varchar(45));";
 
             command.ExecuteNonQuery();
             command.Connection.Close(); //fecha conexão

@@ -19,18 +19,12 @@ create table room (
     room_precoDiaria     float not null
 ); 
 
-create table foods(
-	food_id    int primary key auto_increment,
-    food_nome  varchar(15),
-    food_preco float,
-    food_tipo  varchar(15)
-);
-
-create table drinks(
-	dri_id int primary key auto_increment,
-    dri_nome  varchar(15),
-    dri_preco float,
-    dri_tipo  varchar(15)
+create table consumables(
+	con_id int primary key auto_increment,
+    con_nome varchar(20) not null,
+    con_tipoProduto varchar(10) not null,
+    con_tipoSabor varchar(15) not null,
+    con_descricao varchar(45)
 );
 
 create table guest (
