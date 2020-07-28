@@ -141,5 +141,60 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 return false;
             }
         }
+
+        public Consumables buscarConsumablesNome(string nome)
+        {
+            Consumables consumables = new Consumables();
+
+            try
+            {
+                string query = "select con_id,con_nome,con_tipoProduto,con_tipoSabor,con_descricao from consumables where con_nome = '" + nome + "';";
+                using (connection = new MySqlConnection(conexaoString))
+                {
+                    using (command = new MySqlCommand(query, connection))
+                    {
+                        connection.Open(); // abre a conexão
+                        using (MySqlDataReader dataReader = command.ExecuteReader())
+                        {
+                            while (dataReader.Read())
+                            {
+                                consumables.con_id = Convert.ToInt32(dataReader["con_id"].ToString());
+                                consumables.con_nome = dataReader["con_nome"].ToString();
+                                consumables.con_tipoProduto = dataReader["con_tipoProduto"].ToString();
+                                consumables.con_tipoSabor = dataReader["con_tipoSabor"].ToString();
+                                consumables.con_descricao = dataReader["con_descricao"].ToString();
+                            }
+                        }
+                        return consumables;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                 throw new Exception("Erro ao acessar o produto" + ex.Message);
+            }
+        }
+
+        public bool deletarConsumables(int id)
+        {
+            try
+            {
+                connection = new MySqlConnection(conexaoString);
+                connection.Open(); // abre a conexão
+                command = new MySqlCommand();
+                command.Connection = connection;
+
+                command.CommandType = CommandType.Text;
+                command.CommandText = "delete from consumables where con_id = " + id + ";";
+                command.ExecuteNonQuery();
+                command.Connection.Close(); //fecha conexão
+                return true;
+            }
+            catch (Exception)
+            {
+                return false; 
+            }
+        }
     }
 }

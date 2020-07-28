@@ -122,19 +122,7 @@ namespace Gerenciamento_de_Hotel.View
             }
             
             txtb_cpf.MaxLength = 14;
-            /*
-            txtb_cpf.SelectionStart = txtb_cpf.Text.Length + 1;
-
-            if (txtb_cpf.Text.Length == 3 || txtb_cpf.Text.Length == 7)
-            {
-                txtb_cpf.Text = txtb_cpf.Text + ".";
-            }
-            else if (txtb_cpf.Text.Length == 11)
-            {
-                txtb_cpf.Text = txtb_cpf.Text + "-";
-            }
-            txtb_cpf.SelectionStart = txtb_cpf.Text.Length + 1;*/
-        }
+                    }
 
         private void txtb_titulo_TextChanged(object sender, EventArgs e)
         {

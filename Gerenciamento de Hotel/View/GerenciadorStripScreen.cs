@@ -137,5 +137,12 @@ namespace Gerenciamento_de_Hotel.View
             this.Hide();
             tela.ShowDialog();
         }
+
+        private void deletarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            DeleteConsumablesScreen tela = new DeleteConsumablesScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
     }
 }

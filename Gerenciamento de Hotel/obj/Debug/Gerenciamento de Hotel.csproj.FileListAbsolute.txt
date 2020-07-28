@@ -362,3 +362,13 @@ C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.StoreGuestScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ReadConsumablesScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ConsumablesCRUD.CreateConsumablesScreen.resources
+C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.CloseRoomsScreen.resources
+C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ConsumablesCRUD.CreateConsumablesScreen.resources
+C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ConsumablesCRUD.DeleteConsumablesScreen.resources
+C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.FiltroScreen.resources
+C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.GerenciadorStripScreen.resources
+C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.LoginGuestScreen.resources
+C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.MenuStripScreen.resources
+C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ReadConsumablesScreen.resources
+C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ReserveRoomsScreen.resources
+C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.StoreGuestScreen.resources
