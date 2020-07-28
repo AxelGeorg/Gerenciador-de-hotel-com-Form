@@ -38,7 +38,7 @@ namespace Gerenciamento_de_Hotel.View
             for (int i = 0; i < listConsumables.Count; i++)
             {
                 listView_consumables.Items.Add(listConsumables[i].con_id.ToString());
-                listView_consumables.Items[i].SubItems.Add(listConsumables[i].con_nome);
+                listView_consumables.Items[i] .SubItems.Add(listConsumables[i].con_nome);
                 listView_consumables.Items[i].SubItems.Add(listConsumables[i].con_tipoProduto);
                 listView_consumables.Items[i].SubItems.Add(listConsumables[i].con_tipoSabor);
                 listView_consumables.Items[i].SubItems.Add(listConsumables[i].con_descricao);
@@ -65,6 +65,7 @@ namespace Gerenciamento_de_Hotel.View
             }
             else if (e.Column == 4)
             {
+                //ver o que fazer nessa situação
                 listar(0);
             }
         }

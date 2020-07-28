@@ -59,7 +59,7 @@ namespace Gerenciamento_de_Hotel.View
             {
                 emp.emp_nome = txtb_nome.Text;
                 emp.emp_sobrenome = txtb_sobrenome.Text;
-                emp.emp_cpf = txtb_cpf.Text;
+                emp.emp_cpf = service.preparaCPFparaBD(txtb_cpf.Text);
                 emp.emp_titulo = txtb_titulo.Text;
                 emp.emp_email = txtb_email.Text;
                 emp.emp_password = txtb_senha.Text;
@@ -120,6 +120,20 @@ namespace Gerenciamento_de_Hotel.View
             {
                 btn_cadastrar.Enabled = false;
             }
+            
+            txtb_cpf.MaxLength = 14;
+            /*
+            txtb_cpf.SelectionStart = txtb_cpf.Text.Length + 1;
+
+            if (txtb_cpf.Text.Length == 3 || txtb_cpf.Text.Length == 7)
+            {
+                txtb_cpf.Text = txtb_cpf.Text + ".";
+            }
+            else if (txtb_cpf.Text.Length == 11)
+            {
+                txtb_cpf.Text = txtb_cpf.Text + "-";
+            }
+            txtb_cpf.SelectionStart = txtb_cpf.Text.Length + 1;*/
         }
 
         private void txtb_titulo_TextChanged(object sender, EventArgs e)
@@ -160,6 +174,54 @@ namespace Gerenciamento_de_Hotel.View
             }
 
             txtb_senha.MaxLength = 15;
+        }
+
+        private void txt_cpf(object sender, KeyPressEventArgs e)
+        {
+            char num;
+            txtb_cpf.SelectionStart = txtb_cpf.Text.Length + 1;
+
+            if (txtb_cpf.Text.Length == 3 || txtb_cpf.Text.Length == 7)
+            {
+                txtb_cpf.Text = txtb_cpf.Text + ".";
+            }
+            else if (txtb_cpf.Text.Length == 11)
+            {
+                txtb_cpf.Text = txtb_cpf.Text + "-";
+            }
+            txtb_cpf.SelectionStart = txtb_cpf.Text.Length + 1;
+            
+            if ((e.KeyChar == (char)Keys.Back) && (txtb_cpf.Text.Length > 0))
+            {
+                string s = txtb_cpf.Text.Substring(txtb_cpf.Text.Length-1, 1);
+
+                if (string.Equals(s, "-") || string.Equals(s, "."))
+                {
+                    num = txtb_cpf.Text[txtb_cpf.Text.Length - 2];
+
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+
+                    txtb_cpf.Text += num;
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+                }
+                else if (txtb_cpf.Text.Length == 1)
+                {
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+                }
+                else if (service.verificaIntOrFloat(txtb_cpf.Text))
+                {
+                    num = txtb_cpf.Text[txtb_cpf.Text.Length - 2];
+
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+
+                    txtb_cpf.Text += num;
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+                }
+            }
         }
     }
 }

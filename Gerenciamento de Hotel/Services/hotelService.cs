@@ -103,6 +103,7 @@ namespace Gerenciamento_de_Hotel.Services
                 return ex.Message;
             }
         }
+
         /// <summary>
         /// Serviço que verifica se a variável string passada como parametro pode ser considerada uma variável do tipo int ou float. 
         /// </summary>
@@ -121,6 +122,32 @@ namespace Gerenciamento_de_Hotel.Services
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Serviço que verifica se a variável string passada como parametro pode ser considerado um cpf. 
+        /// </summary>
+        /// <param name="textInt"></param>
+        /// <returns></returns>
+        public bool verificaCPF(string textCPF)
+        {
+
+
+
+            return true;
+        }
+
+        /// <summary>
+        /// Serviço que tira pontos e traços cpf, arrumando-o se necessário. 
+        /// </summary>
+        /// <param name="textInt"></param>
+        /// <returns></returns>
+        public string preparaCPFparaBD(string textCPF)
+        {
+            string cpfCerto = textCPF.Replace(".", "");
+            cpfCerto = cpfCerto.Replace("-", "");
+
+            return cpfCerto;
         }
     }
 }

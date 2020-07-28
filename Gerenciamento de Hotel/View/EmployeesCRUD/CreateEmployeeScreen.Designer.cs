@@ -103,6 +103,7 @@
             this.txtb_cpf.TabIndex = 14;
             this.txtb_cpf.Tag = "Oi";
             this.txtb_cpf.TextChanged += new System.EventHandler(this.txtb_cpf_TextChanged);
+            this.txtb_cpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cpf);
             // 
             // label3
             // 
