@@ -144,5 +144,12 @@ namespace Gerenciamento_de_Hotel.View
             this.Hide();
             tela.ShowDialog();
         }
+
+        private void alterarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            UpdateConsumablesScreen tela = new UpdateConsumablesScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
     }
 }

@@ -20,6 +20,10 @@ namespace Gerenciamento_de_Hotel.Controller
         {
             return consumablesDAO.cadastrarConsumables(consumables);
         }
+        public bool alteraConsumables(Consumables consumables)
+        {
+            return consumablesDAO.alteraConsumables(consumables);
+        }
         public Consumables retonaConsumablesNome(string nome)
         {
             return consumablesDAO.buscarConsumablesNome(nome);

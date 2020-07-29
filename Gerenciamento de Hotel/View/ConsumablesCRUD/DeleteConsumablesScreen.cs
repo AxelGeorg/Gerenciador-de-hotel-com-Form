@@ -12,47 +12,75 @@ using System.Windows.Forms;
 
 namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
 {
-    
     public partial class DeleteConsumablesScreen : Form
     {
         ConsumablesController controller = new ConsumablesController();
         Consumables consumables = new Consumables();
+
         public DeleteConsumablesScreen()
         {
             InitializeComponent();
+            btn_deletar.Enabled = false;
         }
 
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
-            listView_consumables.Clear();
-            if(string.IsNullOrEmpty(txtb_nome.Text))
+
+            if (string.IsNullOrEmpty(txtb_nome.Text))
             {
-                MessageBox.Show("Digite o nome do produto");
+                MessageBox.Show("A caixa de texto pesquisa esta vazia!! \nDigite novamente!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 consumables = controller.retonaConsumablesNome(txtb_nome.Text);
-                ListViewItem itens = new ListViewItem(Convert.ToString(consumables.con_id));
-                itens.SubItems.Add(Convert.ToString(consumables.con_nome));
-                itens.SubItems.Add(Convert.ToString(consumables.con_tipoProduto));
-                itens.SubItems.Add(Convert.ToString(consumables.con_tipoSabor));
-                itens.SubItems.Add(Convert.ToString(consumables.con_descricao));
-                listView_consumables.Items.Add(itens);
+
+                if (consumables.con_nome != null)
+                {
+                    ListViewItem itens = new ListViewItem(Convert.ToString(consumables.con_id));
+                    itens.SubItems.Add(Convert.ToString(consumables.con_nome));
+                    itens.SubItems.Add(Convert.ToString(consumables.con_tipoProduto));
+                    itens.SubItems.Add(Convert.ToString(consumables.con_tipoSabor));
+                    itens.SubItems.Add(Convert.ToString(consumables.con_descricao));
+                    listView_consumables.Items.Add(itens);
+                    btn_deletar.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Não há consumiveis com esse nome!! \nDigite novamente ou verifique no estoque!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
         private void btn_deletar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja deletar o produto?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            if (MessageBox.Show("Deseja deletar esse produto?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 if (controller.deletarConsumable(consumables.con_id))
                 {
-                    MessageBox.Show("Produto deletado com sucesso");
+                    listView_consumables.Items.Clear();
+                    txtb_nome.Text = "";
+                    MessageBox.Show("Produto deletado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Não foi possível deletar o hóspede");
+                    MessageBox.Show("Não foi possível deletar o hóspede", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            GerenciadorStripScreen tela = new GerenciadorStripScreen();
+            this.Hide();
+            tela.ShowDialog();
+        }
+
+        private void txtb_nome_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtb_nome.Text))
+            {
+                listView_consumables.Items.Clear();
+                btn_deletar.Enabled = false;
             }
         }
     }

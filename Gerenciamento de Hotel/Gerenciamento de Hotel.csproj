@@ -140,6 +140,12 @@
     <Compile Include="View\ConsumablesCRUD\DeleteConsumablesScreen.Designer.cs">
       <DependentUpon>DeleteConsumablesScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ConsumablesCRUD\UpdateConsumablesScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConsumablesCRUD\UpdateConsumablesScreen.Designer.cs">
+      <DependentUpon>UpdateConsumablesScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\EmployeesCRUD\CreateEmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ConsumablesCRUD\DeleteConsumablesScreen.resx">
       <DependentUpon>DeleteConsumablesScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConsumablesCRUD\UpdateConsumablesScreen.resx">
+      <DependentUpon>UpdateConsumablesScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EmployeesCRUD\CreateEmployeeScreen.resx">
       <DependentUpon>CreateEmployeeScreen.cs</DependentUpon>

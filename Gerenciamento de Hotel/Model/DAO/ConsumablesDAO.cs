@@ -196,5 +196,36 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 return false; 
             }
         }
+
+        /// <summary>
+        /// Altera o produto desejado.
+        /// </summary>
+        /// <param name="guest"></param>
+        /// <param name="tipoSelect"></param>
+        /// <returns></returns>
+        public bool alteraConsumables(Consumables consumables)
+        {
+            try
+            {
+                string query = "update consumables set con_nome = '"+ consumables.con_nome+ "', con_tipoProduto = '" + consumables.con_tipoProduto + "', con_tipoSabor = '" + consumables.con_tipoSabor + "', con_descricao = '" + consumables.con_descricao + "' where con_id = "+ consumables.con_id + ";";
+
+                connection = new MySqlConnection(conexaoString);
+                connection.Open(); // abre a conexão
+                command = new MySqlCommand();
+                command.Connection = connection;
+
+                command.CommandType = CommandType.Text;
+                command.CommandText = query;
+
+                command.ExecuteNonQuery();
+                command.Connection.Close(); //fecha conexão
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
