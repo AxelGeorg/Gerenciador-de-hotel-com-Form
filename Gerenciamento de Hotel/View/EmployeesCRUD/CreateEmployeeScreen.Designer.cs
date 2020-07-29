@@ -41,12 +41,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_cadastrar = new System.Windows.Forms.Button();
-            this.btn_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtb_sobrenome
             // 
-            this.txtb_sobrenome.Location = new System.Drawing.Point(363, 107);
+            this.txtb_sobrenome.Location = new System.Drawing.Point(363, 96);
             this.txtb_sobrenome.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_sobrenome.Name = "txtb_sobrenome";
             this.txtb_sobrenome.Size = new System.Drawing.Size(299, 20);
@@ -55,7 +54,7 @@
             // 
             // txtb_nome
             // 
-            this.txtb_nome.Location = new System.Drawing.Point(14, 107);
+            this.txtb_nome.Location = new System.Drawing.Point(14, 96);
             this.txtb_nome.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_nome.Name = "txtb_nome";
             this.txtb_nome.Size = new System.Drawing.Size(299, 20);
@@ -67,7 +66,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(360, 76);
+            this.label1.Location = new System.Drawing.Point(360, 65);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 18);
@@ -78,7 +77,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 76);
+            this.label2.Location = new System.Drawing.Point(11, 65);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 18);
@@ -87,7 +86,7 @@
             // 
             // txtb_titulo
             // 
-            this.txtb_titulo.Location = new System.Drawing.Point(363, 191);
+            this.txtb_titulo.Location = new System.Drawing.Point(363, 180);
             this.txtb_titulo.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_titulo.Name = "txtb_titulo";
             this.txtb_titulo.Size = new System.Drawing.Size(299, 20);
@@ -96,7 +95,7 @@
             // 
             // txtb_cpf
             // 
-            this.txtb_cpf.Location = new System.Drawing.Point(14, 191);
+            this.txtb_cpf.Location = new System.Drawing.Point(14, 180);
             this.txtb_cpf.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_cpf.Name = "txtb_cpf";
             this.txtb_cpf.Size = new System.Drawing.Size(299, 20);
@@ -109,7 +108,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(360, 160);
+            this.label3.Location = new System.Drawing.Point(360, 149);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 18);
@@ -120,7 +119,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 160);
+            this.label4.Location = new System.Drawing.Point(11, 149);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 18);
@@ -129,7 +128,7 @@
             // 
             // txtb_senha
             // 
-            this.txtb_senha.Location = new System.Drawing.Point(363, 275);
+            this.txtb_senha.Location = new System.Drawing.Point(363, 264);
             this.txtb_senha.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_senha.Name = "txtb_senha";
             this.txtb_senha.Size = new System.Drawing.Size(299, 20);
@@ -138,7 +137,7 @@
             // 
             // txtb_email
             // 
-            this.txtb_email.Location = new System.Drawing.Point(14, 275);
+            this.txtb_email.Location = new System.Drawing.Point(14, 264);
             this.txtb_email.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_email.Name = "txtb_email";
             this.txtb_email.Size = new System.Drawing.Size(299, 20);
@@ -150,7 +149,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(360, 244);
+            this.label5.Location = new System.Drawing.Point(360, 233);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(133, 18);
@@ -161,7 +160,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 244);
+            this.label6.Location = new System.Drawing.Point(11, 233);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 18);
@@ -171,7 +170,7 @@
             // btn_cadastrar
             // 
             this.btn_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cadastrar.Location = new System.Drawing.Point(224, 334);
+            this.btn_cadastrar.Location = new System.Drawing.Point(197, 336);
             this.btn_cadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(262, 33);
@@ -180,24 +179,11 @@
             this.btn_cadastrar.UseVisualStyleBackColor = true;
             this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
             // 
-            // btn_back
-            // 
-            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Location = new System.Drawing.Point(0, 1);
-            this.btn_back.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(97, 28);
-            this.btn_back.TabIndex = 21;
-            this.btn_back.Text = "←";
-            this.btn_back.UseVisualStyleBackColor = true;
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
-            // 
             // CreateEmployeeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 389);
-            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_cadastrar);
             this.Controls.Add(this.txtb_senha);
             this.Controls.Add(this.txtb_email);
@@ -234,6 +220,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_cadastrar;
-        private System.Windows.Forms.Button btn_back;
     }
 }

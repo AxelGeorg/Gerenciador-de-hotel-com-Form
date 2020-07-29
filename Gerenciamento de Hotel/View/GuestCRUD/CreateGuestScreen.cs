@@ -62,11 +62,18 @@ namespace Gerenciamento_de_Hotel.View
                         txtb_dia.Clear();
                         txtb_mes.Clear();
                         txtb_ano.Clear();
-                        MessageBox.Show("Hóspede cadastrado com sucesso");
+
+                        if (Application.OpenForms.OfType<ReadGuestScreen>().Count() > 0)
+                        {
+                            ReadGuestScreen form = Application.OpenForms["ReadGuestScreen"] as ReadGuestScreen;
+                            form.listar(0);
+                        }
+
+                        MessageBox.Show("Hóspede cadastrado com sucesso!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Não foi possível cadastrar o hóspede");
+                        MessageBox.Show("Não foi possível cadastrar o hóspede!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -135,13 +142,6 @@ namespace Gerenciamento_de_Hotel.View
                 btn_cadastrar.Enabled = false;
             }
             txtb_ano.MaxLength = 4;
-        }
-
-        private void btn_back_Click(object sender, EventArgs e)
-        {
-            GerenciadorStripScreen tela = new GerenciadorStripScreen();
-            this.Hide();
-            tela.ShowDialog();
         }
     }
 }

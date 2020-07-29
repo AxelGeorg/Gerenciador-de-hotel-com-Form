@@ -27,13 +27,6 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
             listaComboBox();
         }
 
-        private void btn_comeBack_Click(object sender, EventArgs e)
-        {
-            GerenciadorStripScreen tela = new GerenciadorStripScreen();
-            this.Hide();
-            tela.ShowDialog();
-        }
-
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             listView_consumables.Items.Clear();
@@ -116,8 +109,15 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
                 if (MessageBox.Show("Deseja alterar esse produto?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 {
                     controller.alteraConsumables(consumables);
-                    MessageBox.Show("Produto alterado com sucesso!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if (Application.OpenForms.OfType<ReadConsumablesScreen>().Count() > 0)
+                    {
+                        ReadConsumablesScreen form = Application.OpenForms["ReadConsumablesScreen"] as ReadConsumablesScreen;
+                        form.listar(0);
+                    }
+
                     limpaCampoForm();
+                    MessageBox.Show("Produto alterado com sucesso!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else

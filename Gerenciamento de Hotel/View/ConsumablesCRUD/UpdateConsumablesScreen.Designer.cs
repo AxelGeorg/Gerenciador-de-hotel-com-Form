@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_comeBack = new System.Windows.Forms.Button();
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.txtb_consumablesAlterar = new System.Windows.Forms.TextBox();
             this.lbl_empAlterar = new System.Windows.Forms.Label();
@@ -45,23 +44,11 @@
             this.cbox_tipo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // btn_comeBack
-            // 
-            this.btn_comeBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_comeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_comeBack.Location = new System.Drawing.Point(2, 1);
-            this.btn_comeBack.Name = "btn_comeBack";
-            this.btn_comeBack.Size = new System.Drawing.Size(97, 28);
-            this.btn_comeBack.TabIndex = 11;
-            this.btn_comeBack.Text = "←";
-            this.btn_comeBack.UseVisualStyleBackColor = true;
-            this.btn_comeBack.Click += new System.EventHandler(this.btn_comeBack_Click);
-            // 
             // btn_pesquisar
             // 
             this.btn_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_pesquisar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn_pesquisar.Location = new System.Drawing.Point(451, 116);
+            this.btn_pesquisar.Location = new System.Drawing.Point(451, 85);
             this.btn_pesquisar.Name = "btn_pesquisar";
             this.btn_pesquisar.Size = new System.Drawing.Size(210, 23);
             this.btn_pesquisar.TabIndex = 35;
@@ -72,7 +59,7 @@
             // txtb_consumablesAlterar
             // 
             this.txtb_consumablesAlterar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtb_consumablesAlterar.Location = new System.Drawing.Point(12, 117);
+            this.txtb_consumablesAlterar.Location = new System.Drawing.Point(12, 86);
             this.txtb_consumablesAlterar.Name = "txtb_consumablesAlterar";
             this.txtb_consumablesAlterar.Size = new System.Drawing.Size(388, 20);
             this.txtb_consumablesAlterar.TabIndex = 34;
@@ -83,7 +70,7 @@
             this.lbl_empAlterar.AutoSize = true;
             this.lbl_empAlterar.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_empAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbl_empAlterar.Location = new System.Drawing.Point(12, 78);
+            this.lbl_empAlterar.Location = new System.Drawing.Point(12, 47);
             this.lbl_empAlterar.Name = "lbl_empAlterar";
             this.lbl_empAlterar.Size = new System.Drawing.Size(291, 17);
             this.lbl_empAlterar.TabIndex = 33;
@@ -99,7 +86,7 @@
             this.columnHeader5});
             this.listView_consumables.GridLines = true;
             this.listView_consumables.HideSelection = false;
-            this.listView_consumables.Location = new System.Drawing.Point(12, 183);
+            this.listView_consumables.Location = new System.Drawing.Point(12, 152);
             this.listView_consumables.Name = "listView_consumables";
             this.listView_consumables.Scrollable = false;
             this.listView_consumables.Size = new System.Drawing.Size(649, 59);
@@ -137,7 +124,7 @@
             this.lbl_opcoesAlterar.AutoSize = true;
             this.lbl_opcoesAlterar.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_opcoesAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbl_opcoesAlterar.Location = new System.Drawing.Point(12, 264);
+            this.lbl_opcoesAlterar.Location = new System.Drawing.Point(12, 233);
             this.lbl_opcoesAlterar.Name = "lbl_opcoesAlterar";
             this.lbl_opcoesAlterar.Size = new System.Drawing.Size(205, 17);
             this.lbl_opcoesAlterar.TabIndex = 38;
@@ -148,7 +135,7 @@
             this.cbox_opcoes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbox_opcoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_opcoes.FormattingEnabled = true;
-            this.cbox_opcoes.Location = new System.Drawing.Point(15, 295);
+            this.cbox_opcoes.Location = new System.Drawing.Point(15, 264);
             this.cbox_opcoes.Name = "cbox_opcoes";
             this.cbox_opcoes.Size = new System.Drawing.Size(202, 21);
             this.cbox_opcoes.TabIndex = 37;
@@ -157,7 +144,7 @@
             // txtb_novoAlterar
             // 
             this.txtb_novoAlterar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtb_novoAlterar.Location = new System.Drawing.Point(233, 296);
+            this.txtb_novoAlterar.Location = new System.Drawing.Point(233, 265);
             this.txtb_novoAlterar.Name = "txtb_novoAlterar";
             this.txtb_novoAlterar.Size = new System.Drawing.Size(428, 20);
             this.txtb_novoAlterar.TabIndex = 39;
@@ -167,7 +154,7 @@
             // 
             this.btn_alterar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_alterar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_alterar.Location = new System.Drawing.Point(174, 339);
+            this.btn_alterar.Location = new System.Drawing.Point(173, 329);
             this.btn_alterar.Name = "btn_alterar";
             this.btn_alterar.Size = new System.Drawing.Size(317, 29);
             this.btn_alterar.TabIndex = 40;
@@ -179,7 +166,7 @@
             // 
             this.cbox_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_tipo.FormattingEnabled = true;
-            this.cbox_tipo.Location = new System.Drawing.Point(304, 296);
+            this.cbox_tipo.Location = new System.Drawing.Point(304, 265);
             this.cbox_tipo.Name = "cbox_tipo";
             this.cbox_tipo.Size = new System.Drawing.Size(279, 21);
             this.cbox_tipo.TabIndex = 41;
@@ -199,7 +186,6 @@
             this.Controls.Add(this.btn_pesquisar);
             this.Controls.Add(this.txtb_consumablesAlterar);
             this.Controls.Add(this.lbl_empAlterar);
-            this.Controls.Add(this.btn_comeBack);
             this.Name = "UpdateConsumablesScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateConsumablesScreen";
@@ -209,8 +195,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_comeBack;
         private System.Windows.Forms.Button btn_pesquisar;
         private System.Windows.Forms.TextBox txtb_consumablesAlterar;
         private System.Windows.Forms.Label lbl_empAlterar;

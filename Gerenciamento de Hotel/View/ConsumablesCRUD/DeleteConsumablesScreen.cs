@@ -58,6 +58,13 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
                 if (controller.deletarConsumable(consumables.con_id))
                 {
                     listView_consumables.Items.Clear();
+
+                    if (Application.OpenForms.OfType<ReadConsumablesScreen>().Count() > 0)
+                    {
+                        ReadConsumablesScreen form = Application.OpenForms["ReadConsumablesScreen"] as ReadConsumablesScreen;
+                        form.listar(0);
+                    }
+
                     txtb_nome.Text = "";
                     MessageBox.Show("Produto deletado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -66,13 +73,6 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
                     MessageBox.Show("Não foi possível deletar o hóspede", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }
-
-        private void btn_back_Click(object sender, EventArgs e)
-        {
-            GerenciadorStripScreen tela = new GerenciadorStripScreen();
-            this.Hide();
-            tela.ShowDialog();
         }
 
         private void txtb_nome_TextChanged(object sender, EventArgs e)

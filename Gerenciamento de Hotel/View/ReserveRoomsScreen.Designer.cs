@@ -37,7 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_filtrar = new System.Windows.Forms.Button();
-            this.btn_comeBack = new System.Windows.Forms.Button();
             this.lbl_numeroQuartoFixo = new System.Windows.Forms.Label();
             this.lbl_precoDiariaFixo = new System.Windows.Forms.Label();
             this.lbl_quantMaxPessoasFixo = new System.Windows.Forms.Label();
@@ -55,8 +54,8 @@
             // 
             // txtb_cpf
             // 
-            this.txtb_cpf.Location = new System.Drawing.Point(236, 117);
-            this.txtb_cpf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_cpf.Location = new System.Drawing.Point(238, 96);
+            this.txtb_cpf.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_cpf.Name = "txtb_cpf";
             this.txtb_cpf.Size = new System.Drawing.Size(220, 20);
             this.txtb_cpf.TabIndex = 4;
@@ -66,7 +65,7 @@
             // 
             this.lb_cpf.AutoSize = true;
             this.lb_cpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_cpf.Location = new System.Drawing.Point(9, 112);
+            this.lb_cpf.Location = new System.Drawing.Point(11, 91);
             this.lb_cpf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_cpf.Name = "lb_cpf";
             this.lb_cpf.Size = new System.Drawing.Size(181, 18);
@@ -75,8 +74,8 @@
             // 
             // txtb_quantDias
             // 
-            this.txtb_quantDias.Location = new System.Drawing.Point(236, 169);
-            this.txtb_quantDias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_quantDias.Location = new System.Drawing.Point(238, 148);
+            this.txtb_quantDias.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_quantDias.Name = "txtb_quantDias";
             this.txtb_quantDias.Size = new System.Drawing.Size(220, 20);
             this.txtb_quantDias.TabIndex = 8;
@@ -87,7 +86,7 @@
             // 
             this.lb_quantDias.AutoSize = true;
             this.lb_quantDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_quantDias.Location = new System.Drawing.Point(9, 167);
+            this.lb_quantDias.Location = new System.Drawing.Point(11, 146);
             this.lb_quantDias.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_quantDias.Name = "lb_quantDias";
             this.lb_quantDias.Size = new System.Drawing.Size(200, 18);
@@ -99,8 +98,8 @@
             this.cbox_quarto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbox_quarto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_quarto.FormattingEnabled = true;
-            this.cbox_quarto.Location = new System.Drawing.Point(236, 279);
-            this.cbox_quarto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbox_quarto.Location = new System.Drawing.Point(238, 258);
+            this.cbox_quarto.Margin = new System.Windows.Forms.Padding(2);
             this.cbox_quarto.Name = "cbox_quarto";
             this.cbox_quarto.Size = new System.Drawing.Size(220, 21);
             this.cbox_quarto.TabIndex = 9;
@@ -110,7 +109,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 277);
+            this.label1.Location = new System.Drawing.Point(11, 256);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(222, 18);
@@ -132,7 +131,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 222);
+            this.label3.Location = new System.Drawing.Point(11, 201);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(210, 18);
@@ -142,26 +141,14 @@
             // btn_filtrar
             // 
             this.btn_filtrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_filtrar.Location = new System.Drawing.Point(236, 222);
-            this.btn_filtrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_filtrar.Location = new System.Drawing.Point(238, 201);
+            this.btn_filtrar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_filtrar.Name = "btn_filtrar";
             this.btn_filtrar.Size = new System.Drawing.Size(220, 21);
             this.btn_filtrar.TabIndex = 13;
             this.btn_filtrar.Text = "Clique Aqui";
             this.btn_filtrar.UseVisualStyleBackColor = true;
             this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
-            // 
-            // btn_comeBack
-            // 
-            this.btn_comeBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_comeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_comeBack.Location = new System.Drawing.Point(2, 1);
-            this.btn_comeBack.Name = "btn_comeBack";
-            this.btn_comeBack.Size = new System.Drawing.Size(97, 28);
-            this.btn_comeBack.TabIndex = 20;
-            this.btn_comeBack.Text = "←";
-            this.btn_comeBack.UseVisualStyleBackColor = true;
-            this.btn_comeBack.Click += new System.EventHandler(this.btn_comeBack_Click);
             // 
             // lbl_numeroQuartoFixo
             // 
@@ -324,7 +311,6 @@
             this.Controls.Add(this.lbl_quantMaxPessoasFixo);
             this.Controls.Add(this.lbl_precoDiariaFixo);
             this.Controls.Add(this.lbl_numeroQuartoFixo);
-            this.Controls.Add(this.btn_comeBack);
             this.Controls.Add(this.btn_filtrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -334,7 +320,7 @@
             this.Controls.Add(this.lb_quantDias);
             this.Controls.Add(this.txtb_cpf);
             this.Controls.Add(this.lb_cpf);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ReserveRoomsScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReserveRoomsScreen";
@@ -354,7 +340,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_filtrar;
-        private System.Windows.Forms.Button btn_comeBack;
         private System.Windows.Forms.Label lbl_numeroQuartoFixo;
         private System.Windows.Forms.Label lbl_precoDiariaFixo;
         private System.Windows.Forms.Label lbl_quantMaxPessoasFixo;

@@ -37,7 +37,6 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_comeBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView_room
@@ -53,9 +52,10 @@
             this.columnHeader9});
             this.listView_room.GridLines = true;
             this.listView_room.HideSelection = false;
-            this.listView_room.Location = new System.Drawing.Point(12, 35);
+            this.listView_room.Location = new System.Drawing.Point(12, 25);
             this.listView_room.Name = "listView_room";
-            this.listView_room.Size = new System.Drawing.Size(649, 343);
+            this.listView_room.Scrollable = false;
+            this.listView_room.Size = new System.Drawing.Size(649, 353);
             this.listView_room.TabIndex = 13;
             this.listView_room.UseCompatibleStateImageBehavior = false;
             this.listView_room.View = System.Windows.Forms.View.Details;
@@ -101,25 +101,12 @@
             this.columnHeader9.Text = "Quant. Pessoas";
             this.columnHeader9.Width = 87;
             // 
-            // btn_comeBack
-            // 
-            this.btn_comeBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_comeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_comeBack.Location = new System.Drawing.Point(1, 1);
-            this.btn_comeBack.Name = "btn_comeBack";
-            this.btn_comeBack.Size = new System.Drawing.Size(97, 28);
-            this.btn_comeBack.TabIndex = 12;
-            this.btn_comeBack.Text = "←";
-            this.btn_comeBack.UseVisualStyleBackColor = true;
-            this.btn_comeBack.Click += new System.EventHandler(this.btn_comeBack_Click);
-            // 
             // ReadRoomScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 389);
             this.Controls.Add(this.listView_room);
-            this.Controls.Add(this.btn_comeBack);
             this.Name = "ReadRoomScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReadRoomScreen";
@@ -136,7 +123,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.Button btn_comeBack;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader9;
     }

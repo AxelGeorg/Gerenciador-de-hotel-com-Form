@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_comeBack = new System.Windows.Forms.Button();
             this.btn_alterar = new System.Windows.Forms.Button();
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.listViewAlterar = new System.Windows.Forms.ListView();
@@ -37,25 +36,13 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtb_empAlterar = new System.Windows.Forms.TextBox();
             this.lbl_empAlterar = new System.Windows.Forms.Label();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbox_opcoes = new System.Windows.Forms.ComboBox();
             this.lbl_opcoesAlterar = new System.Windows.Forms.Label();
             this.txtb_novoAlterar = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // btn_comeBack
-            // 
-            this.btn_comeBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_comeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_comeBack.Location = new System.Drawing.Point(1, 1);
-            this.btn_comeBack.Name = "btn_comeBack";
-            this.btn_comeBack.Size = new System.Drawing.Size(97, 28);
-            this.btn_comeBack.TabIndex = 10;
-            this.btn_comeBack.Text = "←";
-            this.btn_comeBack.UseVisualStyleBackColor = true;
-            this.btn_comeBack.Click += new System.EventHandler(this.btn_comeBack_Click);
             // 
             // btn_alterar
             // 
@@ -73,7 +60,7 @@
             // 
             this.btn_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_pesquisar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn_pesquisar.Location = new System.Drawing.Point(402, 113);
+            this.btn_pesquisar.Location = new System.Drawing.Point(400, 98);
             this.btn_pesquisar.Name = "btn_pesquisar";
             this.btn_pesquisar.Size = new System.Drawing.Size(188, 23);
             this.btn_pesquisar.TabIndex = 24;
@@ -93,7 +80,7 @@
             this.listViewAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewAlterar.GridLines = true;
             this.listViewAlterar.HideSelection = false;
-            this.listViewAlterar.Location = new System.Drawing.Point(12, 151);
+            this.listViewAlterar.Location = new System.Drawing.Point(10, 136);
             this.listViewAlterar.Name = "listViewAlterar";
             this.listViewAlterar.Scrollable = false;
             this.listViewAlterar.Size = new System.Drawing.Size(654, 63);
@@ -126,10 +113,15 @@
             this.columnHeader5.Text = "Título";
             this.columnHeader5.Width = 109;
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Email";
+            this.columnHeader6.Width = 109;
+            // 
             // txtb_empAlterar
             // 
             this.txtb_empAlterar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtb_empAlterar.Location = new System.Drawing.Point(15, 116);
+            this.txtb_empAlterar.Location = new System.Drawing.Point(13, 101);
             this.txtb_empAlterar.Name = "txtb_empAlterar";
             this.txtb_empAlterar.Size = new System.Drawing.Size(294, 20);
             this.txtb_empAlterar.TabIndex = 22;
@@ -140,22 +132,17 @@
             this.lbl_empAlterar.AutoSize = true;
             this.lbl_empAlterar.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_empAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbl_empAlterar.Location = new System.Drawing.Point(12, 77);
+            this.lbl_empAlterar.Location = new System.Drawing.Point(10, 62);
             this.lbl_empAlterar.Name = "lbl_empAlterar";
             this.lbl_empAlterar.Size = new System.Drawing.Size(303, 17);
             this.lbl_empAlterar.TabIndex = 21;
             this.lbl_empAlterar.Text = "Digite o CPF do funcionário que deseja alterar:";
             // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Email";
-            this.columnHeader6.Width = 109;
-            // 
             // cbox_opcoes
             // 
             this.cbox_opcoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_opcoes.FormattingEnabled = true;
-            this.cbox_opcoes.Location = new System.Drawing.Point(12, 279);
+            this.cbox_opcoes.Location = new System.Drawing.Point(10, 264);
             this.cbox_opcoes.Name = "cbox_opcoes";
             this.cbox_opcoes.Size = new System.Drawing.Size(185, 21);
             this.cbox_opcoes.TabIndex = 26;
@@ -165,7 +152,7 @@
             this.lbl_opcoesAlterar.AutoSize = true;
             this.lbl_opcoesAlterar.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_opcoesAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbl_opcoesAlterar.Location = new System.Drawing.Point(9, 248);
+            this.lbl_opcoesAlterar.Location = new System.Drawing.Point(7, 233);
             this.lbl_opcoesAlterar.Name = "lbl_opcoesAlterar";
             this.lbl_opcoesAlterar.Size = new System.Drawing.Size(205, 17);
             this.lbl_opcoesAlterar.TabIndex = 27;
@@ -174,7 +161,7 @@
             // txtb_novoAlterar
             // 
             this.txtb_novoAlterar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtb_novoAlterar.Location = new System.Drawing.Point(231, 279);
+            this.txtb_novoAlterar.Location = new System.Drawing.Point(229, 264);
             this.txtb_novoAlterar.Name = "txtb_novoAlterar";
             this.txtb_novoAlterar.Size = new System.Drawing.Size(401, 20);
             this.txtb_novoAlterar.TabIndex = 28;
@@ -193,7 +180,6 @@
             this.Controls.Add(this.listViewAlterar);
             this.Controls.Add(this.txtb_empAlterar);
             this.Controls.Add(this.lbl_empAlterar);
-            this.Controls.Add(this.btn_comeBack);
             this.Name = "UpdateEmployeeScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateEmployeeScreen";
@@ -203,8 +189,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_comeBack;
         private System.Windows.Forms.Button btn_alterar;
         private System.Windows.Forms.Button btn_pesquisar;
         private System.Windows.Forms.ListView listViewAlterar;

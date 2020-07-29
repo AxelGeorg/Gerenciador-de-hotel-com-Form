@@ -16,17 +16,13 @@ namespace Gerenciamento_de_Hotel.View.GuestCRUD
     {
         GuestController controller = new GuestController();
         Guest guest = new Guest();
+
         public DeleteGuestScreen()
         {
             InitializeComponent();
             btn_deletar.Enabled = false;
         }
-        private void btn_comeBack_Click(object sender, EventArgs e)
-        {
-            GerenciadorStripScreen tela = new GerenciadorStripScreen();
-            this.Hide();
-            tela.ShowDialog();
-        }
+
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             int verificaSeRetornou = 0;
@@ -61,14 +57,17 @@ namespace Gerenciamento_de_Hotel.View.GuestCRUD
             {
                 if (controller.deletaGuest(guest.gue_id))
                 {
-                    MessageBox.Show("Hóspede deletado com sucesso");
-                    GuestScreen tela = new GuestScreen();
-                    this.Hide();
-                    tela.ShowDialog();
+                    if (Application.OpenForms.OfType<ReadGuestScreen>().Count() > 0)
+                    {
+                        ReadGuestScreen form = Application.OpenForms["ReadGuestScreen"] as ReadGuestScreen;
+                        form.listar(0);
+                    }
+
+                    MessageBox.Show("Hóspede deletado com sucesso!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Não foi possível deletar o hóspede");
+                    MessageBox.Show("Não foi possível deletar o hóspede!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

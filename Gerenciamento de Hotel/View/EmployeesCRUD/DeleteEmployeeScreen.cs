@@ -16,20 +16,12 @@ namespace Gerenciamento_de_Hotel.View
     {
         EmployeeController controller = new EmployeeController();
         Employees employees = new Employees();
-        GerenciadorStripScreen tela = new GerenciadorStripScreen();
 
         public DeleteEmployeeScreen()
         {
             InitializeComponent();
             btn_deletar.Enabled = false;
         }
-
-        private void btn_comeBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            tela.ShowDialog();
-        }
-
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             int verificaSeRetornou = 0;
@@ -67,9 +59,16 @@ namespace Gerenciamento_de_Hotel.View
             if (MessageBox.Show("Deseja deletar esse funcionario?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 controller.deletaEmployee(employees.emp_id);
+
+                //verifica se ha um form ReadEmployeeScreen aberto, para desse modo após criar um novo funcionário já atualizar no outro form.
+                if (Application.OpenForms.OfType<ReadEmployeeScreen>().Count() > 0)
+                {
+                    ReadEmployeeScreen form = Application.OpenForms["ReadEmployeeScreen"] as ReadEmployeeScreen;
+                    form.listar(0);
+                }
+
+                txtb_empDeletar.Text = "";
                 MessageBox.Show("Funcionario deletado com sucesso!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
-                tela.ShowDialog();
             }
         }
 

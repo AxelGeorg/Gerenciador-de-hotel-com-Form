@@ -74,16 +74,17 @@ namespace Gerenciamento_de_Hotel.View
                     txtb_titulo.Clear();
                     txtb_email.Clear();
                     txtb_senha.Clear();
+
+                    //verifica se ha um form ReadEmployeeScreen aberto, para desse modo após criar um novo funcionário já atualizar no outro form.
+                    if (Application.OpenForms.OfType<ReadEmployeeScreen>().Count() > 0)
+                    {
+                        ReadEmployeeScreen form = Application.OpenForms["ReadEmployeeScreen"] as ReadEmployeeScreen;
+                        form.listar(0);
+                    }
+
                     MessageBox.Show("Funcionário cadastrado com sucesso!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }
-
-        private void btn_back_Click(object sender, EventArgs e)
-        {
-            GerenciadorStripScreen tela = new GerenciadorStripScreen();
-            this.Hide();
-            tela.ShowDialog();
         }
 
         private void txtb_nome_TextChanged(object sender, EventArgs e)

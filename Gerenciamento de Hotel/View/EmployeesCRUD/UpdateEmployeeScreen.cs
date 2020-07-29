@@ -29,13 +29,6 @@ namespace Gerenciamento_de_Hotel.View
             cbox_opcoes.Enabled = false;
         }
 
-        private void btn_comeBack_Click(object sender, EventArgs e)
-        {
-            GerenciadorStripScreen tela = new GerenciadorStripScreen();
-            this.Hide();
-            tela.ShowDialog();
-        }
-
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             int verificaSeRetornou = 0;
@@ -124,8 +117,16 @@ namespace Gerenciamento_de_Hotel.View
                 if (MessageBox.Show("Deseja alterar esse funcionario?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 {
                     controller.alteraEmployee(employees);
-                    MessageBox.Show("Funcionario alterado com sucesso!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //verifica se ha um form ReadEmployeeScreen aberto, para desse modo após criar um novo funcionário já atualizar no outro form.
+                    if (Application.OpenForms.OfType<ReadEmployeeScreen>().Count() > 0)
+                    {
+                        ReadEmployeeScreen form = Application.OpenForms["ReadEmployeeScreen"] as ReadEmployeeScreen;
+                        form.listar(0);
+                    }
+
                     limpaCampoForm();
+                    MessageBox.Show("Funcionario alterado com sucesso!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else

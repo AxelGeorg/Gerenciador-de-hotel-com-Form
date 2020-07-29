@@ -23,16 +23,6 @@ namespace Gerenciamento_de_Hotel.View
             txtb_qunatPessoas.Enabled = false;
             txtb_qunatPessoas.Text = "0";
         }
-        private void btn_back_Click(object sender, EventArgs e)
-        {
-            GerenciadorStripScreen tela = new GerenciadorStripScreen();
-            this.Hide();
-            tela.ShowDialog();
-        }
-        private void CreateRoomScreen_Load(object sender, EventArgs e)
-        {
-            // 
-        }
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
             Room room = new Room();
@@ -51,7 +41,6 @@ namespace Gerenciamento_de_Hotel.View
 
             if (verificaSeRetornou == 0)
             {
-                //Daniel 09/07/2020 - passa como parametro o objeto room para o método cadastrarRoom para salvar os dados do quarto no banco.
                 room.room_numeroQuarto = txtb_identificacao.Text;
                 room.room_disponibilidade = true;
                 room.room_quantCasal = Convert.ToInt32(txtb_quantCamaCasal.Text);
@@ -69,13 +58,20 @@ namespace Gerenciamento_de_Hotel.View
                     txtb_identificacao.Clear();
                     txtb_precoDiaria.Clear();
                     txtb_qunatCamaSolteiro.Clear();
+
+                    //verifica se ha um form ReadRoomScreen aberto, para desse modo após criar um novo quarto já atualizar no outro form.
+                    if (Application.OpenForms.OfType<ReadRoomScreen>().Count() > 0)
+                    {
+                        ReadRoomScreen form = Application.OpenForms["ReadRoomScreen"] as ReadRoomScreen;
+                        form.listar(0);
+                    }
+
                     MessageBox.Show("Quarto cadastrado com sucesso!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
         private void txtb_quantCamaCasal_TextChanged(object sender, EventArgs e)
         { 
-            //Daniel 09/07/2020 - Faz a verificação dos campos camaCasal e camaSolteiro para setar o valor correto na quantidade de pessoas.
             if (txtb_quantCamaCasal.Text != "")
             {
                 if (txtb_qunatCamaSolteiro.Text == "")

@@ -29,13 +29,6 @@ namespace Gerenciamento_de_Hotel.View
             cbox_opcoes.Enabled = false;
         }
 
-        private void btn_comeBack_Click(object sender, EventArgs e)
-        {
-            GerenciadorStripScreen tela = new GerenciadorStripScreen();
-            this.Hide();
-            tela.ShowDialog();
-        }
-
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             int verificaSeRetornou = 0;
@@ -172,8 +165,15 @@ namespace Gerenciamento_de_Hotel.View
                 if (MessageBox.Show("Deseja alterar esse quarto?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 {
                     controller.alteraRoom(room);
-                    MessageBox.Show(retorno, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if (Application.OpenForms.OfType<ReadRoomScreen>().Count() > 0)
+                    {
+                        ReadRoomScreen form = Application.OpenForms["ReadRoomScreen"] as ReadRoomScreen;
+                        form.listar(0);
+                    }
+
                     limpaCampoForm();
+                    MessageBox.Show(retorno, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else

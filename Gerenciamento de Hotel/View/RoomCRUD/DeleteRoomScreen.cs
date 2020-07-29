@@ -17,10 +17,11 @@ namespace Gerenciamento_de_Hotel.View
     {
         RoomController controller = new RoomController();
         Room room = new Room();
-        GerenciadorStripScreen tela = new GerenciadorStripScreen();
+
         public DeleteRoomScreen()
         {
             InitializeComponent();
+            btn_deletar.Enabled = false;
         }
 
         private void btn_pesquisar_Click(object sender, EventArgs e)
@@ -58,15 +59,11 @@ namespace Gerenciamento_de_Hotel.View
 
                     itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_precoDiaria));
                     itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_quantPessoa));
-                    listView_room.Items.Add(itens);                  
+                    listView_room.Items.Add(itens);
+
+                    btn_deletar.Enabled = true;
                 }
             }
-        }
-
-        private void btn_comeBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            tela.ShowDialog();
         }
 
         private void btn_deletar_Click(object sender, EventArgs e)
@@ -75,16 +72,30 @@ namespace Gerenciamento_de_Hotel.View
             {
                 if (controller.deletaRoom(room.room_id))
                 {
-                    MessageBox.Show("Quarto deletado com sucesso");
-                    this.Hide();
-                    tela.ShowDialog();
+                    if (Application.OpenForms.OfType<ReadRoomScreen>().Count() > 0)
+                    {
+                        ReadRoomScreen form = Application.OpenForms["ReadRoomScreen"] as ReadRoomScreen;
+                        form.listar(0);
+                    }
+
+                    txtb_roomDeletar.Text = "";
+                    MessageBox.Show("Quarto deletado com sucesso!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Não foi possível deletar o quarto");
+                    MessageBox.Show("Não foi possível deletar o quarto!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             
+        }
+
+        private void txtb_roomDeletar_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtb_roomDeletar.Text))
+            {
+                listView_room.Items.Clear();
+                btn_deletar.Enabled = false;
+            }
         }
     }
 }

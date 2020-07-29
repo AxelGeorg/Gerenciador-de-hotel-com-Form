@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_comeBack = new System.Windows.Forms.Button();
             this.listView_consumables = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -36,18 +35,6 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // btn_comeBack
-            // 
-            this.btn_comeBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_comeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_comeBack.Location = new System.Drawing.Point(1, 1);
-            this.btn_comeBack.Name = "btn_comeBack";
-            this.btn_comeBack.Size = new System.Drawing.Size(97, 28);
-            this.btn_comeBack.TabIndex = 32;
-            this.btn_comeBack.Text = "←";
-            this.btn_comeBack.UseVisualStyleBackColor = true;
-            this.btn_comeBack.Click += new System.EventHandler(this.btn_comeBack_Click);
             // 
             // listView_consumables
             // 
@@ -59,7 +46,7 @@
             this.columnHeader5});
             this.listView_consumables.GridLines = true;
             this.listView_consumables.HideSelection = false;
-            this.listView_consumables.Location = new System.Drawing.Point(12, 51);
+            this.listView_consumables.Location = new System.Drawing.Point(11, 37);
             this.listView_consumables.Name = "listView_consumables";
             this.listView_consumables.Scrollable = false;
             this.listView_consumables.Size = new System.Drawing.Size(650, 326);
@@ -99,7 +86,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 389);
             this.Controls.Add(this.listView_consumables);
-            this.Controls.Add(this.btn_comeBack);
             this.Name = "ReadConsumablesScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReadConsumablesScreen";
@@ -108,8 +94,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_comeBack;
         private System.Windows.Forms.ListView listView_consumables;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;

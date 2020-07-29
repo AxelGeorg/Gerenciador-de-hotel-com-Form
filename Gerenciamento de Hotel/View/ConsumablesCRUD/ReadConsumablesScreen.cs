@@ -21,13 +21,6 @@ namespace Gerenciamento_de_Hotel.View
             InitializeComponent();
             listar(0);
         }
-
-        private void btn_comeBack_Click(object sender, EventArgs e)
-        {
-            GerenciadorStripScreen tela = new GerenciadorStripScreen();
-            this.Hide();
-            tela.ShowDialog();
-        }
         public void listar(int tipoOrdenacao)
         {
             listView_consumables.Items.Clear();

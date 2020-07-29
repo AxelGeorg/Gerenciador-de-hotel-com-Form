@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_cadastrar = new System.Windows.Forms.Button();
-            this.btn_back = new System.Windows.Forms.Button();
             this.txtb_quantCamaCasal = new System.Windows.Forms.TextBox();
             this.txtb_identificacao = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,22 +41,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(215, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastrar Quartos";
-            // 
             // btn_cadastrar
             // 
             this.btn_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cadastrar.Location = new System.Drawing.Point(221, 336);
-            this.btn_cadastrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_cadastrar.Location = new System.Drawing.Point(222, 311);
+            this.btn_cadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(235, 28);
             this.btn_cadastrar.TabIndex = 11;
@@ -66,23 +53,10 @@
             this.btn_cadastrar.UseVisualStyleBackColor = true;
             this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
             // 
-            // btn_back
-            // 
-            this.btn_back.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Location = new System.Drawing.Point(2, 0);
-            this.btn_back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(97, 28);
-            this.btn_back.TabIndex = 12;
-            this.btn_back.Text = "←";
-            this.btn_back.UseVisualStyleBackColor = true;
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
-            // 
             // txtb_quantCamaCasal
             // 
-            this.txtb_quantCamaCasal.Location = new System.Drawing.Point(361, 111);
-            this.txtb_quantCamaCasal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_quantCamaCasal.Location = new System.Drawing.Point(363, 88);
+            this.txtb_quantCamaCasal.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_quantCamaCasal.Name = "txtb_quantCamaCasal";
             this.txtb_quantCamaCasal.Size = new System.Drawing.Size(299, 20);
             this.txtb_quantCamaCasal.TabIndex = 16;
@@ -91,8 +65,8 @@
             // 
             // txtb_identificacao
             // 
-            this.txtb_identificacao.Location = new System.Drawing.Point(12, 111);
-            this.txtb_identificacao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_identificacao.Location = new System.Drawing.Point(14, 88);
+            this.txtb_identificacao.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_identificacao.Name = "txtb_identificacao";
             this.txtb_identificacao.Size = new System.Drawing.Size(299, 20);
             this.txtb_identificacao.TabIndex = 15;
@@ -103,7 +77,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(358, 80);
+            this.label2.Location = new System.Drawing.Point(360, 57);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(207, 18);
@@ -114,7 +88,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 80);
+            this.label3.Location = new System.Drawing.Point(11, 57);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(165, 18);
@@ -123,8 +97,8 @@
             // 
             // txtb_precoDiaria
             // 
-            this.txtb_precoDiaria.Location = new System.Drawing.Point(361, 189);
-            this.txtb_precoDiaria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_precoDiaria.Location = new System.Drawing.Point(363, 166);
+            this.txtb_precoDiaria.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_precoDiaria.Name = "txtb_precoDiaria";
             this.txtb_precoDiaria.Size = new System.Drawing.Size(299, 20);
             this.txtb_precoDiaria.TabIndex = 20;
@@ -133,8 +107,8 @@
             // 
             // txtb_qunatCamaSolteiro
             // 
-            this.txtb_qunatCamaSolteiro.Location = new System.Drawing.Point(11, 189);
-            this.txtb_qunatCamaSolteiro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_qunatCamaSolteiro.Location = new System.Drawing.Point(13, 166);
+            this.txtb_qunatCamaSolteiro.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_qunatCamaSolteiro.Name = "txtb_qunatCamaSolteiro";
             this.txtb_qunatCamaSolteiro.Size = new System.Drawing.Size(299, 20);
             this.txtb_qunatCamaSolteiro.TabIndex = 19;
@@ -146,7 +120,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(358, 158);
+            this.label4.Location = new System.Drawing.Point(360, 135);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 18);
@@ -157,7 +131,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 158);
+            this.label5.Location = new System.Drawing.Point(10, 135);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(217, 18);
@@ -167,8 +141,8 @@
             // txtb_qunatPessoas
             // 
             this.txtb_qunatPessoas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtb_qunatPessoas.Location = new System.Drawing.Point(14, 271);
-            this.txtb_qunatPessoas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtb_qunatPessoas.Location = new System.Drawing.Point(16, 248);
+            this.txtb_qunatPessoas.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_qunatPessoas.Name = "txtb_qunatPessoas";
             this.txtb_qunatPessoas.Size = new System.Drawing.Size(299, 23);
             this.txtb_qunatPessoas.TabIndex = 22;
@@ -178,7 +152,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 240);
+            this.label6.Location = new System.Drawing.Point(13, 217);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(235, 18);
@@ -189,7 +163,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 389);
+            this.ClientSize = new System.Drawing.Size(673, 359);
             this.Controls.Add(this.txtb_qunatPessoas);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtb_precoDiaria);
@@ -200,24 +174,18 @@
             this.Controls.Add(this.txtb_identificacao);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_cadastrar);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateRoomScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateRoomScreen";
-            this.Load += new System.EventHandler(this.CreateRoomScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_cadastrar;
-        private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.TextBox txtb_quantCamaCasal;
         private System.Windows.Forms.TextBox txtb_identificacao;
         private System.Windows.Forms.Label label2;

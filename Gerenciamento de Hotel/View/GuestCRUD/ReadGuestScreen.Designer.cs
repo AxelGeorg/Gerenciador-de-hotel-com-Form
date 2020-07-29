@@ -28,25 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_back = new System.Windows.Forms.Button();
             this.listView_guest = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // btn_back
-            // 
-            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Location = new System.Drawing.Point(2, 1);
-            this.btn_back.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(97, 28);
-            this.btn_back.TabIndex = 22;
-            this.btn_back.Text = "←";
-            this.btn_back.UseVisualStyleBackColor = true;
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // listView_guest
             // 
@@ -57,10 +44,10 @@
             this.columnHeader4});
             this.listView_guest.GridLines = true;
             this.listView_guest.HideSelection = false;
-            this.listView_guest.Location = new System.Drawing.Point(125, 25);
+            this.listView_guest.Location = new System.Drawing.Point(33, 25);
             this.listView_guest.Name = "listView_guest";
             this.listView_guest.Scrollable = false;
-            this.listView_guest.Size = new System.Drawing.Size(512, 344);
+            this.listView_guest.Size = new System.Drawing.Size(604, 344);
             this.listView_guest.TabIndex = 23;
             this.listView_guest.UseCompatibleStateImageBehavior = false;
             this.listView_guest.View = System.Windows.Forms.View.Details;
@@ -74,12 +61,12 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Nome";
-            this.columnHeader2.Width = 128;
+            this.columnHeader2.Width = 205;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "CPF";
-            this.columnHeader3.Width = 128;
+            this.columnHeader3.Width = 140;
             // 
             // columnHeader4
             // 
@@ -92,7 +79,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 389);
             this.Controls.Add(this.listView_guest);
-            this.Controls.Add(this.btn_back);
             this.Name = "ReadGuestScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReadGuestScreen";
@@ -101,8 +87,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.ListView listView_guest;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;

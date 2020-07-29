@@ -23,13 +23,6 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
             btn_cadastrar.Enabled = false;
         }
 
-        private void btn_back_Click(object sender, EventArgs e)
-        {
-            GerenciadorStripScreen tela = new GerenciadorStripScreen();
-            this.Hide();
-            tela.ShowDialog();
-        }
-
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
             Consumables consumables = new Consumables();
@@ -57,6 +50,12 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
                 {
                     if (controller.cadastrarConsumables(consumables))
                     {
+                        if (Application.OpenForms.OfType<ReadConsumablesScreen>().Count() > 0)
+                        {
+                            ReadConsumablesScreen form = Application.OpenForms["ReadConsumablesScreen"] as ReadConsumablesScreen;
+                            form.listar(0);
+                        }
+
                         txtb_nome.Clear();
                         cbox_tipo.SelectedIndex = -1;
                         cbox_sabor.SelectedIndex = -1;

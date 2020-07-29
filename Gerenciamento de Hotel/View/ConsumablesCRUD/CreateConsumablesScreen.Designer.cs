@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_back = new System.Windows.Forms.Button();
             this.txtb_descricao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtb_nome = new System.Windows.Forms.TextBox();
@@ -40,22 +39,9 @@
             this.cbox_sabor = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // btn_back
-            // 
-            this.btn_back.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Location = new System.Drawing.Point(1, 2);
-            this.btn_back.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(97, 28);
-            this.btn_back.TabIndex = 23;
-            this.btn_back.Text = "←";
-            this.btn_back.UseVisualStyleBackColor = true;
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
-            // 
             // txtb_descricao
             // 
-            this.txtb_descricao.Location = new System.Drawing.Point(163, 228);
+            this.txtb_descricao.Location = new System.Drawing.Point(161, 211);
             this.txtb_descricao.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_descricao.Name = "txtb_descricao";
             this.txtb_descricao.Size = new System.Drawing.Size(273, 20);
@@ -67,7 +53,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 227);
+            this.label1.Location = new System.Drawing.Point(30, 210);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 18);
@@ -76,7 +62,7 @@
             // 
             // txtb_nome
             // 
-            this.txtb_nome.Location = new System.Drawing.Point(163, 67);
+            this.txtb_nome.Location = new System.Drawing.Point(161, 50);
             this.txtb_nome.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_nome.Name = "txtb_nome";
             this.txtb_nome.Size = new System.Drawing.Size(276, 20);
@@ -88,7 +74,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 66);
+            this.label2.Location = new System.Drawing.Point(30, 49);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 18);
@@ -111,7 +97,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 175);
+            this.label3.Location = new System.Drawing.Point(30, 158);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 18);
@@ -122,7 +108,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 122);
+            this.label4.Location = new System.Drawing.Point(30, 105);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 18);
@@ -134,7 +120,7 @@
             this.cbox_tipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbox_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_tipo.FormattingEnabled = true;
-            this.cbox_tipo.Location = new System.Drawing.Point(163, 118);
+            this.cbox_tipo.Location = new System.Drawing.Point(161, 101);
             this.cbox_tipo.Name = "cbox_tipo";
             this.cbox_tipo.Size = new System.Drawing.Size(276, 21);
             this.cbox_tipo.TabIndex = 37;
@@ -145,7 +131,7 @@
             this.cbox_sabor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbox_sabor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_sabor.FormattingEnabled = true;
-            this.cbox_sabor.Location = new System.Drawing.Point(163, 176);
+            this.cbox_sabor.Location = new System.Drawing.Point(161, 159);
             this.cbox_sabor.Name = "cbox_sabor";
             this.cbox_sabor.Size = new System.Drawing.Size(276, 21);
             this.cbox_sabor.TabIndex = 38;
@@ -165,7 +151,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtb_nome);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btn_back);
             this.Name = "CreateConsumablesScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateConsumablesScreen";
@@ -175,8 +160,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.TextBox txtb_descricao;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtb_nome;

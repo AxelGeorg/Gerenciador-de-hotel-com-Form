@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_comeBack = new System.Windows.Forms.Button();
             this.listView_employees = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,18 +36,6 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // btn_comeBack
-            // 
-            this.btn_comeBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_comeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_comeBack.Location = new System.Drawing.Point(1, 2);
-            this.btn_comeBack.Name = "btn_comeBack";
-            this.btn_comeBack.Size = new System.Drawing.Size(97, 28);
-            this.btn_comeBack.TabIndex = 10;
-            this.btn_comeBack.Text = "←";
-            this.btn_comeBack.UseVisualStyleBackColor = true;
-            this.btn_comeBack.Click += new System.EventHandler(this.btn_comeBack_Click);
             // 
             // listView_employees
             // 
@@ -61,9 +48,9 @@
             this.columnHeader6});
             this.listView_employees.GridLines = true;
             this.listView_employees.HideSelection = false;
-            this.listView_employees.Location = new System.Drawing.Point(135, 23);
+            this.listView_employees.Location = new System.Drawing.Point(41, 34);
             this.listView_employees.Name = "listView_employees";
-            this.listView_employees.Size = new System.Drawing.Size(510, 343);
+            this.listView_employees.Size = new System.Drawing.Size(588, 343);
             this.listView_employees.TabIndex = 11;
             this.listView_employees.UseCompatibleStateImageBehavior = false;
             this.listView_employees.View = System.Windows.Forms.View.Details;
@@ -97,7 +84,7 @@
             // columnHeader6
             // 
             this.columnHeader6.Text = "Email";
-            this.columnHeader6.Width = 85;
+            this.columnHeader6.Width = 160;
             // 
             // ReadEmployeeScreen
             // 
@@ -105,7 +92,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 389);
             this.Controls.Add(this.listView_employees);
-            this.Controls.Add(this.btn_comeBack);
             this.Name = "ReadEmployeeScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReadEmployeeScreen";
@@ -114,8 +100,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_comeBack;
         private System.Windows.Forms.ListView listView_employees;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
