@@ -54,6 +54,7 @@
             this.txtb_cpfGuest.Size = new System.Drawing.Size(324, 20);
             this.txtb_cpfGuest.TabIndex = 33;
             this.txtb_cpfGuest.TextChanged += new System.EventHandler(this.txtb_cpfGuest_TextChanged);
+            this.txtb_cpfGuest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mascara_cpf);
             // 
             // lbl_cpf
             // 

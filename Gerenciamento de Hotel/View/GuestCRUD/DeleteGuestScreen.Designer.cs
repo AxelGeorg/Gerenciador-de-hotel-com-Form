@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.btn_deletar = new System.Windows.Forms.Button();
-            this.listView_guest = new System.Windows.Forms.ListView();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.txtb_guestDeletar = new System.Windows.Forms.TextBox();
             this.lbl_roomNumero = new System.Windows.Forms.Label();
+            this.listView_guest = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btn_deletar
@@ -49,37 +50,6 @@
             this.btn_deletar.Text = "Deletar";
             this.btn_deletar.UseVisualStyleBackColor = true;
             this.btn_deletar.Click += new System.EventHandler(this.btn_deletar_Click);
-            // 
-            // listView_guest
-            // 
-            this.listView_guest.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9});
-            this.listView_guest.GridLines = true;
-            this.listView_guest.HideSelection = false;
-            this.listView_guest.Location = new System.Drawing.Point(19, 128);
-            this.listView_guest.Name = "listView_guest";
-            this.listView_guest.Scrollable = false;
-            this.listView_guest.Size = new System.Drawing.Size(642, 63);
-            this.listView_guest.TabIndex = 48;
-            this.listView_guest.UseCompatibleStateImageBehavior = false;
-            this.listView_guest.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "ID";
-            this.columnHeader7.Width = 35;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Nome";
-            this.columnHeader8.Width = 240;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Data de Nasciemnto";
-            this.columnHeader9.Width = 164;
             // 
             // btn_pesquisar
             // 
@@ -102,6 +72,7 @@
             this.txtb_guestDeletar.Size = new System.Drawing.Size(404, 20);
             this.txtb_guestDeletar.TabIndex = 46;
             this.txtb_guestDeletar.TextChanged += new System.EventHandler(this.txtb_guestDeletar_TextChanged);
+            this.txtb_guestDeletar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mascara_cpf);
             // 
             // lbl_roomNumero
             // 
@@ -114,13 +85,50 @@
             this.lbl_roomNumero.TabIndex = 45;
             this.lbl_roomNumero.Text = "Digite o CPF do hóspede que deseja deletar:";
             // 
+            // listView_guest
+            // 
+            this.listView_guest.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listView_guest.GridLines = true;
+            this.listView_guest.HideSelection = false;
+            this.listView_guest.Location = new System.Drawing.Point(19, 137);
+            this.listView_guest.Name = "listView_guest";
+            this.listView_guest.Scrollable = false;
+            this.listView_guest.Size = new System.Drawing.Size(644, 60);
+            this.listView_guest.TabIndex = 51;
+            this.listView_guest.UseCompatibleStateImageBehavior = false;
+            this.listView_guest.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 161;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Nome";
+            this.columnHeader2.Width = 161;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "CPF";
+            this.columnHeader3.Width = 161;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Data de Nascimento";
+            this.columnHeader4.Width = 161;
+            // 
             // DeleteGuestScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 292);
-            this.Controls.Add(this.btn_deletar);
             this.Controls.Add(this.listView_guest);
+            this.Controls.Add(this.btn_deletar);
             this.Controls.Add(this.btn_pesquisar);
             this.Controls.Add(this.txtb_guestDeletar);
             this.Controls.Add(this.lbl_roomNumero);
@@ -135,12 +143,13 @@
         #endregion
 
         private System.Windows.Forms.Button btn_deletar;
-        private System.Windows.Forms.ListView listView_guest;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.Button btn_pesquisar;
         private System.Windows.Forms.TextBox txtb_guestDeletar;
         private System.Windows.Forms.Label lbl_roomNumero;
+        private System.Windows.Forms.ListView listView_guest;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

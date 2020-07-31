@@ -32,13 +32,14 @@ namespace Gerenciamento_de_Hotel.View
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             int verificaSeRetornou = 0;
+            string cpfRetornado = service.preparaCPFparaBD(txtb_empAlterar.Text);
 
             listViewAlterar.Items.Clear();
             var emp = controller.retornaEmployees(0);
 
             for (int i = 0; i < emp.Count; i++)
             {
-                if (txtb_empAlterar.Text.Trim() == emp[i].emp_cpf)
+                if (cpfRetornado == emp[i].emp_cpf)
                 {
                     ListViewItem itens = new ListViewItem(Convert.ToString(emp[i].emp_id));
                     itens.SubItems.Add(emp[i].emp_nome);
@@ -153,6 +154,8 @@ namespace Gerenciamento_de_Hotel.View
             {
                 limpaCampoForm();
             }
+
+            txtb_empAlterar.MaxLength = 14;
         }
 
         private void limpaCampoForm()
@@ -173,6 +176,55 @@ namespace Gerenciamento_de_Hotel.View
             cbox_opcoes.Items.Add("Título");
             cbox_opcoes.Items.Add("Email");
             cbox_opcoes.Items.Add("Senha");
+        }
+
+        //mascara cpf
+        private void txtb_cpf(object sender, KeyPressEventArgs e)
+        {
+            char num;
+            txtb_empAlterar.SelectionStart = txtb_empAlterar.Text.Length + 1;
+
+            if (txtb_empAlterar.Text.Length == 3 || txtb_empAlterar.Text.Length == 7)
+            {
+                txtb_empAlterar.Text = txtb_empAlterar.Text + ".";
+            }
+            else if (txtb_empAlterar.Text.Length == 11)
+            {
+                txtb_empAlterar.Text = txtb_empAlterar.Text + "-";
+            }
+            txtb_empAlterar.SelectionStart = txtb_empAlterar.Text.Length + 1;
+
+            if ((e.KeyChar == (char)Keys.Back) && (txtb_empAlterar.Text.Length > 0))
+            {
+                string s = txtb_empAlterar.Text.Substring(txtb_empAlterar.Text.Length - 1, 1);
+
+                if (string.Equals(s, "-") || string.Equals(s, "."))
+                {
+                    num = txtb_empAlterar.Text[txtb_empAlterar.Text.Length - 2];
+
+                    txtb_empAlterar.Text = txtb_empAlterar.Text.Remove(txtb_empAlterar.Text.Length - 1);
+
+                    txtb_empAlterar.Text += num;
+                    txtb_empAlterar.SelectionStart = txtb_empAlterar.Text.Length;
+
+                    txtb_empAlterar.Text = txtb_empAlterar.Text.Remove(txtb_empAlterar.Text.Length - 1);
+                    txtb_empAlterar.SelectionStart = txtb_empAlterar.Text.Length;
+                }
+                else if (txtb_empAlterar.Text.Length == 1)
+                {
+                    txtb_empAlterar.Text = txtb_empAlterar.Text.Remove(txtb_empAlterar.Text.Length - 1);
+                    txtb_empAlterar.SelectionStart = txtb_empAlterar.Text.Length;
+                }
+                else if (service.verificaIntOrFloat(txtb_empAlterar.Text))
+                {
+                    num = txtb_empAlterar.Text[txtb_empAlterar.Text.Length - 2];
+
+                    txtb_empAlterar.Text = txtb_empAlterar.Text.Remove(txtb_empAlterar.Text.Length - 1);
+
+                    txtb_empAlterar.Text += num;
+                    txtb_empAlterar.SelectionStart = txtb_empAlterar.Text.Length;
+                }
+            }
         }
     }
 }

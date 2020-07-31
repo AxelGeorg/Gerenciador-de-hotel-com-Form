@@ -1,5 +1,6 @@
 ﻿using Gerenciamento_de_Hotel.Controller;
 using Gerenciamento_de_Hotel.Model.Entidades;
+using Gerenciamento_de_Hotel.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace Gerenciamento_de_Hotel.View.GuestCRUD
     {
         GuestController controller = new GuestController();
         Guest guest = new Guest();
+        HotelService service = new HotelService();
 
         public DeleteGuestScreen()
         {
@@ -26,16 +28,18 @@ namespace Gerenciamento_de_Hotel.View.GuestCRUD
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             int verificaSeRetornou = 0;
+            string cpfRetornado = service.preparaCPFparaBD(txtb_guestDeletar.Text);
 
             listView_guest.Items.Clear();
             var guestRetornado = controller.retornaGuest(0);
 
             for (int i = 0; i < guestRetornado.Count; i++)
             {
-                if (txtb_guestDeletar.Text.Trim() == guestRetornado[i].gue_cpf)
+                if (cpfRetornado == guestRetornado[i].gue_cpf)
                 {
                     ListViewItem itens = new ListViewItem(Convert.ToString(guestRetornado[i].gue_id));
                     itens.SubItems.Add(Convert.ToString(guestRetornado[i].gue_nome));
+                    itens.SubItems.Add(Convert.ToString(guestRetornado[i].gue_cpf));
                     itens.SubItems.Add(Convert.ToString(guestRetornado[i].gue_dataNascimento));
                     listView_guest.Items.Add(itens);
 
@@ -63,6 +67,9 @@ namespace Gerenciamento_de_Hotel.View.GuestCRUD
                         form.listar(0);
                     }
 
+                    listView_guest.Items.Clear();
+                    btn_deletar.Enabled = false;
+                    txtb_guestDeletar.Text = "";
                     MessageBox.Show("Hóspede deletado com sucesso!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -78,6 +85,55 @@ namespace Gerenciamento_de_Hotel.View.GuestCRUD
             {
                 listView_guest.Items.Clear();
                 btn_deletar.Enabled = false;
+            }
+            txtb_guestDeletar.MaxLength = 14;
+        }
+
+        private void mascara_cpf(object sender, KeyPressEventArgs e)
+        {
+            char num;
+            txtb_guestDeletar.SelectionStart = txtb_guestDeletar.Text.Length + 1;
+
+            if (txtb_guestDeletar.Text.Length == 3 || txtb_guestDeletar.Text.Length == 7)
+            {
+                txtb_guestDeletar.Text = txtb_guestDeletar.Text + ".";
+            }
+            else if (txtb_guestDeletar.Text.Length == 11)
+            {
+                txtb_guestDeletar.Text = txtb_guestDeletar.Text + "-";
+            }
+            txtb_guestDeletar.SelectionStart = txtb_guestDeletar.Text.Length + 1;
+
+            if ((e.KeyChar == (char)Keys.Back) && (txtb_guestDeletar.Text.Length > 0))
+            {
+                string s = txtb_guestDeletar.Text.Substring(txtb_guestDeletar.Text.Length - 1, 1);
+
+                if (string.Equals(s, "-") || string.Equals(s, "."))
+                {
+                    num = txtb_guestDeletar.Text[txtb_guestDeletar.Text.Length - 2];
+
+                    txtb_guestDeletar.Text = txtb_guestDeletar.Text.Remove(txtb_guestDeletar.Text.Length - 1);
+
+                    txtb_guestDeletar.Text += num;
+                    txtb_guestDeletar.SelectionStart = txtb_guestDeletar.Text.Length;
+
+                    txtb_guestDeletar.Text = txtb_guestDeletar.Text.Remove(txtb_guestDeletar.Text.Length - 1);
+                    txtb_guestDeletar.SelectionStart = txtb_guestDeletar.Text.Length;
+                }
+                else if (txtb_guestDeletar.Text.Length == 1)
+                {
+                    txtb_guestDeletar.Text = txtb_guestDeletar.Text.Remove(txtb_guestDeletar.Text.Length - 1);
+                    txtb_guestDeletar.SelectionStart = txtb_guestDeletar.Text.Length;
+                }
+                else if (service.verificaIntOrFloat(txtb_guestDeletar.Text))
+                {
+                    num = txtb_guestDeletar.Text[txtb_guestDeletar.Text.Length - 2];
+
+                    txtb_guestDeletar.Text = txtb_guestDeletar.Text.Remove(txtb_guestDeletar.Text.Length - 1);
+
+                    txtb_guestDeletar.Text += num;
+                    txtb_guestDeletar.SelectionStart = txtb_guestDeletar.Text.Length;
+                }
             }
         }
     }

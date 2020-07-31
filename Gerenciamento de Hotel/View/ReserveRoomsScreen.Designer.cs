@@ -60,6 +60,8 @@
             this.txtb_cpf.Size = new System.Drawing.Size(220, 20);
             this.txtb_cpf.TabIndex = 4;
             this.txtb_cpf.Tag = "Oi";
+            this.txtb_cpf.TextChanged += new System.EventHandler(this.txtb_cpf_TextChanged);
+            this.txtb_cpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mascara_cpf);
             // 
             // lb_cpf
             // 

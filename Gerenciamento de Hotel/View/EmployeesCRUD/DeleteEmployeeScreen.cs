@@ -1,5 +1,6 @@
 ﻿using Gerenciamento_de_Hotel.Controller;
 using Gerenciamento_de_Hotel.Model.Entidades;
+using Gerenciamento_de_Hotel.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace Gerenciamento_de_Hotel.View
     {
         EmployeeController controller = new EmployeeController();
         Employees employees = new Employees();
+        HotelService service = new HotelService();
 
         public DeleteEmployeeScreen()
         {
@@ -25,13 +27,14 @@ namespace Gerenciamento_de_Hotel.View
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             int verificaSeRetornou = 0;
+            string cpfDigitado = service.preparaCPFparaBD(txtb_empDeletar.Text);
 
             listViewDeletar.Items.Clear();
             var emp = controller.retornaEmployees(0);
 
             for (int i = 0; i < emp.Count; i++)
             {
-                if (txtb_empDeletar.Text.Trim() == emp[i].emp_cpf)
+                if (cpfDigitado == emp[i].emp_cpf)
                 {
                     ListViewItem itens = new ListViewItem(Convert.ToString(emp[i].emp_id));
                     itens.SubItems.Add(emp[i].emp_nome);
@@ -78,6 +81,56 @@ namespace Gerenciamento_de_Hotel.View
             { 
                 listViewDeletar.Items.Clear();
                 btn_deletar.Enabled = false;
+            }
+
+            txtb_empDeletar.MaxLength = 14;
+        }
+        //mascara cpf
+        private void txt_cpf(object sender, KeyPressEventArgs e)
+        {
+            char num;
+            txtb_empDeletar.SelectionStart = txtb_empDeletar.Text.Length + 1;
+
+            if (txtb_empDeletar.Text.Length == 3 || txtb_empDeletar.Text.Length == 7)
+            {
+                txtb_empDeletar.Text = txtb_empDeletar.Text + ".";
+            }
+            else if (txtb_empDeletar.Text.Length == 11)
+            {
+                txtb_empDeletar.Text = txtb_empDeletar.Text + "-";
+            }
+            txtb_empDeletar.SelectionStart = txtb_empDeletar.Text.Length + 1;
+
+            if ((e.KeyChar == (char)Keys.Back) && (txtb_empDeletar.Text.Length > 0))
+            {
+                string s = txtb_empDeletar.Text.Substring(txtb_empDeletar.Text.Length - 1, 1);
+
+                if (string.Equals(s, "-") || string.Equals(s, "."))
+                {
+                    num = txtb_empDeletar.Text[txtb_empDeletar.Text.Length - 2];
+
+                    txtb_empDeletar.Text = txtb_empDeletar.Text.Remove(txtb_empDeletar.Text.Length - 1);
+
+                    txtb_empDeletar.Text += num;
+                    txtb_empDeletar.SelectionStart = txtb_empDeletar.Text.Length;
+
+                    txtb_empDeletar.Text = txtb_empDeletar.Text.Remove(txtb_empDeletar.Text.Length - 1);
+                    txtb_empDeletar.SelectionStart = txtb_empDeletar.Text.Length;
+                }
+                else if (txtb_empDeletar.Text.Length == 1)
+                {
+                    txtb_empDeletar.Text = txtb_empDeletar.Text.Remove(txtb_empDeletar.Text.Length - 1);
+                    txtb_empDeletar.SelectionStart = txtb_empDeletar.Text.Length;
+                }
+                else if (service.verificaIntOrFloat(txtb_empDeletar.Text))
+                {
+                    num = txtb_empDeletar.Text[txtb_empDeletar.Text.Length - 2];
+
+                    txtb_empDeletar.Text = txtb_empDeletar.Text.Remove(txtb_empDeletar.Text.Length - 1);
+
+                    txtb_empDeletar.Text += num;
+                    txtb_empDeletar.SelectionStart = txtb_empDeletar.Text.Length;
+                }
             }
         }
     }

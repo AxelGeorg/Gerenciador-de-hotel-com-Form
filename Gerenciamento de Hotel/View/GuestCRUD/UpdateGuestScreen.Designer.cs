@@ -107,9 +107,10 @@
             this.txtb_guestAlterar.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtb_guestAlterar.Location = new System.Drawing.Point(17, 75);
             this.txtb_guestAlterar.Name = "txtb_guestAlterar";
-            this.txtb_guestAlterar.Size = new System.Drawing.Size(294, 20);
+            this.txtb_guestAlterar.Size = new System.Drawing.Size(350, 20);
             this.txtb_guestAlterar.TabIndex = 30;
             this.txtb_guestAlterar.TextChanged += new System.EventHandler(this.txtb_guestAlterar_TextChanged);
+            this.txtb_guestAlterar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mascara_cpf);
             // 
             // lbl_empAlterar
             // 

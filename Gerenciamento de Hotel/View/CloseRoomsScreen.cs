@@ -1,4 +1,5 @@
 ﻿using Gerenciamento_de_Hotel.Controller;
+using Gerenciamento_de_Hotel.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Gerenciamento_de_Hotel.View
     {
         GuestController guestController = new GuestController();
         RoomController  roomController  = new RoomController();
+        HotelService service = new HotelService();
         private string cpf;
         private int id_quarto;
 
@@ -25,7 +27,8 @@ namespace Gerenciamento_de_Hotel.View
 
         private void txtb_cpf_Leave(object sender, EventArgs e)
         {
-            var guest = guestController.retornaGuestCPF(txtb_cpf.Text);
+            string cpfSemMascara = service.preparaCPFparaBD(txtb_cpf.Text);
+            var guest = guestController.retornaGuestCPF(cpfSemMascara);
             if (guest.gue_fk_room != null)
             {
                 if (guest.gue_nome != null)
@@ -78,9 +81,11 @@ namespace Gerenciamento_de_Hotel.View
 
         private void txtb_cpf_KeyPress(object sender, KeyPressEventArgs e)
         {
+            string cpfSemMascara = service.preparaCPFparaBD(txtb_cpf.Text);
+
             if (e.KeyChar == (char)Keys.Return)
             {
-                var guest = guestController.retornaGuestCPF(txtb_cpf.Text);
+                var guest = guestController.retornaGuestCPF(cpfSemMascara);
                 if (guest.gue_fk_room != null)
                 {
                     if (guest.gue_nome != null)
@@ -109,6 +114,56 @@ namespace Gerenciamento_de_Hotel.View
 
                 e.Handled = true;
             }
+
+
+
+
+
+            //mascara cpf
+            char num;
+            txtb_cpf.SelectionStart = txtb_cpf.Text.Length + 1;
+
+            if (txtb_cpf.Text.Length == 3 || txtb_cpf.Text.Length == 7)
+            {
+                txtb_cpf.Text = txtb_cpf.Text + ".";
+            }
+            else if (txtb_cpf.Text.Length == 11)
+            {
+                txtb_cpf.Text = txtb_cpf.Text + "-";
+            }
+            txtb_cpf.SelectionStart = txtb_cpf.Text.Length + 1;
+
+            if ((e.KeyChar == (char)Keys.Back) && (txtb_cpf.Text.Length > 0))
+            {
+                string s = txtb_cpf.Text.Substring(txtb_cpf.Text.Length - 1, 1);
+
+                if (string.Equals(s, "-") || string.Equals(s, "."))
+                {
+                    num = txtb_cpf.Text[txtb_cpf.Text.Length - 2];
+
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+
+                    txtb_cpf.Text += num;
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+                }
+                else if (txtb_cpf.Text.Length == 1)
+                {
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+                }
+                else if (service.verificaIntOrFloat(txtb_cpf.Text))
+                {
+                    num = txtb_cpf.Text[txtb_cpf.Text.Length - 2];
+
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+
+                    txtb_cpf.Text += num;
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+                }
+            }
         }
 
         private void txtb_cpf_TextChanged(object sender, EventArgs e)
@@ -117,6 +172,7 @@ namespace Gerenciamento_de_Hotel.View
             {
                 limparCampos();
             }
+            txtb_cpf.MaxLength = 14;
         }
 
         private void rbtn_efetuado_CheckedChanged(object sender, EventArgs e)

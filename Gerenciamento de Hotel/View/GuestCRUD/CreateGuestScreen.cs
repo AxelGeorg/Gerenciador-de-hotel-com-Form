@@ -29,12 +29,13 @@ namespace Gerenciamento_de_Hotel.View
             Guest guest = new Guest();
             string dataNascimento;
             int verificaSeRetornou = 0;
+            string cpfParaCadastrar = service.preparaCPFparaBD(txtb_cpf.Text);
 
             var listGuest = controller.retornaGuest(0);
 
             for (int i = 0; i < listGuest.Count; i++)
             {
-                if (txtb_cpf.Text.Trim() == listGuest[i].gue_cpf)
+                if (cpfParaCadastrar == listGuest[i].gue_cpf)
                 {
                     MessageBox.Show("Não é possível cadastrar esse hóspede, pois já há uma hóspede com esse CPF!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     verificaSeRetornou = 1;
@@ -50,7 +51,7 @@ namespace Gerenciamento_de_Hotel.View
             {
                 dataNascimento = txtb_ano.Text + "/" + txtb_mes.Text + "/" + txtb_dia.Text;
                 guest.gue_nome = txtb_nome.Text;
-                guest.gue_cpf = txtb_cpf.Text;
+                guest.gue_cpf = cpfParaCadastrar;
                 guest.gue_dataNascimento = dataNascimento;
 
                 if (MessageBox.Show("Deseja cadastrar esse Hóspede?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
@@ -102,7 +103,7 @@ namespace Gerenciamento_de_Hotel.View
             {
                 btn_cadastrar.Enabled = false;
             }
-            txtb_cpf.MaxLength = 15;
+            txtb_cpf.MaxLength = 14;
         }
 
         private void txtb_dia_TextChanged(object sender, EventArgs e)
@@ -142,6 +143,54 @@ namespace Gerenciamento_de_Hotel.View
                 btn_cadastrar.Enabled = false;
             }
             txtb_ano.MaxLength = 4;
+        }
+          
+        private void mascara_cpf(object sender, KeyPressEventArgs e)
+        {
+            char num;
+            txtb_cpf.SelectionStart = txtb_cpf.Text.Length + 1;
+
+            if (txtb_cpf.Text.Length == 3 || txtb_cpf.Text.Length == 7)
+            {
+                txtb_cpf.Text = txtb_cpf.Text + ".";
+            }
+            else if (txtb_cpf.Text.Length == 11)
+            {
+                txtb_cpf.Text = txtb_cpf.Text + "-";
+            }
+            txtb_cpf.SelectionStart = txtb_cpf.Text.Length + 1;
+
+            if ((e.KeyChar == (char)Keys.Back) && (txtb_cpf.Text.Length > 0))
+            {
+                string s = txtb_cpf.Text.Substring(txtb_cpf.Text.Length - 1, 1);
+
+                if (string.Equals(s, "-") || string.Equals(s, "."))
+                {
+                    num = txtb_cpf.Text[txtb_cpf.Text.Length - 2];
+
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+
+                    txtb_cpf.Text += num;
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+                }
+                else if (txtb_cpf.Text.Length == 1)
+                {
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+                }
+                else if (service.verificaIntOrFloat(txtb_cpf.Text))
+                {
+                    num = txtb_cpf.Text[txtb_cpf.Text.Length - 2];
+
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+
+                    txtb_cpf.Text += num;
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+                }
+            }
         }
     }
 }

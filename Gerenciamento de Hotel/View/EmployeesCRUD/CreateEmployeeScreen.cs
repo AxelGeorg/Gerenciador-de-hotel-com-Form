@@ -28,18 +28,19 @@ namespace Gerenciamento_de_Hotel.View
         {
             Employees emp = new Employees();
             int verificaSeRetornou = 0;
+            string cpfSemMascara = service.preparaCPFparaBD(txtb_cpf.Text);
 
             //valida se há outra empresa com msm nome
             var listEmp = controller.retornaEmployees(0);
 
             for (int i = 0; i < listEmp.Count; i++)
             {
-                if ((txtb_cpf.Text.Trim() == listEmp[i].emp_cpf) && (txtb_email.Text.Trim() == listEmp[i].emp_email))
+                if ((cpfSemMascara == listEmp[i].emp_cpf) && (txtb_email.Text.Trim() == listEmp[i].emp_email))
                 {
                     MessageBox.Show("Não é possível cadastrar essa funcionários, pois já há uma funcionário com esse CPF e com esse Email!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     verificaSeRetornou = 1;
                 }
-                else if (txtb_cpf.Text.Trim() == listEmp[i].emp_cpf)
+                else if (cpfSemMascara == listEmp[i].emp_cpf)
                 {
                     MessageBox.Show("Não é possível cadastrar essa funcionários, pois já há uma funcionário com esse CPF!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     verificaSeRetornou = 1;
@@ -59,7 +60,7 @@ namespace Gerenciamento_de_Hotel.View
             {
                 emp.emp_nome = txtb_nome.Text;
                 emp.emp_sobrenome = txtb_sobrenome.Text;
-                emp.emp_cpf = service.preparaCPFparaBD(txtb_cpf.Text);
+                emp.emp_cpf = cpfSemMascara;
                 emp.emp_titulo = txtb_titulo.Text;
                 emp.emp_email = txtb_email.Text;
                 emp.emp_password = txtb_senha.Text;
@@ -123,7 +124,7 @@ namespace Gerenciamento_de_Hotel.View
             }
             
             txtb_cpf.MaxLength = 14;
-                    }
+        }
 
         private void txtb_titulo_TextChanged(object sender, EventArgs e)
         {

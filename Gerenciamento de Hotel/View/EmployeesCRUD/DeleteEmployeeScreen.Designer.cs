@@ -111,6 +111,7 @@
             this.txtb_empDeletar.Size = new System.Drawing.Size(408, 20);
             this.txtb_empDeletar.TabIndex = 26;
             this.txtb_empDeletar.TextChanged += new System.EventHandler(this.txtb_empDeletar_TextChanged);
+            this.txtb_empDeletar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cpf);
             // 
             // lbl_empDeletar
             // 

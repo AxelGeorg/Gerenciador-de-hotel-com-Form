@@ -126,6 +126,7 @@
             this.txtb_empAlterar.Size = new System.Drawing.Size(294, 20);
             this.txtb_empAlterar.TabIndex = 22;
             this.txtb_empAlterar.TextChanged += new System.EventHandler(this.txtb_empAlterar_TextChanged);
+            this.txtb_empAlterar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtb_cpf);
             // 
             // lbl_empAlterar
             // 

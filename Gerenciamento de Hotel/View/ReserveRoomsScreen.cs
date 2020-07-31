@@ -41,6 +41,7 @@ namespace Gerenciamento_de_Hotel.View
         {
             InitializeComponent();
 
+            btn_reservar.Enabled = false;
             filtroSQL = sqlstring;
             executaCboxAndVisible(filtroSQL);
         }
@@ -88,54 +89,10 @@ namespace Gerenciamento_de_Hotel.View
             }
         }
 
-        private void cbox_quarto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            for (int i = 0; i < listRoom.Count; i++)
-            {
-                if (cbox_quarto.SelectedIndex == i)
-                {
-                    room_id_fk = listRoom[i].room_id;
-
-                    lbl_numeroQuartoA.Text = listRoom[i].room_numeroQuarto;
-                    lbl_quantCamasCasalA.Text = Convert.ToString(listRoom[i].room_quantCasal);
-                    lbl_camasSolteiroA.Text = Convert.ToString(listRoom[i].room_quantSolteiro);
-                    lbl_quantMaxPessoasA.Text = Convert.ToString(listRoom[i].room_quantPessoa);
-                    lbl_precoDiariaA.Text = Convert.ToString(listRoom[i].room_precoDiaria);
-
-                    lbl_numeroQuartoA.Visible = true;
-                    lbl_quantCamasCasalA.Visible = true;
-                    lbl_camasSolteiroA.Visible = true;
-                    lbl_quantMaxPessoasA.Visible = true;
-                    lbl_precoDiariaA.Visible = true;
-
-                    if (!string.IsNullOrEmpty(txtb_quantDias.Text))
-                    {
-                        lbl_precpTotalA.Text = Convert.ToString(listRoom[i].room_precoDiaria * Convert.ToInt32(txtb_quantDias.Text));
-                    }
-                    else
-                    {
-                        lbl_precpTotalA.Text = Convert.ToString(listRoom[i].room_precoDiaria);
-                    }
-                    lbl_precpTotalA.Visible = true;
-                }
-            }
-        }
-
-        private void txtb_quantDias_TextChanged(object sender, EventArgs e)
-        {
-            if ((!string.IsNullOrEmpty(txtb_quantDias.Text)) && (lbl_precpTotalA.Visible) && (service.verificaIntOrFloat(txtb_quantDias.Text)))
-            {
-                lbl_precpTotalA.Text = Convert.ToString(Convert.ToInt32(lbl_precoDiariaA.Text) * Convert.ToInt32(txtb_quantDias.Text));
-            }
-            else if ((string.IsNullOrEmpty(txtb_quantDias.Text)) && (lbl_precpTotalA.Visible))
-            {
-                lbl_precpTotalA.Text = lbl_precoDiariaA.Text;
-            }
-        }
-
         private void btn_reservar_Click(object sender, EventArgs e)
         {
             int verificaSeRetornou = 0;
+            string cpfSemMascara = service.preparaCPFparaBD(txtb_cpf.Text);
 
             if ((!string.IsNullOrEmpty(txtb_quantDias.Text)) && (service.verificaIntOrFloat(txtb_quantDias.Text)) && (!string.IsNullOrEmpty(txtb_cpf.Text)))
             {
@@ -143,7 +100,7 @@ namespace Gerenciamento_de_Hotel.View
 
                 for (int i = 0; i < listGuest.Count; i++)
                 {
-                    if (txtb_cpf.Text.Trim() == listGuest[i].gue_cpf)
+                    if (cpfSemMascara == listGuest[i].gue_cpf)
                     {                       
                         verificaSeRetornou = 1;
 
@@ -199,6 +156,130 @@ namespace Gerenciamento_de_Hotel.View
             precoMin = 0;
             precoMax = 0;
             listaComboBox(padraoSQL);
+        }
+
+        private void txtb_cpf_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_quantDias.Text)) && (cbox_quarto.SelectedIndex != -1))
+            {
+                btn_reservar.Enabled = true;
+            }
+            else
+            {
+                btn_reservar.Enabled = false;
+            }
+            txtb_cpf.MaxLength = 14;
+        }
+
+        private void txtb_quantDias_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrEmpty(txtb_quantDias.Text)) && (lbl_precpTotalA.Visible) && (service.verificaIntOrFloat(txtb_quantDias.Text)))
+            {
+                lbl_precpTotalA.Text = Convert.ToString(Convert.ToInt32(lbl_precoDiariaA.Text) * Convert.ToInt32(txtb_quantDias.Text));
+            }
+            else if ((string.IsNullOrEmpty(txtb_quantDias.Text)) && (lbl_precpTotalA.Visible))
+            {
+                lbl_precpTotalA.Text = lbl_precoDiariaA.Text;
+            }
+
+            if ((!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_quantDias.Text)) && (cbox_quarto.SelectedIndex != -1))
+            {
+                btn_reservar.Enabled = true;
+            }
+            else
+            {
+                btn_reservar.Enabled = false;
+            }
+        }
+
+        private void cbox_quarto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < listRoom.Count; i++)
+            {
+                if (cbox_quarto.SelectedIndex == i)
+                {
+                    room_id_fk = listRoom[i].room_id;
+
+                    lbl_numeroQuartoA.Text = listRoom[i].room_numeroQuarto;
+                    lbl_quantCamasCasalA.Text = Convert.ToString(listRoom[i].room_quantCasal);
+                    lbl_camasSolteiroA.Text = Convert.ToString(listRoom[i].room_quantSolteiro);
+                    lbl_quantMaxPessoasA.Text = Convert.ToString(listRoom[i].room_quantPessoa);
+                    lbl_precoDiariaA.Text = Convert.ToString(listRoom[i].room_precoDiaria);
+
+                    lbl_numeroQuartoA.Visible = true;
+                    lbl_quantCamasCasalA.Visible = true;
+                    lbl_camasSolteiroA.Visible = true;
+                    lbl_quantMaxPessoasA.Visible = true;
+                    lbl_precoDiariaA.Visible = true;
+
+                    if (!string.IsNullOrEmpty(txtb_quantDias.Text))
+                    {
+                        lbl_precpTotalA.Text = Convert.ToString(listRoom[i].room_precoDiaria * Convert.ToInt32(txtb_quantDias.Text));
+                    }
+                    else
+                    {
+                        lbl_precpTotalA.Text = Convert.ToString(listRoom[i].room_precoDiaria);
+                    }
+                    lbl_precpTotalA.Visible = true;
+                }
+            }
+
+            if ((!string.IsNullOrWhiteSpace(txtb_cpf.Text)) && (!string.IsNullOrWhiteSpace(txtb_quantDias.Text)) && (cbox_quarto.SelectedIndex != -1))
+            {
+                btn_reservar.Enabled = true;
+            }
+            else
+            {
+                btn_reservar.Enabled = false;
+            }
+        }
+
+        private void mascara_cpf(object sender, KeyPressEventArgs e)
+        {
+            char num;
+            txtb_cpf.SelectionStart = txtb_cpf.Text.Length + 1;
+
+            if (txtb_cpf.Text.Length == 3 || txtb_cpf.Text.Length == 7)
+            {
+                txtb_cpf.Text = txtb_cpf.Text + ".";
+            }
+            else if (txtb_cpf.Text.Length == 11)
+            {
+                txtb_cpf.Text = txtb_cpf.Text + "-";
+            }
+            txtb_cpf.SelectionStart = txtb_cpf.Text.Length + 1;
+
+            if ((e.KeyChar == (char)Keys.Back) && (txtb_cpf.Text.Length > 0))
+            {
+                string s = txtb_cpf.Text.Substring(txtb_cpf.Text.Length - 1, 1);
+
+                if (string.Equals(s, "-") || string.Equals(s, "."))
+                {
+                    num = txtb_cpf.Text[txtb_cpf.Text.Length - 2];
+
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+
+                    txtb_cpf.Text += num;
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+                }
+                else if (txtb_cpf.Text.Length == 1)
+                {
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+                }
+                else if (service.verificaIntOrFloat(txtb_cpf.Text))
+                {
+                    num = txtb_cpf.Text[txtb_cpf.Text.Length - 2];
+
+                    txtb_cpf.Text = txtb_cpf.Text.Remove(txtb_cpf.Text.Length - 1);
+
+                    txtb_cpf.Text += num;
+                    txtb_cpf.SelectionStart = txtb_cpf.Text.Length;
+                }
+            }
         }
     }
 }
