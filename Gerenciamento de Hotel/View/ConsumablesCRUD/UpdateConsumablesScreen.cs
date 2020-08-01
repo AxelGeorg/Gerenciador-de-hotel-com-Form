@@ -1,5 +1,6 @@
 ﻿using Gerenciamento_de_Hotel.Controller;
 using Gerenciamento_de_Hotel.Model.Entidades;
+using Gerenciamento_de_Hotel.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
     {
         ConsumablesController controller = new ConsumablesController();
         Consumables consumables = new Consumables();
+        HotelService service = new HotelService();
 
         public UpdateConsumablesScreen()
         {
@@ -45,6 +47,7 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
                     itens.SubItems.Add(Convert.ToString(consumables.con_nome));
                     itens.SubItems.Add(Convert.ToString(consumables.con_tipoProduto));
                     itens.SubItems.Add(Convert.ToString(consumables.con_tipoSabor));
+                    itens.SubItems.Add(Convert.ToString(consumables.con_preco));
                     itens.SubItems.Add(Convert.ToString(consumables.con_descricao));
                     listView_consumables.Items.Add(itens);
 
@@ -61,6 +64,7 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
             cbox_opcoes.Items.Add("Nome");
             cbox_opcoes.Items.Add("Tipo Produto");
             cbox_opcoes.Items.Add("Tipo Sabor");
+            cbox_opcoes.Items.Add("Preço");
             cbox_opcoes.Items.Add("Descrição");
         }
         private void listaComboBoxProduto()
@@ -101,6 +105,17 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
             }
             else if (cbox_opcoes.SelectedIndex == 3)
             {
+                if (!service.verificaIntOrFloat(txtb_novoAlterar.Text))
+                {
+                    verificaSeRetornou = 1;
+                }
+                else
+                {
+                    consumables.con_preco = float.Parse(txtb_novoAlterar.Text);
+                }
+            }
+            else if (cbox_opcoes.SelectedIndex == 3)
+            {
                 consumables.con_descricao = txtb_novoAlterar.Text;
             }
 
@@ -122,13 +137,13 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
             }
             else
             {
-                MessageBox.Show("Não é possível alterar esse produto, pois já há um produto com esse nome!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Não é possível alterar esse produto, pois já há um produto com esse nome ou o formato do preço a alterar está incorreto!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void cbox_opcoes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((cbox_opcoes.SelectedIndex == 0) || (cbox_opcoes.SelectedIndex == 3))
+            if ((cbox_opcoes.SelectedIndex == 0) || (cbox_opcoes.SelectedIndex == 3) || (cbox_opcoes.SelectedIndex == 4))
             {
                 btn_alterar.Enabled = false;
                 txtb_novoAlterar.Visible = true;

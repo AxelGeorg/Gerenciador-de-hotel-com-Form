@@ -34,6 +34,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView_consumables
@@ -43,7 +44,8 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader6});
             this.listView_consumables.GridLines = true;
             this.listView_consumables.HideSelection = false;
             this.listView_consumables.Location = new System.Drawing.Point(11, 37);
@@ -58,17 +60,17 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 80;
+            this.columnHeader1.Width = 50;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Nome";
-            this.columnHeader2.Width = 130;
+            this.columnHeader2.Width = 90;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Produto";
-            this.columnHeader3.Width = 130;
+            this.columnHeader3.Width = 110;
             // 
             // columnHeader4
             // 
@@ -77,8 +79,13 @@
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Descrição";
-            this.columnHeader5.Width = 180;
+            this.columnHeader5.Text = "Preço";
+            this.columnHeader5.Width = 120;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Descrição";
+            this.columnHeader6.Width = 150;
             // 
             // ReadConsumablesScreen
             // 
@@ -100,5 +107,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }

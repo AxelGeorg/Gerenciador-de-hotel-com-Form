@@ -40,6 +40,7 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
                     itens.SubItems.Add(Convert.ToString(consumables.con_nome));
                     itens.SubItems.Add(Convert.ToString(consumables.con_tipoProduto));
                     itens.SubItems.Add(Convert.ToString(consumables.con_tipoSabor));
+                    itens.SubItems.Add(Convert.ToString("R$"+consumables.con_preco));
                     itens.SubItems.Add(Convert.ToString(consumables.con_descricao));
                     listView_consumables.Items.Add(itens);
                     btn_deletar.Enabled = true;

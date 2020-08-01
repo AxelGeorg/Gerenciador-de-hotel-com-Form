@@ -1,5 +1,6 @@
 ﻿using Gerenciamento_de_Hotel.Controller;
 using Gerenciamento_de_Hotel.Model.Entidades;
+using Gerenciamento_de_Hotel.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
     public partial class CreateConsumablesScreen : Form
     {
         ConsumablesController controller = new ConsumablesController();
+        HotelService service = new HotelService();
 
         public CreateConsumablesScreen()
         {
@@ -39,11 +41,17 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
                 }
             }
 
+            if (!service.verificaIntOrFloat(txtb_preco.Text))
+            {
+                verificaSeRetornou = 1;
+            }
+
             if (verificaSeRetornou == 0)
             {
                 consumables.con_nome = txtb_nome.Text;
                 consumables.con_tipoProduto = cbox_tipo.SelectedItem.ToString();
                 consumables.con_tipoSabor = cbox_sabor.SelectedItem.ToString();
+                consumables.con_preco = float.Parse(txtb_preco.Text);
                 consumables.con_descricao = txtb_descricao.Text;
 
                 if (MessageBox.Show("Deseja cadastrar esse Consumível?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
@@ -59,6 +67,7 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
                         txtb_nome.Clear();
                         cbox_tipo.SelectedIndex = -1;
                         cbox_sabor.SelectedIndex = -1;
+                        txtb_preco.Clear();
                         txtb_descricao.Clear();
                         MessageBox.Show("Consumível cadastrado com sucesso!");
                     }
@@ -83,7 +92,7 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
 
         private void txtb_nome_TextChanged(object sender, EventArgs e)
         {
-            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_descricao.Text)) && (cbox_tipo.SelectedIndex != -1) && (cbox_sabor.SelectedIndex != -1))
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_descricao.Text)) && (!string.IsNullOrWhiteSpace(txtb_preco.Text)) && (cbox_tipo.SelectedIndex != -1) && (cbox_sabor.SelectedIndex != -1))
             {
                 btn_cadastrar.Enabled = true;
             }
@@ -95,7 +104,7 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
 
         private void cbox_tipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_descricao.Text)) && (cbox_tipo.SelectedIndex != -1) && (cbox_sabor.SelectedIndex != -1))
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_descricao.Text)) && (!string.IsNullOrWhiteSpace(txtb_preco.Text)) && (cbox_tipo.SelectedIndex != -1) && (cbox_sabor.SelectedIndex != -1))
             {
                 btn_cadastrar.Enabled = true;
             }
@@ -107,7 +116,7 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
 
         private void cbox_sabor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_descricao.Text)) && (cbox_tipo.SelectedIndex != -1) && (cbox_sabor.SelectedIndex != -1))
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_descricao.Text)) && (!string.IsNullOrWhiteSpace(txtb_preco.Text)) && (cbox_tipo.SelectedIndex != -1) && (cbox_sabor.SelectedIndex != -1))
             {
                 btn_cadastrar.Enabled = true;
             }
@@ -119,7 +128,19 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
 
         private void txtb_descricao_TextChanged(object sender, EventArgs e)
         {
-            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_descricao.Text)) && (cbox_tipo.SelectedIndex != -1) && (cbox_sabor.SelectedIndex != -1))
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_descricao.Text)) && (!string.IsNullOrWhiteSpace(txtb_preco.Text)) && (cbox_tipo.SelectedIndex != -1) && (cbox_sabor.SelectedIndex != -1))
+            {
+                btn_cadastrar.Enabled = true;
+            }
+            else
+            {
+                btn_cadastrar.Enabled = false;
+            }
+        }
+
+        private void txtb_preco_TextChanged(object sender, EventArgs e)
+        {
+            if ((!string.IsNullOrWhiteSpace(txtb_nome.Text)) && (!string.IsNullOrWhiteSpace(txtb_descricao.Text)) && (!string.IsNullOrWhiteSpace(txtb_preco.Text)) && (cbox_tipo.SelectedIndex != -1) && (cbox_sabor.SelectedIndex != -1))
             {
                 btn_cadastrar.Enabled = true;
             }

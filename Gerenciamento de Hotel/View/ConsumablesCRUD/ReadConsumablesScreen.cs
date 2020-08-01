@@ -31,9 +31,10 @@ namespace Gerenciamento_de_Hotel.View
             for (int i = 0; i < listConsumables.Count; i++)
             {
                 listView_consumables.Items.Add(listConsumables[i].con_id.ToString());
-                listView_consumables.Items[i] .SubItems.Add(listConsumables[i].con_nome);
+                listView_consumables.Items[i].SubItems.Add(listConsumables[i].con_nome);
                 listView_consumables.Items[i].SubItems.Add(listConsumables[i].con_tipoProduto);
                 listView_consumables.Items[i].SubItems.Add(listConsumables[i].con_tipoSabor);
+                listView_consumables.Items[i].SubItems.Add("R$"+listConsumables[i].con_preco);
                 listView_consumables.Items[i].SubItems.Add(listConsumables[i].con_descricao);
             }
         }
@@ -57,6 +58,10 @@ namespace Gerenciamento_de_Hotel.View
                 listar(3);
             }
             else if (e.Column == 4)
+            {
+                listar(4);
+            }
+            else if (e.Column == 5)
             {
                 //ver o que fazer nessa situação
                 listar(0);

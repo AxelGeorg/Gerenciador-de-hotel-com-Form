@@ -15,6 +15,7 @@ namespace Gerenciamento_de_Hotel.View
     public partial class StoreConsumablesScreen : Form
     {
         ConsumablesController consumablesController = new ConsumablesController();
+        GuestController guestController = new GuestController();
         Guest guest = new Guest();
         bool verificaSeHaProdutos;
         string tipoProdutoList = "";
@@ -147,9 +148,27 @@ namespace Gerenciamento_de_Hotel.View
 
         private void btn_comprarProduto_Click(object sender, EventArgs e)
         {
-            btn_comprarProduto.Enabled = false;
-            MessageBox.Show(listView_consumables.SelectedItems[0].SubItems[1].Text, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            listView_consumables.Items.Remove(listView_consumables.SelectedItems[0]);
+            if (MessageBox.Show("Deseja comprar esse produto?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            {
+                //controller.alteraConsumables(consumables);
+                //guest.gue_precoTotal += 
+                //guestController.alteraGuestParaReserva(guest);
+
+                if (Application.OpenForms.OfType<ReadGuestScreen>().Count() > 0)
+                {
+                    ReadGuestScreen form = Application.OpenForms["ReadGuestScreen"] as ReadGuestScreen;
+                    form.listar(0);
+                }
+
+                btn_comprarProduto.Enabled = false;
+                MessageBox.Show(listView_consumables.SelectedItems[0].SubItems[1].Text, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                listView_consumables.Items.Remove(listView_consumables.SelectedItems[0]);
+            }
+
+
+
+
+
         }
     }
 }

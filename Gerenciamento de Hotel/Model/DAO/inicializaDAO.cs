@@ -113,6 +113,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                                                                           "con_nome varchar(20) not null," +
                                                                           "con_tipoProduto varchar(10) not null," +
                                                                           "con_tipoSabor varchar(10) not null," +
+                                                                          "con_preco float not null," +
                                                                           "con_descricao varchar(45));";
 
             command.ExecuteNonQuery();

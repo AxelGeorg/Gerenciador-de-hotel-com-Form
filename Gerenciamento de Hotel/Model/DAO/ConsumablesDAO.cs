@@ -18,6 +18,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         bool clickNome = true;
         bool clickProduto = true;
         bool clickSabor = true;
+        bool clickPreco = true;
         bool clickDescrição = true;
 
         /// <summary>
@@ -30,7 +31,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             try
             {
                 var listConsumables = new List<Consumables>();
-                string query = "select con_id,con_nome,con_tipoProduto,con_tipoSabor,con_descricao from consumables";
+                string query = "select con_id,con_nome,con_tipoProduto,con_tipoSabor,con_preco,con_descricao from consumables";
 
                 if (tipoOrdenacao == 0)
                 {
@@ -88,6 +89,20 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                     }
                 }
 
+                if (tipoOrdenacao == 4)
+                {
+                    if (clickPreco == true)
+                    {
+                        query = query + " order by con_preco asc;";
+                        clickPreco = false;
+                    }
+                    else
+                    {
+                        query = query + " order by con_preco desc;";
+                        clickPreco = true;
+                    }
+                }
+
                 using (connection = new MySqlConnection(conexaoString))
                 {
                     using (command = new MySqlCommand(query, connection))
@@ -102,6 +117,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                                 consumables.con_nome = dataReader["con_nome"].ToString();
                                 consumables.con_tipoProduto = dataReader["con_tipoProduto"].ToString();
                                 consumables.con_tipoSabor = dataReader["con_tipoSabor"].ToString();
+                                consumables.con_preco = float.Parse(dataReader["con_preco"].ToString());
                                 consumables.con_descricao = dataReader["con_descricao"].ToString();
                                 listConsumables.Add(consumables);
                             }
@@ -184,6 +200,20 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                     }
                 }
 
+                if (tipoOrdenacao == 4)
+                {
+                    if (clickPreco == true)
+                    {
+                        query = query + " order by con_preco asc;";
+                        clickPreco = false;
+                    }
+                    else
+                    {
+                        query = query + " order by con_preco desc;";
+                        clickPreco = true;
+                    }
+                }
+
                 using (connection = new MySqlConnection(conexaoString))
                 {
                     using (command = new MySqlCommand(query, connection))
@@ -198,6 +228,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                                 consumables.con_nome = dataReader["con_nome"].ToString();
                                 consumables.con_tipoProduto = dataReader["con_tipoProduto"].ToString();
                                 consumables.con_tipoSabor = dataReader["con_tipoSabor"].ToString();
+                                consumables.con_preco = float.Parse(dataReader["con_preco"].ToString());
                                 consumables.con_descricao = dataReader["con_descricao"].ToString();
                                 listConsumables.Add(consumables);
                             }
@@ -227,7 +258,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 command.Connection = connection;
 
                 command.CommandType = CommandType.Text;
-                command.CommandText = "insert into consumables (con_nome, con_tipoProduto, con_tipoSabor, con_descricao) values ('" + consumables.con_nome + "', '" + consumables.con_tipoProduto + "', '" + consumables.con_tipoSabor + "', '" + consumables.con_descricao + "');";
+                command.CommandText = "insert into consumables (con_nome, con_tipoProduto, con_tipoSabor, con_preco, con_descricao) values ('" + consumables.con_nome + "', '" + consumables.con_tipoProduto + "', '" + consumables.con_tipoSabor + "', '" + consumables.con_preco + "', '" + consumables.con_descricao + "');";
                 command.ExecuteNonQuery();
                 command.Connection.Close(); //fecha conexão
                 return true;
@@ -244,7 +275,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
 
             try
             {
-                string query = "select con_id,con_nome,con_tipoProduto,con_tipoSabor,con_descricao from consumables where con_nome = '" + nome + "';";
+                string query = "select con_id,con_nome,con_tipoProduto,con_tipoSabor,con_preco,con_descricao from consumables where con_nome = '" + nome + "';";
                 using (connection = new MySqlConnection(conexaoString))
                 {
                     using (command = new MySqlCommand(query, connection))
@@ -258,6 +289,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                                 consumables.con_nome = dataReader["con_nome"].ToString();
                                 consumables.con_tipoProduto = dataReader["con_tipoProduto"].ToString();
                                 consumables.con_tipoSabor = dataReader["con_tipoSabor"].ToString();
+                                consumables.con_preco = float.Parse(dataReader["con_preco"].ToString());
                                 consumables.con_descricao = dataReader["con_descricao"].ToString();
                             }
                         }
@@ -303,7 +335,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         {
             try
             {
-                string query = "update consumables set con_nome = '"+ consumables.con_nome+ "', con_tipoProduto = '" + consumables.con_tipoProduto + "', con_tipoSabor = '" + consumables.con_tipoSabor + "', con_descricao = '" + consumables.con_descricao + "' where con_id = "+ consumables.con_id + ";";
+                string query = "update consumables set con_nome = '"+ consumables.con_nome+ "', con_tipoProduto = '" + consumables.con_tipoProduto + "', con_tipoSabor = '" + consumables.con_tipoSabor + "', con_preco = '" + consumables.con_preco + "', con_descricao = '" + consumables.con_descricao + "' where con_id = "+ consumables.con_id + ";";
 
                 connection = new MySqlConnection(conexaoString);
                 connection.Open(); // abre a conexão

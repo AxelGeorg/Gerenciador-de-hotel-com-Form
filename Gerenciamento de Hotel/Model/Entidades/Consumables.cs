@@ -12,6 +12,7 @@ namespace Gerenciamento_de_Hotel.Model.Entidades
         public string con_nome { get; set; }
         public string con_tipoProduto { get; set; }
         public string con_tipoSabor { get; set; }
+        public float con_preco { get; set; }
         public string con_descricao { get; set; }
     }
 }

@@ -37,14 +37,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbox_tipo = new System.Windows.Forms.ComboBox();
             this.cbox_sabor = new System.Windows.Forms.ComboBox();
+            this.txtb_preco = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtb_descricao
             // 
-            this.txtb_descricao.Location = new System.Drawing.Point(161, 211);
+            this.txtb_descricao.Location = new System.Drawing.Point(161, 238);
             this.txtb_descricao.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_descricao.Name = "txtb_descricao";
-            this.txtb_descricao.Size = new System.Drawing.Size(273, 20);
+            this.txtb_descricao.Size = new System.Drawing.Size(276, 20);
             this.txtb_descricao.TabIndex = 30;
             this.txtb_descricao.Tag = "Oi";
             this.txtb_descricao.TextChanged += new System.EventHandler(this.txtb_descricao_TextChanged);
@@ -53,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 210);
+            this.label1.Location = new System.Drawing.Point(30, 237);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 18);
@@ -62,7 +64,7 @@
             // 
             // txtb_nome
             // 
-            this.txtb_nome.Location = new System.Drawing.Point(161, 50);
+            this.txtb_nome.Location = new System.Drawing.Point(161, 55);
             this.txtb_nome.Margin = new System.Windows.Forms.Padding(2);
             this.txtb_nome.Name = "txtb_nome";
             this.txtb_nome.Size = new System.Drawing.Size(276, 20);
@@ -74,7 +76,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 49);
+            this.label2.Location = new System.Drawing.Point(30, 54);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 18);
@@ -84,7 +86,7 @@
             // btn_cadastrar
             // 
             this.btn_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cadastrar.Location = new System.Drawing.Point(128, 287);
+            this.btn_cadastrar.Location = new System.Drawing.Point(117, 314);
             this.btn_cadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(262, 27);
@@ -97,7 +99,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 158);
+            this.label3.Location = new System.Drawing.Point(30, 147);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 18);
@@ -108,7 +110,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(30, 105);
+            this.label4.Location = new System.Drawing.Point(30, 100);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 18);
@@ -131,17 +133,40 @@
             this.cbox_sabor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbox_sabor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_sabor.FormattingEnabled = true;
-            this.cbox_sabor.Location = new System.Drawing.Point(161, 159);
+            this.cbox_sabor.Location = new System.Drawing.Point(161, 148);
             this.cbox_sabor.Name = "cbox_sabor";
             this.cbox_sabor.Size = new System.Drawing.Size(276, 21);
             this.cbox_sabor.TabIndex = 38;
             this.cbox_sabor.SelectedIndexChanged += new System.EventHandler(this.cbox_sabor_SelectedIndexChanged);
             // 
+            // txtb_preco
+            // 
+            this.txtb_preco.Location = new System.Drawing.Point(161, 194);
+            this.txtb_preco.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_preco.Name = "txtb_preco";
+            this.txtb_preco.Size = new System.Drawing.Size(276, 20);
+            this.txtb_preco.TabIndex = 40;
+            this.txtb_preco.Tag = "Oi";
+            this.txtb_preco.TextChanged += new System.EventHandler(this.txtb_preco_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(30, 193);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 18);
+            this.label5.TabIndex = 39;
+            this.label5.Text = "Digite o preço:";
+            // 
             // CreateConsumablesScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 335);
+            this.ClientSize = new System.Drawing.Size(496, 363);
+            this.Controls.Add(this.txtb_preco);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.cbox_sabor);
             this.Controls.Add(this.cbox_tipo);
             this.Controls.Add(this.label4);
@@ -169,5 +194,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbox_tipo;
         private System.Windows.Forms.ComboBox cbox_sabor;
+        private System.Windows.Forms.TextBox txtb_preco;
+        private System.Windows.Forms.Label label5;
     }
 }

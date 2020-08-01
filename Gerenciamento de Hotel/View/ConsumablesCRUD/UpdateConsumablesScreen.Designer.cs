@@ -31,17 +31,18 @@
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.txtb_consumablesAlterar = new System.Windows.Forms.TextBox();
             this.lbl_empAlterar = new System.Windows.Forms.Label();
-            this.listView_consumables = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl_opcoesAlterar = new System.Windows.Forms.Label();
             this.cbox_opcoes = new System.Windows.Forms.ComboBox();
             this.txtb_novoAlterar = new System.Windows.Forms.TextBox();
             this.btn_alterar = new System.Windows.Forms.Button();
             this.cbox_tipo = new System.Windows.Forms.ComboBox();
+            this.listView_consumables = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btn_pesquisar
@@ -75,49 +76,6 @@
             this.lbl_empAlterar.Size = new System.Drawing.Size(291, 17);
             this.lbl_empAlterar.TabIndex = 33;
             this.lbl_empAlterar.Text = "Digite o nome do produto que deseja alterar:";
-            // 
-            // listView_consumables
-            // 
-            this.listView_consumables.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.listView_consumables.GridLines = true;
-            this.listView_consumables.HideSelection = false;
-            this.listView_consumables.Location = new System.Drawing.Point(12, 152);
-            this.listView_consumables.Name = "listView_consumables";
-            this.listView_consumables.Scrollable = false;
-            this.listView_consumables.Size = new System.Drawing.Size(649, 59);
-            this.listView_consumables.TabIndex = 36;
-            this.listView_consumables.UseCompatibleStateImageBehavior = false;
-            this.listView_consumables.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 80;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Nome";
-            this.columnHeader2.Width = 130;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Produto";
-            this.columnHeader3.Width = 130;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Sabor";
-            this.columnHeader4.Width = 130;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Descrição";
-            this.columnHeader5.Width = 180;
             // 
             // lbl_opcoesAlterar
             // 
@@ -172,17 +130,66 @@
             this.cbox_tipo.TabIndex = 41;
             this.cbox_tipo.SelectedIndexChanged += new System.EventHandler(this.cbox_tipo_SelectedIndexChanged);
             // 
+            // listView_consumables
+            // 
+            this.listView_consumables.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11});
+            this.listView_consumables.GridLines = true;
+            this.listView_consumables.HideSelection = false;
+            this.listView_consumables.Location = new System.Drawing.Point(12, 129);
+            this.listView_consumables.Name = "listView_consumables";
+            this.listView_consumables.Scrollable = false;
+            this.listView_consumables.Size = new System.Drawing.Size(649, 65);
+            this.listView_consumables.TabIndex = 42;
+            this.listView_consumables.UseCompatibleStateImageBehavior = false;
+            this.listView_consumables.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "ID";
+            this.columnHeader6.Width = 50;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Nome";
+            this.columnHeader7.Width = 90;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Produto";
+            this.columnHeader8.Width = 110;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Sabor";
+            this.columnHeader9.Width = 130;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Preço";
+            this.columnHeader10.Width = 120;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Descrição";
+            this.columnHeader11.Width = 150;
+            // 
             // UpdateConsumablesScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 389);
+            this.Controls.Add(this.listView_consumables);
             this.Controls.Add(this.cbox_tipo);
             this.Controls.Add(this.btn_alterar);
             this.Controls.Add(this.txtb_novoAlterar);
             this.Controls.Add(this.lbl_opcoesAlterar);
             this.Controls.Add(this.cbox_opcoes);
-            this.Controls.Add(this.listView_consumables);
             this.Controls.Add(this.btn_pesquisar);
             this.Controls.Add(this.txtb_consumablesAlterar);
             this.Controls.Add(this.lbl_empAlterar);
@@ -198,16 +205,17 @@
         private System.Windows.Forms.Button btn_pesquisar;
         private System.Windows.Forms.TextBox txtb_consumablesAlterar;
         private System.Windows.Forms.Label lbl_empAlterar;
-        private System.Windows.Forms.ListView listView_consumables;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Label lbl_opcoesAlterar;
         private System.Windows.Forms.ComboBox cbox_opcoes;
         private System.Windows.Forms.TextBox txtb_novoAlterar;
         private System.Windows.Forms.Button btn_alterar;
         private System.Windows.Forms.ComboBox cbox_tipo;
+        private System.Windows.Forms.ListView listView_consumables;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
     }
 }
