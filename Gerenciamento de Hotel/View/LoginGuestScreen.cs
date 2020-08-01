@@ -23,11 +23,6 @@ namespace Gerenciamento_de_Hotel.View
             btn_entrar.Enabled = false;
         }
 
-        private void LoginGuestScreen_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_comeBack_Click(object sender, EventArgs e)
         {
             MenuStripScreen tela = new MenuStripScreen();
@@ -48,7 +43,7 @@ namespace Gerenciamento_de_Hotel.View
             }
             else
             {
-                MessageBox.Show("CPF não identificado ou inválido!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("CPF não identificado, inválido ou este hóspede não está vinculado à um quarto!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

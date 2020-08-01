@@ -294,6 +294,12 @@
     <Compile Include="View\RoomCRUD\UpdateRoomScreen.Designer.cs">
       <DependentUpon>UpdateRoomScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\StoreConsumablesScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StoreConsumablesScreen.Designer.cs">
+      <DependentUpon>StoreConsumablesScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\StoreGuestScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -393,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RoomCRUD\UpdateRoomScreen.resx">
       <DependentUpon>UpdateRoomScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StoreConsumablesScreen.resx">
+      <DependentUpon>StoreConsumablesScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StoreGuestScreen.resx">
       <DependentUpon>StoreGuestScreen.cs</DependentUpon>

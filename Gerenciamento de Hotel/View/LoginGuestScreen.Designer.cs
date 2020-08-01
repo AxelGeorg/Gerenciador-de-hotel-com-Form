@@ -91,7 +91,6 @@
             this.Name = "LoginGuestScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginGuestScreen";
-            this.Load += new System.EventHandler(this.LoginGuestScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

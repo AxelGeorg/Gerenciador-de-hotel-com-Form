@@ -16,6 +16,17 @@ namespace Gerenciamento_de_Hotel.Controller
         {
             return consumablesDAO.BuscarConsumables(tipoOrdenacao);
         }
+        public List<Consumables> retornaConsumablesPorTipoProduto(int tipoOrdenacao,string tipoProduto)
+        {
+            if (tipoProduto == "")
+            {
+                return consumablesDAO.BuscarConsumables(tipoOrdenacao);
+            }
+            else
+            {
+                return consumablesDAO.BuscarConsumablesPorTipoProduto(tipoOrdenacao, tipoProduto);
+            }
+        }
         public bool cadastrarConsumables(Consumables consumables)
         {
             return consumablesDAO.cadastrarConsumables(consumables);

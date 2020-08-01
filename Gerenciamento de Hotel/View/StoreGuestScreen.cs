@@ -25,9 +25,9 @@ namespace Gerenciamento_de_Hotel.View
             guest = guestRetornado;
         }
 
-        private void btn_comeBack_Click(object sender, EventArgs e)
+        private void telaInicialToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoginGuestScreen tela = new LoginGuestScreen();
+            MenuStripScreen tela = new MenuStripScreen();
             this.Hide();
             tela.ShowDialog();
         }
@@ -35,6 +35,19 @@ namespace Gerenciamento_de_Hotel.View
         private void btn_teste_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Entrou com o hóspede "+ guest.gue_nome + ".", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void produtosDisponíveisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<StoreConsumablesScreen>().Count() > 0)
+            {
+                MessageBox.Show("Está tela já está aberta, não é possível abrir mais uma tela desta!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                StoreConsumablesScreen tela = new StoreConsumablesScreen(guest);
+                tela.Show();
+            }
         }
     }
 }
