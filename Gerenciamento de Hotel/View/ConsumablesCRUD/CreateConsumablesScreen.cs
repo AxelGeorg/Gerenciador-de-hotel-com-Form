@@ -51,6 +51,9 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
                 consumables.con_nome = txtb_nome.Text;
                 consumables.con_tipoProduto = cbox_tipo.SelectedItem.ToString();
                 consumables.con_tipoSabor = cbox_sabor.SelectedItem.ToString();
+
+
+
                 consumables.con_preco = float.Parse(txtb_preco.Text);
                 consumables.con_descricao = txtb_descricao.Text;
 

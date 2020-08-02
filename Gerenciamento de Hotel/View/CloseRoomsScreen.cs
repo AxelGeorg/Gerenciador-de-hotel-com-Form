@@ -35,7 +35,7 @@ namespace Gerenciamento_de_Hotel.View
                 {
                     cpf = guest.gue_cpf;
                     txtb_hospede.Text = guest.gue_nome;
-                    txtb_precoTotal.Text = Convert.ToString(guest.gue_precoTotal);
+                    txtb_precoTotal.Text = "R$"+Convert.ToString(guest.gue_precoTotal);
 
                     var room = roomController.retornaRoomID(guest.gue_fk_room);
                     id_quarto = room.room_id;
@@ -92,7 +92,7 @@ namespace Gerenciamento_de_Hotel.View
                     {
                         cpf = guest.gue_cpf;
                         txtb_hospede.Text = guest.gue_nome;
-                        txtb_precoTotal.Text = Convert.ToString(guest.gue_precoTotal);
+                        txtb_precoTotal.Text = "R$" + Convert.ToString(guest.gue_precoTotal);
 
                         var room = roomController.retornaRoomID(guest.gue_fk_room);
                         id_quarto = room.room_id;

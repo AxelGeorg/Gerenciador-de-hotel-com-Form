@@ -32,13 +32,14 @@
             this.lbl_semProdutos = new System.Windows.Forms.Label();
             this.lbl_ordenar = new System.Windows.Forms.Label();
             this.cbox_ordem = new System.Windows.Forms.ComboBox();
-            this.listView_consumables = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_comprarProduto = new System.Windows.Forms.Button();
+            this.listView_consumables = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -79,51 +80,6 @@
             this.cbox_ordem.TabIndex = 3;
             this.cbox_ordem.SelectedIndexChanged += new System.EventHandler(this.cbox_ordem_SelectedIndexChanged);
             // 
-            // listView_consumables
-            // 
-            this.listView_consumables.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.listView_consumables.FullRowSelect = true;
-            this.listView_consumables.GridLines = true;
-            this.listView_consumables.HideSelection = false;
-            this.listView_consumables.Location = new System.Drawing.Point(11, 93);
-            this.listView_consumables.Name = "listView_consumables";
-            this.listView_consumables.Size = new System.Drawing.Size(650, 240);
-            this.listView_consumables.TabIndex = 34;
-            this.listView_consumables.UseCompatibleStateImageBehavior = false;
-            this.listView_consumables.View = System.Windows.Forms.View.Details;
-            this.listView_consumables.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.ordenar);
-            this.listView_consumables.SelectedIndexChanged += new System.EventHandler(this.listView_consumables_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 80;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Nome";
-            this.columnHeader2.Width = 130;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Produto";
-            this.columnHeader3.Width = 130;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Sabor";
-            this.columnHeader4.Width = 130;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Descrição";
-            this.columnHeader5.Width = 180;
-            // 
             // btn_comprarProduto
             // 
             this.btn_comprarProduto.Location = new System.Drawing.Point(231, 349);
@@ -134,13 +90,64 @@
             this.btn_comprarProduto.UseVisualStyleBackColor = true;
             this.btn_comprarProduto.Click += new System.EventHandler(this.btn_comprarProduto_Click);
             // 
+            // listView_consumables
+            // 
+            this.listView_consumables.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11});
+            this.listView_consumables.FullRowSelect = true;
+            this.listView_consumables.GridLines = true;
+            this.listView_consumables.HideSelection = false;
+            this.listView_consumables.Location = new System.Drawing.Point(12, 94);
+            this.listView_consumables.Name = "listView_consumables";
+            this.listView_consumables.Scrollable = false;
+            this.listView_consumables.Size = new System.Drawing.Size(649, 233);
+            this.listView_consumables.TabIndex = 36;
+            this.listView_consumables.UseCompatibleStateImageBehavior = false;
+            this.listView_consumables.View = System.Windows.Forms.View.Details;
+            this.listView_consumables.SelectedIndexChanged += new System.EventHandler(this.listView_consumables_SelectedIndexChanged_1);
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "ID";
+            this.columnHeader6.Width = 50;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Nome";
+            this.columnHeader7.Width = 90;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Produto";
+            this.columnHeader8.Width = 110;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Sabor";
+            this.columnHeader9.Width = 130;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Preço";
+            this.columnHeader10.Width = 120;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Descrição";
+            this.columnHeader11.Width = 150;
+            // 
             // StoreConsumablesScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 389);
-            this.Controls.Add(this.btn_comprarProduto);
             this.Controls.Add(this.listView_consumables);
+            this.Controls.Add(this.btn_comprarProduto);
             this.Controls.Add(this.cbox_ordem);
             this.Controls.Add(this.lbl_ordenar);
             this.Controls.Add(this.lbl_semProdutos);
@@ -158,12 +165,13 @@
         private System.Windows.Forms.Label lbl_semProdutos;
         private System.Windows.Forms.Label lbl_ordenar;
         private System.Windows.Forms.ComboBox cbox_ordem;
-        private System.Windows.Forms.ListView listView_consumables;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button btn_comprarProduto;
+        private System.Windows.Forms.ListView listView_consumables;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
     }
 }

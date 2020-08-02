@@ -17,6 +17,7 @@ namespace Gerenciamento_de_Hotel.View
         ConsumablesController consumablesController = new ConsumablesController();
         GuestController guestController = new GuestController();
         Guest guest = new Guest();
+        Consumables consumablesCerto = new Consumables();
         bool verificaSeHaProdutos;
         string tipoProdutoList = "";
 
@@ -78,6 +79,7 @@ namespace Gerenciamento_de_Hotel.View
                 listView_consumables.Items[i].SubItems.Add(listConsumables[i].con_nome);
                 listView_consumables.Items[i].SubItems.Add(listConsumables[i].con_tipoProduto);
                 listView_consumables.Items[i].SubItems.Add(listConsumables[i].con_tipoSabor);
+                listView_consumables.Items[i].SubItems.Add("R$"+listConsumables[i].con_preco);
                 listView_consumables.Items[i].SubItems.Add(listConsumables[i].con_descricao);
             }
         }
@@ -138,21 +140,12 @@ namespace Gerenciamento_de_Hotel.View
             }
         }
 
-        private void listView_consumables_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listView_consumables.SelectedItems.Count > 0)
-            {
-                btn_comprarProduto.Enabled = true;
-            }
-        }
-
         private void btn_comprarProduto_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja comprar esse produto?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
-                //controller.alteraConsumables(consumables);
-                //guest.gue_precoTotal += 
-                //guestController.alteraGuestParaReserva(guest);
+                guest.gue_precoTotal += float.Parse(listView_consumables.SelectedItems[0].SubItems[4].Text.Replace("R$", ""));
+                guestController.alteraGuestParaReserva(guest);
 
                 if (Application.OpenForms.OfType<ReadGuestScreen>().Count() > 0)
                 {
@@ -169,6 +162,14 @@ namespace Gerenciamento_de_Hotel.View
 
 
 
+        }
+
+        private void listView_consumables_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (listView_consumables.SelectedItems.Count > 0)
+            {
+                btn_comprarProduto.Enabled = true;
+            }
         }
     }
 }
