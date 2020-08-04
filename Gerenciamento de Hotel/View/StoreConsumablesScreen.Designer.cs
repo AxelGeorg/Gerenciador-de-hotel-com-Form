@@ -153,6 +153,7 @@
             this.Controls.Add(this.lbl_semProdutos);
             this.Controls.Add(this.label1);
             this.Name = "StoreConsumablesScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StoreConsumablesScreen";
             this.ResumeLayout(false);
             this.PerformLayout();

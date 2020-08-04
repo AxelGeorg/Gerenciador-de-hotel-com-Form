@@ -40,10 +40,11 @@
             this.columnHeader2});
             this.listView_historico.GridLines = true;
             this.listView_historico.HideSelection = false;
-            this.listView_historico.Location = new System.Drawing.Point(12, 12);
+            this.listView_historico.Location = new System.Drawing.Point(9, 10);
+            this.listView_historico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listView_historico.Name = "listView_historico";
             this.listView_historico.Scrollable = false;
-            this.listView_historico.Size = new System.Drawing.Size(452, 310);
+            this.listView_historico.Size = new System.Drawing.Size(340, 253);
             this.listView_historico.TabIndex = 0;
             this.listView_historico.UseCompatibleStateImageBehavior = false;
             this.listView_historico.View = System.Windows.Forms.View.Details;
@@ -61,11 +62,13 @@
             // 
             // PurchasesHistoricScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 334);
+            this.ClientSize = new System.Drawing.Size(361, 271);
             this.Controls.Add(this.listView_historico);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PurchasesHistoricScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PurchasesHistoricScreen";
             this.ResumeLayout(false);
 

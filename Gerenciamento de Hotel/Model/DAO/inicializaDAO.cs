@@ -137,7 +137,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                                                                         "gue_dataNascimento date not null," +
                                                                         "gue_diasReservado int," +
                                                                         "gue_precoTotal float," +
-                                                                        "gue_historico varchar(100000)," +
+                                                                        "gue_historico varchar(10000)," +
                                                                         "gue_fk_room int," +
                                                                         "CONSTRAINT fk_room FOREIGN KEY(gue_fk_room) REFERENCES room(room_id));";
 

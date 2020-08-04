@@ -61,7 +61,6 @@ C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.LoginScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.Properties.Resources.resources
-C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.PanelScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento de Hotel.csproj.GenerateResource.cache
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento de Hotel.csproj.CoreCompileInputs.cache
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento de Hotel.csproj.CopyComplete
@@ -143,9 +142,7 @@ C:\Users\Daniel\Desktop\Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento de 
 C:\Users\Daniel\Desktop\Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.CreateRoomScreen.resources
 C:\Users\Daniel\Desktop\Hotel\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.RoomScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.CreateRoomScreen.resources
-C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.RoomScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.CreateEmployeeScreen.resources
-C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.EmployeeScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ReadEmployeeScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.UpdateEmployeeScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.DeleteEmployeeScreen.resources
@@ -330,7 +327,6 @@ C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamen
 C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.GuestScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.CreateGuestScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.DeleteRoomScreen.resources
-C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.GuestScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.ReadGuestScreen.resources
 C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.UpdateGuestScreen.resources
 C:\Users\Daniel\Desktop\Hotel certo 01\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.GuestCRUD.DeleteGuestScreen.resources
@@ -379,3 +375,4 @@ C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento 
 C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.StoreConsumablesScreen.resources
 C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.StoreGuestScreen.resources
 C:\Users\Daniel\Desktop\Hotel Certo\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.PurchasesHistoricScreen.resources
+C:\Users\fe_ma\angular\atividades_c#\Gerenciador-de-hotel-com-Form\Gerenciamento de Hotel\obj\Debug\Gerenciamento_de_Hotel.View.PurchasesHistoricScreen.resources

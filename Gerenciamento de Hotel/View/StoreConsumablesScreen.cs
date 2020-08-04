@@ -143,7 +143,7 @@ namespace Gerenciamento_de_Hotel.View
                     historico = guest.gue_historico;
                 }
 
-                historico +=  listView_consumables.SelectedItems[0].SubItems[1].Text + " / " + listView_consumables.SelectedItems[0].SubItems[4].Text + " / ";
+                historico +=  listView_consumables.SelectedItems[0].SubItems[1].Text + "/" + listView_consumables.SelectedItems[0].SubItems[4].Text + "/";
                 guest.gue_historico = historico;
 
                 guest.gue_precoTotal +=  precoCerto;
