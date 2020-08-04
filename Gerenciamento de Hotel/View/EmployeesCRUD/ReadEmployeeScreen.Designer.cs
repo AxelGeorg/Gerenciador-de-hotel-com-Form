@@ -48,13 +48,15 @@
             this.columnHeader6});
             this.listView_employees.GridLines = true;
             this.listView_employees.HideSelection = false;
-            this.listView_employees.Location = new System.Drawing.Point(41, 34);
+            this.listView_employees.Location = new System.Drawing.Point(55, 42);
+            this.listView_employees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView_employees.Name = "listView_employees";
-            this.listView_employees.Size = new System.Drawing.Size(588, 343);
+            this.listView_employees.Size = new System.Drawing.Size(783, 421);
             this.listView_employees.TabIndex = 11;
             this.listView_employees.UseCompatibleStateImageBehavior = false;
             this.listView_employees.View = System.Windows.Forms.View.Details;
             this.listView_employees.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.ordenar);
+            this.listView_employees.SelectedIndexChanged += new System.EventHandler(this.listView_employees_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -88,10 +90,11 @@
             // 
             // ReadEmployeeScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 389);
+            this.ClientSize = new System.Drawing.Size(897, 479);
             this.Controls.Add(this.listView_employees);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ReadEmployeeScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReadEmployeeScreen";

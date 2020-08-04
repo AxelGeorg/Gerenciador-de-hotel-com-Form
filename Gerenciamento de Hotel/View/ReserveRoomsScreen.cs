@@ -34,6 +34,8 @@ namespace Gerenciamento_de_Hotel.View
         public ReserveRoomsScreen()
         {
             InitializeComponent();
+            txtb_cpf.Focus();
+            txtb_cpf.Select();
             executaCboxAndVisible(filtroSQL);
         }
 

@@ -23,6 +23,8 @@ namespace Gerenciamento_de_Hotel.View
         public CloseRoomsScreen()
         {
             InitializeComponent();
+            txtb_cpf.Focus();
+            txtb_cpf.Select();
         }
 
         private void txtb_cpf_Leave(object sender, EventArgs e)

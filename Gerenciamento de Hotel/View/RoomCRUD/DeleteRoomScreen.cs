@@ -23,6 +23,8 @@ namespace Gerenciamento_de_Hotel.View
         {
             InitializeComponent();
             btn_deletar.Enabled = false;
+            txtb_roomDeletar.Focus();
+            txtb_roomDeletar.Select();
         }
 
         private void btn_pesquisar_Click(object sender, EventArgs e)

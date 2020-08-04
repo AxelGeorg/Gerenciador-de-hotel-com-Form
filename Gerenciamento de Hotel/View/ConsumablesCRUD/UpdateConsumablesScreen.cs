@@ -22,6 +22,9 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
         public UpdateConsumablesScreen()
         {
             InitializeComponent();
+            txtb_consumablesAlterar.Focus();
+            txtb_consumablesAlterar.Select();
+           
             btn_alterar.Enabled = false;
             txtb_novoAlterar.Enabled = false;
             cbox_opcoes.Enabled = false;

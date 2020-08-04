@@ -23,6 +23,8 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
             InitializeComponent();
             listaComboBoxs();
             btn_cadastrar.Enabled = false;
+            txtb_nome.Focus();
+            txtb_nome.Select();
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
@@ -53,7 +55,7 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
                 consumables.con_tipoSabor = cbox_sabor.SelectedItem.ToString();
 
                 var precoCerto = txtb_preco.Text.Replace(",", ".");
-                consumables.con_preco = float.Parse(precoCerto);
+                consumables.con_preco = float.Parse(precoCerto)/100;
                 consumables.con_descricao = txtb_descricao.Text;
 
                 if (MessageBox.Show("Deseja cadastrar esse Consumível?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)

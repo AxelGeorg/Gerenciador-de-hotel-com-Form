@@ -22,6 +22,8 @@ namespace Gerenciamento_de_Hotel.View
         {
             InitializeComponent();
             btn_cadastrar.Enabled = false;
+            txtb_nome.Focus();
+            txtb_nome.Select();
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)

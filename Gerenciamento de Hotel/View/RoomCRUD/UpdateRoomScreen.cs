@@ -22,6 +22,8 @@ namespace Gerenciamento_de_Hotel.View
         public UpdateRoomScreen()
         {
             InitializeComponent();
+            txtb_roomAlterar.Focus();
+            txtb_roomAlterar.Select();
 
             listaComboBox();
             btn_alterar.Enabled = false;

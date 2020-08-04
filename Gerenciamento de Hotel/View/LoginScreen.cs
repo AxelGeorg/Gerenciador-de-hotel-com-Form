@@ -28,6 +28,8 @@ namespace Gerenciamento_de_Hotel
         public LoginScreen()
         {
             InitializeComponent();
+            txtb_email.Focus();
+            txtb_email.Select();
         }
 
         private void btn_login_Click(object sender, EventArgs e)

@@ -127,11 +127,24 @@ namespace Gerenciamento_de_Hotel.View
 
         private void btn_comprarProduto_Click(object sender, EventArgs e)
         {
+            string historico;
             if (MessageBox.Show("Deseja comprar esse produto?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 //n esta efetuando a compra quando comprasse um produto que tenha ".".
                 //Erro
                 var precoCerto = float.Parse(String.Format("{0:#.00}", listView_consumables.SelectedItems[0].SubItems[4].Text.Replace("R$", "")));
+
+                if(string.IsNullOrEmpty(guest.gue_historico) )
+                {
+                    historico = "";
+                }
+                else
+                {
+                    historico = guest.gue_historico;
+                }
+
+                historico +=  listView_consumables.SelectedItems[0].SubItems[1].Text + " / " + listView_consumables.SelectedItems[0].SubItems[4].Text + " / ";
+                guest.gue_historico = historico;
 
                 guest.gue_precoTotal +=  precoCerto;
                 guestController.alterarGuestPreco(guest);

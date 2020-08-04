@@ -19,6 +19,8 @@ namespace Gerenciamento_de_Hotel.View
         public CreateRoomScreen()
         {
             InitializeComponent();
+            txtb_identificacao.Focus();
+            txtb_identificacao.Select();
             btn_cadastrar.Enabled = true;
             txtb_qunatPessoas.Enabled = false;
             txtb_qunatPessoas.Text = "0";

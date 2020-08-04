@@ -171,7 +171,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             Guest guest = new Guest();
             try
             {
-                string query = "select gue_id, gue_cpf, gue_nome, gue_precoTotal, gue_fk_room from guest where gue_fk_room != 0 and gue_cpf = '" + cpf + "';";
+                string query = "select gue_id, gue_cpf, gue_nome, gue_precoTotal, gue_fk_room, gue_historico from guest where gue_fk_room != 0 and gue_cpf = '" + cpf + "';";
                 using (connection = new MySqlConnection(conexaoString))
                 {
                     using (command = new MySqlCommand(query, connection))
@@ -186,6 +186,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                                 guest.gue_fk_room = Convert.ToInt32(dataReader["gue_fk_room"].ToString());
                                 guest.gue_precoTotal = float.Parse(dataReader["gue_precoTotal"].ToString());
                                 guest.gue_cpf = dataReader["gue_cpf"].ToString();
+                                guest.gue_historico = dataReader["gue_historico"].ToString();
                             }
                         }
                     }
@@ -302,7 +303,9 @@ namespace Gerenciamento_de_Hotel.Model.DAO
         {
             try
             {
-                string query = "update guest set gue_precoTotal = " + guest.gue_precoTotal + " where gue_id = " + guest.gue_id + ";";
+                string preco = Convert.ToString(guest.gue_precoTotal);
+                preco = preco.Replace(",", ".");
+                string query = "update guest set gue_precoTotal = " + preco + ", gue_historico = '" + guest.gue_historico + "' where gue_id = " + guest.gue_id + ";";
 
                 connection = new MySqlConnection(conexaoString);
                 connection.Open(); // abre a conexão

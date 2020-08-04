@@ -21,6 +21,8 @@ namespace Gerenciamento_de_Hotel.View
         {
             InitializeComponent();
             btn_entrar.Enabled = false;
+            txtb_cpfGuest.Focus();
+            txtb_cpfGuest.Select();
         }
 
         private void btn_comeBack_Click(object sender, EventArgs e)
@@ -49,6 +51,7 @@ namespace Gerenciamento_de_Hotel.View
 
         private void txtb_cpfGuest_TextChanged(object sender, EventArgs e)
         {
+            txtb_cpfGuest.Focus();
             if ((string.IsNullOrWhiteSpace(txtb_cpfGuest.Text)))
             {
                 btn_entrar.Enabled = false;

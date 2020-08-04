@@ -22,6 +22,8 @@ namespace Gerenciamento_de_Hotel.View
         public UpdateGuestScreen()
         {
             InitializeComponent();
+            txtb_guestAlterar.Focus();
+            txtb_guestAlterar.Select();
 
             listaComboBox();
             btn_alterar.Enabled = false;

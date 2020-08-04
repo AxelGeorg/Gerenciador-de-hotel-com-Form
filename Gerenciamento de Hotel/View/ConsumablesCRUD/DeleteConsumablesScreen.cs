@@ -21,6 +21,8 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
         {
             InitializeComponent();
             btn_deletar.Enabled = false;
+            txtb_nome.Focus();
+            txtb_nome.Select();
         }
 
         private void btn_pesquisar_Click(object sender, EventArgs e)

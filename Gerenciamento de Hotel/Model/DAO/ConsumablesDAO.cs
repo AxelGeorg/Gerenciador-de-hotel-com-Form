@@ -258,7 +258,9 @@ namespace Gerenciamento_de_Hotel.Model.DAO
                 command.Connection = connection;
 
                 command.CommandType = CommandType.Text;
-                command.CommandText = "insert into consumables (con_nome, con_tipoProduto, con_tipoSabor, con_preco, con_descricao) values ('" + consumables.con_nome + "', '" + consumables.con_tipoProduto + "', '" + consumables.con_tipoSabor + "', '" + consumables.con_preco + "', '" + consumables.con_descricao + "');";
+                string preco = Convert.ToString(consumables.con_preco);
+                preco = preco.Replace(",", ".");
+                command.CommandText = "insert into consumables (con_nome, con_tipoProduto, con_tipoSabor, con_preco, con_descricao) values ('" + consumables.con_nome + "', '" + consumables.con_tipoProduto + "', '" + consumables.con_tipoSabor + "', " + /*consumables.con_preco*/preco + ", '" + consumables.con_descricao + "');";
                 command.ExecuteNonQuery();
                 command.Connection.Close(); //fecha conexão
                 return true;

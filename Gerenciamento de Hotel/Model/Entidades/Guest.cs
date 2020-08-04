@@ -15,5 +15,6 @@ namespace Gerenciamento_de_Hotel.Model.Entidades
         public int gue_diasReservados { get; set; }
         public float gue_precoTotal { get; set; }
         public int gue_fk_room { get; set; }
+        public string gue_historico { get; set; }
     }
 }

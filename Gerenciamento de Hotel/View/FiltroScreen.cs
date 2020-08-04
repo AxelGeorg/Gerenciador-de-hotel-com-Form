@@ -34,6 +34,8 @@ namespace Gerenciamento_de_Hotel.View
         {
             InitializeComponent();
             preencherCampos();
+            txtb_quantPessoa.Focus();
+            txtb_quantPessoa.Select();
         } 
 
         public FiltroScreen(ReserveRoomsScreen formReserve, int quantPessoas, int quantCamasCasal, int quantCamasSolteiro, float precoMin, float precoMax)

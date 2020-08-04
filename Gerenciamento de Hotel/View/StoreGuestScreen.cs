@@ -49,5 +49,18 @@ namespace Gerenciamento_de_Hotel.View
                 tela.Show();
             }
         }
+
+        private void seuHistóricoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<PurchasesHistoricScreen>().Count() > 0)
+            {
+                MessageBox.Show("Está tela já está aberta, não é possível abrir mais uma tela desta!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                PurchasesHistoricScreen tela = new PurchasesHistoricScreen(guest);
+                tela.Show();
+            }
+        }
     }
 }
