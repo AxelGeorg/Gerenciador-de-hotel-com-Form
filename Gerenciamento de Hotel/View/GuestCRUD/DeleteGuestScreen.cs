@@ -53,7 +53,7 @@ namespace Gerenciamento_de_Hotel.View.GuestCRUD
             }
             if (verificaSeRetornou == 0)
             {
-                MessageBox.Show("Não foi possìvel encontrar nenhum hóspede com esse cpf!! \nDigite novamente!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Não foi possìvel encontrar nenhum hóspede com esse cpf ou esse hóspede possui vinculo a um quarto, desse modo, não pode ser deletado!! \nDigite novamente!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
