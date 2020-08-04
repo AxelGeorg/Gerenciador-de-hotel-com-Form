@@ -64,9 +64,6 @@ namespace Gerenciamento_de_Hotel.View
             cbox_ordem.Items.Add("Todos os Produtos");
             cbox_ordem.Items.Add("Todas as Bebidas");
             cbox_ordem.Items.Add("Todas as Comidas");
-            cbox_ordem.Items.Add("Produtos com Descrição");
-            cbox_ordem.Items.Add("Bebidas com Descrição");
-            cbox_ordem.Items.Add("Comidas com Descrição");
         }
         public void Listar(int tipoOrdenacao, string tipoProdutoList)
         {
@@ -126,26 +123,18 @@ namespace Gerenciamento_de_Hotel.View
                 tipoProdutoList = "Comida";
                 Listar(0, tipoProdutoList);
             }
-            else if (cbox_ordem.SelectedIndex == 3)
-            {
-
-            }
-            else if (cbox_ordem.SelectedIndex == 4)
-            {
-
-            }
-            else if (cbox_ordem.SelectedIndex == 5)
-            {
-
-            }
         }
 
         private void btn_comprarProduto_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja comprar esse produto?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
-                guest.gue_precoTotal += float.Parse(listView_consumables.SelectedItems[0].SubItems[4].Text.Replace("R$", ""));
-                guestController.alteraGuestParaReserva(guest);
+                //n esta efetuando a compra quando comprasse um produto que tenha ".".
+                //Erro
+                var precoCerto = float.Parse(String.Format("{0:#.00}", listView_consumables.SelectedItems[0].SubItems[4].Text.Replace("R$", "")));
+
+                guest.gue_precoTotal +=  precoCerto;
+                guestController.alterarGuestPreco(guest);
 
                 if (Application.OpenForms.OfType<ReadGuestScreen>().Count() > 0)
                 {
@@ -155,13 +144,7 @@ namespace Gerenciamento_de_Hotel.View
 
                 btn_comprarProduto.Enabled = false;
                 MessageBox.Show(listView_consumables.SelectedItems[0].SubItems[1].Text, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                listView_consumables.Items.Remove(listView_consumables.SelectedItems[0]);
             }
-
-
-
-
-
         }
 
         private void listView_consumables_SelectedIndexChanged_1(object sender, EventArgs e)

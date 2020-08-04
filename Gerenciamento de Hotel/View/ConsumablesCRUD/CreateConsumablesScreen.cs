@@ -52,9 +52,8 @@ namespace Gerenciamento_de_Hotel.View.ConsumablesCRUD
                 consumables.con_tipoProduto = cbox_tipo.SelectedItem.ToString();
                 consumables.con_tipoSabor = cbox_sabor.SelectedItem.ToString();
 
-
-
-                consumables.con_preco = float.Parse(txtb_preco.Text);
+                var precoCerto = txtb_preco.Text.Replace(",", ".");
+                consumables.con_preco = float.Parse(precoCerto);
                 consumables.con_descricao = txtb_descricao.Text;
 
                 if (MessageBox.Show("Deseja cadastrar esse Consumível?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)

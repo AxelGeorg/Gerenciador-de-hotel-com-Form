@@ -142,7 +142,7 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             try
             {
                 var listConsumables = new List<Consumables>();
-                string query = "select con_id,con_nome,con_tipoProduto,con_tipoSabor,con_descricao from consumables where con_tipoProduto = '"+tipoProduto+"' ";
+                string query = "select con_id,con_nome,con_tipoProduto,con_tipoSabor,con_preco,con_descricao from consumables where con_tipoProduto = '" + tipoProduto+"' ";
 
                 if (tipoOrdenacao == 0)
                 {

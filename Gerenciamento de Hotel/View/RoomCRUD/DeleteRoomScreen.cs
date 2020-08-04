@@ -16,6 +16,7 @@ namespace Gerenciamento_de_Hotel.View
     public partial class DeleteRoomScreen : Form
     {
         RoomController controller = new RoomController();
+        GuestController controllerGuest = new GuestController();
         Room room = new Room();
 
         public DeleteRoomScreen()
@@ -27,42 +28,67 @@ namespace Gerenciamento_de_Hotel.View
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
             listView_room.Items.Clear();
+            int verificaSeRetornou = 0;
             var roomRetornado = controller.retornaRoom(0);
 
             for (int i = 0; i < roomRetornado.Count; i++)
             {
                 if (txtb_roomDeletar.Text.Trim() == roomRetornado[i].room_numeroQuarto)
                 {
-                    ListViewItem itens = new ListViewItem(Convert.ToString(roomRetornado[i].room_id));
-                    room.room_id = roomRetornado[i].room_id;
-                    itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_numeroQuarto));
-                    itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_quantCasal));
-                    itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_quantSolteiro));
+                    var guestRetornado = controllerGuest.retornaGuestParaDelete();
+                    int contGuest = 0;
 
-                    if (roomRetornado[i].room_disponibilidade == true)
+                    for (int j = 0; j < guestRetornado.Count; j++)
                     {
-                        itens.SubItems.Add("Disponível");
-                    }
-                    else if (roomRetornado[i].room_disponibilidade == false)
-                    {
-                        itens.SubItems.Add("Ocupado");
+                        if (guestRetornado[j].gue_fk_room == roomRetornado[i].room_id)
+                        {
+                            contGuest = 1;
+                        }
                     }
 
-                    if (roomRetornado[i].room_limpeza == true)
+                    if (contGuest==1)
                     {
-                        itens.SubItems.Add("Limpo");
+                        verificaSeRetornou = 0;
+                        txtb_roomDeletar.Text = "";
                     }
-                    else if (roomRetornado[i].room_limpeza == false)
+                    else
                     {
-                        itens.SubItems.Add("Sujo");
-                    }
+                        ListViewItem itens = new ListViewItem(Convert.ToString(roomRetornado[i].room_id));
+                        room.room_id = roomRetornado[i].room_id;
+                        itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_numeroQuarto));
+                        itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_quantCasal));
+                        itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_quantSolteiro));
 
-                    itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_precoDiaria));
-                    itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_quantPessoa));
-                    listView_room.Items.Add(itens);
+                        if (roomRetornado[i].room_disponibilidade == true)
+                        {
+                            itens.SubItems.Add("Disponível");
+                        }
+                        else if (roomRetornado[i].room_disponibilidade == false)
+                        {
+                            itens.SubItems.Add("Ocupado");
+                        }
 
-                    btn_deletar.Enabled = true;
+                        if (roomRetornado[i].room_limpeza == true)
+                        {
+                            itens.SubItems.Add("Limpo");
+                        }
+                        else if (roomRetornado[i].room_limpeza == false)
+                        {
+                            itens.SubItems.Add("Sujo");
+                        }
+
+                        itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_precoDiaria));
+                        itens.SubItems.Add(Convert.ToString(roomRetornado[i].room_quantPessoa));
+                        listView_room.Items.Add(itens);
+
+                        verificaSeRetornou = 1;
+                        btn_deletar.Enabled = true;
+                    }  
                 }
+            }
+            if (verificaSeRetornou == 0)
+            {
+                MessageBox.Show("Não foi possìvel encontrar nenhum quarto com essa identificação, pois o mesmo não existe ou ainda está vinculado à um hóspede!! \nDigite novamente!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

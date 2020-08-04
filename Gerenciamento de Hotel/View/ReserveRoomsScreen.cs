@@ -130,6 +130,13 @@ namespace Gerenciamento_de_Hotel.View
                     {
                         controllerGuest.alteraGuestParaReserva(guest);
                         controllerRoom.alteraRoom(room);
+
+                        lbl_numeroQuartoA.Text = "";
+                        lbl_camasSolteiroA.Text = "";
+                        lbl_quantCamasCasalA.Text = "";
+                        lbl_precoDiariaA.Text = "";
+                        lbl_quantMaxPessoasA.Text = "";
+                        lbl_precpTotalA.Text = "";
                         limpaCamposForm();
                     }
                 }

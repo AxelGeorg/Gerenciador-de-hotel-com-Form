@@ -118,6 +118,54 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             }
         }
 
+        /// <summary>
+        /// Retorna uma lista de funcionários.
+        /// </summary>
+        /// <param name="tipoOrdenacao"></param>
+        /// <returns></returns>
+        public List<Guest> BuscarGuestParaDeletar()
+        {
+            try
+            {
+                var listGuest = new List<Guest>();
+                string query = "select gue_id,gue_nome,gue_cpf,gue_fk_room from guest;";
+
+                using (connection = new MySqlConnection(conexaoString))
+                {
+                    using (command = new MySqlCommand(query, connection))
+                    {
+                        connection.Open(); // abre a conexão
+                        using (MySqlDataReader dataReader = command.ExecuteReader())
+                        {
+                            while (dataReader.Read())
+                            {
+                                Guest guest = new Guest();
+                                guest.gue_id = Convert.ToInt32(dataReader["gue_id"].ToString());
+                                guest.gue_nome = dataReader["gue_nome"].ToString();
+                                guest.gue_cpf = dataReader["gue_cpf"].ToString();
+
+                                if (string.IsNullOrEmpty(dataReader["gue_fk_room"].ToString()))
+                                {
+                                    guest.gue_fk_room = 0;
+                                }
+                                else
+                                {
+                                    guest.gue_fk_room = Convert.ToInt32(dataReader["gue_fk_room"].ToString());
+                                }
+
+                                listGuest.Add(guest);
+                            }
+                        }
+                        return listGuest;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao acessar a lista de funcionarios" + ex.Message);
+            }
+        }
+
         public Guest retornaGuestCPF(string cpf)
         {
             Guest guest = new Guest();
@@ -224,6 +272,37 @@ namespace Gerenciamento_de_Hotel.Model.DAO
             try
             {
                 string query = "update guest set gue_diasReservado = "+guest.gue_diasReservados+ ", gue_precoTotal = "+guest.gue_precoTotal+ ", gue_fk_room = "+guest.gue_fk_room+" where gue_id = " + guest.gue_id + ";";
+
+                connection = new MySqlConnection(conexaoString);
+                connection.Open(); // abre a conexão
+                command = new MySqlCommand();
+                command.Connection = connection;
+
+                command.CommandType = CommandType.Text;
+                command.CommandText = query;
+
+                command.ExecuteNonQuery();
+                command.Connection.Close(); //fecha conexão
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Altera o preco total presente no hóspede desejado.
+        /// </summary>
+        /// <param name="guest"></param>
+        /// <param name="tipoSelect"></param>
+        /// <returns></returns>
+        public bool alterarGuestPreco(Guest guest)
+        {
+            try
+            {
+                string query = "update guest set gue_precoTotal = " + guest.gue_precoTotal + " where gue_id = " + guest.gue_id + ";";
 
                 connection = new MySqlConnection(conexaoString);
                 connection.Open(); // abre a conexão

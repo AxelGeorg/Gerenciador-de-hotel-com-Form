@@ -32,10 +32,12 @@ namespace Gerenciamento_de_Hotel.View.GuestCRUD
 
             listView_guest.Items.Clear();
             var guestRetornado = controller.retornaGuest(0);
+            var guestParaValidacao = controller.retornaGuestParaDelete();
+
 
             for (int i = 0; i < guestRetornado.Count; i++)
             {
-                if (cpfRetornado == guestRetornado[i].gue_cpf)
+                if ((cpfRetornado == guestRetornado[i].gue_cpf) && ((string.IsNullOrEmpty(guestParaValidacao[i].gue_fk_room.ToString()) || (guestParaValidacao[i].gue_fk_room == 0))))
                 {
                     ListViewItem itens = new ListViewItem(Convert.ToString(guestRetornado[i].gue_id));
                     itens.SubItems.Add(Convert.ToString(guestRetornado[i].gue_nome));
