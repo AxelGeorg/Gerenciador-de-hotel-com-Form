@@ -45,9 +45,10 @@
             // 
             this.btn_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_pesquisar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn_pesquisar.Location = new System.Drawing.Point(478, 103);
+            this.btn_pesquisar.Location = new System.Drawing.Point(637, 127);
+            this.btn_pesquisar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_pesquisar.Name = "btn_pesquisar";
-            this.btn_pesquisar.Size = new System.Drawing.Size(188, 23);
+            this.btn_pesquisar.Size = new System.Drawing.Size(251, 28);
             this.btn_pesquisar.TabIndex = 28;
             this.btn_pesquisar.Text = "Pesquisar";
             this.btn_pesquisar.UseVisualStyleBackColor = true;
@@ -65,10 +66,11 @@
             this.listViewDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewDeletar.GridLines = true;
             this.listViewDeletar.HideSelection = false;
-            this.listViewDeletar.Location = new System.Drawing.Point(12, 182);
+            this.listViewDeletar.Location = new System.Drawing.Point(16, 224);
+            this.listViewDeletar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listViewDeletar.Name = "listViewDeletar";
             this.listViewDeletar.Scrollable = false;
-            this.listViewDeletar.Size = new System.Drawing.Size(654, 63);
+            this.listViewDeletar.Size = new System.Drawing.Size(871, 77);
             this.listViewDeletar.TabIndex = 27;
             this.listViewDeletar.UseCompatibleStateImageBehavior = false;
             this.listViewDeletar.View = System.Windows.Forms.View.Details;
@@ -106,9 +108,10 @@
             // txtb_empDeletar
             // 
             this.txtb_empDeletar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtb_empDeletar.Location = new System.Drawing.Point(15, 104);
+            this.txtb_empDeletar.Location = new System.Drawing.Point(20, 128);
+            this.txtb_empDeletar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtb_empDeletar.Name = "txtb_empDeletar";
-            this.txtb_empDeletar.Size = new System.Drawing.Size(408, 20);
+            this.txtb_empDeletar.Size = new System.Drawing.Size(543, 22);
             this.txtb_empDeletar.TabIndex = 26;
             this.txtb_empDeletar.TextChanged += new System.EventHandler(this.txtb_empDeletar_TextChanged);
             this.txtb_empDeletar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cpf);
@@ -118,9 +121,10 @@
             this.lbl_empDeletar.AutoSize = true;
             this.lbl_empDeletar.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_empDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbl_empDeletar.Location = new System.Drawing.Point(12, 65);
+            this.lbl_empDeletar.Location = new System.Drawing.Point(16, 80);
+            this.lbl_empDeletar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_empDeletar.Name = "lbl_empDeletar";
-            this.lbl_empDeletar.Size = new System.Drawing.Size(306, 17);
+            this.lbl_empDeletar.Size = new System.Drawing.Size(362, 20);
             this.lbl_empDeletar.TabIndex = 25;
             this.lbl_empDeletar.Text = "Digite o CPF do funcionário que deseja deletar:";
             // 
@@ -128,9 +132,10 @@
             // 
             this.btn_deletar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_deletar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_deletar.Location = new System.Drawing.Point(182, 312);
+            this.btn_deletar.Location = new System.Drawing.Point(243, 384);
+            this.btn_deletar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_deletar.Name = "btn_deletar";
-            this.btn_deletar.Size = new System.Drawing.Size(317, 29);
+            this.btn_deletar.Size = new System.Drawing.Size(423, 36);
             this.btn_deletar.TabIndex = 29;
             this.btn_deletar.Text = "Deletar";
             this.btn_deletar.UseVisualStyleBackColor = true;
@@ -138,14 +143,17 @@
             // 
             // DeleteEmployeeScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 358);
+            this.ClientSize = new System.Drawing.Size(897, 441);
             this.Controls.Add(this.btn_deletar);
             this.Controls.Add(this.btn_pesquisar);
             this.Controls.Add(this.listViewDeletar);
             this.Controls.Add(this.txtb_empDeletar);
             this.Controls.Add(this.lbl_empDeletar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "DeleteEmployeeScreen";
             this.Text = "DeleteEmployeeScreen";
             this.ResumeLayout(false);

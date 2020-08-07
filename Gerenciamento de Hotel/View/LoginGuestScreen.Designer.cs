@@ -38,9 +38,10 @@
             // 
             this.btn_comeBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_comeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_comeBack.Location = new System.Drawing.Point(2, 2);
+            this.btn_comeBack.Location = new System.Drawing.Point(3, 2);
+            this.btn_comeBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_comeBack.Name = "btn_comeBack";
-            this.btn_comeBack.Size = new System.Drawing.Size(97, 28);
+            this.btn_comeBack.Size = new System.Drawing.Size(129, 34);
             this.btn_comeBack.TabIndex = 30;
             this.btn_comeBack.Text = "←";
             this.btn_comeBack.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // txtb_cpfGuest
             // 
             this.txtb_cpfGuest.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtb_cpfGuest.Location = new System.Drawing.Point(170, 96);
+            this.txtb_cpfGuest.Location = new System.Drawing.Point(227, 118);
+            this.txtb_cpfGuest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtb_cpfGuest.Name = "txtb_cpfGuest";
-            this.txtb_cpfGuest.Size = new System.Drawing.Size(324, 20);
+            this.txtb_cpfGuest.Size = new System.Drawing.Size(431, 22);
             this.txtb_cpfGuest.TabIndex = 33;
             this.txtb_cpfGuest.TextChanged += new System.EventHandler(this.txtb_cpfGuest_TextChanged);
             this.txtb_cpfGuest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mascara_cpf);
@@ -61,9 +63,10 @@
             this.lbl_cpf.AutoSize = true;
             this.lbl_cpf.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_cpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbl_cpf.Location = new System.Drawing.Point(47, 97);
+            this.lbl_cpf.Location = new System.Drawing.Point(63, 119);
+            this.lbl_cpf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_cpf.Name = "lbl_cpf";
-            this.lbl_cpf.Size = new System.Drawing.Size(117, 17);
+            this.lbl_cpf.Size = new System.Drawing.Size(142, 20);
             this.lbl_cpf.TabIndex = 32;
             this.lbl_cpf.Text = "Digite o seu CPF:";
             // 
@@ -71,9 +74,10 @@
             // 
             this.btn_entrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_entrar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_entrar.Location = new System.Drawing.Point(152, 191);
+            this.btn_entrar.Location = new System.Drawing.Point(203, 235);
+            this.btn_entrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_entrar.Name = "btn_entrar";
-            this.btn_entrar.Size = new System.Drawing.Size(243, 27);
+            this.btn_entrar.Size = new System.Drawing.Size(324, 33);
             this.btn_entrar.TabIndex = 35;
             this.btn_entrar.Text = "Entrar";
             this.btn_entrar.UseVisualStyleBackColor = true;
@@ -81,13 +85,16 @@
             // 
             // LoginGuestScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 242);
+            this.ClientSize = new System.Drawing.Size(736, 298);
             this.Controls.Add(this.btn_entrar);
             this.Controls.Add(this.txtb_cpfGuest);
             this.Controls.Add(this.lbl_cpf);
             this.Controls.Add(this.btn_comeBack);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "LoginGuestScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginGuestScreen";

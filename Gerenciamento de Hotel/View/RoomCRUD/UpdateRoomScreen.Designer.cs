@@ -51,9 +51,10 @@
             // txtb_novoAlterar
             // 
             this.txtb_novoAlterar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtb_novoAlterar.Location = new System.Drawing.Point(231, 255);
+            this.txtb_novoAlterar.Location = new System.Drawing.Point(308, 314);
+            this.txtb_novoAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtb_novoAlterar.Name = "txtb_novoAlterar";
-            this.txtb_novoAlterar.Size = new System.Drawing.Size(430, 20);
+            this.txtb_novoAlterar.Size = new System.Drawing.Size(572, 22);
             this.txtb_novoAlterar.TabIndex = 37;
             this.txtb_novoAlterar.TextChanged += new System.EventHandler(this.txtb_novoAlterar_TextChanged);
             // 
@@ -62,9 +63,10 @@
             this.lbl_opcoesAlterar.AutoSize = true;
             this.lbl_opcoesAlterar.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_opcoesAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbl_opcoesAlterar.Location = new System.Drawing.Point(9, 224);
+            this.lbl_opcoesAlterar.Location = new System.Drawing.Point(12, 276);
+            this.lbl_opcoesAlterar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_opcoesAlterar.Name = "lbl_opcoesAlterar";
-            this.lbl_opcoesAlterar.Size = new System.Drawing.Size(205, 17);
+            this.lbl_opcoesAlterar.Size = new System.Drawing.Size(240, 20);
             this.lbl_opcoesAlterar.TabIndex = 36;
             this.lbl_opcoesAlterar.Text = "Selecione o que deseja alterar:";
             // 
@@ -72,9 +74,10 @@
             // 
             this.cbox_opcoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_opcoes.FormattingEnabled = true;
-            this.cbox_opcoes.Location = new System.Drawing.Point(12, 255);
+            this.cbox_opcoes.Location = new System.Drawing.Point(16, 314);
+            this.cbox_opcoes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbox_opcoes.Name = "cbox_opcoes";
-            this.cbox_opcoes.Size = new System.Drawing.Size(185, 21);
+            this.cbox_opcoes.Size = new System.Drawing.Size(245, 24);
             this.cbox_opcoes.TabIndex = 35;
             this.cbox_opcoes.SelectedIndexChanged += new System.EventHandler(this.cbox_opcoes_SelectedIndexChanged);
             // 
@@ -82,9 +85,10 @@
             // 
             this.btn_alterar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_alterar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_alterar.Location = new System.Drawing.Point(175, 325);
+            this.btn_alterar.Location = new System.Drawing.Point(233, 400);
+            this.btn_alterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_alterar.Name = "btn_alterar";
-            this.btn_alterar.Size = new System.Drawing.Size(317, 29);
+            this.btn_alterar.Size = new System.Drawing.Size(423, 36);
             this.btn_alterar.TabIndex = 34;
             this.btn_alterar.Text = "Alterar";
             this.btn_alterar.UseVisualStyleBackColor = true;
@@ -94,9 +98,10 @@
             // 
             this.btn_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_pesquisar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn_pesquisar.Location = new System.Drawing.Point(417, 89);
+            this.btn_pesquisar.Location = new System.Drawing.Point(556, 110);
+            this.btn_pesquisar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_pesquisar.Name = "btn_pesquisar";
-            this.btn_pesquisar.Size = new System.Drawing.Size(188, 23);
+            this.btn_pesquisar.Size = new System.Drawing.Size(251, 28);
             this.btn_pesquisar.TabIndex = 33;
             this.btn_pesquisar.Text = "Pesquisar";
             this.btn_pesquisar.UseVisualStyleBackColor = true;
@@ -105,9 +110,10 @@
             // txtb_roomAlterar
             // 
             this.txtb_roomAlterar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtb_roomAlterar.Location = new System.Drawing.Point(15, 92);
+            this.txtb_roomAlterar.Location = new System.Drawing.Point(20, 113);
+            this.txtb_roomAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtb_roomAlterar.Name = "txtb_roomAlterar";
-            this.txtb_roomAlterar.Size = new System.Drawing.Size(324, 20);
+            this.txtb_roomAlterar.Size = new System.Drawing.Size(431, 22);
             this.txtb_roomAlterar.TabIndex = 31;
             this.txtb_roomAlterar.TextChanged += new System.EventHandler(this.txtb_roomAlterar_TextChanged);
             // 
@@ -116,9 +122,10 @@
             this.lbl_roomNumero.AutoSize = true;
             this.lbl_roomNumero.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_roomNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbl_roomNumero.Location = new System.Drawing.Point(12, 53);
+            this.lbl_roomNumero.Location = new System.Drawing.Point(16, 65);
+            this.lbl_roomNumero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_roomNumero.Name = "lbl_roomNumero";
-            this.lbl_roomNumero.Size = new System.Drawing.Size(327, 17);
+            this.lbl_roomNumero.Size = new System.Drawing.Size(385, 20);
             this.lbl_roomNumero.TabIndex = 30;
             this.lbl_roomNumero.Text = "Digite a identificação do quarto que deseja alterar:";
             // 
@@ -135,10 +142,11 @@
             this.columnHeader15});
             this.listView_room.GridLines = true;
             this.listView_room.HideSelection = false;
-            this.listView_room.Location = new System.Drawing.Point(12, 140);
+            this.listView_room.Location = new System.Drawing.Point(16, 172);
+            this.listView_room.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView_room.Name = "listView_room";
             this.listView_room.Scrollable = false;
-            this.listView_room.Size = new System.Drawing.Size(649, 63);
+            this.listView_room.Size = new System.Drawing.Size(864, 77);
             this.listView_room.TabIndex = 38;
             this.listView_room.UseCompatibleStateImageBehavior = false;
             this.listView_room.View = System.Windows.Forms.View.Details;
@@ -186,9 +194,10 @@
             // rbtn_limpo
             // 
             this.rbtn_limpo.AutoSize = true;
-            this.rbtn_limpo.Location = new System.Drawing.Point(285, 259);
+            this.rbtn_limpo.Location = new System.Drawing.Point(380, 319);
+            this.rbtn_limpo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtn_limpo.Name = "rbtn_limpo";
-            this.rbtn_limpo.Size = new System.Drawing.Size(53, 17);
+            this.rbtn_limpo.Size = new System.Drawing.Size(67, 21);
             this.rbtn_limpo.TabIndex = 41;
             this.rbtn_limpo.TabStop = true;
             this.rbtn_limpo.Text = "Limpo";
@@ -199,9 +208,10 @@
             // rbtn_sujo
             // 
             this.rbtn_sujo.AutoSize = true;
-            this.rbtn_sujo.Location = new System.Drawing.Point(428, 259);
+            this.rbtn_sujo.Location = new System.Drawing.Point(571, 319);
+            this.rbtn_sujo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtn_sujo.Name = "rbtn_sujo";
-            this.rbtn_sujo.Size = new System.Drawing.Size(46, 17);
+            this.rbtn_sujo.Size = new System.Drawing.Size(57, 21);
             this.rbtn_sujo.TabIndex = 42;
             this.rbtn_sujo.TabStop = true;
             this.rbtn_sujo.Text = "Sujo";
@@ -211,9 +221,9 @@
             // 
             // UpdateRoomScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 378);
+            this.ClientSize = new System.Drawing.Size(897, 465);
             this.Controls.Add(this.rbtn_sujo);
             this.Controls.Add(this.rbtn_limpo);
             this.Controls.Add(this.listView_room);
@@ -224,6 +234,9 @@
             this.Controls.Add(this.btn_pesquisar);
             this.Controls.Add(this.txtb_roomAlterar);
             this.Controls.Add(this.lbl_roomNumero);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "UpdateRoomScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateRoomScreen";

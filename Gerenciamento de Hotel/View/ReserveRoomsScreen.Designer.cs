@@ -54,10 +54,10 @@
             // 
             // txtb_cpf
             // 
-            this.txtb_cpf.Location = new System.Drawing.Point(238, 96);
-            this.txtb_cpf.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_cpf.Location = new System.Drawing.Point(317, 118);
+            this.txtb_cpf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_cpf.Name = "txtb_cpf";
-            this.txtb_cpf.Size = new System.Drawing.Size(220, 20);
+            this.txtb_cpf.Size = new System.Drawing.Size(292, 22);
             this.txtb_cpf.TabIndex = 4;
             this.txtb_cpf.Tag = "Oi";
             this.txtb_cpf.TextChanged += new System.EventHandler(this.txtb_cpf_TextChanged);
@@ -67,19 +67,18 @@
             // 
             this.lb_cpf.AutoSize = true;
             this.lb_cpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_cpf.Location = new System.Drawing.Point(11, 91);
-            this.lb_cpf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_cpf.Location = new System.Drawing.Point(15, 112);
             this.lb_cpf.Name = "lb_cpf";
-            this.lb_cpf.Size = new System.Drawing.Size(181, 18);
+            this.lb_cpf.Size = new System.Drawing.Size(230, 24);
             this.lb_cpf.TabIndex = 3;
             this.lb_cpf.Text = "Digite o CPF do Hóspede:";
             // 
             // txtb_quantDias
             // 
-            this.txtb_quantDias.Location = new System.Drawing.Point(238, 148);
-            this.txtb_quantDias.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_quantDias.Location = new System.Drawing.Point(317, 182);
+            this.txtb_quantDias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_quantDias.Name = "txtb_quantDias";
-            this.txtb_quantDias.Size = new System.Drawing.Size(220, 20);
+            this.txtb_quantDias.Size = new System.Drawing.Size(292, 22);
             this.txtb_quantDias.TabIndex = 8;
             this.txtb_quantDias.Tag = "Oi";
             this.txtb_quantDias.TextChanged += new System.EventHandler(this.txtb_quantDias_TextChanged);
@@ -88,10 +87,9 @@
             // 
             this.lb_quantDias.AutoSize = true;
             this.lb_quantDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_quantDias.Location = new System.Drawing.Point(11, 146);
-            this.lb_quantDias.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb_quantDias.Location = new System.Drawing.Point(15, 180);
             this.lb_quantDias.Name = "lb_quantDias";
-            this.lb_quantDias.Size = new System.Drawing.Size(200, 18);
+            this.lb_quantDias.Size = new System.Drawing.Size(258, 24);
             this.lb_quantDias.TabIndex = 7;
             this.lb_quantDias.Text = "Informe a quantidade de dias:";
             // 
@@ -100,10 +98,10 @@
             this.cbox_quarto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbox_quarto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox_quarto.FormattingEnabled = true;
-            this.cbox_quarto.Location = new System.Drawing.Point(238, 258);
-            this.cbox_quarto.Margin = new System.Windows.Forms.Padding(2);
+            this.cbox_quarto.Location = new System.Drawing.Point(317, 318);
+            this.cbox_quarto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbox_quarto.Name = "cbox_quarto";
-            this.cbox_quarto.Size = new System.Drawing.Size(220, 21);
+            this.cbox_quarto.Size = new System.Drawing.Size(292, 24);
             this.cbox_quarto.TabIndex = 9;
             this.cbox_quarto.SelectedIndexChanged += new System.EventHandler(this.cbox_quarto_SelectedIndexChanged);
             // 
@@ -111,10 +109,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 256);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(15, 315);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 18);
+            this.label1.Size = new System.Drawing.Size(283, 24);
             this.label1.TabIndex = 10;
             this.label1.Text = "Selecione o quarto para reserva:";
             // 
@@ -122,10 +119,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(477, 54);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(636, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(345, 24);
+            this.label2.Size = new System.Drawing.Size(431, 29);
             this.label2.TabIndex = 11;
             this.label2.Text = "Informações do quarto selecionado:";
             // 
@@ -133,20 +129,19 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 201);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(15, 247);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(210, 18);
+            this.label3.Size = new System.Drawing.Size(259, 24);
             this.label3.TabIndex = 12;
             this.label3.Text = "Para realizar filtro dos quartos:";
             // 
             // btn_filtrar
             // 
             this.btn_filtrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_filtrar.Location = new System.Drawing.Point(238, 201);
-            this.btn_filtrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_filtrar.Location = new System.Drawing.Point(317, 247);
+            this.btn_filtrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_filtrar.Name = "btn_filtrar";
-            this.btn_filtrar.Size = new System.Drawing.Size(220, 21);
+            this.btn_filtrar.Size = new System.Drawing.Size(293, 26);
             this.btn_filtrar.TabIndex = 13;
             this.btn_filtrar.Text = "Clique Aqui";
             this.btn_filtrar.UseVisualStyleBackColor = true;
@@ -156,10 +151,9 @@
             // 
             this.lbl_numeroQuartoFixo.AutoSize = true;
             this.lbl_numeroQuartoFixo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_numeroQuartoFixo.Location = new System.Drawing.Point(496, 112);
-            this.lbl_numeroQuartoFixo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_numeroQuartoFixo.Location = new System.Drawing.Point(661, 138);
             this.lbl_numeroQuartoFixo.Name = "lbl_numeroQuartoFixo";
-            this.lbl_numeroQuartoFixo.Size = new System.Drawing.Size(66, 18);
+            this.lbl_numeroQuartoFixo.Size = new System.Drawing.Size(84, 24);
             this.lbl_numeroQuartoFixo.TabIndex = 21;
             this.lbl_numeroQuartoFixo.Text = "Número:";
             // 
@@ -167,10 +161,9 @@
             // 
             this.lbl_precoDiariaFixo.AutoSize = true;
             this.lbl_precoDiariaFixo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_precoDiariaFixo.Location = new System.Drawing.Point(496, 282);
-            this.lbl_precoDiariaFixo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_precoDiariaFixo.Location = new System.Drawing.Point(661, 347);
             this.lbl_precoDiariaFixo.Name = "lbl_precoDiariaFixo";
-            this.lbl_precoDiariaFixo.Size = new System.Drawing.Size(111, 18);
+            this.lbl_precoDiariaFixo.Size = new System.Drawing.Size(141, 24);
             this.lbl_precoDiariaFixo.TabIndex = 23;
             this.lbl_precoDiariaFixo.Text = "Preço da diária:";
             // 
@@ -178,10 +171,9 @@
             // 
             this.lbl_quantMaxPessoasFixo.AutoSize = true;
             this.lbl_quantMaxPessoasFixo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_quantMaxPessoasFixo.Location = new System.Drawing.Point(496, 225);
-            this.lbl_quantMaxPessoasFixo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_quantMaxPessoasFixo.Location = new System.Drawing.Point(661, 277);
             this.lbl_quantMaxPessoasFixo.Name = "lbl_quantMaxPessoasFixo";
-            this.lbl_quantMaxPessoasFixo.Size = new System.Drawing.Size(216, 18);
+            this.lbl_quantMaxPessoasFixo.Size = new System.Drawing.Size(277, 24);
             this.lbl_quantMaxPessoasFixo.TabIndex = 24;
             this.lbl_quantMaxPessoasFixo.Text = "Quantidade máxima de pessoa:";
             // 
@@ -189,10 +181,9 @@
             // 
             this.lbl_precpTotalFixo.AutoSize = true;
             this.lbl_precpTotalFixo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_precpTotalFixo.Location = new System.Drawing.Point(669, 282);
-            this.lbl_precpTotalFixo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_precpTotalFixo.Location = new System.Drawing.Point(892, 347);
             this.lbl_precpTotalFixo.Name = "lbl_precpTotalFixo";
-            this.lbl_precpTotalFixo.Size = new System.Drawing.Size(84, 18);
+            this.lbl_precpTotalFixo.Size = new System.Drawing.Size(103, 24);
             this.lbl_precpTotalFixo.TabIndex = 25;
             this.lbl_precpTotalFixo.Text = "Preço total:";
             // 
@@ -200,10 +191,9 @@
             // 
             this.lbl_quantCamasCasalFixo.AutoSize = true;
             this.lbl_quantCamasCasalFixo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_quantCamasCasalFixo.Location = new System.Drawing.Point(496, 149);
-            this.lbl_quantCamasCasalFixo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_quantCamasCasalFixo.Location = new System.Drawing.Point(661, 183);
             this.lbl_quantCamasCasalFixo.Name = "lbl_quantCamasCasalFixo";
-            this.lbl_quantCamasCasalFixo.Size = new System.Drawing.Size(215, 18);
+            this.lbl_quantCamasCasalFixo.Size = new System.Drawing.Size(275, 24);
             this.lbl_quantCamasCasalFixo.TabIndex = 26;
             this.lbl_quantCamasCasalFixo.Text = "Quantidade de camas de casal:";
             // 
@@ -211,10 +201,9 @@
             // 
             this.lbl_camasSolteiroFixo.AutoSize = true;
             this.lbl_camasSolteiroFixo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_camasSolteiroFixo.Location = new System.Drawing.Point(496, 190);
-            this.lbl_camasSolteiroFixo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_camasSolteiroFixo.Location = new System.Drawing.Point(661, 234);
             this.lbl_camasSolteiroFixo.Name = "lbl_camasSolteiroFixo";
-            this.lbl_camasSolteiroFixo.Size = new System.Drawing.Size(229, 18);
+            this.lbl_camasSolteiroFixo.Size = new System.Drawing.Size(292, 24);
             this.lbl_camasSolteiroFixo.TabIndex = 27;
             this.lbl_camasSolteiroFixo.Text = "Quantidade de camas de solteiro:";
             // 
@@ -222,10 +211,9 @@
             // 
             this.lbl_precpTotalA.AutoSize = true;
             this.lbl_precpTotalA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_precpTotalA.Location = new System.Drawing.Point(756, 282);
-            this.lbl_precpTotalA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_precpTotalA.Location = new System.Drawing.Point(1008, 347);
             this.lbl_precpTotalA.Name = "lbl_precpTotalA";
-            this.lbl_precpTotalA.Size = new System.Drawing.Size(55, 18);
+            this.lbl_precpTotalA.Size = new System.Drawing.Size(71, 24);
             this.lbl_precpTotalA.TabIndex = 28;
             this.lbl_precpTotalA.Text = "precoT";
             // 
@@ -233,10 +221,9 @@
             // 
             this.lbl_precoDiariaA.AutoSize = true;
             this.lbl_precoDiariaA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_precoDiariaA.Location = new System.Drawing.Point(608, 282);
-            this.lbl_precoDiariaA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_precoDiariaA.Location = new System.Drawing.Point(811, 347);
             this.lbl_precoDiariaA.Name = "lbl_precoDiariaA";
-            this.lbl_precoDiariaA.Size = new System.Drawing.Size(57, 18);
+            this.lbl_precoDiariaA.Size = new System.Drawing.Size(72, 24);
             this.lbl_precoDiariaA.TabIndex = 29;
             this.lbl_precoDiariaA.Text = "precoD";
             // 
@@ -244,10 +231,9 @@
             // 
             this.lbl_quantMaxPessoasA.AutoSize = true;
             this.lbl_quantMaxPessoasA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_quantMaxPessoasA.Location = new System.Drawing.Point(726, 225);
-            this.lbl_quantMaxPessoasA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_quantMaxPessoasA.Location = new System.Drawing.Point(968, 277);
             this.lbl_quantMaxPessoasA.Name = "lbl_quantMaxPessoasA";
-            this.lbl_quantMaxPessoasA.Size = new System.Drawing.Size(96, 18);
+            this.lbl_quantMaxPessoasA.Size = new System.Drawing.Size(119, 24);
             this.lbl_quantMaxPessoasA.TabIndex = 30;
             this.lbl_quantMaxPessoasA.Text = "numPessoas";
             // 
@@ -255,10 +241,9 @@
             // 
             this.lbl_camasSolteiroA.AutoSize = true;
             this.lbl_camasSolteiroA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_camasSolteiroA.Location = new System.Drawing.Point(726, 190);
-            this.lbl_camasSolteiroA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_camasSolteiroA.Location = new System.Drawing.Point(968, 234);
             this.lbl_camasSolteiroA.Name = "lbl_camasSolteiroA";
-            this.lbl_camasSolteiroA.Size = new System.Drawing.Size(88, 18);
+            this.lbl_camasSolteiroA.Size = new System.Drawing.Size(111, 24);
             this.lbl_camasSolteiroA.TabIndex = 31;
             this.lbl_camasSolteiroA.Text = "numSolteiro";
             // 
@@ -266,10 +251,9 @@
             // 
             this.lbl_quantCamasCasalA.AutoSize = true;
             this.lbl_quantCamasCasalA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_quantCamasCasalA.Location = new System.Drawing.Point(726, 149);
-            this.lbl_quantCamasCasalA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_quantCamasCasalA.Location = new System.Drawing.Point(968, 183);
             this.lbl_quantCamasCasalA.Name = "lbl_quantCamasCasalA";
-            this.lbl_quantCamasCasalA.Size = new System.Drawing.Size(75, 18);
+            this.lbl_quantCamasCasalA.Size = new System.Drawing.Size(94, 24);
             this.lbl_quantCamasCasalA.TabIndex = 32;
             this.lbl_quantCamasCasalA.Text = "numCasal";
             // 
@@ -277,19 +261,19 @@
             // 
             this.lbl_numeroQuartoA.AutoSize = true;
             this.lbl_numeroQuartoA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_numeroQuartoA.Location = new System.Drawing.Point(566, 112);
-            this.lbl_numeroQuartoA.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_numeroQuartoA.Location = new System.Drawing.Point(755, 138);
             this.lbl_numeroQuartoA.Name = "lbl_numeroQuartoA";
-            this.lbl_numeroQuartoA.Size = new System.Drawing.Size(83, 18);
+            this.lbl_numeroQuartoA.Size = new System.Drawing.Size(105, 24);
             this.lbl_numeroQuartoA.TabIndex = 33;
             this.lbl_numeroQuartoA.Text = "numQuarto";
             // 
             // btn_reservar
             // 
             this.btn_reservar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_reservar.Location = new System.Drawing.Point(611, 317);
+            this.btn_reservar.Location = new System.Drawing.Point(815, 390);
+            this.btn_reservar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_reservar.Name = "btn_reservar";
-            this.btn_reservar.Size = new System.Drawing.Size(211, 26);
+            this.btn_reservar.Size = new System.Drawing.Size(281, 32);
             this.btn_reservar.TabIndex = 34;
             this.btn_reservar.Text = "Reservar";
             this.btn_reservar.UseVisualStyleBackColor = true;
@@ -297,9 +281,9 @@
             // 
             // ReserveRoomsScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 355);
+            this.ClientSize = new System.Drawing.Size(1124, 437);
             this.Controls.Add(this.btn_reservar);
             this.Controls.Add(this.lbl_numeroQuartoA);
             this.Controls.Add(this.lbl_quantCamasCasalA);
@@ -322,7 +306,9 @@
             this.Controls.Add(this.lb_quantDias);
             this.Controls.Add(this.txtb_cpf);
             this.Controls.Add(this.lb_cpf);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "ReserveRoomsScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReserveRoomsScreen";

@@ -44,10 +44,11 @@
             this.columnHeader4});
             this.listView_guest.GridLines = true;
             this.listView_guest.HideSelection = false;
-            this.listView_guest.Location = new System.Drawing.Point(33, 25);
+            this.listView_guest.Location = new System.Drawing.Point(44, 31);
+            this.listView_guest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView_guest.Name = "listView_guest";
             this.listView_guest.Scrollable = false;
-            this.listView_guest.Size = new System.Drawing.Size(604, 344);
+            this.listView_guest.Size = new System.Drawing.Size(804, 422);
             this.listView_guest.TabIndex = 23;
             this.listView_guest.UseCompatibleStateImageBehavior = false;
             this.listView_guest.View = System.Windows.Forms.View.Details;
@@ -75,10 +76,13 @@
             // 
             // ReadGuestScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 389);
+            this.ClientSize = new System.Drawing.Size(897, 479);
             this.Controls.Add(this.listView_guest);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "ReadGuestScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReadGuestScreen";

@@ -43,9 +43,10 @@
             // 
             this.btn_deletar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_deletar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_deletar.Location = new System.Drawing.Point(168, 240);
+            this.btn_deletar.Location = new System.Drawing.Point(224, 295);
+            this.btn_deletar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_deletar.Name = "btn_deletar";
-            this.btn_deletar.Size = new System.Drawing.Size(317, 29);
+            this.btn_deletar.Size = new System.Drawing.Size(423, 36);
             this.btn_deletar.TabIndex = 50;
             this.btn_deletar.Text = "Deletar";
             this.btn_deletar.UseVisualStyleBackColor = true;
@@ -55,9 +56,10 @@
             // 
             this.btn_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_pesquisar.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btn_pesquisar.Location = new System.Drawing.Point(473, 75);
+            this.btn_pesquisar.Location = new System.Drawing.Point(631, 92);
+            this.btn_pesquisar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_pesquisar.Name = "btn_pesquisar";
-            this.btn_pesquisar.Size = new System.Drawing.Size(188, 23);
+            this.btn_pesquisar.Size = new System.Drawing.Size(251, 28);
             this.btn_pesquisar.TabIndex = 47;
             this.btn_pesquisar.Text = "Pesquisar";
             this.btn_pesquisar.UseVisualStyleBackColor = true;
@@ -67,9 +69,10 @@
             // 
             this.txtb_guestDeletar.CausesValidation = false;
             this.txtb_guestDeletar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtb_guestDeletar.Location = new System.Drawing.Point(19, 78);
+            this.txtb_guestDeletar.Location = new System.Drawing.Point(25, 96);
+            this.txtb_guestDeletar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtb_guestDeletar.Name = "txtb_guestDeletar";
-            this.txtb_guestDeletar.Size = new System.Drawing.Size(404, 20);
+            this.txtb_guestDeletar.Size = new System.Drawing.Size(537, 22);
             this.txtb_guestDeletar.TabIndex = 46;
             this.txtb_guestDeletar.TextChanged += new System.EventHandler(this.txtb_guestDeletar_TextChanged);
             this.txtb_guestDeletar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mascara_cpf);
@@ -79,9 +82,10 @@
             this.lbl_roomNumero.AutoSize = true;
             this.lbl_roomNumero.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_roomNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbl_roomNumero.Location = new System.Drawing.Point(16, 41);
+            this.lbl_roomNumero.Location = new System.Drawing.Point(21, 50);
+            this.lbl_roomNumero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_roomNumero.Name = "lbl_roomNumero";
-            this.lbl_roomNumero.Size = new System.Drawing.Size(291, 17);
+            this.lbl_roomNumero.Size = new System.Drawing.Size(343, 20);
             this.lbl_roomNumero.TabIndex = 45;
             this.lbl_roomNumero.Text = "Digite o CPF do hóspede que deseja deletar:";
             // 
@@ -94,10 +98,11 @@
             this.columnHeader4});
             this.listView_guest.GridLines = true;
             this.listView_guest.HideSelection = false;
-            this.listView_guest.Location = new System.Drawing.Point(19, 137);
+            this.listView_guest.Location = new System.Drawing.Point(25, 169);
+            this.listView_guest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView_guest.Name = "listView_guest";
             this.listView_guest.Scrollable = false;
-            this.listView_guest.Size = new System.Drawing.Size(644, 60);
+            this.listView_guest.Size = new System.Drawing.Size(857, 73);
             this.listView_guest.TabIndex = 51;
             this.listView_guest.UseCompatibleStateImageBehavior = false;
             this.listView_guest.View = System.Windows.Forms.View.Details;
@@ -124,15 +129,17 @@
             // 
             // DeleteGuestScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 292);
+            this.ClientSize = new System.Drawing.Size(897, 359);
             this.Controls.Add(this.listView_guest);
             this.Controls.Add(this.btn_deletar);
             this.Controls.Add(this.btn_pesquisar);
             this.Controls.Add(this.txtb_guestDeletar);
             this.Controls.Add(this.lbl_roomNumero);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "DeleteGuestScreen";
             this.Text = "DeleteGuestScreen";
             this.ResumeLayout(false);

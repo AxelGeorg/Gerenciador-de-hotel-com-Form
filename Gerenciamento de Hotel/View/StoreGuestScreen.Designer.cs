@@ -44,7 +44,7 @@
             this.btn_teste.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_teste.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 12F, System.Drawing.FontStyle.Bold);
             this.btn_teste.Location = new System.Drawing.Point(293, 407);
-            this.btn_teste.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_teste.Margin = new System.Windows.Forms.Padding(4);
             this.btn_teste.Name = "btn_teste";
             this.btn_teste.Size = new System.Drawing.Size(324, 33);
             this.btn_teste.TabIndex = 36;
@@ -106,7 +106,7 @@
             // seuHistóricoToolStripMenuItem
             // 
             this.seuHistóricoToolStripMenuItem.Name = "seuHistóricoToolStripMenuItem";
-            this.seuHistóricoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.seuHistóricoToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
             this.seuHistóricoToolStripMenuItem.Text = "Seu histórico";
             this.seuHistóricoToolStripMenuItem.Click += new System.EventHandler(this.seuHistóricoToolStripMenuItem_Click);
             // 
@@ -117,8 +117,10 @@
             this.ClientSize = new System.Drawing.Size(897, 479);
             this.Controls.Add(this.btn_teste);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "StoreGuestScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StoreGuestScreen";

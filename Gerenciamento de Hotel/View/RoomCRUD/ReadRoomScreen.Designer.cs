@@ -52,10 +52,11 @@
             this.columnHeader9});
             this.listView_room.GridLines = true;
             this.listView_room.HideSelection = false;
-            this.listView_room.Location = new System.Drawing.Point(12, 25);
+            this.listView_room.Location = new System.Drawing.Point(16, 31);
+            this.listView_room.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView_room.Name = "listView_room";
             this.listView_room.Scrollable = false;
-            this.listView_room.Size = new System.Drawing.Size(649, 353);
+            this.listView_room.Size = new System.Drawing.Size(864, 434);
             this.listView_room.TabIndex = 13;
             this.listView_room.UseCompatibleStateImageBehavior = false;
             this.listView_room.View = System.Windows.Forms.View.Details;
@@ -103,10 +104,13 @@
             // 
             // ReadRoomScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 389);
+            this.ClientSize = new System.Drawing.Size(897, 479);
             this.Controls.Add(this.listView_room);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "ReadRoomScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReadRoomScreen";

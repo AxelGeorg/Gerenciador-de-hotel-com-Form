@@ -45,19 +45,19 @@
             // 
             // txtb_sobrenome
             // 
-            this.txtb_sobrenome.Location = new System.Drawing.Point(363, 96);
-            this.txtb_sobrenome.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_sobrenome.Location = new System.Drawing.Point(484, 118);
+            this.txtb_sobrenome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_sobrenome.Name = "txtb_sobrenome";
-            this.txtb_sobrenome.Size = new System.Drawing.Size(299, 20);
+            this.txtb_sobrenome.Size = new System.Drawing.Size(397, 22);
             this.txtb_sobrenome.TabIndex = 11;
             this.txtb_sobrenome.TextChanged += new System.EventHandler(this.txtb_sobrenome_TextChanged);
             // 
             // txtb_nome
             // 
-            this.txtb_nome.Location = new System.Drawing.Point(14, 96);
-            this.txtb_nome.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_nome.Location = new System.Drawing.Point(19, 118);
+            this.txtb_nome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_nome.Name = "txtb_nome";
-            this.txtb_nome.Size = new System.Drawing.Size(299, 20);
+            this.txtb_nome.Size = new System.Drawing.Size(397, 22);
             this.txtb_nome.TabIndex = 10;
             this.txtb_nome.Tag = "Oi";
             this.txtb_nome.TextChanged += new System.EventHandler(this.txtb_nome_TextChanged);
@@ -66,10 +66,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(360, 65);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(480, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 18);
+            this.label1.Size = new System.Drawing.Size(200, 24);
             this.label1.TabIndex = 9;
             this.label1.Text = "Digite seu sobrenome:";
             // 
@@ -77,28 +76,27 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 65);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(15, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 18);
+            this.label2.Size = new System.Drawing.Size(152, 24);
             this.label2.TabIndex = 8;
             this.label2.Text = "Digite seu nome:";
             // 
             // txtb_titulo
             // 
-            this.txtb_titulo.Location = new System.Drawing.Point(363, 180);
-            this.txtb_titulo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_titulo.Location = new System.Drawing.Point(484, 222);
+            this.txtb_titulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_titulo.Name = "txtb_titulo";
-            this.txtb_titulo.Size = new System.Drawing.Size(299, 20);
+            this.txtb_titulo.Size = new System.Drawing.Size(397, 22);
             this.txtb_titulo.TabIndex = 15;
             this.txtb_titulo.TextChanged += new System.EventHandler(this.txtb_titulo_TextChanged);
             // 
             // txtb_cpf
             // 
-            this.txtb_cpf.Location = new System.Drawing.Point(14, 180);
-            this.txtb_cpf.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_cpf.Location = new System.Drawing.Point(19, 222);
+            this.txtb_cpf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_cpf.Name = "txtb_cpf";
-            this.txtb_cpf.Size = new System.Drawing.Size(299, 20);
+            this.txtb_cpf.Size = new System.Drawing.Size(397, 22);
             this.txtb_cpf.TabIndex = 14;
             this.txtb_cpf.Tag = "Oi";
             this.txtb_cpf.TextChanged += new System.EventHandler(this.txtb_cpf_TextChanged);
@@ -108,10 +106,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(360, 149);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(480, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 18);
+            this.label3.Size = new System.Drawing.Size(141, 24);
             this.label3.TabIndex = 13;
             this.label3.Text = "Digite seu título:";
             // 
@@ -119,28 +116,27 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 149);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(15, 183);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 18);
+            this.label4.Size = new System.Drawing.Size(140, 24);
             this.label4.TabIndex = 12;
             this.label4.Text = "Digite seu CPF:";
             // 
             // txtb_senha
             // 
-            this.txtb_senha.Location = new System.Drawing.Point(363, 264);
-            this.txtb_senha.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_senha.Location = new System.Drawing.Point(484, 325);
+            this.txtb_senha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_senha.Name = "txtb_senha";
-            this.txtb_senha.Size = new System.Drawing.Size(299, 20);
+            this.txtb_senha.Size = new System.Drawing.Size(397, 22);
             this.txtb_senha.TabIndex = 19;
             this.txtb_senha.TextChanged += new System.EventHandler(this.txtb_senha_TextChanged);
             // 
             // txtb_email
             // 
-            this.txtb_email.Location = new System.Drawing.Point(14, 264);
-            this.txtb_email.Margin = new System.Windows.Forms.Padding(2);
+            this.txtb_email.Location = new System.Drawing.Point(19, 325);
+            this.txtb_email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtb_email.Name = "txtb_email";
-            this.txtb_email.Size = new System.Drawing.Size(299, 20);
+            this.txtb_email.Size = new System.Drawing.Size(397, 22);
             this.txtb_email.TabIndex = 18;
             this.txtb_email.Tag = "Oi";
             this.txtb_email.TextChanged += new System.EventHandler(this.txtb_email_TextChanged);
@@ -149,10 +145,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(360, 233);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(480, 287);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 18);
+            this.label5.Size = new System.Drawing.Size(169, 24);
             this.label5.TabIndex = 17;
             this.label5.Text = "Digite a sua senha:";
             // 
@@ -160,20 +155,19 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 233);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(15, 287);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 18);
+            this.label6.Size = new System.Drawing.Size(154, 24);
             this.label6.TabIndex = 16;
             this.label6.Text = "Digite seu e-mail:";
             // 
             // btn_cadastrar
             // 
             this.btn_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cadastrar.Location = new System.Drawing.Point(197, 336);
-            this.btn_cadastrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_cadastrar.Location = new System.Drawing.Point(263, 414);
+            this.btn_cadastrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_cadastrar.Name = "btn_cadastrar";
-            this.btn_cadastrar.Size = new System.Drawing.Size(262, 33);
+            this.btn_cadastrar.Size = new System.Drawing.Size(349, 41);
             this.btn_cadastrar.TabIndex = 20;
             this.btn_cadastrar.Text = "Cadastrar";
             this.btn_cadastrar.UseVisualStyleBackColor = true;
@@ -181,9 +175,9 @@
             // 
             // CreateEmployeeScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 389);
+            this.ClientSize = new System.Drawing.Size(897, 479);
             this.Controls.Add(this.btn_cadastrar);
             this.Controls.Add(this.txtb_senha);
             this.Controls.Add(this.txtb_email);
@@ -197,6 +191,9 @@
             this.Controls.Add(this.txtb_nome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "CreateEmployeeScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateEmployeeScreen";
