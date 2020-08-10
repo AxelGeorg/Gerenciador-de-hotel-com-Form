@@ -48,13 +48,12 @@ namespace Gerenciamento_de_Hotel.Services
         /// <param name="assuntoEmail"></param>
         /// <param name="corpoEmail"></param>
         /// <returns></returns>
-        public string EnviaEmail(string assuntoEmail, string corpoEmail)
+        public string EnviaEmail(string assuntoEmail, string corpoEmail,string destinatarioEmail)
         {
             try
             {
                 const string emailRemetente = "gerenciadorHotel@hotmail.com";               
                 const string nomeUsuario = "Gerenciador de Hotel";
-                //const string senha = "hotel123";
                 const string senha = "senha123";
                 const string servidorSMTP = "smtp.office365.com";
                 const string mensagemRetorno = "Email enviado com sucesso!";
@@ -64,8 +63,8 @@ namespace Gerenciamento_de_Hotel.Services
                 using (SmtpClient smtpClient = new SmtpClient()
                 {
                     Host = servidorSMTP,
-                    Port = 587, 
-                    EnableSsl = false,
+                    Port = 587,
+                    EnableSsl = true,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
                     Credentials = new NetworkCredential(emailRemetente, senha)
@@ -74,12 +73,12 @@ namespace Gerenciamento_de_Hotel.Services
                     //cria uma mensagem - MailMessage(Remetente, Destinatario, Assunto, enviaMensagem);
                     MailMessage mensagemEmail = new MailMessage();
                     mensagemEmail.From = new MailAddress(emailRemetente, nomeUsuario, Encoding.UTF8);
-                    mensagemEmail.To.Add(new MailAddress("vilson.daniel@hotmail.com"));
+                    mensagemEmail.To.Add(new MailAddress(destinatarioEmail));
                     //mensagemEmail.To.Add(new MailAddress(emp.emp_email));
-                    mensagemEmail.Bcc.Add("axelgeorg16@gmail.com");
+                    mensagemEmail.Bcc.Add("vilson.daniel@hotmail.com");
                     mensagemEmail.Subject = assunto;
                     mensagemEmail.Body = emailTexto;
-                    mensagemEmail.BodyEncoding = Encoding.UTF8;
+                    ///mensagemEmail.BodyEncoding = Encoding.UTF8;
                     mensagemEmail.BodyEncoding = Encoding.GetEncoding("ISO-8859-1");
                     mensagemEmail.Priority = MailPriority.High;
 
@@ -120,19 +119,6 @@ namespace Gerenciamento_de_Hotel.Services
             {
                 return false;
             }
-        }
-
-        /// <summary>
-        /// Serviço que verifica se a variável string passada como parametro pode ser considerado um cpf. 
-        /// </summary>
-        /// <param name="textInt"></param>
-        /// <returns></returns>
-        public bool verificaCPF(string textCPF)
-        {
-
-
-
-            return true;
         }
 
         /// <summary>

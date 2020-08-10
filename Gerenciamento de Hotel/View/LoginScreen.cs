@@ -75,6 +75,7 @@ namespace Gerenciamento_de_Hotel
             var resposta = "";
             string assunto = "Recuperação da senha";
             string emailTexto = "";
+            string remetente = "";
             var verificaSeValidouEmail = 0;
             var listEmp = controller.retornaEmployees(0);
             var emp = new Employees();
@@ -86,6 +87,7 @@ namespace Gerenciamento_de_Hotel
                     if ((txtb_email.Text.Trim() == listEmp[i].emp_email) && (service.ValidaEnderecoEmail(txtb_email.Text.Trim()) == true))
                     {
                         verificaSeValidouEmail = 1;
+                        remetente = txtb_email.Text.Trim();
                         emp = listEmp[i];
                     }
                 }
@@ -96,9 +98,9 @@ namespace Gerenciamento_de_Hotel
             {
                 try
                 {
-                    emailTexto = "Este email é automático, por favor não responda-o\n \n Caro(a) " + emp.emp_nome + " " + emp.emp_sobrenome + " a senha referente ao seu email " + emp.emp_email + " é: " + emp.emp_password + ".\n\n Atenciosamente Gerenciador de Hoteis.";
+                    emailTexto = "Este email é automático, por favor não responda-o.\n \n Caro(a) " + emp.emp_nome + " " + emp.emp_sobrenome + " a senha referente ao seu email " + emp.emp_email + " é " + emp.emp_password + ".\n\n Atenciosamente Gerenciador de Hoteis.";
 
-                    resposta = service.EnviaEmail(assunto, emailTexto);
+                    resposta = service.EnviaEmail(assunto, emailTexto, remetente);
 
                     MessageBox.Show(resposta, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
